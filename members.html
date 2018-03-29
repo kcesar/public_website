@@ -24,7 +24,8 @@
 	  <a href="index.html" class="w3-bar-item w3-button w3-padding-16 w3-mobile">Home</a>
 	  <a href="donate.html" class="w3-bar-item w3-button w3-padding-16 w3-mobile">Donate</a>
 	  <div class="w3-dropdown-hover w3-mobile">
-		<a href="about.html" class="w3-button w3-padding-16">About Us <i class="fa fa-caret-down"></i></a>
+		<span class="w3-button w3-padding-16">About Us <i class="fa fa-caret-down"></i></span>
+		<!-- <a href="about.html" class="w3-button w3-padding-16">About Us <i class="fa fa-caret-down"></i></a> -->
 		<div class="w3-dropdown-content w3-card-4 w3-bar-block">
 		  <a href="about.html" class="w3-bar-item w3-button">About KCESAR</a>
 		  <a href="contacts.html" class="w3-bar-item w3-button">Contacts</a>
@@ -35,7 +36,7 @@
 		<span class="w3-button w3-padding-16">Members <i class="fa fa-caret-down"></i></span>
 		<!-- <a href="members.html" class="w3-button w3-padding-16">Members <i class="fa fa-caret-down"></i></a> -->
 		<div class="w3-dropdown-content w3-card-4 w3-bar-block">
-		  <!-- <a href="members.html" class="w3-bar-item w3-button">Member Resources</a> -->
+		  <a href="members.html" class="w3-bar-item w3-button">Member Resources</a>
 		  <a href="https://respond.kcesar.org" class="w3-bar-item w3-button" target="_blank">Respond to a Mission <i class="fa fa-external-link"></i></a>
 		  <a href="https://database.kcsara.org/" class="w3-bar-item w3-button" target="_blank">KCSARA Database <i class="fa fa-external-link"></i></a>
 		  <a href="https://esar.sharepoint.com/" class="w3-bar-item w3-button" target="_blank">ESAR SharePoint <i class="fa fa-external-link"></i></a>
@@ -51,20 +52,102 @@
 <!-- Body Wrapper -->
 <div class="w3-row" style="max-width: 1200px; margin: auto;">
 	
-	<div class="w3-row-padding w3-margin-top">
+	<!-- <div class="w3-row-padding w3-margin-top">
 		<div class="w3-container">
 			<H3 style="font-weight: lighter; text-align: justify;">!!! Lead Message</H3>
 			
 		</div>	
 	</div>
 	
-	<HR>
+	<HR> -->
 	
 	<div class="w3-row-padding w3-margin-top">
-		<div class="w3-container">
-			!!! Member Page Info
-			
+	
+		<div class="w3-container w3-theme">
+			<h3>King County Search & Rescue Database</h3>
 		</div>
+		<P><A HREF="https://database.kcsara.org/" TARGET="_blank">https://database.kcsara.org/ <i class="fa fa-external-link"></i></A></P>
+		<P>
+			This is the King County Search & Rescue Association Database. It includes Member, Mission, and Training data:
+			<UL>
+				<LI>Mission & Training Rosters
+				<LI>Member Contact Information
+				<LI>Member Training Records
+			</UL>
+			See <A HREF="#Office365">Office 365</A> below for login credential information.
+		</P>
+		
+		<div class="w3-container w3-theme">
+			<h3>KCESAR SharePoint</h3>
+		</div>
+		<P><A HREF="https://esar.sharepoint.com/" TARGET="_blank">https://esar.sharepoint.com/ <i class="fa fa-external-link"></i></A></P>
+		<P>
+			This is the King County Explorer Search & Rescue SharePoint. It is used to store/distribute unit documents/resources:
+			<UL>
+				<LI>Unit Bylaws
+				<LI>Code of Conduct
+				<LI>Trading Post Information (ESAR Gear)
+				<LI>OL Duty Schedule
+			</UL>
+			See <A HREF="#Office365">Office 365</A> below for login credential information.
+		</P>
+		
+		<div class="w3-container w3-theme">
+			<h3 ID="Office365">Office 365</h3>
+		</div>
+		<P>
+			In order to access ESAR's online resources you will need to know your Office 365 User Name and Password. New members will receive login information shortly after completing basic training. Your username will end in @kcesar.org. When you first visit the site you will be asked to log in. If you are presented with a choice between using a Work or Personal account, choose the "Work or school account." 
+			<DIV CLASS="w3-card w3-mobile" STYLE="width: 300px;">
+				<IMG WIDTH="100%" SRC="siteassets/365_LogInScreen.jpg">
+			</DIV>
+		</P>
+		
+		<P>
+			<H4>Troubleshooting</H4>
+			<UL>
+				<LI>If you've forgotten your password for your login, it can be reset using the instructions below.
+				<LI>If you were already logged in with a Microsoft account that's not part of ESAR (doesn't end in @kcesar.org) you will likely see the screen below. As described in the error message, you will either need to log out of your other account first or open a new browser window (or new private browsing window) in order to continue.
+				<P><DIV CLASS="w3-card w3-mobile" STYLE="width: 500px;">
+					<IMG WIDTH="100%" SRC="siteassets/365_WrongUser.png">
+				</DIV></P>
+				<LI>Questions about accessing these resources can be directed to <a href="mailto:secretary@kcesar.org">secretary@kcesar.org</a> or <a href="mailto:webmaster@kcesar.org">webmaster@kcesar.org</a>.
+			</UL>
+		</P>
+		
+		<P>
+			<H4>Reset Office 365 Password</H4>
+			<OL>
+				<LI>Start by accessing <A HREF="https://passwordreset.microsoftonline.com" TARGET="_blank">https://passwordreset.microsoftonline.com <i class="fa fa-external-link"></i></A>
+				
+				<LI>Enter your ESAR email address (ex: myusername@kcesar.org) and the "I'm not a robot" text:
+				<P><DIV CLASS="w3-card w3-mobile" STYLE="width: 500px;">
+					<IMG WIDTH="100%" SRC="siteassets/365_NotARobot.jpg">
+				</DIV></P>
+				
+				<LI>The next screen should give you the option of sending a verification code to your alternate e-mail address. This email should be the one where you receive your ESAR emails (@gmail.com, @comcast.net, etc.). It should not end in @kcesar.org:
+				<P><DIV CLASS="w3-card w3-mobile" STYLE="width: 500px;">
+					<IMG WIDTH="100%" SRC="siteassets/365_GetCode.png">
+				</DIV></P>
+				
+				<LI>Wait a few minutes for a verification code to be sent to your personal email. Type or copy/paste this code into the verification box and press "Next":
+				<P><DIV CLASS="w3-card w3-mobile" STYLE="width: 500px;">
+					<IMG WIDTH="100%" SRC="siteassets/365_CodeSubmit.jpg">
+				</DIV></P>
+				
+				<LI>Enter your new password and click "Finish". The password should be less than 16 characters:
+				<P><DIV CLASS="w3-card w3-mobile" STYLE="width: 500px;">
+					<IMG WIDTH="100%" SRC="siteassets/365_NewPassword.jpg">
+				</DIV></P>
+				
+				<LI>The password reset is complete:
+				<P><DIV CLASS="w3-card w3-mobile" STYLE="width: 300px;">
+					<IMG WIDTH="100%" SRC="siteassets/365_PasswordReset.jpg">
+				</DIV></P>
+				
+			</OL>
+		</P>
+			
+		
 	</div>
 	
 	<HR>
