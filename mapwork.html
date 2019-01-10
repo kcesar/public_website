@@ -60,7 +60,7 @@
 		<div class="w3-container">
 			<H3 style="font-weight: lighter; text-align: justify;">In response to many of our trainees asking for additional practice mapwork we have compiled a series of supplemental problems that you can use to self-study.</H3>
 
-			<P style="text-align: justify;">Print and familiarize yourself with <a href="">The Map</a>, then review the problem set below. Each problem has the answer hidden. When you are ready to check your work simply click on the question to reveal the answer. Click again to hide it.
+			<P style="text-align: justify;">Print and familiarize yourself with <a href="siteassets/map_01.jpg" target="_blank">The Map</a>, then review the problem set below. Each problem has the answer hidden. When you are ready to check your work simply click on the question to reveal the answer. Click again to hide it.
 		</div>	
 	</div>
 	
@@ -68,29 +68,55 @@
 	
 	<div class="w3-row-padding w3-margin-top w3-margin-bottom">
 		
-		<button onclick="myAccFunc('Demo1')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align">1. Plotting Problem</button>
-		<div id="Demo1" class="w3-hide w3-card">
-		  <div class="w3-container">
-			<div class="w3-margin w3-third" style="width: 300px; height: 300px; border: 2px solid black; position: relative;">
-			<div style="width: 16px; height: 16px; border: 2px solid red; border-radius: 50%; position: absolute; left: 50%; top: 50%; margin-left: -8px; margin-top: -8px;"></div>
-				<div style="width: 4px; height: 4px; background-color: red; border-radius: 50%; position: absolute; left: 50%; top: 50%; margin-left: -2px; margin-top: -2px;"></div>
+		<div class="w3-container w3-card w3-padding">
+			<p>
+				<strong>1. Determine the Map's Scale</strong>
+				<br>Use information available on the map to determine the scale. To calculate the distance, in feet, between the ends of the bracket at the bottom of the map, where it says "Check Scale Here."
+			</p>
+			<button onclick="myAccFunc('Q001')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right">Show/Hide Answer</button>
+			<div id="Q001" class="w3-hide">
+			  <div class="w3-container w3-margin">
+				<div class="w3-container w3-third">
+					<strong>Answer:</strong>
+					<p>Approximately 1056 Feet</p>
+				</div>
+				<div class="w3-container w3-twothird">
+					<strong>Explanation:</strong>
+					<p>The scale of the map may vary depending on how it was printed. We'll need to use information that is printed on the map to determine its scale. The best indication of scale on this map is the UTM grid, the width of which is a known distance, 1000 meters.</p>
+					<p>
+						To calculate the scale:
+						<ol>
+							<li>Measure the distance between the UTM grid lines on the map using your preferred unit of measure, generally either inches or centimeters.
+							<li>Divide 1000m by your measurement, for example if you measured the grid to be 5 inches wide: 1000m/5in = 200m/in.
+							<li>Next, convert meters to feet (1m = 3.28ft). Continuing the example from above, 200m/in * 3.28ft/m = 656ft/in. This is your scale!
+							<li>Finally to check your answer, measure the distance between the ends of the bracket, then multiply by your scale. e.g. 1.6in * 656ft/in = 1056 feet.
+						</ol>
+					</p>
+				</div>
+			  </div>
 			</div>
-			<div class="w3-margin w3-twothird">This is where any explainatory information would go.</div>
-		  </div>
 		</div>
 		
-		<button onclick="myAccFunc('Demo2')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align w3-margin-top">2. Problem 2</button>
-		<div id="Demo2" class="w3-hide w3-card">
-		  <div class="w3-container">
-			<p>Answer 2</p>
-		  </div>
-		</div>
-		
-		<button onclick="myAccFunc('Demo3')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align w3-margin-top">3. Problem 3</button>
-		<div id="Demo3" class="w3-hide w3-card">
-		  <div class="w3-container">
-			<p>Answer 3</p>
-		  </div>
+		<div class="w3-container w3-card w3-padding w3-margin-top">
+			<p>
+				<strong>2. Plotting Problem Template</strong>
+				<br>Plot 10T 054321 654321
+			</p>
+			<button onclick="myAccFunc('Q002')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right">Show/Hide Answer</button>
+			<div id="Q002" class="w3-hide">
+			  <div class="w3-container w3-margin">
+				<div class="w3-container w3-third">
+					<div style="width: 300px; height: 300px; background-position: -100px -200px; background-image: url('siteassets/map_01.jpg'); background-size: 800px; background-repeat: no-repeat; border: 2px solid black; position: relative;">
+						<div style="width: 16px; height: 16px; border: 2px solid red; border-radius: 50%; position: absolute; left: 50%; top: 50%; margin-left: -8px; margin-top: -8px;"></div>
+						<div style="width: 4px; height: 4px; background-color: red; border-radius: 50%; position: absolute; left: 50%; top: 50%; margin-left: -2px; margin-top: -2px;"></div>
+					</div>
+				</div>
+				<div class="w3-container w3-twothird">
+					<strong>Explanation:</strong>
+					<p>Feedback here...</p>
+				</div>
+			  </div>
+			</div>
 		</div>
 
 	</div>
