@@ -8,6 +8,41 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
 <script src="siteassets/dropdown-fix.js" async="true"></script>
 <script src="siteassets/w3.js"></script>
+<style>
+	.map_container {
+		width: 300px;
+		height: 300px;
+		background-image: url('siteassets/map_01.jpg');
+		background-size: 800px;
+		background-repeat: no-repeat;
+		border: 2px solid black;
+		position: relative;
+	}
+
+	.map_point {
+		width: 16px;
+		height: 16px;
+		border: 2px solid red;
+		border-radius: 50%;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-left: -8px;
+		margin-top: -8px;
+	}
+	
+	.map_circle {
+		width: 4px;
+		height: 4px;
+		background-color: red;
+		border-radius: 50%;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-left: -2px;
+		margin-top: -2px;
+	}
+</style>
 <body>
 
 <!-- Header -->
@@ -71,14 +106,14 @@
 		<div class="w3-container w3-card w3-padding">
 			<p>
 				<strong>1. Determine the Map's Scale</strong>
-				<br>Use information available on the map to determine the scale. To calculate the distance, in feet, between the ends of the bracket at the bottom of the map, where it says "Check Scale Here."
+				<br>Use information available on the map to determine the scale, then check your answer by calculating the distance, in feet, between the ends of the bracket at the bottom of the map, where it says "Check Scale Here."
 			</p>
-			<button onclick="myAccFunc('Q001')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right">Show/Hide Answer</button>
+			<button onclick="myAccFunc('Q001')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right w3-margin">Show/Hide Answer</button>
 			<div id="Q001" class="w3-hide">
 			  <div class="w3-container w3-margin">
 				<div class="w3-container w3-third">
 					<strong>Answer:</strong>
-					<p>Approximately 1056 Feet</p>
+					<p>The width of the bracket is approximately 1056 Feet</p>
 				</div>
 				<div class="w3-container w3-twothird">
 					<strong>Explanation:</strong>
@@ -99,21 +134,151 @@
 		
 		<div class="w3-container w3-card w3-padding w3-margin-top">
 			<p>
-				<strong>2. Plotting Problem Template</strong>
-				<br>Plot 10T 054321 654321
+				<strong>2. Basic UTM Plot</strong>
+				<br>Plot 10T 0619350E 5253637N
 			</p>
-			<button onclick="myAccFunc('Q002')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right">Show/Hide Answer</button>
+			<button onclick="myAccFunc('Q002')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right w3-margin">Show/Hide Answer</button>
 			<div id="Q002" class="w3-hide">
 			  <div class="w3-container w3-margin">
-				<div class="w3-container w3-third">
-					<div style="width: 300px; height: 300px; background-position: -100px -200px; background-image: url('siteassets/map_01.jpg'); background-size: 800px; background-repeat: no-repeat; border: 2px solid black; position: relative;">
-						<div style="width: 16px; height: 16px; border: 2px solid red; border-radius: 50%; position: absolute; left: 50%; top: 50%; margin-left: -8px; margin-top: -8px;"></div>
-						<div style="width: 4px; height: 4px; background-color: red; border-radius: 50%; position: absolute; left: 50%; top: 50%; margin-left: -2px; margin-top: -2px;"></div>
-					</div>
+				<div class="w3-container w3-left">
+					<div class="map_container" style="background-position: -140px -201px;"><div class="map_point"></div><div class="map_circle"></div></div>
 				</div>
-				<div class="w3-container w3-twothird">
+				<div class="w3-container w3-left">
 					<strong>Explanation:</strong>
-					<p>Feedback here...</p>
+					<p>The bottom of Julie's Chair</p>
+				</div>
+			  </div>
+			</div>
+		</div>
+		
+		<div class="w3-container w3-card w3-padding w3-margin-top">
+			<p>
+				<strong>3. Basic UTM Plot</strong>
+				<br>Plot 10T 0619708E 5252790N
+			</p>
+			<button onclick="myAccFunc('Q003')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right w3-margin">Show/Hide Answer</button>
+			<div id="Q003" class="w3-hide">
+			  <div class="w3-container w3-margin">
+				<div class="w3-container w3-left">
+					<div class="map_container" style="background-position: -346px -720px;"><div class="map_point"></div><div class="map_circle"></div></div>
+				</div>
+				<div class="w3-container w3-left">
+					<strong>Explanation:</strong>
+					<p>Intersection northwest of the Fire Station</p>
+				</div>
+			  </div>
+			</div>
+		</div>
+		
+		<div class="w3-container w3-card w3-padding w3-margin-top">
+			<p>
+				<strong>4. Basic UTM Plot</strong>
+				<br>Plot 10T 0619693E 5253869N
+			</p>
+			<button onclick="myAccFunc('Q004')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right w3-margin">Show/Hide Answer</button>
+			<div id="Q004" class="w3-hide">
+			  <div class="w3-container w3-margin">
+				<div class="w3-container w3-left">
+					<div class="map_container" style="background-position: -350px -65px;"><div class="map_point"></div><div class="map_circle"></div></div>
+				</div>
+				<div class="w3-container w3-left">
+					<strong>Explanation:</strong>
+					<p>Intersection of Pacfic Crest Trail and Old Commonweath Trail</p>
+				</div>
+			  </div>
+			</div>
+		</div>
+		
+		<div class="w3-container w3-card w3-padding w3-margin-top">
+			<p>
+				<strong>5. Basic UTM Plot</strong>
+				<br>Plot 10T 0619083E 5253522N
+			</p>
+			<button onclick="myAccFunc('Q005')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right w3-margin">Show/Hide Answer</button>
+			<div id="Q005" class="w3-hide">
+			  <div class="w3-container w3-margin">
+				<div class="w3-container w3-left">
+					<div class="map_container" style="background-position: 22px -268px;"><div class="map_point"></div><div class="map_circle"></div></div>
+				</div>
+				<div class="w3-container w3-left">
+					<strong>Explanation:</strong>
+					<p>~3200 Foot Elevation on the Pacific Crest Trail</p>
+				</div>
+			  </div>
+			</div>
+		</div>
+		
+		<div class="w3-container w3-card w3-padding w3-margin-top">
+			<p>
+				<strong>6. Basic UTM Plot</strong>
+				<br>Plot 10T 0619104E 5252818N
+			</p>
+			<button onclick="myAccFunc('Q006')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right w3-margin">Show/Hide Answer</button>
+			<div id="Q006" class="w3-hide">
+			  <div class="w3-container w3-margin">
+				<div class="w3-container w3-left">
+					<div class="map_container" style="background-position: 19px -695px;"><div class="map_point"></div><div class="map_circle"></div></div>
+				</div>
+				<div class="w3-container w3-left">
+					<strong>Explanation:</strong>
+					<p>Near the top of Easy Rider Chair Lift</p>
+				</div>
+			  </div>
+			</div>
+		</div>
+		
+		<div class="w3-container w3-card w3-padding w3-margin-top">
+			<p>
+				<strong>7. Basic UTM Plot</strong>
+				<br>Plot 10T 0619047E 5253858N
+			</p>
+			<button onclick="myAccFunc('Q007')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right w3-margin">Show/Hide Answer</button>
+			<div id="Q007" class="w3-hide">
+			  <div class="w3-container w3-margin">
+				<div class="w3-container w3-left">
+					<div class="map_container" style="background-position: 40px -65px;"><div class="map_point"></div><div class="map_circle"></div></div>
+				</div>
+				<div class="w3-container w3-left">
+					<strong>Explanation:</strong>
+					<p>Pacific Crest Trailhead - Summit West</p>
+				</div>
+			  </div>
+			</div>
+		</div>
+		
+		<div class="w3-container w3-card w3-padding w3-margin-top">
+			<p>
+				<strong>8. Plot Location Problem</strong>
+				<br>From the intersection at 10T 0619742E 5252932N walk northbound on the road for 216m.
+			</p>
+			<button onclick="myAccFunc('Q008')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right w3-margin">Show/Hide Answer</button>
+			<div id="Q008" class="w3-hide">
+			  <div class="w3-container w3-margin">
+				<div class="w3-container w3-left">
+					<div class="map_container" style="background-position: -400px -475px;"><div class="map_point"></div><div class="map_circle"></div></div>
+				</div>
+				<div class="w3-container w3-left">
+					<strong>Explanation:</strong>
+					<p>On WA 906 in front of the Museum</p>
+				</div>
+			  </div>
+			</div>
+		</div>
+		
+		<div class="w3-container w3-card w3-padding w3-margin-top">
+			<p>
+				<strong>9. Plot Location Problem</strong>
+				<br>Follow the Dodge Ridge Chairlift uphill until you reach 3160ft elevation, then travel 355ft on a bearing of 186&deg;T
+			</p>
+			<button onclick="myAccFunc('Q009')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right w3-margin">Show/Hide Answer</button>
+			<div id="Q009" class="w3-hide">
+			  <div class="w3-container w3-margin">
+				<div class="w3-container w3-left">
+					<div class="map_container" style="background-position: -58px -437px;"><div class="map_point"></div><div class="map_circle"></div></div>
+				</div>
+				<div class="w3-container w3-left">
+					<strong>Explanation:</strong>
+					<p>On the slope between the Dodge Ridge and Little Thunder Chairlifts</p>
 				</div>
 			  </div>
 			</div>
