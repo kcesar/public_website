@@ -7,6 +7,15 @@
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-green.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
 <script src="siteassets/dropdown-fix.js" async="true"></script>
+<style>
+	.red {
+		color: red;
+	}
+
+	.bold {
+		font-weight: bold;
+	}
+</style>
 <body>
 
 <!-- Header -->
@@ -68,36 +77,34 @@
 					<span style="font-size: 1.25em;">Training Resources</span>
 				</div>
 				<div class="w3-container" style="padding-top: 16px; padding-bottom: 8px;">
-					<center><form action="#SCHEDULE"><button type="submit" class="w3-button w3-theme w3-round-xxlarge" style="bottom: 0; min-width: 225px;"><i class="fa fa-calendar" aria-hidden="true"></i> Training Schedule</button></form></center>
+					<center><form action="#COURSEA"><button type="submit" class="w3-button w3-theme w3-round-xxlarge" style="bottom: 0; min-width: 225px;"><i class="fa fa-calendar" aria-hidden="true"></i> Training Schedule</button></form></center>
 				</div>
 				<div class="w3-container" style="padding-top: 8px; padding-bottom: 8px;">
 					<center><form action="siteassets/ESAR_TrainingPacket.pdf" TARGET="_blank"><button type="submit" class="w3-button w3-theme w3-round-xxlarge" style="bottom: 0; min-width: 225px;"><i class="fa fa-book" aria-hidden="true"></i> Orientation Packet</button></form></center>
 				</div>
 				
 				<!-- Training Email List -->
+				<!--
 				<div class="w3-container" style="padding-top: 8px; padding-bottom: 8px;">
 					<center><form action="https://docs.google.com/forms/d/e/1FAIpQLSeJKHmuuPYBteQustd_gDFAQ1nUM7yugLmyPkWmWpCTMjBdgA/viewform?usp=pp_url&entry.1903771899&entry.2109271675&entry.1400731069=Prefer+Weeknight&entry.1226911418&entry.1163518030&entry.1284048981=YES" TARGET="_blank"><button type="submit" class="w3-button w3-theme w3-round-xxlarge" style="bottom: 0; min-width: 225px;"><i class="fa fa-envelope" aria-hidden="true"></i> Training Email List</button></form></center>
 				</div>
-				
-				<!-- Jump To Course A -->
-				<!--
-				<div class="w3-container" style="padding-top: 8px; padding-bottom: 8px;">
-					<center><form action="#COURSEA"><button type="submit" class="w3-button w3-yellow w3-round-xxlarge" style="bottom: 0; min-width: 225px;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Course A Registration</button></form></center>
-				</div>
 				-->
+
+				<!-- Jump To Course A -->
+				
+				<div class="w3-container" style="padding-top: 8px; padding-bottom: 8px;">
+					<center><form action="#SCHEDULE"><button type="submit" class="w3-button w3-yellow w3-round-xxlarge" style="bottom: 0; min-width: 225px;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Submit Application</button></form></center>
+				</div>
+				
 				
 				<!-- Training Fee -->
 				<!--
 				<div class="w3-container" style="padding-top: 8px; padding-bottom: 16px;">
-					<center>
-					
-					<form action="https://www.paypal.com/cgi-bin/webscr" target="_blank">
+					<center><form action="https://www.paypal.com/cgi-bin/webscr" target="_blank">
 						<input type="hidden" name="cmd" value="_s-xclick">
 						<input type="hidden" name="hosted_button_id" value="NWKJ9QWMN4LGQ">
 						<button type="submit" class="w3-button w3-yellow w3-round-xxlarge" style="bottom: 0; min-width: 225px;"><i class="fa fa-paypal" aria-hidden="true"></i> Pay Training Fee</button>
-					</form>
-					
-					</center>
+					</form></center>
 				</div>
 				-->
 				
@@ -180,9 +187,23 @@
 				<LI> <A HREF="https://emergencycare.hsi.com/" TARGET="_blank">American Safety & Health Institute (ASHI)</A>
 			</UL>
 
-			<P><STRONG>Application:</STRONG>
-			<P>*** Application Link and Instructions Here ***</P>
-			<P>Once your application has been reviewed and accepted you will recieve information about how to register for Course A. The registration process for subsequent courses will be reviewed during Course A.</P>
+			<p>If obtaining a First Aid/CPR/AED certification will pose a financal hardship, please contact <A HREF="mailto:training.admin@kcesar.org">training.admin@kcesar.org</A>.</p>
+
+			<p>
+				<STRONG>Basic Training Application:</STRONG>
+				<ol>
+					<li>Make sure you have a digital copy (pdf or image) of your First Aid/CPR/AED Certification ready to upload.</li>
+					<li>Complete and submit a <a href="https://forms.gle/fMrfV8zegAVTzfjG9" target="_blank">Basic Training Application</a>.</li>
+					<li>Wait for your application to be reviewed (this may take several weeks, we're all volunteers, thank you for your patience.)</li>
+					<li>Once your application has been reviewed and accepted you will recieve information about how to register for Course A.</li>
+				</ol>
+			</p>
+			<P>
+				<ul>
+					<li>The registration process for subsequent courses will be reviewed during Course A.</li>
+					<li>If you are unable to submit an application via the link provided, please contact <A HREF="mailto:training.admin@kcesar.org">training.admin@kcesar.org</A>.</li>
+				</ul>
+			</P>
 			
 			<P><STRONG>Returning Trainees:</STRONG>
 				<br>If you started training last year and are returning this year, please:
@@ -202,15 +223,13 @@
 				<A NAME="COURSEA">
 				<TR><TH CLASS="w3-green" COLSPAN="3">Course A: Orientation</TH></TR>
 				<TR><TD COLSPAN=3>
-					
-					
-					<SPAN STYLE="color: red; font-weight: bold;">
-						REQUIRED:
-						<UL>
-							<LI>Bring current photo ID (Drivers License, Passport, or student ID)
-							<LI>Bring proof of current auto insurance if you drive. If minor, bring parents auto insurance.
-						</UL>
-					</SPAN>
+
+					<SPAN class="red bold">REQUIRED:</SPAN>
+					<UL>
+						While attending Course A you will complete and submit a King County Emergency Worker Application and Background Check Form.
+						<LI><SPAN class="red">Bring current photo ID (Drivers License, Passport, or student ID)</SPAN>
+						<LI><SPAN class="red">Bring proof of current auto insurance if you drive. If minor, bring parents auto insurance.</SPAN>
+					</UL></SPAN>
 					
 					<!-- COURSE A REGISTRATION -->
 					<!--
@@ -268,22 +287,24 @@
 					<P><STRONG>Course Fee Due:</STRONG></P>
 					<P>The training fee is $165.00 and is due when you sign in at Course B. PayPal is the preferred payment method, we can accept check or cash if needed, but we cannot make change.</P>
 
-					<SPAN STYLE="color: red; font-weight: bold;">
+					<SPAN class="red bold">
 						Do not make a course fee payment until you have successfully registered for Course B.
 					</SPAN>
+
+
 					
-					<!--
 					<UL>
-						<LI> (Preferred) Please use the PayPal link below and <span style="text-decoration: underline; color: red;">bring proof of payment to Course B</span>.
-						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-							<input type="hidden" name="cmd" value="_s-xclick">
-							<input type="hidden" name="hosted_button_id" value="NWKJ9QWMN4LGQ">
-							<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-							<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-						</form>
+						<LI> (Preferred) Please use the PayPal link below and <span style="text-decoration: underline;" class="red">bring proof of payment to Course B</span>.
+							
+							<p><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+								<input type="hidden" name="cmd" value="_s-xclick">
+								<input type="hidden" name="hosted_button_id" value="NWKJ9QWMN4LGQ">
+								<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+								<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+							</form></p>
+
 						<LI> If you are paying with Check or Cash, it will be collected when you sign in at Course B.
 					</UL>
-					-->
 					
 					<P><STRONG>Badge Photo:</STRONG></P>
 					<P>Be prepared to have your badge photo taken at the beginning of Course B. We use this photo throughout training so we can put names to faces. This photo will also be used on your DEM identification card after you graduate.</P>
