@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<title>Test Lists</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+
+<!-- Course Session Template -->
+<template id="scheduleItem">
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</template>
+
+<!-- Course Item Template -->
+<template id="courseItem">
+	<tbody>
+    	<tr><th colspan=4></th></tr>
+    </tbody>
+</template>
+
+<table id="schedule"></table>
+
+<script>
+
+var courses = [
+	{courseId:'COURSEA', courseName:'Course A: Orientation'},
+    {courseId:'COURSEB', courseName:'Course B: Map and Compass'},
+    {courseId:'COURSEC', courseName:'Course C: Search Theory and Field Practice'},
+    {courseId:'COURSE1', courseName:'Course I: Navigation Practice'},
+    {courseId:'COURSE2', courseName:'Course II: Navigation Evaluation'}
+];
+
+var locations = [
+    {locationId:'KCSARA', locationName:'King County Search & Rescue Headquarters', locationAddress:'47.512097, -121.882279', goolgeMapsUrl:'https://goo.gl/maps/G42pfULrz7x'},
+    {locationId:'CITYHL', locationName:'Bellevue City Hall', locationAddress:'450 110th Ave NE, Bellevue, WA 98004', goolgeMapsUrl:'https://goo.gl/maps/G42pfULrz7x'},
+    {locationId:'CWSGYM', locationName:'Central Washington Sammamish GYM', locationAddress:'120 228th Ave NE, Sammamish, WA 98074', goolgeMapsUrl:'https://goo.gl/maps/jjAox7PF23q'},
+    {locationId:'CAMPED', locationName:'Camp Edward', locationAddress:'25600 Monroe Camp Rd, Snohomish, WA 98290', goolgeMapsUrl:'https://goo.gl/maps/SURfVBFYc1K2'},
+    {locationId:'FIRE85', locationName:'Carnation - Fire Station 85', locationAddress:'3600 Tolt Avenue NE, Carnation, WA 98014', goolgeMapsUrl:'https://goo.gl/maps/tBwJCitRmT72'},
+    {locationId:'ESFRHQ', locationName:'Eastside Fire and Rescue Headquarters', locationAddress:'175 Newport Way NW, Issaquah, WA 98027', goolgeMapsUrl:'https://goo.gl/maps/Q1wfxSyuAPG2'},
+    {locationId:'FIRE73', locationName:'Issaquah Highlands - Fire Station 73', locationAddress:'1280 NE Park Drive, Issaquah, WA 98029', goolgeMapsUrl:'https://goo.gl/maps/VBGzyssUaqG2'},
+    {locationId:'FIRE82', locationName:'Sahalee - Fire Station 82', locationAddress:'1851 228th Ave NE, Sammamish, WA 98074', goolgeMapsUrl:'https://goo.gl/maps/YTFJBC7ob9B2'},
+    {locationId:'YMCASM', locationName:'Sammamish YMCA', locationAddress:'831 228th Ave SE, Sammamish, WA 98075', goolgeMapsUrl:'https://goo.gl/maps/edbzPt8RMko'},
+    {locationId:'VASAPK', locationName:'Vasa Park Resort & Ballroom', locationAddress:'3560 W Lake Sammamish Pkwy S, Bellevue, WA 98008', goolgeMapsUrl:'https://goo.gl/maps/jYAxd4YFnU92'}
+];
+
+var courseSessions = [
+    {courseId:'COURSEA', courseDate:'08/07/2019', courseStartTime:'8:00am', courseEndTime:'5:00pm', locationId:'KCSARA'},
+    {courseId:'COURSEB', courseDate:'08/15/2019', courseStartTime:'8:00am', courseEndTime:'5:00pm', locationId:'CWSGYM'},
+    {courseId:'COURSEA', courseDate:'08/21/2019', courseStartTime:'8:00am', courseEndTime:'5:00pm', locationId:'CITYHL'},
+    {courseId:'COURSEC', courseDate:'08/30/2019', courseStartTime:'8:00am', courseEndTime:'5:00pm', locationId:'YMCASM'},
+    {courseId:'COURSEC', courseDate:'08/07/2019', courseStartTime:'8:00am', courseEndTime:'5:00pm', locationId:'KCSARA'},
+    {courseId:'COURSEB', courseDate:'08/15/2019', courseStartTime:'8:00am', courseEndTime:'5:00pm', locationId:'CWSGYM'},
+    {courseId:'COURSEB', courseDate:'08/21/2019', courseStartTime:'8:00am', courseEndTime:'5:00pm', locationId:'CITYHL'},
+    {courseId:'COURSE1', courseDate:'08/30/2019', courseStartTime:'8:00am', courseEndTime:'5:00pm', locationId:'YMCASM'}
+];
+
+var locationMap = new Map();
+for (var i=0; i<locations.length; i++) {
+    locationMap.set(locations[i].locationId, locations[i]);
+}
+
+var courseMap = new Map();
+for (var i=0; i<courses.length; i++) {
+    courseMap.set(courses[i].courseId, courses[i]);
+}
+
+var scheduleItem = document.querySelector('#scheduleItem');
+for (var i = 0; i < courseSessions.length; i++) {
+    var courseSession = courseSessions[i];
+    var loc = locationMap.get(courseSession.locationId);
+    var courseSchedule = getCourseSchedule(courseSession.courseId);
+    if (courseSchedule == null) {
+    	continue;
+    }
+	var clone = scheduleItem.content.cloneNode(true);
+	var td = clone.querySelectorAll('td');
+	td[0].innerHTML = courseSession.courseDate;
+    td[1].innerHTML = '<a href="' + loc.goolgeMapsUrl + '" target="_blank">' + loc.locationName + '</a>';
+    td[2].innerHTML = courseSession.courseStartTime;
+    td[3].innerHTML = courseSession.courseEndTime;
+	courseSchedule.appendChild(clone);
+}
+
+function getCourseSchedule(courseId){
+	var courseSchedule = document.getElementById(courseId);
+	if (document.getElementById(courseId) == null) {
+    	var course = courseMap.get(courseId);
+        if (course == null) {
+        	return null;
+        }
+    	var schedule = document.getElementById('schedule');//schedule
+    	var courseItem = document.querySelector('#courseItem'); //template
+        var newCourseItem = courseItem.content.cloneNode(true);
+        newCourseItem.querySelectorAll('tbody')[0].id = courseId;
+        newCourseItem.querySelectorAll('th')[0].innerHTML = courseMap.get(courseId).courseName;
+        schedule.appendChild(newCourseItem);
+        courseSchedule = document.getElementById(courseId);
+    }
+	return courseSchedule;
+}
+
+</script>
+
+
+</body>
+</html>
