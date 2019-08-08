@@ -364,11 +364,12 @@ for (var i = 0; i < courseSessions.length; i++) {
 
     // Get Location data, Default to TBD if none is found
     var loc = locationMap.get(courseSession.locationId);
+	var locationNotes = courseSession.LocationNotes == null ? '' : ' ' + courseSession.LocationNotes;
     var locationHTML;
     if (loc == null || loc.Name == 'TBD') {
-        locationHTML = 'TBD'
+        locationHTML = 'TBD' + locationNotes;
     } else {
-        var locationDescription = loc.Name + (courseSession.LocationNotes == null ? '' : ' ' + courseSession.LocationNotes);
+        var locationDescription = loc.Name + locationNotes;
         locationHTML = '<a href="' + loc.GoolgeMapsUrl + '" title="' + loc.StreetAddress + '" target="_blank">' + locationDescription + '</a>';
     }
     
