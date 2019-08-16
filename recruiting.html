@@ -73,7 +73,7 @@
 					<span style="font-size: 1.25em;">Training Resources</span>
 				</div>
 				<div class="w3-container" style="padding-top: 16px; padding-bottom: 8px; text-align:center;">
-					<form action="#COURSEA"><button type="submit" class="w3-button w3-theme w3-round-xxlarge" style="bottom: 0; min-width: 225px;"><i class="fa fa-calendar" aria-hidden="true"></i> Training Schedule</button></form>
+					<form action="#schedule"><button type="submit" class="w3-button w3-theme w3-round-xxlarge" style="bottom: 0; min-width: 225px;"><i class="fa fa-calendar" aria-hidden="true"></i> Training Schedule</button></form>
 				</div>
 				<div class="w3-container" style="padding-top: 8px; padding-bottom: 8px; text-align:center;">
 					<form action="siteassets/ESAR_TrainingPacket.pdf" TARGET="_blank"><button type="submit" class="w3-button w3-theme w3-round-xxlarge" style="bottom: 0; min-width: 225px;"><i class="fa fa-book" aria-hidden="true"></i> Orientation Packet</button></form>
@@ -136,6 +136,8 @@
 		<div class="w3-row-padding w3-container">
 		
         <P><STRONG>Training Dates:</STRONG> The dates posted on this schedule are for August 2019 through April 2020.</P>
+
+        <p><b>Google Calendar:</b> Our training schedule is available as a Google Calendar. <a href="https://calendar.google.com/calendar/embed?src=kcesar.org_4r2brjkoml90hilp9h73t2lgno%40group.calendar.google.com&ctz=America%2FLos_Angeles" target="_blank">View in Browser</a> | <a href="https://calendar.google.com/calendar/ical/kcesar.org_4r2brjkoml90hilp9h73t2lgno%40group.calendar.google.com/public/basic.ics">Download as .ics</a></a></p>
         
         <P><STRONG>Training Fee:</STRONG> $165.00 (Due at Course B)<br>The training fee is a one-time payment and covers all required training to become an ESAR member.</P>
         
@@ -258,7 +260,7 @@ var courses = [
 ];
 
 var locations = [
-    {Id:'KCSARA', Name:'King County Search & Rescue Headquarters', StreetAddress:'47.512097, -121.882279', GoolgeMapsUrl:'https://goo.gl/maps/G42pfULrz7x'},
+    {Id:'KCSARA', Name:'King County Search & Rescue Headquarters', StreetAddress:'47.512097, -121.882279', GoolgeMapsUrl:'https://goo.gl/maps/GrLHi5q6giKDrTcc7'},
     {Id:'BELLCH', Name:'Bellevue City Hall', StreetAddress:'450 110th Ave NE, Bellevue, WA 98004', GoolgeMapsUrl:'https://goo.gl/maps/G42pfULrz7x'},
     {Id:'ISSYCH', Name:'Issaquah City Hall', StreetAddress:'130 East Sunset Way, Issaquah, WA 98027', GoolgeMapsUrl:'https://goo.gl/maps/7tvtxxQqmQfNn4GX6'},
     {Id:'BELLLB', Name:'Bellevue Library', StreetAddress:'1111 110th Ave NE, Bellevue, WA 98004', GoolgeMapsUrl:'https://goo.gl/maps/wyFBHAuYyEKL3a4U6'},
@@ -274,16 +276,15 @@ var locations = [
     {Id:'VASAPK', Name:'Vasa Park Resort & Ballroom', StreetAddress:'3560 W Lake Sammamish Pkwy S, Bellevue, WA 98008', GoolgeMapsUrl:'https://goo.gl/maps/jYAxd4YFnU92'},
     {Id:'CWSGYM', Name:'Central Washington Sammamish GYM', StreetAddress:'120 228th Ave NE, Sammamish, WA 98074', GoolgeMapsUrl:'https://goo.gl/maps/jjAox7PF23q'},
     {Id:'CAMPED', Name:'Camp Edward', StreetAddress:'25600 Monroe Camp Rd, Snohomish, WA 98290', GoolgeMapsUrl:'https://goo.gl/maps/SURfVBFYc1K2'},
-    {Id:'TBDUNK', Name:'TBD', StreetAddress:'', GoolgeMapsUrl:'#'}
-
+    {Id:'SEAMTN', Name:'Seattle Mountaineers', StreetAddress:'7700 Sand Point Way NE, Seattle, WA 98115', GoolgeMapsUrl:'https://goo.gl/maps/2vQHCspiamKrNhMn9'},
+    {Id:'TBDTBD', Name:'TBD', StreetAddress:'', GoolgeMapsUrl:''}
 ];
 
 var courseSessions = [
-    
     {courseId:'CRSA', courseDate:'August 13th', courseStartTime:'7:00pm', courseEndTime:'9:00pm', locationId:'KCSARA', LocationNotes:null},
     {courseId:'CRSA', courseDate:'August 15th', courseStartTime:'7:00pm', courseEndTime:'9:00pm', locationId:'BELLCH', LocationNotes:'Room 1E-113'},
     {courseId:'CRSA', courseDate:'August 20th', courseStartTime:'7:00pm', courseEndTime:'9:00pm', locationId:'BELLCH', LocationNotes:'Room 1E-108'},
-    {courseId:'CRSA', courseDate:'August 21st', courseStartTime:'7:00pm', courseEndTime:'9:00pm', locationId:'TBDUNK', LocationNotes:'- Seattle'},
+    {courseId:'CRSA', courseDate:'August 21st', courseStartTime:'7:00pm', courseEndTime:'9:00pm', locationId:'SEAMTN', LocationNotes:'Room Goodman B'},
     {courseId:'CRSA', courseDate:'August 24th', courseStartTime:'9:00am', courseEndTime:'11:00am', locationId:'KCSARA', LocationNotes:null},
     {courseId:'CRSA', courseDate:'August 24th', courseStartTime:'12:00pm', courseEndTime:'2:00pm', locationId:'KCSARA', LocationNotes:null},
     {courseId:'CRSA', courseDate:'September 10th', courseStartTime:'7:00pm', courseEndTime:'9:00pm', locationId:'YMCASM', LocationNotes:null},
@@ -299,10 +300,10 @@ var courseSessions = [
     {courseId:'CRSC', courseDate:'November 23-24', courseStartTime:'Sat 6:30am', courseEndTime:'Sun 4:00pm', locationId:'CAMPED', LocationNotes:null},
     {courseId:'CRSC', courseDate:'December 7-8', courseStartTime:'Sat 6:30am', courseEndTime:'Sun 4:00pm', locationId:'CAMPED', LocationNotes:null},
 
-    {courseId:'SFA1', courseDate:'November 16th', courseStartTime:'8:00am', courseEndTime:'5:00pm', locationId:'TBDUNK', LocationNotes:null},
-    {courseId:'SFA1', courseDate:'December 15th', courseStartTime:'8:00am', courseEndTime:'5:00pm', locationId:'TBDUNK', LocationNotes:null},
-    {courseId:'SFA1', courseDate:'January 12th', courseStartTime:'8:00am', courseEndTime:'5:00pm', locationId:'TBDUNK', LocationNotes:null},
-    {courseId:'SFA1', courseDate:'February 8th', courseStartTime:'8:00am', courseEndTime:'5:00pm', locationId:'TBDUNK', LocationNotes:null},
+    {courseId:'SFA1', courseDate:'November 16th', courseStartTime:'8:00am', courseEndTime:'5:00pm', locationId:'TBDTBD', LocationNotes:null},
+    {courseId:'SFA1', courseDate:'December 15th', courseStartTime:'8:00am', courseEndTime:'5:00pm', locationId:'TBDTBD', LocationNotes:null},
+    {courseId:'SFA1', courseDate:'January 12th', courseStartTime:'8:00am', courseEndTime:'5:00pm', locationId:'TBDTBD', LocationNotes:null},
+    {courseId:'SFA1', courseDate:'February 8th', courseStartTime:'8:00am', courseEndTime:'5:00pm', locationId:'TBDTBD', LocationNotes:null},
 
     {courseId:'CRS1', courseDate:'November 23-24', courseStartTime:'Sat 6:20am', courseEndTime:'Sun 3:00pm', locationId:'CAMPED', LocationNotes:null},
     {courseId:'CRS1', courseDate:'December 7-8', courseStartTime:'Sat 6:20am', courseEndTime:'Sun 3:00pm', locationId:'CAMPED', LocationNotes:null},
@@ -314,18 +315,18 @@ var courseSessions = [
     {courseId:'CRS2', courseDate:'February 1-2', courseStartTime:'Sat 7:00am', courseEndTime:'Sun 3:00pm', locationId:'CAMPED', LocationNotes:null},
     {courseId:'CRS2', courseDate:'February 15-16', courseStartTime:'Sat 7:00am', courseEndTime:'Sun 3:00pm', locationId:'CAMPED', LocationNotes:null},
 
-    {courseId:'SFA2', courseDate:'February 9th', courseStartTime:'9:00am', courseEndTime:'6:00pm', locationId:'TBDUNK', LocationNotes:null},
-    {courseId:'SFA2', courseDate:'February 22nd', courseStartTime:'9:00am', courseEndTime:'6:00pm', locationId:'TBDUNK', LocationNotes:null},
-    {courseId:'SFA2', courseDate:'February 23rd', courseStartTime:'9:00am', courseEndTime:'6:00pm', locationId:'TBDUNK', LocationNotes:null},
-    {courseId:'SFA2', courseDate:'March 7th', courseStartTime:'9:00am', courseEndTime:'6:00pm', locationId:'TBDUNK', LocationNotes:null},
+    {courseId:'SFA2', courseDate:'February 9th', courseStartTime:'9:00am', courseEndTime:'6:00pm', locationId:'TBDTBD', LocationNotes:null},
+    {courseId:'SFA2', courseDate:'February 22nd', courseStartTime:'9:00am', courseEndTime:'6:00pm', locationId:'TBDTBD', LocationNotes:null},
+    {courseId:'SFA2', courseDate:'February 23rd', courseStartTime:'9:00am', courseEndTime:'6:00pm', locationId:'TBDTBD', LocationNotes:null},
+    {courseId:'SFA2', courseDate:'March 7th', courseStartTime:'9:00am', courseEndTime:'6:00pm', locationId:'TBDTBD', LocationNotes:null},
 
-    {courseId:'CRS3', courseDate:'February 29-March 1', courseStartTime:'Sat 7:00am', courseEndTime:'Sun 3:00pm', locationId:'TBDUNK', LocationNotes:null},
-    {courseId:'CRS3', courseDate:'March 14-15', courseStartTime:'Sat 7:00am', courseEndTime:'Sun 3:00pm', locationId:'TBDUNK', LocationNotes:null},
-    {courseId:'CRS3', courseDate:'March 28-29', courseStartTime:'Sat 7:00am', courseEndTime:'Sun 3:00pm', locationId:'TBDUNK', LocationNotes:null},
+    {courseId:'CRS3', courseDate:'February 29-March 1', courseStartTime:'Sat 7:00am', courseEndTime:'Sun 3:00pm', locationId:'TBDTBD', LocationNotes:null},
+    {courseId:'CRS3', courseDate:'March 14-15', courseStartTime:'Sat 7:00am', courseEndTime:'Sun 3:00pm', locationId:'TBDTBD', LocationNotes:null},
+    {courseId:'CRS3', courseDate:'March 28-29', courseStartTime:'Sat 7:00am', courseEndTime:'Sun 3:00pm', locationId:'TBDTBD', LocationNotes:null},
 
-    {courseId:'OPS1', courseDate:'TBD', courseStartTime:'', courseEndTime:'', locationId:'TBDUNK', LocationNotes:null},
-    {courseId:'OPS1', courseDate:'TBD', courseStartTime:'', courseEndTime:'', locationId:'TBDUNK', LocationNotes:null},
-    {courseId:'OPS1', courseDate:'TBD', courseStartTime:'', courseEndTime:'', locationId:'TBDUNK', LocationNotes:null},
+    {courseId:'OPS1', courseDate:'TBD', courseStartTime:'', courseEndTime:'', locationId:'TBDTBD', LocationNotes:null},
+    {courseId:'OPS1', courseDate:'TBD', courseStartTime:'', courseEndTime:'', locationId:'TBDTBD', LocationNotes:null},
+    {courseId:'OPS1', courseDate:'TBD', courseStartTime:'', courseEndTime:'', locationId:'TBDTBD', LocationNotes:null},
     
     {courseId:'GRAD', courseDate:'April 5th', courseStartTime:'2:00pm', courseEndTime:'5:00pm', locationId:'VASAPK', LocationNotes:'<br>(Doors open at 1pm)'}
 ];
