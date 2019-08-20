@@ -140,12 +140,11 @@ function generateKml(triggerButton) {
   getData(function(data) {
     console.log(data);
 
-    var text = '<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>SAR Trailheads</name>\n';
+    var text = '<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>SAR Trailheads</name><Folder><name>Placemarks</name>\n';
     for (var i in data) {
       text += '<Placemark><name>' + data[i]['First Name'].replace('&', '&amp;') + '</name><description><![CDATA[' + data[i].Notes.replace('&', '&amp;') + ']]></description><Point><coordinates>' + data[i].Lng + ',' + data[i].Lat + '</coordinates></Point></Placemark>\n';
     }
-    text += '<Placemark><name>ABIEL LAKE</name><description><![CDATA[Drains to Tinkham Creek on SE side of Abiel Peak]]></description><Point><coordinates>-121.46139,47.34833,0</coordinates></Point></Placemark>';
-    text += '</Document></kml>';
+    text += '</Folder></Document></kml>';
     var file = new Blob([text], {type: 'application/vnd.google-earth.kml+xml'});
     var url = window.URL.createObjectURL(file);
 
