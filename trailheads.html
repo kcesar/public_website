@@ -72,6 +72,10 @@
       <p style="font-weight: bold;">Phone Contacts CSV File</p>
       <p>Download the list of trailheads in a format that can easily be imported into your phone's contact list.</p>
       <a class="w3-button w3-theme w3-round-xxlarge" style="bottom: 0; min-width: 225px;" href="/SiteAssets/trailheads.csv">Download CSV</a>
+
+      <p style="font-weight: bold;">Google Earth KML File</p>
+      <button class="w3-button w3-theme w3-round-xxlarge" style="bottom: 0; min-width: 225px;" onClick="generateKml(this)">Generate KML</button>
+      <span id="kml-result"></span>
 		</div>
 </div>
 <HR>
@@ -116,183 +120,41 @@
 </div>
 </footer>
 
-<!-- Course Session Template -->
-<template id="scheduleItem">
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-</template>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.0.2/papaparse.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-<!-- Course Item Template -->
-<template id="courseItem">
-	<tbody>
-        <tr><th class="w3-green" colspan=3></th></tr>
-        <tr><td colspan=3></td></tr>
-        <tr><th>Date</th><th>Time</th><th>Location</th></th>
-    </tbody>
-</template>
-
-<!-- Code to Render Schedule -->
 <script>
 
-var courses = [
-	{Id:'CRSA', Name:'Course A: Orientation', DescriptionHTML:'<p><b>Prerequisite:</b> You must submit an application and receive a registration code.</p><p><span class="red bold">REQUIRED:</span><ul>While attending Course A you will complete and submit a King County Emergency Worker Application and Background Check Form.<span class="red"><li>Bring a legible photocopy of your current photo ID (Drivers License, Passport, or student ID)</li><li>Bring a legible photocopy of your proof of current auto insurance if you drive. If minor, bring photocopy of parent\'s or legal guardian\'s auto insurance.</li></span></ul></p>'},
-    {Id:'CRSB', Name:'Course B: Map and Compass', DescriptionHTML:'<p><b>Prerequisite:</b> Course A</p><p><b>Course Fee Due:</b></p><p>The training fee is $165.00 and is due when you sign in at Course B. PayPal is the preferred payment method, we can accept check or cash if needed, but we cannot make change.</p><span class="red bold">Do not make a course fee payment until you have successfully registered for Course B.</span><ul><li>(Preferred) Please use the PayPal link below and <span style="text-decoration: underline;" class="red">bring proof of payment to Course B</span>.</li><p><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="NWKJ9QWMN4LGQ"><input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" style="border:0;" name="submit" alt="PayPal - The safer, easier way to pay online!"><img alt="" style="border:0;" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"></form></p><li>If you are paying with Check or Cash, it will be collected when you sign in at Course B.</li></ul><p><b>Badge Photo:</b></p><p>Be prepared to have your badge photo taken at the beginning of Course B. We use this photo throughout training so we can put names to faces. This photo will also be used on your DEM identification card after you graduate.</p>'},
-    {Id:'CRSC', Name:'Course C: Search Theory and Field Practice', DescriptionHTML:'<b>Prerequisite:</b> Course B'},
-    {Id:'CRS1', Name:'Course I: Navigation Practice', DescriptionHTML:'<b>Prerequisite:</b> Course C'},
-    {Id:'CRS2', Name:'Course II: Navigation Evaluation', DescriptionHTML:'<b>Prerequisite:</b> Course I'},
-    {Id:'CRS3', Name:'Course III: Navigation Evaluation', DescriptionHTML:'<b>Prerequisite:</b> Searcher First Aid'},
-    {Id:'SFA1', Name:'Introduction to Searcher First Aid', DescriptionHTML:'<b>Prerequisite:</b> Course B'},
-    {Id:'SFA2', Name:'Searcher First Aid', DescriptionHTML:'<b>Prerequisite:</b> Course II & Introduction to Searcher First Aid'},
-    {Id:'OPS1', Name:'Operations Orientation', DescriptionHTML:''},
-    {Id:'GRAD', Name:'Graduation', DescriptionHTML:''}
-];
+  function getData(callback) {
+    Papa.parse("/SiteAssets/trailheads.csv", { download: true, header: true, complete: function(result) {
+      console.log(result)
+      callback.call(this,
+        result.data.filter(function(row) { return row.Address }).map(function(row) {
+          var coord = row.Address.split(',').map(function(coord) { return parseFloat(coord); })
+          return Object.assign(row, { Lat: coord[0], Lng: coord[1] })
+        })
+      )}})
+  }
 
-var locations = [
-    {Id:'KCSARA', Name:'King County Search & Rescue Headquarters', StreetAddress:'47.512097, -121.882279', GoolgeMapsUrl:'https://goo.gl/maps/GrLHi5q6giKDrTcc7'},
-    {Id:'BELLCH', Name:'Bellevue City Hall', StreetAddress:'450 110th Ave NE, Bellevue, WA 98004', GoolgeMapsUrl:'https://goo.gl/maps/G42pfULrz7x'},
-    {Id:'ISSYCH', Name:'Issaquah City Hall', StreetAddress:'130 East Sunset Way, Issaquah, WA 98027', GoolgeMapsUrl:'https://goo.gl/maps/7tvtxxQqmQfNn4GX6'},
-    {Id:'BELLLB', Name:'Bellevue Library', StreetAddress:'1111 110th Ave NE, Bellevue, WA 98004', GoolgeMapsUrl:'https://goo.gl/maps/wyFBHAuYyEKL3a4U6'},
-    {Id:'ESFRHQ', Name:'Eastside Fire and Rescue Headquarters', StreetAddress:'175 Newport Way NW, Issaquah, WA 98027', GoolgeMapsUrl:'https://goo.gl/maps/Q1wfxSyuAPG2'},
-    {Id:'FIRE01', Name:'Bellevue - Fire Station 1', StreetAddress:'766 Bellevue Way SE, Bellevue, WA 98004', GoolgeMapsUrl:'https://goo.gl/maps/kRV7ijDgYw8JZBRw7'},
-    {Id:'FIRE09', Name:'Newcastle - Fire Station 9', StreetAddress:'12412 Newcastle Way, Bellevue, WA 98006', GoolgeMapsUrl:'https://goo.gl/maps/u2TqQHyxeJj16nwV9'},
-    {Id:'FIRE73', Name:'Issaquah Highlands - Fire Station 73', StreetAddress:'1280 NE Park Drive, Issaquah, WA 98029', GoolgeMapsUrl:'https://goo.gl/maps/VBGzyssUaqG2'},
-    {Id:'FIRE82', Name:'Sahalee - Fire Station 82', StreetAddress:'1851 228th Ave NE, Sammamish, WA 98074', GoolgeMapsUrl:'https://goo.gl/maps/YTFJBC7ob9B2'},
-    {Id:'FIRE83', Name:'Sammamish - Fire Station 83', StreetAddress:'3425 Issaquah-Pine Lake Road SE, Sammamish, WA 98075', GoolgeMapsUrl:'https://goo.gl/maps/g79UAMQz96AEUMro7'},
-    {Id:'FIRE85', Name:'Carnation - Fire Station 85', StreetAddress:'3600 Tolt Avenue NE, Carnation, WA 98014', GoolgeMapsUrl:'https://goo.gl/maps/tBwJCitRmT72'},
-    {Id:'FIRE91', Name:'Mercer Island - Fire Station 91', StreetAddress:'3030 78th Ave SE, Mercer Island, WA 98040', GoolgeMapsUrl:'https://goo.gl/maps/U7JPgbHJHyZ9HvvW7'},
-    {Id:'YMCASM', Name:'Sammamish YMCA', StreetAddress:'831 228th Ave SE, Sammamish, WA 98075', GoolgeMapsUrl:'https://goo.gl/maps/edbzPt8RMko'},
-    {Id:'VASAPK', Name:'Vasa Park Resort & Ballroom', StreetAddress:'3560 W Lake Sammamish Pkwy S, Bellevue, WA 98008', GoolgeMapsUrl:'https://goo.gl/maps/jYAxd4YFnU92'},
-    {Id:'CWSGYM', Name:'Central Washington Sammamish GYM', StreetAddress:'120 228th Ave NE, Sammamish, WA 98074', GoolgeMapsUrl:'https://goo.gl/maps/jjAox7PF23q'},
-    {Id:'CAMPED', Name:'Camp Edward', StreetAddress:'25600 Monroe Camp Rd, Snohomish, WA 98290', GoolgeMapsUrl:'https://goo.gl/maps/SURfVBFYc1K2'},
-    {Id:'SEAMTN', Name:'Seattle Mountaineers', StreetAddress:'7700 Sand Point Way NE, Seattle, WA 98115', GoolgeMapsUrl:'https://goo.gl/maps/2vQHCspiamKrNhMn9'},
-    {Id:'TBDTBD', Name:'TBD', StreetAddress:'', GoolgeMapsUrl:''}
-];
+function generateKml(triggerButton) {
+  getData(function(data) {
+    console.log(data);
 
-var courseSessions = [
-    {courseId:'CRSA', courseDate:'August 13th', courseStartTime:'7:00pm', courseEndTime:'9:00pm', locationId:'KCSARA', LocationNotes:null},
-    {courseId:'CRSA', courseDate:'August 15th', courseStartTime:'7:00pm', courseEndTime:'9:00pm', locationId:'BELLCH', LocationNotes:'Room 1E-113'},
-    {courseId:'CRSA', courseDate:'August 20th', courseStartTime:'7:00pm', courseEndTime:'9:00pm', locationId:'BELLCH', LocationNotes:'Room 1E-108'},
-    {courseId:'CRSA', courseDate:'August 21st', courseStartTime:'7:00pm', courseEndTime:'9:00pm', locationId:'SEAMTN', LocationNotes:'Room Goodman B'},
-    {courseId:'CRSA', courseDate:'August 24th', courseStartTime:'9:00am', courseEndTime:'11:00am', locationId:'KCSARA', LocationNotes:null},
-    {courseId:'CRSA', courseDate:'August 24th', courseStartTime:'12:00pm', courseEndTime:'2:00pm', locationId:'KCSARA', LocationNotes:null},
-    {courseId:'CRSA', courseDate:'September 10th', courseStartTime:'7:00pm', courseEndTime:'9:00pm', locationId:'YMCASM', LocationNotes:null},
-    {courseId:'CRSA', courseDate:'September 14th', courseStartTime:'9:00am', courseEndTime:'11:00am', locationId:'YMCASM', LocationNotes:null},
-
-    {courseId:'CRSB', courseDate:'September 7th', courseStartTime:'9:00am', courseEndTime:'6:00pm', locationId:'KCSARA', LocationNotes:null},
-    {courseId:'CRSB', courseDate:'September 21st', courseStartTime:'9:00am', courseEndTime:'6:00pm', locationId:'KCSARA', LocationNotes:null},
-    {courseId:'CRSB', courseDate:'October 12th', courseStartTime:'9:00am', courseEndTime:'6:00pm', locationId:'KCSARA', LocationNotes:null},
-    {courseId:'CRSB', courseDate:'October 26th', courseStartTime:'9:00am', courseEndTime:'6:00pm', locationId:'KCSARA', LocationNotes:null},
-
-    {courseId:'CRSC', courseDate:'October 19-20', courseStartTime:'Sat 6:30am', courseEndTime:'Sun 4:00pm', locationId:'CAMPED', LocationNotes:null},
-    {courseId:'CRSC', courseDate:'November 2-3', courseStartTime:'Sat 6:30am', courseEndTime:'Sun 4:00pm', locationId:'CAMPED', LocationNotes:null},
-    {courseId:'CRSC', courseDate:'November 23-24', courseStartTime:'Sat 6:30am', courseEndTime:'Sun 4:00pm', locationId:'CAMPED', LocationNotes:null},
-    {courseId:'CRSC', courseDate:'December 7-8', courseStartTime:'Sat 6:30am', courseEndTime:'Sun 4:00pm', locationId:'CAMPED', LocationNotes:null},
-
-    {courseId:'SFA1', courseDate:'November 16th', courseStartTime:'8:00am', courseEndTime:'5:00pm', locationId:'TBDTBD', LocationNotes:null},
-    {courseId:'SFA1', courseDate:'December 15th', courseStartTime:'8:00am', courseEndTime:'5:00pm', locationId:'TBDTBD', LocationNotes:null},
-    {courseId:'SFA1', courseDate:'January 12th', courseStartTime:'8:00am', courseEndTime:'5:00pm', locationId:'TBDTBD', LocationNotes:null},
-    {courseId:'SFA1', courseDate:'February 8th', courseStartTime:'8:00am', courseEndTime:'5:00pm', locationId:'TBDTBD', LocationNotes:null},
-
-    {courseId:'CRS1', courseDate:'November 23-24', courseStartTime:'Sat 6:20am', courseEndTime:'Sun 3:00pm', locationId:'CAMPED', LocationNotes:null},
-    {courseId:'CRS1', courseDate:'December 7-8', courseStartTime:'Sat 6:20am', courseEndTime:'Sun 3:00pm', locationId:'CAMPED', LocationNotes:null},
-    {courseId:'CRS1', courseDate:'January 4-5', courseStartTime:'Sat 6:20am', courseEndTime:'Sun 3:00pm', locationId:'CAMPED', LocationNotes:null},
-    {courseId:'CRS1', courseDate:'January 18-19', courseStartTime:'Sat 6:20am', courseEndTime:'Sun 3:00pm', locationId:'CAMPED', LocationNotes:null},
-
-    {courseId:'CRS2', courseDate:'January 4-5', courseStartTime:'Sat 7:00am', courseEndTime:'Sun 3:00pm', locationId:'CAMPED', LocationNotes:null},
-    {courseId:'CRS2', courseDate:'January 18-19', courseStartTime:'Sat 7:00am', courseEndTime:'Sun 3:00pm', locationId:'CAMPED', LocationNotes:null},
-    {courseId:'CRS2', courseDate:'February 1-2', courseStartTime:'Sat 7:00am', courseEndTime:'Sun 3:00pm', locationId:'CAMPED', LocationNotes:null},
-    {courseId:'CRS2', courseDate:'February 15-16', courseStartTime:'Sat 7:00am', courseEndTime:'Sun 3:00pm', locationId:'CAMPED', LocationNotes:null},
-
-    {courseId:'SFA2', courseDate:'February 9th', courseStartTime:'9:00am', courseEndTime:'6:00pm', locationId:'TBDTBD', LocationNotes:null},
-    {courseId:'SFA2', courseDate:'February 22nd', courseStartTime:'9:00am', courseEndTime:'6:00pm', locationId:'TBDTBD', LocationNotes:null},
-    {courseId:'SFA2', courseDate:'February 23rd', courseStartTime:'9:00am', courseEndTime:'6:00pm', locationId:'TBDTBD', LocationNotes:null},
-    {courseId:'SFA2', courseDate:'March 7th', courseStartTime:'9:00am', courseEndTime:'6:00pm', locationId:'TBDTBD', LocationNotes:null},
-
-    {courseId:'CRS3', courseDate:'February 29-March 1', courseStartTime:'Sat 7:00am', courseEndTime:'Sun 3:00pm', locationId:'TBDTBD', LocationNotes:null},
-    {courseId:'CRS3', courseDate:'March 14-15', courseStartTime:'Sat 7:00am', courseEndTime:'Sun 3:00pm', locationId:'TBDTBD', LocationNotes:null},
-    {courseId:'CRS3', courseDate:'March 28-29', courseStartTime:'Sat 7:00am', courseEndTime:'Sun 3:00pm', locationId:'TBDTBD', LocationNotes:null},
-
-    {courseId:'OPS1', courseDate:'TBD', courseStartTime:'', courseEndTime:'', locationId:'TBDTBD', LocationNotes:null},
-    {courseId:'OPS1', courseDate:'TBD', courseStartTime:'', courseEndTime:'', locationId:'TBDTBD', LocationNotes:null},
-    {courseId:'OPS1', courseDate:'TBD', courseStartTime:'', courseEndTime:'', locationId:'TBDTBD', LocationNotes:null},
-    
-    {courseId:'GRAD', courseDate:'April 5th', courseStartTime:'2:00pm', courseEndTime:'5:00pm', locationId:'VASAPK', LocationNotes:'<br>(Doors open at 1pm)'}
-];
-
-// Create Map of Locations By Id
-var locationMap = new Map();
-for (var i=0; i<locations.length; i++) {
-    locationMap.set(locations[i].Id, locations[i]);
-}
-
-// Create Map of Courses By Id
-var courseMap = new Map();
-for (var i=0; i<courses.length; i++) {
-    courseMap.set(courses[i].Id, courses[i]);
-}
-
-// Get Templates
-const SCHEDULE_ITEM = document.getElementById('scheduleItem'); // Course Session Template
-const COURSE_ITEM = document.getElementById('courseItem'); // Course Section Template
-
-// Populate Schedule, runs on page load
-for (var i = 0; i < courseSessions.length; i++) {
-    var courseSession = courseSessions[i];
-
-    // Get the Course data, Skip if none is found
-    var course = courseMap.get(courseSession.courseId);
-    if (course == null) {
-        continue;
+    var text = '<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>SAR Trailheads</name>\n';
+    for (var i in data) {
+      text += '<Placemark><name>' + data[i]['First Name'].replace('&', '&amp;') + '</name><description><![CDATA[' + data[i].Notes.replace('&', '&amp;') + ']]></description><Point><coordinates>' + data[i].Lng + ',' + data[i].Lat + '</coordinates></Point></Placemark>\n';
     }
+    text += '<Placemark><name>ABIEL LAKE</name><description><![CDATA[Drains to Tinkham Creek on SE side of Abiel Peak]]></description><Point><coordinates>-121.46139,47.34833,0</coordinates></Point></Placemark>';
+    text += '</Document></kml>';
+    var file = new Blob([text], {type: 'application/vnd.google-earth.kml+xml'});
+    var url = window.URL.createObjectURL(file);
 
-    // Retrieve the Course Schedule element from the DOM, Skip if none is found
-    var courseSchedule = getCourseSchedule(course);
-    if (courseSchedule == null) {
-    	continue;
-    }
-
-    // Get Location data, Default to TBD if none is found
-    var loc = locationMap.get(courseSession.locationId);
-	var locationNotes = courseSession.LocationNotes == null ? '' : ' ' + courseSession.LocationNotes;
-    var locationHTML;
-    if (loc == null || loc.Name == 'TBD') {
-        locationHTML = 'TBD' + locationNotes;
-    } else {
-        var locationDescription = loc.Name + locationNotes;
-        locationHTML = '<a href="' + loc.GoolgeMapsUrl + '" title="' + loc.StreetAddress + '" target="_blank">' + locationDescription + '</a>';
-    }
-    
-    // Clone the Schedule Item template
-	var newScheduleItem = SCHEDULE_ITEM.content.cloneNode(true);
-    // Populate template
-	var td = newScheduleItem.querySelectorAll('td');
-	td[0].innerHTML = courseSession.courseDate;
-    td[1].innerHTML = courseSession.courseStartTime + ' - ' + courseSession.courseEndTime;
-    td[2].innerHTML = locationHTML;
-    // Add Course Session to schedule
-	courseSchedule.appendChild(newScheduleItem);
+    $('#kml-result').html($('<a class="w3-button w3-theme w3-round-xxlarge" style="bottom: 0; margin-left:1em; min-width: 225px;">')
+      .prop('href', url)
+      .prop('download', 'trailheads.kml')
+      .text("Download KML (" + data.length + " placemarks)"));
+  });
 }
-
-function getCourseSchedule(course){
-	var courseSchedule = document.getElementById(course.Id);
-	if (courseSchedule == null) {
-        // Clone the Course Item template
-        var newCourseItem = COURSE_ITEM.content.cloneNode(true);
-        // Populate the template
-        newCourseItem.querySelectorAll('tbody')[0].id = course.Id;
-        newCourseItem.querySelectorAll('th')[0].innerHTML = course.Name;
-        newCourseItem.querySelectorAll('td')[0].innerHTML = course.DescriptionHTML;
-        // Add the Course Section to the schedule
-        document.getElementById('schedule').appendChild(newCourseItem); // Add the Course Section to the schedule
-        // Retrieve the element from DOM
-        courseSchedule = document.getElementById(course.Id);
-    }
-	return courseSchedule;
-}
-
 </script>
 
 </body>
