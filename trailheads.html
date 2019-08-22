@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<title>King County Explorer Search & Rescue - Trailheads</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-green.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<script src="siteassets/dropdown-fix.js" async="true"></script>
+<style>
+	.red {
+		color: red;
+	}
+
+	.bold {
+		font-weight: bold;
+	}
+</style>
+<body>
+
+<!-- Header -->
+<header class="w3-theme" style="background-image: url(siteassets/staff_road.jpg); background-size: cover; background-position: center;" id="myHeader">
+	<div class="w3-center" style="background-color:rgba(0, 0, 0, 0.5); padding: 64px 0;">
+		<IMG SRC="siteassets/logo_esar.png" STYLE="height:200px; margin-bottom: 8px;">
+		<H3>King County, WA</H3>
+		<H4>Est. 1954</H4>
+	</div>
+</header>
+
+
+<!-- Navigation -->
+<div class="w3-bar w3-theme">
+	<div class="w3-row" style="max-width: 1200px; margin: auto;">
+	  <a href="index.html" class="w3-bar-item w3-button w3-padding-16 w3-mobile">Home</a>
+	  <a href="donate.html" class="w3-bar-item w3-button w3-padding-16 w3-mobile">Donate</a>
+	  <div class="w3-dropdown-hover w3-mobile">
+		<span class="w3-button w3-padding-16">About Us <i class="fa fa-caret-down"></i></span>
+		<!-- <a href="about.html" class="w3-button w3-padding-16">About Us <i class="fa fa-caret-down"></i></a> -->
+		<div class="w3-dropdown-content w3-card-4 w3-bar-block">
+		  <a href="about.html" class="w3-bar-item w3-button">About KCESAR</a>
+		  <a href="contacts.html" class="w3-bar-item w3-button">Contacts</a>
+		  <!-- <a href="sponsors.html" class="w3-bar-item w3-button">Sponsors</a> -->
+		</div>
+	  </div>
+	  <div class="w3-dropdown-hover w3-mobile">
+		<span class="w3-button w3-padding-16">Members <i class="fa fa-caret-down"></i></span>
+		<!-- <a href="members.html" class="w3-button w3-padding-16">Members <i class="fa fa-caret-down"></i></a> -->
+		<div class="w3-dropdown-content w3-card-4 w3-bar-block">
+		  <a href="members.html" class="w3-bar-item w3-button">Member Resources</a>
+		  <a href="https://respond.kcesar.org" class="w3-bar-item w3-button" target="_blank">Respond to a Mission <i class="fa fa-external-link"></i></a>
+		  <a href="https://www.signupgenius.com/index.cfm?go=s.SignupLogin&urlid=10C0945AAAB28A3F94-radteam" class="w3-bar-item w3-button" target="_blank">RAD SignUp <i class="fa fa-external-link"></i></a>
+		  <a href="https://sarcareteam.wixsite.com/home" class="w3-bar-item w3-button" target="_blank">CARE Team <i class="fa fa-external-link"></i></a>
+		  <a href="https://database.kcsara.org/" class="w3-bar-item w3-button" target="_blank">KCSARA Database <i class="fa fa-external-link"></i></a>
+		  <a href="https://esar.sharepoint.com/" class="w3-bar-item w3-button" target="_blank">ESAR SharePoint <i class="fa fa-external-link"></i></a>
+		  <a href="https://page.kcesar.org" class="w3-bar-item w3-button" target="_blank">Page Out <i class="fa fa-external-link"></i></a>
+		</div>
+	  </div>
+	  <a href="recruiting.html" class="w3-bar-item w3-button w3-padding-16 w3-mobile">Join ESAR</a>
+	  <a href="https://www.facebook.com/kingcountyesar/" target="_blank" class="w3-bar-item w3-button w3-padding-16 w3-mobile">
+		<i class="fa fa-facebook-official" style="font-size:18px"></i>
+	  </a>
+	</div>
+</div>
+
+<!-- Body Wrapper -->
+<div class="w3-row" style="max-width: 1200px; margin: auto;">
+	
+  <div class="w3-row-padding w3-margin-top">
+		<div class="w3-container">
+			<p style="text-align: justify;">Members of King County Explorer Search and Rescue are often responding to missions at a common set of trailheads in our response area. Use the tools below to help find these trailheads.</p>
+      
+      <p style="font-weight: bold;">Phone Contacts CSV File</p>
+      <p>Download the list of trailheads in a format that can easily be imported into your phone's contact list. See the <a href="/SiteAssets/trailheads-contacts.pdf">PDF instructions</a> for importing into your contact list.</p>
+      <a class="w3-button w3-theme w3-round-xxlarge" style="bottom: 0; min-width: 225px;" href="/SiteAssets/trailheads.csv">Download CSV</a>
+
+      <p style="font-weight: bold;">Google Earth KML File</p>
+      <button class="w3-button w3-theme w3-round-xxlarge" style="bottom: 0; min-width: 225px;" onClick="generateKml(this)">Generate KML</button>
+      <span id="kml-result"></span>
+		</div>
+</div>
+<HR>
+
+<!-- Call to Action -->
+<div class="w3-row-padding w3-margin-top w3-margin-bottom">
+<div class="w3-container w3-center">
+    
+    <H3 style="font-weight: lighter">King County Explorer Search & Rescue (ESAR) is a 501(c)(3) Volunteer Organization.</H3>
+    
+    <P><STRONG>Our members respond to over 150 emergencies every year.</STRONG></P>
+
+    <P style="text-align: justify;">ESAR is King County's primary wilderness ground search and rescue organization. Our members are outdoor enthusiasts with a passion for helping those in need. 100% of funding for training, operations, and critical, life-saving equipment comes from generous donations by local businesses, the communities that we serve, our volunteers, and people like you.<P>
+    
+    <form action="donate.html"><button type="submit" class="w3-button w3-yellow w3-round-xxlarge" style="bottom: 0;">Donate Today</button></form>
+</div>	
+</div>
+
+
+
+</div>
+<!-- End Body Wrapper -->
+
+<!-- Footer -->
+<footer class="w3-container w3-theme-dark w3-padding-16">
+<div class="w3-row" style="max-width: 1200px; margin: auto;">
+<div class="w3-mobile w3-left">
+    <IMG SRC="siteassets/logo_esar.png" STYLE="height:50px; margin-right: 8px;">
+    <span style="font-size: 1.5em;">King County Explorer Search & Rescue</span>
+</div>		
+<div class="w3-mobile" STYLE="clear: both; font-size:.75em; line-height: 40%;">
+    <div class="w3-mobile w3-left">
+        <p></p>© KCESAR • PO Box 1266 • North Bend, WA 98045</p>
+        <p style="font-size:.75em;">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    </div>
+    <div class="w3-mobile w3-right" STYLE="color: rgb(50, 121, 50);">
+        <p><A HREF="about.html" style="text-decoration: none;">About KCESAR</A></p>
+        <p><A HREF="contacts.html" style="text-decoration: none;">Contact Us</A></p>
+        <p><A HREF="siteassets/kcesar_code_of_conduct_v082019.pdf" style="text-decoration: none;">Code of Conduct</A></p>
+    </div>
+</div>
+</div>
+</footer>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.0.2/papaparse.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+
+  function getData(callback) {
+    Papa.parse("/SiteAssets/trailheads.csv", { download: true, header: true, complete: function(result) {
+      console.log(result)
+      callback.call(this,
+        result.data.filter(function(row) { return row.Address }).map(function(row) {
+          var coord = row.Address.split(',').map(function(coord) { return parseFloat(coord); })
+          return Object.assign(row, { Lat: coord[0], Lng: coord[1] })
+        })
+      )}})
+  }
+
+function generateKml(triggerButton) {
+  getData(function(data) {
+    console.log(data);
+
+    var text = '<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>SAR Trailheads</name><Folder><name>Placemarks</name>\n';
+    for (var i in data) {
+      text += '<Placemark><name>' + data[i]['First Name'].replace('&', '&amp;') + '</name><description><![CDATA[' + data[i].Notes.replace('&', '&amp;') + ']]></description><Point><coordinates>' + data[i].Lng + ',' + data[i].Lat + '</coordinates></Point></Placemark>\n';
+    }
+    text += '</Folder></Document></kml>';
+    var file = new Blob([text], {type: 'application/vnd.google-earth.kml+xml'});
+    var url = window.URL.createObjectURL(file);
+
+    $('#kml-result').html($('<a class="w3-button w3-theme w3-round-xxlarge" style="bottom: 0; margin-left:1em; min-width: 225px;">')
+      .prop('href', url)
+      .prop('download', 'trailheads.kml')
+      .text("Download KML (" + data.length + " placemarks)"));
+  });
+}
+</script>
+
+</body>
+</html>
