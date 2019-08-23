@@ -38,6 +38,21 @@ function myAccFunc(id) {
   }
 }
 
+// Show/Hide tab content on the supplemental navigation homework.
+function openProblemSet(setName) {
+  let selectedTabClass = 'w3-light-grey';
+  let problemTabs = document.getElementsByClassName("problemSetTab");
+  let problemBodys = document.getElementsByClassName("problemSetBody");
+  for (i = 0; i < problemBodys.length; i++) {
+    problemBodys[i].style.display = "none";
+  }
+  for (i = 0; i < problemTabs.length; i++) {
+    problemTabs[i].classList.remove(selectedTabClass);
+  }
+  document.getElementById(setName + '_Body').style.display = "block";
+  document.getElementById(setName + '_Tab').classList.add(selectedTabClass); 
+}
+
 // Slideshows
 var slideIndex = 1;
 
