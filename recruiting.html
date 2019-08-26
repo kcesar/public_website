@@ -80,10 +80,10 @@
 				</div>
 
 				<!-- Jump To Course A -->
-				
-				<div class="w3-container" style="padding-top: 8px; padding-bottom: 8px; text-align:center;">
+                
+                <div class="w3-container" style="padding-top: 8px; padding-bottom: 8px; text-align:center;">
 					<form action="#SCHEDULE"><button type="submit" class="w3-button w3-yellow w3-round-xxlarge" style="bottom: 0; min-width: 225px;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Submit Application</button></form>
-				</div>
+                </div>
 				
 				<!-- Training Fee -->
 				<!--
@@ -154,6 +154,14 @@
 
         <p>
             <STRONG>Basic Training Application:</STRONG>
+        <p>
+
+        <div class='w3-container w3-yellow w3-mobile w3-padding w3-round-xxlarge'>
+            Applications for the 2019-20 training season are now closed. If you would like to <a href='https://docs.google.com/forms/d/e/1FAIpQLScP3st5ICUEuQHlI2LwqwXhow-QZ2v5L3sipfAjB_zqjDQCXA/viewform?usp=pp_url&entry.1632680082=Prefer+Weeknight&entry.1415451955=Yes' target='_blank'>join the waitlist</a> we will notify you if space becomes available. You will also be among the first to be notified when next year's training schedule is posted.
+        </div>
+
+        <!--
+        <p>
             <ol>
                 <li>Make sure you have a digital copy (pdf or image) of your First Aid/CPR/AED Certification ready to upload.</li>
                 <li>Complete and submit a <a href="https://forms.gle/fMrfV8zegAVTzfjG9" target="_blank">Basic Training Application</a>.</li>
@@ -167,6 +175,7 @@
                 <li>If you are unable to submit an application via the link provided, please contact <A HREF="mailto:training.admin@kcesar.org">training.admin@kcesar.org</A>.</li>
             </ul>
         </P>
+        -->
         
         <P><STRONG>Returning Trainees:</STRONG>
             <br>If you started training last year and are returning this year, please:
@@ -247,7 +256,8 @@
 <script>
 
 var courses = [
-	{Id:'CRSA', Name:'Course A: Orientation', DescriptionHTML:'<p><b>Prerequisite:</b> You must submit an application and receive a registration code.</p><p><span class="red bold">REQUIRED:</span><ul>While attending Course A you will complete and submit a King County Emergency Worker Application and Background Check Form.<span class="red"><li>Bring a legible photocopy of your current photo ID (Drivers License, Passport, or student ID)</li><li>Bring a legible photocopy of your proof of current auto insurance if you drive. If minor, bring photocopy of parent\'s or legal guardian\'s auto insurance.</li></span></ul></p>'},
+    // Course A - Join Waitlist
+    {Id:'CRSA', Name:'Course A: Orientation', DescriptionHTML:'<p><b>Prerequisite:</b> You must submit an application and receive a registration code.</p><p><span class="red bold">REQUIRED:</span><ul>While attending Course A you will complete and submit a King County Emergency Worker Application and Background Check Form.<span class="red"><li>Bring a legible photocopy of your current photo ID (Drivers License, Passport, or student ID)</li><li>Bring a legible photocopy of your proof of current auto insurance if you drive. If minor, bring photocopy of parent\'s or legal guardian\'s auto insurance.</li></span></ul></p>'},
     {Id:'CRSB', Name:'Course B: Map and Compass', DescriptionHTML:'<p><b>Prerequisite:</b> Course A</p><p><b>Course Fee Due:</b></p><p>The training fee is $165.00 and is due when you sign in at Course B. PayPal is the preferred payment method, we can accept check or cash if needed, but we cannot make change.</p><span class="red bold">Do not make a course fee payment until you have successfully registered for Course B.</span><ul><li>(Preferred) Please use the PayPal link below and <span style="text-decoration: underline;" class="red">bring proof of payment to Course B</span>.</li><p><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="NWKJ9QWMN4LGQ"><input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" style="border:0;" name="submit" alt="PayPal - The safer, easier way to pay online!"><img alt="" style="border:0;" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"></form></p><li>If you are paying with Check or Cash, it will be collected when you sign in at Course B.</li></ul><p><b>Badge Photo:</b></p><p>Be prepared to have your badge photo taken at the beginning of Course B. We use this photo throughout training so we can put names to faces. This photo will also be used on your DEM identification card after you graduate.</p>'},
     {Id:'CRSC', Name:'Course C: Search Theory and Field Practice', DescriptionHTML:'<b>Prerequisite:</b> Course B'},
     {Id:'CRS1', Name:'Course I: Navigation Practice', DescriptionHTML:'<b>Prerequisite:</b> Course C'},
