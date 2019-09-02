@@ -26,7 +26,7 @@
 			if (locationMap.has(map)) {
 				map = locationMap.get(map).Coordinates;
 			}
-			window.location.href = "https://www.google.com/maps/search/?api=1&query=" + map
+			window.location.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURI(map)
 		}
 	</script>
 

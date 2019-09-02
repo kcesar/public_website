@@ -7,6 +7,8 @@
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-green.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
 <script src="siteassets/dropdown-fix.js" async="true"></script>
+<script src="siteassets/locations.js"></script>
+
 <style>
 	.red {
 		color: red;
@@ -77,22 +79,35 @@
       <button class="w3-button w3-theme w3-round-xxlarge" style="bottom: 0; min-width: 225px;" onClick="generateKml(this)">Generate KML</button>
       <span id="kml-result"></span>
 		</div>
-</div>
-<HR>
+  </div>
+  <HR>
 
-<!-- Call to Action -->
-<div class="w3-row-padding w3-margin-top w3-margin-bottom">
-<div class="w3-container w3-center">
-    
-    <H3 style="font-weight: lighter">King County Explorer Search & Rescue (ESAR) is a 501(c)(3) Volunteer Organization.</H3>
-    
-    <P><STRONG>Our members respond to over 150 emergencies every year.</STRONG></P>
+  <div class="w3-row-padding w3-margin-top">
+    <div class="w3-container">
+      <table class="w3-table w3-bordered w3-card-4" id="locationTable">
+        <tr>
+          <th class='w3-theme'>Location Name</th>
+          <th class='w3-theme'>Short Link</th>
+          <th class='w3-theme'>Coordinates</th>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <HR>
 
-    <P style="text-align: justify;">ESAR is King County's primary wilderness ground search and rescue organization. Our members are outdoor enthusiasts with a passion for helping those in need. 100% of funding for training, operations, and critical, life-saving equipment comes from generous donations by local businesses, the communities that we serve, our volunteers, and people like you.<P>
-    
-    <form action="donate.html"><button type="submit" class="w3-button w3-yellow w3-round-xxlarge" style="bottom: 0;">Donate Today</button></form>
-</div>	
-</div>
+  <!-- Call to Action -->
+  <div class="w3-row-padding w3-margin-top w3-margin-bottom">
+  <div class="w3-container w3-center">
+      
+      <H3 style="font-weight: lighter">King County Explorer Search & Rescue (ESAR) is a 501(c)(3) Volunteer Organization.</H3>
+      
+      <P><STRONG>Our members respond to over 150 emergencies every year.</STRONG></P>
+
+      <P style="text-align: justify;">ESAR is King County's primary wilderness ground search and rescue organization. Our members are outdoor enthusiasts with a passion for helping those in need. 100% of funding for training, operations, and critical, life-saving equipment comes from generous donations by local businesses, the communities that we serve, our volunteers, and people like you.<P>
+      
+      <form action="donate.html"><button type="submit" class="w3-button w3-yellow w3-round-xxlarge" style="bottom: 0;">Donate Today</button></form>
+  </div>	
+  </div>
 
 
 
@@ -154,6 +169,41 @@ function generateKml(triggerButton) {
       .text("Download KML (" + data.length + " placemarks)"));
   });
 }
+</script>
+
+<!-- Location Item Template -->
+<template id="locationItem">
+    <tr>
+        <td></td>
+        <td></td>
+        <td style="font-family: Lucida Console, Courier, monospace;"></td>
+    </tr>
+</template>
+
+<script>
+
+  // Get Templates
+  const LOCATION_ITEM = document.getElementById('locationItem'); // Course Session Template
+
+  // Get the Table from the DOM
+  let locationTable = document.getElementById('locationTable');
+
+  // Add records to the Table
+  if (locationTable != null) {
+    for (i = 0; i < locationData.length; i++) {
+      // Get Location Data
+      let location = locationData[i];
+      // Clone the Schedule Item template
+      let newLocationItem = LOCATION_ITEM.content.cloneNode(true);
+      // Populate template
+      let td = newLocationItem.querySelectorAll('td');
+      td[0].innerHTML = location.FullName;
+      td[1].innerHTML = 'kcesar.org?map=' + location.LocName;
+      td[2].innerHTML = location.Coordinates;
+      // Add Course Session to schedule
+      locationTable.appendChild(newLocationItem);
+    }
+  }
 </script>
 
 </body>
