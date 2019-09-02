@@ -11,6 +11,7 @@
 <script src="siteassets/locations.js"></script>
 
 <script>
+		// Parse URL Arguments
 		function getUrlVars() {
 			var vars = {};
 			var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
@@ -18,13 +19,14 @@
 			});
 			return vars;
 		}
-		let nav = getUrlVars()["nav"];
-	
-		if (nav != null) {
-			if (locationMap.has(nav)) {
-				nav = locationMap.get(nav).Coordinates;
+		let map = getUrlVars()["map"];
+		
+		// Redirect to Google Maps
+		if (map != null) {
+			if (locationMap.has(map)) {
+				map = locationMap.get(map).Coordinates;
 			}
-			window.location.href = "https://www.google.com/maps/dir/?api=1&destination=" + nav + "&travelmode=driving&dir_action=navigate";
+			window.location.href = "https://www.google.com/maps/search/?api=1&query=" + map
 		}
 	</script>
 
