@@ -197,7 +197,7 @@ function generateKml(triggerButton) {
       let newLocationItem = LOCATION_ITEM.content.cloneNode(true);
       // Populate template
       let td = newLocationItem.querySelectorAll('td');
-      td[0].innerHTML = location.FullName;
+      td[0].innerHTML = '<a href="https://www.google.com/maps/search/?api=1&query=' + location.Coordinates + '">' + location.FullName + '</a>';
       td[1].innerHTML = 'kcesar.org?map=' + location.LocName;
       td[2].innerHTML = location.Coordinates;
       // Add Course Session to schedule
