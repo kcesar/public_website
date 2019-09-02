@@ -8,6 +8,26 @@
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-green.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
 <script src="siteassets/dropdown-fix.js" async="true"></script>
+<script src="siteassets/locations.js"></script>
+
+<script>
+		function getUrlVars() {
+			var vars = {};
+			var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+				vars[key] = value;
+			});
+			return vars;
+		}
+		let nav = getUrlVars()["nav"];
+	
+		if (nav != null) {
+			if (trailheadMap.has(nav)) {
+				nav = trailheadMap.get(nav).Coordinates;
+			}
+			window.location.href = "https://www.google.com/maps/dir/?api=1&destination=" + nav + "&travelmode=driving&dir_action=navigate";
+		}
+	</script>
+
 </head>
 <body>
 
