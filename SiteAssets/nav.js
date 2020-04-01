@@ -37,6 +37,7 @@ function getNavBarFacebookButton() {
     navBarButton.classList.add('w3-bar-item', 'w3-button', 'w3-padding-16', 'w3-mobile');
     navBarButton.append(getFaIcon('fa-facebook-official', 'font-size:18px;'));
     navBarButton.target = '_blank';
+    navBarButton.href = 'https://www.facebook.com/kingcountyesar/';
     return navBarButton;
 }
 
