@@ -1,205 +1,116 @@
 <!DOCTYPE html>
-<html>
-<title>King County Explorer Search & Rescue - Donate</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-green.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-<script src="siteassets/dropdown-fix.js" async="true"></script>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>King County ESAR - Donate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="./esar.css">
+</head>
 <body>
+    
+    <!-- header is populated by esar.js -->
+    <header></header>
 
-<!-- Header -->
-<header class="w3-theme" style="background-image: url(siteassets/cascade_packout.jpg); background-size: cover; background-position: center;" id="myHeader">
-	<div class="w3-center" style="background-color:rgba(0, 0, 0, 0.5); padding: 64px 0;">
-		<IMG SRC="siteassets/logo_esar.png" STYLE="height:200px; margin-bottom: 8px;">
-		<H3>King County, WA</H3>
-		<H4>Est. 1954</H4>
-	</div>
-</header>
+    <section class="main-content">
+        <div class="container">
+            
+            <div class="card showcase-sm" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('./assets/img/forest.jpg') no-repeat center center/cover;">
+                <h3>Donate</h3>
+            </div>
 
+            <div style="text-align:center;margin-bottom:20px;">
+                <h2>King County Explorer Search & Rescue (ESAR) is a 501(c)(3) Volunteer Organization</h2>
+                <p>"SARTECH" (d.b.a. King County Explorer Search & Rescue)</p>
+                <p>EIN #91-1433442</p>
+            </div>
 
-<!-- Navigation -->
-<nav id="navbar" class="w3-bar w3-theme"></nav>
-<script src="./SiteAssets/nav.js"></script>
+            <div class="grid-col-1-2">
+                <div class="center" style="display: flex;flex-direction: column;justify-content: center;">
+                    <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_200x51.png" style="max-width: 225px;margin:auto;" alt="PayPal Logo">
+                </div>
+                <div style="display: flex;flex-direction: column;justify-content: center;" class="mobile-center">
+                    <h3 class="sub-header-2" style="margin-top:0;">Make a one-time donation:</h3>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="6R8CW7RS2HRBN">
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                    </form>
+                    <h3 class="sub-header-2" style="margin-top:0;">Make a recurring donation:</h3>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="BR5AUP454JY3G">
+                        <table width=100% style="padding-bottom:10px;">
+                        <tr><td><select name="os0">
+                            <option value="10">10 : $10.00 USD - monthly</option>
+                            <option value="25">25 : $25.00 USD - monthly</option>
+                            <option value="50">50 : $50.00 USD - monthly</option>
+                            <option value="25">25 : $25.00 USD - yearly</option>
+                            <option value="50">50 : $50.00 USD - yearly</option>
+                            <option value="100">100 : $100.00 USD - yearly</option>
+                            <option value="250">250 : $250.00 USD - yearly</option>
+                        </select> </td></tr>
+                        </table>
+                        <input type="hidden" name="currency_code" value="USD">
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribe_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                    </form>
+                </div>
 
-<!-- Body Wrapper -->
-<div class="w3-row" style="max-width: 1200px; margin: auto;">
-	
-	<div class="w3-row-padding w3-margin-top">
-		<div class="w3-container">
-			<H3 style="font-weight: lighter; text-align: justify;">ESAR is King County's primary wilderness ground search and rescue organization. Our members are outdoor enthusiasts with a passion for helping those in need. 100% of funding for training, operations, and critical, life-saving equipment comes from generous donations by local businesses, the communities that we serve, our volunteers, and people like you. We do not receive tax payer dollars and we do not charge for our services.</H3>
-			<P><H3 style="font-weight: bold; text-align: center;">King County Explorer Search & Rescue (ESAR) is a 501(c)(3) Volunteer Organization<BR>Registered as "SARTECH" EIN #91-1433442</H3></P>
-		</div>
-	</div>
-	
-	
-	
-	<HR>
-	
-	<div class="w3-row-padding w3-margin-top">
+                <div class="center" style="display: flex;flex-direction: column;justify-content: center;">
+                    <a href="https://www.facebook.com/kingcountyesar/"  target="_blank">
+                        <img class="w3-mobile" src='./assets/img/f_logo_RGB-Blue_250.png' style="max-width: 150px; border-style: none;" />
+                    </a>
+                </div>
+                <div style="display: flex;flex-direction: column;justify-content: center;">
+                    <h3 class="sub-header-2 mobile-center" style="margin-top:0;">Donate on Facebook</h3>
+                    <p class="justify">ESAR Receives 100% of your donation via Facebook. Simply visit our page at <a href="https://www.facebook.com/kingcountyesar/" class="inline" target="_blank">https://www.facebook.com/kingcountyesar/</a> and click on the 'Donate' button.</p>
+                </div>
 
-		<div class="w3-container">
+                <div class="center" style="display: flex;flex-direction: column;justify-content: center;">
+                    <img src='./assets/img/envelope.png' style="max-width: 150px; border-style: none;margin:auto;" />
+                </div>
+                <div style="display: flex;flex-direction: column;justify-content: center;" class="mobile-center">
+                    <h3 class="sub-header-2" style="margin-top:0;">Donate By Mail</h3>
+                    <p>KCESAR<br>PO Box 1266<Bbr>North Bend, WA 98045</p>
+                    <p>Tax ID #91-1433442</p>
+                </div>
 
-			<div style="display: flex; align-content: center; justify-content: center; width: 300px;" class="w3-left w3-mobile">
-				<img class="w3-mobile" src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_200x51.png" style="max-width: 225px;" alt="PayPal Logo">	
-			</div>
-			
-			<div style="display: flex; align-content: center; justify-content: center;" class="w3-left w3-mobile">
-				<div>
+                <div class="center" style="display: flex;flex-direction: column;justify-content: center;">
+                    <a href="http://smile.amazon.com/ch/91-1433442" target="_blank">
+                        <img src='./assets/img/AmazonSmile.png' id="banner" style="max-width: 225px; border-style: none; margin:auto;" />
+                    </a>
+                </div>
+                <div style="display: flex;flex-direction: column;justify-content: center;">
+                    <h3 class="sub-header-2 mobile-center" style="margin-top:0;">Amazon Smile</h3>
+                    <p class="justify">If you shop on Amazon, you can generate a donation to ESAR with every purchase when you use <a href="https://smile.amazon.com/ch/91-1433442" class="inline" target="_blank">Amazon Smile</a> and select SARTECH as your charity. Amazon will donate 0.5% of every purchase to King County Explorer Search & Rescue.</p>
+                </div>
 
-					<div class="w3-mobile">
-						<H4>Make a one-time donation:</H4>
-						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-							<input type="hidden" name="cmd" value="_s-xclick">
-							<input type="hidden" name="hosted_button_id" value="6R8CW7RS2HRBN">
-							<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-							<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-						</form>
-					</div>
+                <div class="center" style="display: flex;flex-direction: column;justify-content: center;">
+                    <a href="https://www.fredmeyer.com/" target="_blank">
+                        <img src='./assets/img/Fred-Meyer.jpg' id="banner" style="max-width: 225px; border-style: none; margin:auto;" />
+                    </a>
+                </div>
+                <div style="display: flex;flex-direction: column;justify-content: center;">
+                    <h3 class="sub-header-2 mobile-center" style="margin-top:0;">Fred Meyer Community Rewards</h3>
+                    <p class="justify">If you shop at Fred Meyer, you can generate a donation to ESAR with every purchase. To register, log into your account at <a href="https://www.fredmeyer.com/" class="inline" target="_blank">https://www.fredmeyer.com/</a> and locate 'Community Rewards' on the 'My Account' page. Search for "SARTECH" or by our organization number "KN761" then click 'Enroll.'</p>
+                </div>
 
-					<div class="w3-mobile">
-						<H4>Make a recurring donation:</H4>
-						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-							<input type="hidden" name="cmd" value="_s-xclick">
-							<input type="hidden" name="hosted_button_id" value="BR5AUP454JY3G">
-							<table>
-							<tr><td><select name="os0">
-								<option value="10">10 : $10.00 USD - monthly</option>
-								<option value="25">25 : $25.00 USD - monthly</option>
-								<option value="50">50 : $50.00 USD - monthly</option>
-								<option value="25">25 : $25.00 USD - yearly</option>
-								<option value="50">50 : $50.00 USD - yearly</option>
-								<option value="100">100 : $100.00 USD - yearly</option>
-								<option value="250">250 : $250.00 USD - yearly</option>
-							</select> </td></tr>
-							</table>
-							<input type="hidden" name="currency_code" value="USD">
-							<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribe_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-							<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-						</form>
-					</div>
-				
-				</div>
-			</div>
-			
-		
-			
-		</div>
-			
-		<HR>
-		
-		<div class="w3-container">
-		
-			<div style="display: flex; align-content: center; justify-content: center; width: 300px;" class="w3-left w3-mobile">
-				<a href="https://www.facebook.com/kingcountyesar/">
-					<img class="w3-mobile" src='./siteassets/f_logo_RGB-Blue_250.png' style="max-width: 150px; border-style: none;" />
-				</a>
-			</div>
-			
-			<div style="display: flex; align-content: center; justify-content: center;" class="w3-mobile">
-				<div>
-					<H3>Donate on Facebook</H3>
-					<P>ESAR Receives 100% of your donation via Facebook. Simply visit our page at <a href="https://www.facebook.com/kingcountyesar/">https://www.facebook.com/kingcountyesar/</a> and click on the 'Donate' button.</P>
-				</div>
-			</div>
-			
-		</div>
-				
-		<HR>
+                
+            </div>
+            
+        </div>
+    </section>
 
-		<div class="w3-container">
-			
-			<div style="display: flex; align-content: center; justify-content: center; width: 300px;" class="w3-left w3-mobile">
-				<img class="w3-mobile" src='siteassets/envelope.png' style="max-width: 150px; border-style: none;" />
-			</div>
-			
-			<div style="display: flex; align-content: center; justify-content: center;" class="w3-left w3-mobile">
-				<div>
-					<H3>Donate By Mail</H3>
-					<P>KCESAR<BR>PO Box 1266<BR>North Bend, WA 98045</P>
-					<P>Tax ID #91-1433442</P>
-				</div>
-			</div>
-			
-		</div>
+    <section class="center" style="border-top: 1px solid lightgrey;padding: 30px 0;">
+        <SPAN STYLE="font-size: 2em;">Thank You</SPAN>	
+		<P>Questions? Please Contact: <a href="mailto:treasurer@kcesar.org" target="_top" class="inline">treasurer@kcesar.org</a></P>
+    </section>
 
-		<HR>
-		
-		<div class="w3-container">
+    <!-- footer is populated by esar.js -->
+    <footer></footer>
 
-			<div style="display: flex; align-content: center; justify-content: center; width: 300px;" class="w3-left w3-mobile">
-				<a href="http://smile.amazon.com/ch/91-1433442">
-					<img class="w3-mobile" src='siteassets/AmazonSmile.png' id="banner" style="max-width: 225px; border-style: none;" />
-				</a>
-			</div>
-			
-			<div style="display: flex; align-content: center; justify-content: center;" class="w3-mobile">
-				<div>
-					<H3>Amazon Smile</H3>
-					<P>If you shop on Amazon, you can generate a donation to ESAR with every purchase when you use <A HREF="https://smile.amazon.com/ch/91-1433442" TARGET="_blank">Amazon Smile</A> and select SARTECH as your charity. Amazon will donate 0.5% of every purchase to King County Explorer Search & Rescue.</P>
-				</div>
-			</div>
-
-		</div>
-
-		<HR>
-		
-		<div class="w3-container">
-
-			<div style="display: flex; align-content: center; justify-content: center; width: 300px;" class="w3-left w3-mobile">
-				<a href="https://www.fredmeyer.com/">
-					<img class="w3-mobile" src='SiteAssets/Fred-Meyer.jpg' id="banner" style="max-width: 225px; border-style: none;" /></a>
-			</div>
-			
-			<div style="display: flex; align-content: center; justify-content: center;" class="w3-mobile">
-				<div>
-					<H3>Fred Meyer Community Rewards</H3>
-					<P>If you shop at Fred Meyer, you can generate a donation to ESAR with every purchase. To register, log into your account at <a href="https://www.fredmeyer.com/">https://www.fredmeyer.com/</a> and locate 'Community Rewards' on the 'My Account' page. Search for "SARTECH" or by our organization number "KN761" then click 'Enroll.'</P>
-				</div>
-			</div>
-		</div>
-
-	</div>
-	
-	<HR>
-	
-	<!-- Call to Action -->
-	<div class="w3-row-padding w3-margin-top w3-margin-bottom">
-		<div class="w3-container w3-center">
-			
-			<SPAN STYLE="font-size: 2em;">Thank You</SPAN>
-			
-			<P>Questions? Please Contact: <a href="mailto:treasurer@kcesar.org" target="_top">treasurer@kcesar.org</a></P>
-			
-		</div>	
-	</div>
-	
-
-	
-</div>
-<!-- End Body Wrapper -->
-
-<!-- Footer -->
-<footer class="w3-container w3-theme-dark w3-padding-16">
-	<div class="w3-row" style="max-width: 1200px; margin: auto;">
-		<div class="w3-mobile w3-left">
-			<IMG SRC="siteassets/logo_esar.png" STYLE="height:50px; margin-right: 8px;">
-			<span style="font-size: 1.5em;">King County Explorer Search & Rescue</span>
-		</div>		
-		<div class="w3-mobile" STYLE="clear: both; font-size:.75em; line-height: 40%;">
-			<div class="w3-mobile w3-left">
-				<p></p>© KCESAR • PO Box 1266 • North Bend, WA 98045</p>
-				<p style="font-size:.75em;">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-			</div>
-			<div class="w3-mobile w3-right" STYLE="color: rgb(50, 121, 50);">
-				<p><A HREF="about.html" style="text-decoration: none;">About KCESAR</A></p>
-				<p><A HREF="contacts.html" style="text-decoration: none;">Contact Us</A></p>
-				<p><A HREF="siteassets/KCESAR_Code_of_Conduct.pdf" style="text-decoration: none;">Code of Conduct</A></p>
-			</div>
-		</div>
-	</div>
-</footer>
-
+    <script src="./esar.js"></script>
 </body>
 </html>

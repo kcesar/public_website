@@ -1,160 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>King County Explorer Search & Rescue - Home</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-green.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-<script src="siteassets/dropdown-fix.js" async="true"></script>
-<script src="siteassets/locations.js"></script>
-
-<script>
-		// Parse URL Arguments
-		function getUrlVars() {
-			var vars = {};
-			var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-				vars[key] = value;
-			});
-			return vars;
-		}
-		let map = getUrlVars()["map"];
-		
-		// Redirect to Google Maps
-		if (map != null) {
-			if (locationMap.has(map)) {
-				map = locationMap.get(map).Coordinates;
-			}
-			window.location.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURI(map)
-		}
-	</script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>King County ESAR</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="./esar.css">
 </head>
 <body>
+    
+    <!-- header is populated by esar.js -->
+    <header></header>
 
-<!-- Header -->
-<header class="w3-theme" style="background-image: url(siteassets/wheel_packout.jpg); background-size: cover; background-position: center;" id="myHeader">
-	<div class="w3-center" style="background-color:rgba(0, 0, 0, 0.5); padding: 64px 0;">
-		<IMG SRC="siteassets/logo_esar.png" STYLE="height:200px; margin-bottom: 8px;">
-		<H3>King County, WA</H3>
-		<H4>Est. 1954</H4>
-	</div>
-</header>
+    <section class="main-content">
+        <div class="container">
+            <div class="card showcase" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('./assets/img/cascade_packout.jpg') no-repeat center center/cover;">
+                <img class="showcase-logo" src="./assets/logo/logo_kcesar_300x300.png">
+                <h3>King County, WA</h3>
+                <h4>Est. 1954</h4>
+            </div>
+            <div class="grid-col-3">
+                <!--Learn More-->
+                <div class="card padding-bottom flex-column">
+                    <div class="card-img" style="background: url('./assets/img/1970s.jpg') no-repeat center center/cover;"></div>
+                    <h2>Learn</h2>
+                    <p class="card-text">Founded in 1954, King County Explorer Search & Rescue is one of the earliest Search & Rescue organizations established in the United States and the largest of eight member-units of the King County Search & Rescue Association.</p>
+                    <p class="card-btn"><a href="./about.html" class="btn btn-green">Learn More</a></p>
+                </div>
+                <!--Donate Today-->
+                <div class="card padding-bottom flex-column">
+                    <div class="card-img" style="background: url('./assets/img/large_packout.jpg') no-repeat center center/cover;"></div>
+                    <h2>Donate</h2>
+                    <p class="card-text">100% Volunteer, 100% Donation Funded. King County Explorer Search & Rescue is a non-profit organization. It is donations from people like you that make Search & Rescue services possible. Please consider donating today.</p>
+                    <p class="card-btn"><a href="./donate.html" class="btn btn-yellow">Donate Today</a></p>
+                </div>
+                <!--Recruiting-->
+                <div class="card padding-bottom flex-column">
+                    <div class="card-img" style="background: url('./assets/img/course1.jpg') no-repeat center center/cover;"></div>
+                    <h2>Join</h2>
+                    <p class="card-text">King County Explorer Search & Rescue is open to both adult and youth membership. New members must complete our comprehensive basic training program which is designed to prepare them for the challenges that they will face in the field.</p>
+                    <p class="card-btn"><a href="./recruiting.html" class="btn btn-green">Join ESAR</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- call to action is populated by esar.js -->
+    <section class="call-to-action-donate"></section>
 
-<!-- Navigation -->
-<nav id="navbar" class="w3-bar w3-theme"></nav>
-<script src="./SiteAssets/nav.js"></script>
+    <!-- footer is populated by esar.js -->
+    <footer></footer>
 
-<!-- Body Wrapper -->
-<div class="w3-row" style="max-width: 1200px; margin: auto;">
-	
-	<div class="w3-row-padding w3-margin-top w3-center">
-		<div class="w3-container">
-			<H3 style="font-weight: lighter;">Welcome to King County Explorer Search & Rescue (ESAR)</H3>
-		</div>	
-	</div>
-	
-	<!-- Topic Cards -->
-	<div class="w3-row-padding w3-margin-top">
-	<div class="w3-third">
-	  <div class="w3-card w3-margin-bottom" style="min-height:460px; padding-bottom:16px;">
-		<div style="height: 160px; background-image: url(SiteAssets/1970s.jpg); background-size: cover; background-position: center;"></div>
-		<div class="w3-container w3-theme">
-			<h3 class="w3-center">Learn</h3>
-		</div>
-		<div class="w3-container">
-			<P style="text-align: justify;">
-				Founded in 1954, King County Explorer Search & Rescue is one of the earliest Search & Rescue organizations established in the United States and the largest of eight member-units of the King County Search & Rescue Association.
-			</P>
-			<center><form action="about.html"><button type="submit" class="w3-button w3-theme w3-round-xxlarge" style="bottom: 0;">Learn More</button></form></center>
-		</div>
-	  </div>
-	</div>
-	
-	<div class="w3-third">
-	  <div class="w3-card w3-margin-bottom" style="min-height:460px; padding-bottom:16px;">
-		<div style="height: 160px; background-image: url(siteassets/large_packout.jpg); background-size: cover; background-position: center;"></div>
-		<div class="w3-container w3-theme">
-			<h3 class="w3-center">Donate</h3>
-		</div>
-		<div class="w3-container">
-			<P style="text-align: justify;">
-				100% Volunteer, 100% Donation Funded. King County Explorer Search & Rescue is a non-profit organization. It is donations from people like you that make Search & Rescue services possible. Please consider donating today.
-			</P>
-			<center><form action="donate.html"><button type="submit" class="w3-button w3-yellow w3-round-xxlarge" style="bottom: 0;">Donate Today</button></form></center>
-		</div>
-	  </div>
-	</div>
-
-	<div class="w3-third">
-	  <div class="w3-card w3-margin-bottom" style="min-height:460px; padding-bottom:16px;">
-		<div style="height: 160px; background-image: url(siteassets/course1.jpg); background-size: cover; background-position: center;"></div>
-		<div class="w3-container w3-theme">
-			<h3 class="w3-center">Join</h3>
-		</div>
-		<div class="w3-container">
-			<P style="text-align: justify;">
-				King County Explorer Search & Rescue is open to both adult and youth membership. New members must complete our comprehensive basic training program which is designed to prepare them for the challenges that they will face in the field.
-			</P>
-			<center><form action="recruiting.html"><button type="submit" class="w3-button w3-theme w3-round-xxlarge" style="bottom: 0;">Recruiting</button></form></center>
-		</div>
-	  </div>
-	</div>
-	</div>
-	
-<!-- 	<HR>
-	
-	<div class="w3-row-padding w3-margin-top w3-margin-bottom">
-		<div class="w3-container w3-center">
-			
-			<P>!!! Preparedness Message/Tips</P>
-		</div>	
-	</div> -->
-	
-	<HR>
-	
-	<!-- Call to Action -->
-	<div class="w3-row-padding w3-margin-top w3-margin-bottom">
-		<div class="w3-container w3-center">
-			
-			<H3 style="font-weight: lighter">King County Explorer Search & Rescue (ESAR) is a 501(c)(3) Volunteer Organization.</H3>	
-			
-			<P><STRONG>Our members respond to over 150 emergencies every year.</STRONG></P>
-
-			<P style="text-align: justify;">ESAR is King County's primary wilderness ground search and rescue organization. Our members are outdoor enthusiasts with a passion for helping those in need. 100% of funding for training, operations, and critical, life-saving equipment comes from generous donations by local businesses, the communities that we serve, our volunteers, and people like you.<P>
-			
-			<center><form action="donate.html"><button type="submit" class="w3-button w3-yellow w3-round-xxlarge" style="bottom: 0;">Donate Today</button></form></center>
-			
-		</div>	
-	</div>
-	
-
-	
-</div>
-<!-- End Body Wrapper -->
-
-<!-- Footer -->
-<footer class="w3-container w3-theme-dark w3-padding-16">
-	<div class="w3-row" style="max-width: 1200px; margin: auto;">
-		<div class="w3-mobile w3-left">
-			<IMG SRC="siteassets/logo_esar.png" STYLE="height:50px; margin-right: 8px;">
-			<span style="font-size: 1.5em;">King County Explorer Search & Rescue</span>
-		</div>		
-		<div class="w3-mobile" STYLE="clear: both; font-size:.75em; line-height: 40%;">
-			<div class="w3-mobile w3-left">
-				<p></p>© KCESAR • PO Box 1266 • North Bend, WA 98045</p>
-				<p style="font-size:.75em;">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-			</div>
-			<div class="w3-mobile w3-right" STYLE="color: rgb(50, 121, 50);">
-				<p><A HREF="about.html" style="text-decoration: none;">About KCESAR</A></p>
-				<p><A HREF="contacts.html" style="text-decoration: none;">Contact Us</A></p>
-				<p><A HREF="siteassets/KCESAR_Code_of_Conduct.pdf" style="text-decoration: none;">Code of Conduct</A></p>
-			</div>
-		</div>
-	</div>
-</footer>
-
+    <script src="./esar.js"></script>
 </body>
 </html>

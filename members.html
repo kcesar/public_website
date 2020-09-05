@@ -1,194 +1,110 @@
 <!DOCTYPE html>
-<html>
-<title>King County Explorer Search & Rescue - Members</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-green.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-<script src="siteassets/dropdown-fix.js" async="true"></script>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>King County ESAR - Members</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="./esar.css">
+</head>
 <body>
+    
+    <!-- header is populated by esar.js -->
+    <header></header>
 
-<!-- Header -->
-<header class="w3-theme" style="background-image: url(siteassets/snow.jpg); background-size: cover; background-position: center;" id="myHeader">
-	<div class="w3-center" style="background-color:rgba(0, 0, 0, 0.5); padding: 64px 0;">
-		<IMG SRC="siteassets/logo_esar.png" STYLE="height:200px; margin-bottom: 8px;">
-		<H3>King County, WA</H3>
-		<H4>Est. 1954</H4>
-	</div>
-</header>
+    <section class="main-content">
+        <div class="container">
+            
+            <div class="card showcase-sm" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('./assets/img/snow.jpg') no-repeat center center/cover;">
+                <h3>Member Resources</h3>
+            </div>
 
+            <h2 class="sub-header-1">Document Quick Access</h2>
+			<b>Code of Conduct:</b>
+			<ul class="bullet">
+				<li><A HREF="./assets/doc/KCESAR_Code_of_Conduct.pdf">Code of Conduct <i class="fa fa-download"></i></A></li>
+			</ul>
 
-<!-- Navigation -->
-<nav id="navbar" class="w3-bar w3-theme"></nav>
-<script src="./SiteAssets/nav.js"></script>
+			<b>Forms:</b>
+			<ul class="bullet">
+				<li><A HREF="./assets/doc/sign_in_roster.pdf">Sign-In Roster <i class="fa fa-download"></i></A></li>
+				<li><A HREF="./assets/doc/team_assignments_ics104.pdf">Team Assignments <i class="fa fa-download"></i></A></li>
+				<li><A HREF="./assets/doc/radio_log_ics109.pdf">Communications Log <i class="fa fa-download"></i></A></li>
+			</ul>
 
-<!-- Body Wrapper -->
-<div class="w3-row" style="max-width: 1200px; margin: auto;">
-	
-	<!-- <div class="w3-row-padding w3-margin-top">
-		<div class="w3-container">
-			<H3 style="font-weight: lighter; text-align: justify;">!!! Lead Message</H3>
+			<b>Training Information:</b>
+			<ul class="bullet">
+				<li><A HREF="./assets/doc/ESAR_TrainingPacket.pdf">Training Orientation Packet <i class="fa fa-download"></i></A></li>
+				<li><A HREF="./assets/doc/ESAR_Parent_Packet_2019.pdf">Parent Information Packet <i class="fa fa-download"></i></A></li>
+			</ul>
 			
-		</div>	
-	</div>
-	
-	<HR> -->
-	
-	<div class="w3-row-padding w3-margin-top">
-	
-		<div class="w3-container w3-theme">
-			<h3>Document Quick Access:</h3>
-		</div>
-		<b>Code of Conduct:</b>
-		<ul>
-			<P><A HREF="siteassets/KCESAR_Code_of_Conduct.pdf">Code of Conduct <i class="fa fa-download"></i></A></P>
-		</ul>
-
-		<b>Forms:</b>
-		<ul>
-			<li><A HREF="siteassets/sign_in_roster.pdf">Sign-In Roster (ICS 111) <i class="fa fa-download"></i></A></li>
-			<li><A HREF="siteassets/roster_covid.pdf">Sign-In Roster (ICS 111-Covid) <i class="fa fa-download"></i></A></li>
-			<li><A HREF="siteassets/team_assignments_ics104.pdf">Team Assignments (ICS 104-A) <i class="fa fa-download"></i></A></li>
-			<li><a href="SiteAssets/teamActivity_covid.pdf">Team Activity Log (ICS 114-Covid) <i class="fa fa-download"></i></a></li>
-			<li><A HREF="siteassets/radio_log_ics109.pdf">Communications Log (ICS 109) <i class="fa fa-download"></i></A></li>
-			<li><A HREF="siteassets/msoChecklist.pdf">KCSARA Medical Safety Officer Checklist <i class="fa fa-download"></i></A></li>
-		</ul>
-
-		<b>Training Information:</b>
-		<ul>
-			<li><A HREF="siteassets/ESAR_TrainingPacket.pdf">Training Orientation Packet <i class="fa fa-download"></i></A></li>
-			<li><A HREF="siteassets/ESAR_Parent_Packet_2019.pdf">Parent Information Packet <i class="fa fa-download"></i></A></li>
-		</ul>
-
-		<div class="w3-container w3-theme">
-			<h3>King County Search & Rescue Database</h3>
-		</div>
-		<P><A HREF="https://database.kcsara.org/" TARGET="_blank">https://database.kcsara.org/ <i class="fa fa-external-link"></i></A></P>
-		<P>
-			This is the King County Search & Rescue Association Database. It includes Member, Mission, and Training data:
-			<UL>
-				<LI>Mission & Training Rosters
-				<LI>Member Contact Information
-				<LI>Member Training Records
-			</UL>
-			See <A HREF="#Office365">Office 365</A> below for login credential information.
-		</P>
-		
-		<div class="w3-container w3-theme">
-			<h3>KCESAR SharePoint</h3>
-		</div>
-		<P><A HREF="https://esar.sharepoint.com/" TARGET="_blank">https://esar.sharepoint.com/ <i class="fa fa-external-link"></i></A></P>
-		<P>
-			This is the King County Explorer Search & Rescue SharePoint. It is used to store/distribute unit documents/resources:
-			<UL>
-				<LI>Unit Bylaws
-				<LI>Code of Conduct
-				<LI>Trading Post Information (ESAR Gear)
-				<LI>OL Duty Schedule
-			</UL>
-			See <A HREF="#Office365">Office 365</A> below for login credential information.
-		</P>
-		
-		<div class="w3-container w3-theme">
-			<h3 ID="Office365">Office 365</h3>
-		</div>
-		<P>
-			In order to access ESAR's online resources you will need to know your Office 365 User Name and Password. New members will receive login information shortly after completing basic training. Your username will end in @kcesar.org. When you first visit the site you will be asked to log in. If you are presented with a choice between using a Work or Personal account, choose the "Work or school account." 
-			<DIV CLASS="w3-card w3-mobile" STYLE="width: 300px;">
-				<IMG WIDTH="100%" SRC="siteassets/365_LogInScreen.jpg">
-			</DIV>
-		</P>
-		
-		<P>
-			<H4>Troubleshooting</H4>
-			<UL>
-				<LI>If you've forgotten your password for your login, it can be reset using the instructions below.
-				<LI>If you were already logged in with a Microsoft account that's not part of ESAR (doesn't end in @kcesar.org) you will likely see the screen below. As described in the error message, you will either need to log out of your other account first or open a new browser window (or new private browsing window) in order to continue.
-				<P><DIV CLASS="w3-card w3-mobile" STYLE="width: 500px;">
-					<IMG WIDTH="100%" SRC="siteassets/365_WrongUser.png">
-				</DIV></P>
-				<LI>Questions about accessing these resources can be directed to <a href="mailto:secretary@kcesar.org">secretary@kcesar.org</a> or <a href="mailto:webmaster@kcesar.org">webmaster@kcesar.org</a>.
-			</UL>
-		</P>
-		
-		<P>
-			<H4>Reset Office 365 Password</H4>
-			<OL>
-				<LI>Start by accessing <A HREF="https://passwordreset.microsoftonline.com" TARGET="_blank">https://passwordreset.microsoftonline.com <i class="fa fa-external-link"></i></A>
-				
-				<LI>Enter your ESAR email address (ex: myusername@kcesar.org) and the "I'm not a robot" text:
-				<P><DIV CLASS="w3-card w3-mobile" STYLE="width: 500px;">
-					<IMG WIDTH="100%" SRC="siteassets/365_NotARobot.jpg">
-				</DIV></P>
-				
-				<LI>The next screen should give you the option of sending a verification code to your alternate e-mail address. This email should be the one where you receive your ESAR emails (@gmail.com, @comcast.net, etc.). It should not end in @kcesar.org:
-				<P><DIV CLASS="w3-card w3-mobile" STYLE="width: 500px;">
-					<IMG WIDTH="100%" SRC="siteassets/365_GetCode.png">
-				</DIV></P>
-				
-				<LI>Wait a few minutes for a verification code to be sent to your personal email. Type or copy/paste this code into the verification box and press "Next":
-				<P><DIV CLASS="w3-card w3-mobile" STYLE="width: 500px;">
-					<IMG WIDTH="100%" SRC="siteassets/365_CodeSubmit.jpg">
-				</DIV></P>
-				
-				<LI>Enter your new password and click "Finish". The password should be less than 16 characters:
-				<P><DIV CLASS="w3-card w3-mobile" STYLE="width: 500px;">
-					<IMG WIDTH="100%" SRC="siteassets/365_NewPassword.jpg">
-				</DIV></P>
-				
-				<LI>The password reset is complete:
-				<P><DIV CLASS="w3-card w3-mobile" STYLE="width: 300px;">
-					<IMG WIDTH="100%" SRC="siteassets/365_PasswordReset.jpg">
-				</DIV></P>
-				
-			</OL>
-		</P>
+            <h2 class="sub-header-1">King County Search & Rescue Database</h2>
+			<P class="padding-bottom"><A HREF="https://database.kcsara.org/" class="inline" TARGET="_blank">https://database.kcsara.org/ <i class="fa fa-external-link"></i></A></P>
+			<P>
+				This is the King County Search & Rescue Association Database. It includes Member, Mission, and Training data:
+				<UL class="bullet padding-bottom">
+					<LI>Mission & Training Rosters
+					<LI>Member Contact Information
+					<LI>Member Training Records
+				</UL>
+				See Office 365 below for login credential information.
+			</P>
 			
+            <h2 class="sub-header-1">KCESAR Sharepoint</h2>
+			<P class="padding-bottom"><A HREF="https://esar.sharepoint.com/" class="inline" TARGET="_blank">https://esar.sharepoint.com/ <i class="fa fa-external-link"></i></A></P>
+			<P>
+				This is the King County Explorer Search & Rescue SharePoint. It is used to store/distribute unit documents/resources:
+				<UL class="bullet padding-bottom">
+					<LI>Unit Bylaws
+					<LI>Code of Conduct
+					<LI>Trading Post Information (ESAR Gear)
+					<LI>OL Duty Schedule
+				</UL>
+				See Office 365 below for login credential information.
+			</P>
+			
+            <h2 class="sub-header-1">Office 365</h2>
+			<p class="justify padding-bottom">In order to access ESAR's online resources you will need to know your Office 365 User Name and Password. New members will receive login information shortly after completing basic training. Your username will end in @kcesar.org. When you first visit the site you will be asked to log in. If you are presented with a choice between using a Work or Personal account, choose the "Work or school account."</p>
+			<img class="card mobile" width="25%" src="./assets/img/365_LogInScreen.jpg">
+			
+			<h2 class="sub-header-2">Troubleshooting</h2>
+			<ul class="bullet padding-bottom">
+				<li>If you've forgotten your password, it can be reset using the instructions below.</li>
+				<li class="padding-bottom">If you were already logged in with a Microsoft account that's not part of ESAR (doesn't end in @kcesar.org) you will likely see the screen below. As described in the error message, you will either need to log out of your other account first or open a new browser window (or new private browsing window) in order to continue.</li>
+				<img class="card mobile" width="50%" SRC="./assets/img/365_WrongUser.png">
+				<li>Questions about accessing these resources can be directed to <a href="mailto:secretary@kcesar.org">secretary@kcesar.org</a> or <a href="mailto:webmaster@kcesar.org">webmaster@kcesar.org</a>.</li>
+			</ul>
+			
+			<h2 class="sub-header-2">Reset Office 365 Password</h2>
+			<ul class="bullet padding-bottom">
+				<li>Access <A HREF="https://passwordreset.microsoftonline.com" class="inline" TARGET="_blank">https://passwordreset.microsoftonline.com <i class="fa fa-external-link"></i></A>
+				
+				<li class="padding-bottom">Enter your ESAR email address (ex: myusername@kcesar.org) and the "I'm not a robot" text:</li>
+				<img class="card mobile" width="25%" SRC="./assets/img/365_NotARobot.jpg">
+				
+				<li class="padding-bottom">The next screen should give you the option of sending a verification code to your alternate e-mail address. This email should be the one where you receive your ESAR emails (@gmail.com, @comcast.net, etc.). It should not end in @kcesar.org:</li>
+				<img class="card mobile" width="25%" SRC="./assets/img/365_GetCode.png">
+				
+				<li class="padding-bottom">Wait a few minutes for a verification code to be sent to your personal email. Type or copy/paste this code into the verification box and press "Next":</li>
+				<img class="card mobile" width="25%" SRC="./assets/img/365_CodeSubmit.jpg">
+				
+				<li class="padding-bottom">Enter your new password and click "Finish". The password should be less than 16 characters:</li>
+				<img class="card mobile" width="25%" SRC="./assets/img/365_NewPassword.jpg">
+				
+				<li class="padding-bottom">The password reset is complete:</li>
+				<img class="card mobile" width="25%" SRC="./assets/img/365_PasswordReset.jpg">
+				
+			</ul>
 		
-	</div>
-	
-	<HR>
-	
-	<!-- Call to Action -->
-	<div class="w3-row-padding w3-margin-top w3-margin-bottom">
-		<div class="w3-container w3-center">
-			
-			<H3 style="font-weight: lighter">King County Explorer Search & Rescue (ESAR) is a 501(c)(3) Volunteer Organization.</H3>
-			
-			<P><STRONG>Our members respond to over 150 emergencies every year.</STRONG></P>
-
-			<P style="text-align: justify;">ESAR is King County's primary wilderness ground search and rescue organization. Our members are outdoor enthusiasts with a passion for helping those in need. 100% of funding for training, operations, and critical, life-saving equipment comes from generous donations by local businesses, the communities that we serve, our volunteers, and people like you.<P>
-			
-			<center><form action="donate.html"><button type="submit" class="w3-button w3-yellow w3-round-xxlarge" style="bottom: 0;">Donate Today</button></form></center>
-		</div>	
-	</div>
-	
-
-	
-</div>
-<!-- End Body Wrapper -->
-
-<!-- Footer -->
-<footer class="w3-container w3-theme-dark w3-padding-16">
-	<div class="w3-row" style="max-width: 1200px; margin: auto;">
-		<div class="w3-mobile w3-left">
-			<IMG SRC="siteassets/logo_esar.png" STYLE="height:50px; margin-right: 8px;">
-			<span style="font-size: 1.5em;">King County Explorer Search & Rescue</span>
-		</div>		
-		<div class="w3-mobile" STYLE="clear: both; font-size:.75em; line-height: 40%;">
-			<div class="w3-mobile w3-left">
-				<p></p>© KCESAR • PO Box 1266 • North Bend, WA 98045</p>
-				<p style="font-size:.75em;">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-			</div>
-			<div class="w3-mobile w3-right" STYLE="color: rgb(50, 121, 50);">
-				<p><A HREF="about.html" style="text-decoration: none;">About KCESAR</A></p>
-				<p><A HREF="contacts.html" style="text-decoration: none;">Contact Us</A></p>
-				<p><A HREF="siteassets/KCESAR_Code_of_Conduct.pdf" style="text-decoration: none;">Code of Conduct</A></p>
-			</div>
 		</div>
-	</div>
-</footer>
+    </section>
 
+    <!-- call to action is populated by esar.js -->
+    <section class="call-to-action-donate"></section>
+
+    <!-- footer is populated by esar.js -->
+    <footer></footer>
+
+    <script src="./esar.js"></script>
 </body>
 </html>
