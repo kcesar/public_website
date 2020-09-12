@@ -123,7 +123,7 @@ function addFooter() {
     let footerLinks = document.createElement('ul');
     footerLinks.appendChild(getListItem(getLink('./about.html', document.createTextNode('About Us'))));
     footerLinks.appendChild(getListItem(getLink('./contacts.html', document.createTextNode('Contact Us'))));
-    footerLinks.appendChild(getListItem(getLink('./assets/docs/KCESAR_Code_of_Conduct.pdf', document.createTextNode('Code of Conduct'))));
+    footerLinks.appendChild(getListItem(getLink('./assets/doc/KCESAR_Code_of_Conduct.pdf', document.createTextNode('Code of Conduct'))));
     container.appendChild(footerLinks);
 
     footer.appendChild(container);
