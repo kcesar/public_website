@@ -1,3 +1,5 @@
+// Location Data
+
 let locationData = [
     {Id: 'TH00001', LocationType: 'Trailhead', LocName: 'annette', FullName: 'Annette Lake Trailhead', Coordinates: '47.392933,-121.474159'},
     {Id: 'LZ00001', LocationType: 'LZ', LocName: 'bandera-lz', FullName: 'Bandera Airstrip', Coordinates: '47.394170,-121.529720'},
@@ -29,3 +31,29 @@ let locationMap = new Map();
 for (var i=0; i<locationData.length; i++) {
     locationMap.set(locationData[i].LocName, locationData[i]);
 }
+
+/**
+ * URL Forwarding for shortcut links
+ * @description Checks if a location name is provided as a URL parameter in the format ?map=<String>.
+ *              If a value exists then look in the locationMap for the corresponding record. If a
+ *              match is found, then forward to google maps with coordinates from locationMap.
+ */
+function doForward() {
+    let nav = getUrlVars()["map"];
+    if (nav) {
+        if (locationMap.has(nav)) {
+            nav = locationMap.get(nav).Coordinates;
+            window.location.href = "https://www.google.com/maps/dir/?api=1&destination=" + nav + "&travelmode=driving&dir_action=navigate";
+        }
+    }
+}
+
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+doForward();
