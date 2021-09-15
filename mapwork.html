@@ -245,87 +245,34 @@
 				</div>
 
 				<!-- Pacing Problem Set -->
-				<div class='tabcontent' Id='Pacing_Body' style='display: none;'>
+				<div class='tabcontent container' Id='Pacing_Body' style='display: none;'>
 
-					<div class="w3-container">
-						<div class='w3-moblie' style="padding-right: 16px;"><p><b>Pacing is a method to keep track of distance.</b></p><p>A pace is the distance that you travel while walking each time the same foot hits the ground. For example, if you lead (take your first step) with your left foot, then you will count a pace each time your right foot touches the ground. For the purposes of ESAR Basic Training we generally refer to pace in terms of feet.</p></div>
-						<div class='w3-center w3-mobile w3-margin-top w3-margin-bottom'><img class='w3-card w3-mobile' style='max-width: 600px;' src='./assets/img/1pace.jpg'></div>
-					</div>
+					<p class="padding-bottom">Pacing is a method to keep track of distance. A pace is the distance that you travel while walking each time the same foot hits the ground. For example, if you lead (take your first step) with your left foot, then you will count a pace each time your right foot touches the ground. For the purposes of ESAR Basic Training we generally refer to pace in terms of feet.</p>
+					<div class="mobile"><img class='w3-card w3-mobile' style='max-width: 600px;' src='./assets/img/1pace.jpg'></div>
+				
+					<c-quiz-item
+						prompt="Joe is calculating his pace. If he walks 1000 feet in 196 paces, what is the length of his pace?"
+						answer="5.10 feet"
+						explain="<p>Joe's pace can be calculated by simply dividing the distance he travelled by the number of paces he took:</p><p>1000 feet / 196 paces = 5.10 feet</p>"
+					></c-quiz-item>
 
-					<div class="w3-container w3-card w3-margin-top w3-margin-bottom">
-						<p>Joe is calculating his pace. If he walks 1000 feet in 196 paces, what is the length of his pace?</p>
-						<button onclick="myAccFunc('Q200')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right w3-margin">Show/Hide Answer</button>
-						<div id="Q200" class="w3-hide">
-							<div class="w3-container w3-margin">
-								<div class="w3-container w3-third">
-									<b>Answer:</b>
-									<p>5.10 feet</p>
-								</div>
-								<div class="w3-container w3-twothird">
-									<b>Explanation:</b>
-									<p>Joe's pace can be calculated by simply dividing the distance he travelled by the number of paces he took:</p>
-									<p>1000 feet / 196 paces = 5.10 feet</p>
-								</div>
-							</div>
-						</div>
-					</div>
+					<c-quiz-item
+						prompt="Susan's pace is 4.5 feet. If she needs to travel 1140 feet how many paces does she need to take?"
+						answer="Approximately 253 paces"
+						explain="<p>Since the distance and Susan's pace are already expressed in the same units (feet), we can simply divide:</p><p>1140 feet / 4.5 feet = ~253 paces</p>"
+					></c-quiz-item>
 
-					<div class="w3-container w3-card w3-margin-top w3-margin-bottom">
-						<p>Susan's pace is 4.5 feet. If she needs to travel 1140 feet how many paces does she need to take?</p>
-						<button onclick="myAccFunc('Q201')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right w3-margin">Show/Hide Answer</button>
-						<div id="Q201" class="w3-hide">
-							<div class="w3-container w3-margin">
-								<div class="w3-container w3-third">
-									<b>Answer:</b>
-									<p>Approximately 253 paces</p>
-								</div>
-								<div class="w3-container w3-twothird">
-									<b>Explanation:</b>
-									<p>Since the distance and Susan's pace are already expressed in the same units (feet), we can simply divide:</p>
-									<p>1140 feet / 4.5 feet = ~253 paces</p>
-								</div>
-							</div>
-						</div>
-					</div>
+					<c-quiz-item
+						prompt="Michael's pace is 4.8 feet. If he needs to travel 235 meters how many paces does he need to take?"
+						answer="Approximately 161 paces"
+						explain="<p>Because the distance that Michael needs to travel is expressed in meters, first we need to convert it to feet. By checking the conversion table, we know that 1 meter = 3.28 feet.</p><p>First Convert to Feet: 235 meters * 3.28 feet = Michael needs to travel 770.8 feet</p><p>Then Calculate Paces: 770.8 feet / 4.8 feet = ~161 paces</p>"
+					></c-quiz-item>
 
-					<div class="w3-container w3-card w3-margin-top w3-margin-bottom">
-						<p>Michael's pace is 4.8 feet. If he needs to travel 235 meters how many paces does he need to take?</p>
-						<button onclick="myAccFunc('Q202')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right w3-margin">Show/Hide Answer</button>
-						<div id="Q202" class="w3-hide">
-							<div class="w3-container w3-margin">
-								<div class="w3-container w3-third">
-									<b>Answer:</b>
-									<p>Approximately 161 paces</p>
-								</div>
-								<div class="w3-container w3-twothird">
-									<b>Explanation:</b>
-									<p>Because the distance that Michael needs to travel is expressed in meters, first we need to convert it to feet. By checking the conversion table, we know that 1 meter = 3.28 feet.</p>
-									<p>First Convert to Feet: 235 meters * 3.28 feet = Michael needs to travel 770.8 feet</p>
-									<p>Then Calculate Paces: 770.8 feet / 4.8 feet = ~161 paces</p>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="w3-container w3-card w3-margin-top w3-margin-bottom">
-						<p>Megan and Zoe have partnered for a compass run. Megan's pace is 4.7 feet and Zoe's pace is 5.25 feet. During the compass run both Megan and Zoe were counting their paces, but Zoe forgot what her count was. They stop to confer. Megan has counted 57 paces so far. If Zoe returns to Megan's position, what should her current pace count be?</p>
-						<button onclick="myAccFunc('Q203')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right w3-margin">Show/Hide Answer</button>
-						<div id="Q203" class="w3-hide">
-							<div class="w3-container w3-margin">
-								<div class="w3-container w3-third">
-									<b>Answer:</b>
-									<p>Approximately 51 paces</p>
-								</div>
-								<div class="w3-container w3-twothird">
-									<b>Explanation:</b>
-									<p>First we need to know how far the pair has travelled based on Megan's pace count:</p>
-									<p>57 paces * 4.7 feet = ~268 feet</p>
-									<p>Next we can calculate how many paces Zoe should have taken by this point:</p>
-									<p>268 feet / 5.25 feet = ~51 paces</p>
-								</div>
-							</div>
-						</div>
-					</div>
+					<c-quiz-item
+						prompt="Megan and Zoe have partnered for a compass run. Megan's pace is 4.7 feet and Zoe's pace is 5.25 feet. During the compass run both Megan and Zoe were counting their paces, but Zoe forgot what her count was. They stop to confer. Megan has counted 57 paces so far. If Zoe returns to Megan's position, what should her current pace count be?"
+						answer="Approximately 51 paces"
+						explain="<p>First we need to know how far the pair has travelled based on Megan's pace count:</p><p>57 paces * 4.7 feet = ~268 feet</p><p>Next we can calculate how many paces Zoe should have taken by this point:</p><p>268 feet / 5.25 feet = ~51 paces</p>"
+					></c-quiz-item>					
 				
 				</div>
 
