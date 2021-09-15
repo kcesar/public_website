@@ -2,14 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-green.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>King County ESAR - Supplemental Mapwork</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 	<link rel="stylesheet" href="./esar.css">
-	
-	<script src="siteassets/w3.js"></script>
+
+	<script src='./components/cQuizItem.js'></script>
 
 	<style>
 		.map_container {
@@ -46,6 +44,43 @@
 			margin-top: -2px;
 		}
 	</style>
+
+	<style>
+		/* Style the tab */
+		.tab {
+			overflow: hidden;
+			background-color: #559955;
+		}
+
+		/* Style the buttons that are used to open the tab content */
+		.tab button {
+			background-color: inherit;
+			float: left;
+			border: none;
+			outline: none;
+			cursor: pointer;
+			padding: 14px 16px;
+			transition: 0.3s;
+			color: white;
+		}
+
+		/* Change background color of buttons on hover */
+		.tab button:hover {
+			background-color: #417541;
+		}
+
+		/* Create an active/current tablink class */
+		.tab button.active {
+			background-color: #417541;
+		}
+
+		/* Style the tab content */
+		.tabcontent {
+			display: none;
+			padding: 6px 12px;
+			border-top: none;
+		}
+	</style>
 </head>
 
 <body>
@@ -56,282 +91,165 @@
     <section class="main-content">
         <div class="container">
 
+			<h2 class="sub-header-1">Supplemental Mapwork</h2>
+            <p class="justify padding-bottom">In response to many of our trainees asking for additional practice mapwork we have compiled a series of supplemental problems that you can use to self-study. These example questions are similar to the type of work you will be completing during training. Each problem has the answer hidden. When you are ready to check your work simply click "Show/Hide Answer" to reveal the solution. Click again to hide it.</p>
 
-	
-			<div class="w3-row-padding w3-margin-top">
-				<div class="w3-container">
-					<H3 style="font-weight: lighter; text-align: justify;">In response to many of our trainees asking for additional practice mapwork we have compiled a series of supplemental problems that you can use to self-study. These example questions are similar to the type of work you will be completing during training. Each problem has the answer hidden. When you are ready to check your work simply click "Show/Hide Answer" to reveal the solution. Click again to hide it.</H3>
-				</div>	
-			</div>
 			
-			<div class="w3-card">
+			<div class="card">
 
-				<div class="w3-margin-top">
-					<div class="w3-bar w3-green">
-						<button id='Tools_Tab' class="w3-mobile w3-bar-item w3-button w3-light-grey problemSetTab" onclick="openProblemSet('Tools')">Tools & Review</button>
-						<button id='Units_Tab' class="w3-mobile w3-bar-item w3-button problemSetTab" onclick="openProblemSet('Units')">Unit Conversion</button>
-						<button id='Pacing_Tab' class="w3-mobile w3-bar-item w3-button problemSetTab" onclick="openProblemSet('Pacing')">Pacing Problems</button>
-						<button id='Mapping_Tab' class="w3-mobile w3-bar-item w3-button problemSetTab" onclick="openProblemSet('Mapping')">Mapping Problems</button>
-					</div>	
+				<div class="tab">
+					<button class="tablinks mobile" onclick="openTab(event, 'Tools_Body')">Tools & Review</button>
+					<button class="tablinks mobile" onclick="openTab(event, 'Units_Body')">Unit Conversion</button>
+					<button class="tablinks mobile" onclick="openTab(event, 'Pacing_Body')">Pacing Problems</button>
+					<button class="tablinks mobile" onclick="openTab(event, 'Mapping_Body')">Mapping Problems</button>
 				</div>
 
 				<!-- Tools Problem Set -->
-				<div class='w3-padding problemSetBody' Id='Tools_Body' style='display: block;'>
+				<div class='tabcontent container' Id='Tools_Body' style='display: block;'>
 
-					<div class="w3-container">
-						<div class='w3-left w3-mobile' style="width: 66%;">
-							<p><h2>Tools</h2></p>
-							<p>In order to complete this supplemental coursework you will need some basic tools. These items are included in the navigation kit that you will receive at Course B. However, if you have not yet received your navigation kit then these printable versions will be sufficient for now.</p>
-							<p><b>Pencil</b> - Pencils are preferable because you may need to make corrections or revise your plan.</p>
-							<p><b>Ruler</b> - A tenths ruler makes calculations easier than a standard ruler. <a href='siteassets/tenths-ruler.pdf'>Tenths Ruler PDF <i class="fa fa-download"></i></a></p>
-							<p><b>Protractor</b> - A 360° protractor, clear is preferable. <a href='siteassets/protractor.pdf'>Protractor PDF <i class="fa fa-download"></i></a></p>
-							<p><b>Calculator</b> - A basic calculator for doing simple math.</p>
+					<div class="card padding-bottom" style="float: right; margin: 0 0 15px 15px;">
+						<h2>Unit Conversion Table</h2>
+						<table class='w3-table-all w3-card'>
+							<tr class='w3-theme'>
+								<th class='w3-center' colspan="3">Unit Conversion Table</th>
+							</tr>
+							<tr>
+								<td>1 meter</td>
+								<td>=</td>
+								<td>3.28 feet</td>
+							</tr>
+							<tr>
+								<td>1 inch</td>
+								<td>=</td>
+								<td>2.54 centimeters</td>
+							</tr>
+							<tr>
+								<td>1 mile</td>
+								<td>=</td>
+								<td>5280 feet</td>
+							</tr>
+							<tr>
+								<td>1 kilometer</td>
+								<td>=</td>
+								<td>1000 meters</td>
+							</tr>
+							<tr>
+								<td>1 degree</td>
+								<td>=</td>
+								<td>60 minutes</td>
+							</tr>
+							<tr>
+								<td>1 minute</td>
+								<td>=</td>
+								<td>60 seconds</td>
+							</tr>
+						</table>
+					</div>
 
-							<p><h2>Coordinate Systems</h2></p>
-							<p>The most common coordinate systems used in search and rescue are Latidude/Longitude and UTM. For the purposes of this supplemental coursework we will stick to these and assume the WGS-84 datum. Below is some useful information to review. There are plenty of resources available online if you want to delve into more detail or learn about other coordinate systems.</p>
-							<p><h3>Latitude/Longitude</h3></p>
+					<h1>Tools</h1>
+					<div class='padding-bottom'>
+						<p>In order to complete this supplemental coursework you will need some basic tools. These items are included in the navigation kit that you will receive at Course B. However, if you have not yet received your navigation kit then these printable versions will be sufficient for now.</p>
+						<p><b>Pencil</b> - Pencils are preferable because you may need to make corrections or revise your plan.</p>
+						<p><b>Ruler</b> - A tenths ruler makes calculations easier than a standard ruler. <a href='siteassets/tenths-ruler.pdf'>Tenths Ruler PDF <i class="fa fa-download"></i></a></p>
+						<p><b>Protractor</b> - A 360° protractor, clear is preferable. <a href='siteassets/protractor.pdf'>Protractor PDF <i class="fa fa-download"></i></a></p>
+						<p><b>Calculator</b> - A basic calculator for doing simple math.</p>
+					</div>
+					
+
+					<h1>Coordinate Systems</h1>
+					<div>
+						<p class='padding-bottom'>The most common coordinate systems used in search and rescue are Latidude/Longitude and UTM. For the purposes of this supplemental coursework we will stick to these and assume the WGS-84 datum. Below is some useful information to review. There are plenty of resources available online if you want to delve into more detail or learn about other coordinate systems.</p>
+						
+						<h3>Latitude/Longitude</h3>
+						<div class='padding-bottom'>
 							<p>Coordinates in Latitude and Longitude are expressed as some combination of Degrees, Minutes, and Seconds. There are 60 minutes in a degree, and 60 seconds in a minute. You can convert between formats using simple division and multiplication. You are likely to encounter them in the following formats:</p>
 							<ul>
 								<li><b>N47.5068° W121.7390°</b> - Degrees Only ("Decimal Degrees")</li>
 								<li><b>N47°30.408' W121°44.341'</b> - Degrees and Minutes ("Degrees Decimal Minutes")</li>
 								<li><b>N47°30'24" W121°44'20"</b> - Degrees, Minutes, and Seconds ("Degrees Minutes Seconds")</li>
 							</ul>
-							<p><h3>Universal Transverse Mercator (UTM)</h3></p>
+						</div>
+
+						<h3>Universal Transverse Mercator (UTM)</h3>
+						<div class='padding-bottom'>
 							<p>Coordinates in UTM are expressed in meters and in the context of a Grid Zone. The Grid Zone is determined based on a system of "Zones" and longitudinal "Bands". For the purposes of this coursework it is sufficient to know that ESAR's primary area of operations lies in the 10T Grid Zone. UTM coordinates describe a position within the Grid Zone as an Easting and Northing; the distance, in meters, east and north from the southwest corner of the Grid Zone:</p>
 							<ul>
 								<li><b>10T 0549596E 5262255N </b> - Grid Zone, Easting, and Northing</li>
 							</ul>
-						</div>
-
-						<div class='w3-right w3-mobile w3-margin-top w3-margin-bottom' style="width: 33%;">
-							<table class='w3-table-all w3-card'>
-								<tr class='w3-theme'>
-									<th class='w3-center' colspan="3">Unit Conversion Table</th>
-								</tr>
-								<tr>
-									<td>1 meter</td>
-									<td>=</td>
-									<td>3.28 feet</td>
-								</tr>
-								<tr>
-									<td>1 inch</td>
-									<td>=</td>
-									<td>2.54 centimeters</td>
-								</tr>
-								<tr>
-									<td>1 mile</td>
-									<td>=</td>
-									<td>5280 feet</td>
-								</tr>
-								<tr>
-									<td>1 kilometer</td>
-									<td>=</td>
-									<td>1000 meters</td>
-								</tr>
-								<tr>
-									<td>1 degree</td>
-									<td>=</td>
-									<td>60 minutes</td>
-								</tr>
-								<tr>
-									<td>1 minute</td>
-									<td>=</td>
-									<td>60 seconds</td>
-								</tr>
-							</table>
 						</div>
 					</div>
 
 				</div>
 
 				<!-- Units Problem Set -->
-				<div class='w3-padding problemSetBody' Id='Units_Body' style='display: none;'>
+				<div class='tabcontent container' Id='Units_Body' style='display: none;'>
 					
-					<div class="w3-container">
-						<div class='w3-moblie' style="padding-right: 16px;">
-							<p><h2>Units of Measurement</h2></p>
-						</div>
-					</div>
+					<h1 class="sub-header-1">Units of Measurement</h1>
 
-					<div class="w3-container w3-card w3-margin-top w3-margin-bottom">
-						<p>Convert 5 centimeters to inches.</p>
-						<button onclick="myAccFunc('Q110')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right w3-margin">Show/Hide Answer</button>
-						<div id="Q110" class="w3-hide">
-							<div class="w3-container w3-margin">
-								<div class="w3-container w3-third">
-									<b>Answer:</b>
-									<p>1.9685in</p>
-								</div>
-								<div class="w3-container w3-twothird">
-									<b>Explanation:</b>
-									<br>5cm / 2.54cm/in = 1.9685 inches
-								</div>
-							</div>
-						</div>
-					</div>
+					<c-quiz-item
+						prompt="Convert 5 centimeters to inches."
+						answer="1.9685in"
+						explain="5cm / 2.54cm/in = 1.9685 inches"
+					></c-quiz-item>
 
-					<div class="w3-container w3-card w3-margin-top w3-margin-bottom">
-						<p>Convert 3.4 inches to centimeters.</p>
-						<button onclick="myAccFunc('Q111')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right w3-margin">Show/Hide Answer</button>
-						<div id="Q111" class="w3-hide">
-							<div class="w3-container w3-margin">
-								<div class="w3-container w3-third">
-									<b>Answer:</b>
-									<p>8.636cm</p>
-								</div>
-								<div class="w3-container w3-twothird">
-									<b>Explanation:</b>
-									<br>3.4in * 2.54cm/in = 8.636 centimeters
-								</div>
-							</div>
-						</div>
-					</div>
+					<c-quiz-item
+						prompt="Convert 3.4 inches to centimeters."
+						answer="8.636cm"
+						explain="3.4in * 2.54cm/in = 8.636 centimeters"
+					></c-quiz-item>
 
-					<div class="w3-container w3-card w3-margin-top w3-margin-bottom">
-						<p>How many kilometers is 1 mile?</p>
-						<button onclick="myAccFunc('Q112')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right w3-margin">Show/Hide Answer</button>
-						<div id="Q112" class="w3-hide">
-							<div class="w3-container w3-margin">
-								<div class="w3-container w3-third">
-									<b>Answer:</b>
-									<p>1.61km</p>
-								</div>
-								<div class="w3-container w3-twothird">
-									<b>Explanation:</b>
-									<br>5280ft / 3.28ft/m = ~1610 meters
-									<br>1610m / 1000m/km = 1.61 kilometers
-								</div>
-							</div>
-						</div>
-					</div>
+					<c-quiz-item
+						prompt="How many kilometers is 1 mile?"
+						answer="1.61km"
+						explain="5280ft / 3.28ft/m = ~1610 meters<br>1610m / 1000m/km = 1.61 kilometers"
+					></c-quiz-item>
 
-					<div class="w3-container w3-card w3-margin-top w3-margin-bottom">
-						<p>You are riding with 4x4 to your assignment location. The assignment begins 1100 meters past a forest service gate. The 4x4 driver can use their trip meter to help determine how far to drive. How many tenths of a mile should they drive?</p>
-						<button onclick="myAccFunc('Q113')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right w3-margin">Show/Hide Answer</button>
-						<div id="Q113" class="w3-hide">
-							<div class="w3-container w3-margin">
-								<div class="w3-container w3-third">
-									<b>Answer:</b>
-									<p>Approximately 7 tenths of a mile.</p>
-								</div>
-								<div class="w3-container w3-twothird">
-									<b>Explanation:</b>
-									<br>1100m * 3.28ft/m = 3608 feet
-									<br>3608ft / 5280ft/mi = 0.68 miles
-								</div>
-							</div>
-						</div>
-					</div>
+					<c-quiz-item
+						prompt="You are riding with 4x4 to your assignment location. The assignment begins 1100 meters past a forest service gate. The 4x4 driver can use their trip meter to help determine how far to drive. How many tenths of a mile should they drive?"
+						answer="Approximately 7 tenths of a mile."
+						explain="3608ft / 5280ft/mi = 0.68 miles"
+					></c-quiz-item>
 
-					<div class="w3-container">
-						<div class='w3-moblie' style="padding-right: 16px;">
-							<p><h2>Coordinate Systems</h2></p>
-						</div>
-					</div>
+					<h1 class="sub-header-1">Coordinate Systems</h1>
 
-					<div class="w3-container w3-card w3-margin-top w3-margin-bottom">
-						<p>How many Minutes is 54.6 Seconds?</p>
-						<button onclick="myAccFunc('Q100')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right w3-margin">Show/Hide Answer</button>
-						<div id="Q100" class="w3-hide">
-							<div class="w3-container w3-margin">
-								<div class="w3-container w3-third">
-									<b>Answer:</b>
-									<p>0.91 Minutes</p>
-								</div>
-								<div class="w3-container w3-twothird">
-									<b>Explanation:</b>
-									<br>54.6 seconds / 60 seconds per minute = 0.91 Minutes
-								</div>
-							</div>
-						</div>
-					</div>
+					<c-quiz-item
+						prompt="How many Minutes is 54.6 Seconds?"
+						answer="0.91 Minutes"
+						explain="54.6 seconds / 60 seconds per minute = 0.91 Minutes"
+					></c-quiz-item>
 
-					<div class="w3-container w3-card w3-margin-top w3-margin-bottom">
-						<p>How many Seconds is 0.70 Minutes?</p>
-						<button onclick="myAccFunc('Q101')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right w3-margin">Show/Hide Answer</button>
-						<div id="Q101" class="w3-hide">
-							<div class="w3-container w3-margin">
-								<div class="w3-container w3-third">
-									<b>Answer:</b>
-									<p>42 Seconds</p>
-								</div>
-								<div class="w3-container w3-twothird">
-									<b>Explanation:</b>
-									<br>0.70 Minutes * 60 seconds per minute = 42 Seconds
-								</div>
-							</div>
-						</div>
-					</div>
+					<c-quiz-item
+						prompt="How many Seconds is 0.70 Minutes?"
+						answer="42 Seconds"
+						explain="0.70 Minutes * 60 seconds per minute = 42 Seconds"
+					></c-quiz-item>
 
-					<div class="w3-container w3-card w3-margin-top w3-margin-bottom">
-						<p>How many Minutes is 0.8059 Degrees?</p>
-						<button onclick="myAccFunc('Q102')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right w3-margin">Show/Hide Answer</button>
-						<div id="Q102" class="w3-hide">
-							<div class="w3-container w3-margin">
-								<div class="w3-container w3-third">
-									<b>Answer:</b>
-									<p>48.354 Minutes</p>
-								</div>
-								<div class="w3-container w3-twothird">
-									<b>Explanation:</b>
-									<br>0.8059 degrees * 60 minutes per degree = 48.354 Minutes
-								</div>
-							</div>
-						</div>
-					</div>
+					<c-quiz-item
+						prompt="How many Minutes is 0.8059 Degrees?"
+						answer="48.354 Minutes"
+						explain="0.8059 degrees * 60 minutes per degree = 48.354 Minutes"
+					></c-quiz-item>
 
-					<div class="w3-container w3-card w3-margin-top w3-margin-bottom">
-						<p>Convert N47.4880° W121.7232° to Degrees Decimal Minutes.</p>
-						<button onclick="myAccFunc('Q103')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right w3-margin">Show/Hide Answer</button>
-						<div id="Q103" class="w3-hide">
-							<div class="w3-container w3-margin">
-								<div class="w3-container w3-third">
-									<b>Answer:</b>
-									<p>N47°29.28' W121°43.392'</p>
-								</div>
-								<div class="w3-container w3-twothird">
-									<b>Explanation:</b>
-									<br>Convert the Decimal Degrees to Minutes:
-									<br>Latitude: .4880 degrees * 60 = 29.28 minutes
-									<br>Longitude: .7232 degrees * 60 = 43.392 minutes
-									<br>N47°29.28' W121°43.392'</p>
-								</div>
-							</div>
-						</div>
-					</div>
+					<c-quiz-item
+						prompt="Convert N47.4880° W121.7232° to Degrees Decimal Minutes."
+						answer="N47°29.28' W121°43.392'"
+						explain="<br>Convert the Decimal Degrees to Minutes:<br>Latitude: .4880 degrees * 60 = 29.28 minutes<br>Longitude: .7232 degrees * 60 = 43.392 minutes<br>N47°29.28' W121°43.392'</p>"
+					></c-quiz-item>
 
-					<div class="w3-container w3-card w3-margin-top w3-margin-bottom">
-						<p>Convert N47°32'28.1" W122°10'28.2" to Decimal Degress.</p>
-						<button onclick="myAccFunc('Q104')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right w3-margin">Show/Hide Answer</button>
-						<div id="Q104" class="w3-hide">
-							<div class="w3-container w3-margin">
-								<div class="w3-container w3-third">
-									<b>Answer:</b>
-									<p>N47.541138° W122.174500°</p>
-								</div>
-								<div class="w3-container w3-twothird">
-									<b>Explanation:</b>
-									<br>First convert the Seconds to Decimal Minutes:
-									<br>Latitude: 28.1 seconds / 60 = .4683 minutes
-									<br>Longitude: 28.2 seconds / 60 = .4700 minutes
-									<br>N47°32.4683' W122°10.4700'</p>
-									<p>Next convert the Minutes to Decimal Degrees:
-									<br>Latitude: 32.4683 minutes / 60 = .541138 degrees
-									<br>Longitude: 10.4700 minutes / 60 = .174500 degrees
-									<br>N47.541138° W122.174500°</p>
-								</div>
-							</div>
-						</div>
-					</div>
+					<c-quiz-item
+						prompt="Convert N47°32'28.1&quot; W122°10'28.2&quot; to Decimal Degress."
+						answer="N47.541138° W122.174500°"
+						explain="<br>First convert the Seconds to Decimal Minutes:<br>Latitude: 28.1 seconds / 60 = .4683 minutes<br>Longitude: 28.2 seconds / 60 = .4700 minutes<br>N47°32.4683' W122°10.4700'</p><p>Next convert the Minutes to Decimal Degrees:<br>Latitude: 32.4683 minutes / 60 = .541138 degrees<br>Longitude: 10.4700 minutes / 60 = .174500 degrees<br>N47.541138° W122.174500°</p>"
+					></c-quiz-item>
 				
 				</div>
 
 				<!-- Pacing Problem Set -->
-				<div class='w3-padding problemSetBody' Id='Pacing_Body' style='display: none;'>
+				<div class='tabcontent' Id='Pacing_Body' style='display: none;'>
 
 					<div class="w3-container">
 						<div class='w3-moblie' style="padding-right: 16px;"><p><b>Pacing is a method to keep track of distance.</b></p><p>A pace is the distance that you travel while walking each time the same foot hits the ground. For example, if you lead (take your first step) with your left foot, then you will count a pace each time your right foot touches the ground. For the purposes of ESAR Basic Training we generally refer to pace in terms of feet.</p></div>
-						<div class='w3-center w3-mobile w3-margin-top w3-margin-bottom'><img class='w3-card w3-mobile' style='max-width: 600px;' src='SiteAssets/1pace.jpg'></div>
+						<div class='w3-center w3-mobile w3-margin-top w3-margin-bottom'><img class='w3-card w3-mobile' style='max-width: 600px;' src='./assets/img/1pace.jpg'></div>
 					</div>
 
 					<div class="w3-container w3-card w3-margin-top w3-margin-bottom">
@@ -412,7 +330,7 @@
 				</div>
 
 				<!-- Mapping Problem Set -->
-				<div class='w3-padding problemSetBody' Id='Mapping_Body' style='display: none;'>
+				<div class='tabcontent' Id='Mapping_Body' style='display: none;'>
 
 						<div class="w3-container">
 							<p>In order to complete this set of problems you will need to print and familiarize yourself with <a href="siteassets/map_01.jpg" target="_blank">The Map  <i class="fa fa-download"></i></a>.</p>
@@ -582,6 +500,29 @@
 <footer></footer>
 
 <script src="./esar.js"></script>
+
+<script>
+	function openTab(evt, cityName) {
+		// Declare all variables
+		var i, tabcontent, tablinks;
+
+		// Get all elements with class="tabcontent" and hide them
+		tabcontent = document.getElementsByClassName("tabcontent");
+		for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		}
+
+		// Get all elements with class="tablinks" and remove the class "active"
+		tablinks = document.getElementsByClassName("tablinks");
+		for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active", "");
+		}
+
+		// Show the current tab, and add an "active" class to the button that opened the tab
+		document.getElementById(cityName).style.display = "block";
+		evt.currentTarget.className += " active";
+	}
+</script>
 
 </body>
 </html>
