@@ -50,10 +50,8 @@ class cQuizItem extends HTMLElement {
                 <div id="prompt"></div>
                 <button>Show/Hide Answer</button>
                 <div id="solution" class="hidden">
-                    <b>Answer:</b>
-                    <p id="answer"></p>
-                    <b>Explanation:</b>
-                    <p id="explain"></p>
+                    <h4>Answer:</h4>
+                    <slot></slot>
                 </div>
             </div>
         `;
@@ -77,12 +75,6 @@ class cQuizItem extends HTMLElement {
             case 'prompt':
                 this.shadowRoot.querySelector('#prompt').innerHTML = newValue;
                 break;
-            case 'answer':
-                this.shadowRoot.querySelector('#answer').innerHTML = newValue;
-                break;
-            case 'explain':
-                this.shadowRoot.querySelector('#explain').innerHTML = newValue;
-                break;
         }
     }
 
@@ -104,22 +96,6 @@ class cQuizItem extends HTMLElement {
 
     set prompt(newValue) {
         this.setAttribute('prompt', newValue);
-    }
-
-    get answer() {
-        return this.getAttribute('answer');
-    }
-
-    set answer(newValue) {
-        this.setAttribute('answer', newValue);
-    }
-
-    get explain() {
-        return this.getAttribute('explain');
-    }
-
-    set explain(newValue) {
-        this.setAttribute('explain', newValue);
     }
 
 }

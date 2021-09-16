@@ -8,42 +8,7 @@
 	<link rel="stylesheet" href="./esar.css">
 
 	<script src='./components/cQuizItem.js'></script>
-
-	<style>
-		.map_container {
-			width: 300px;
-			height: 300px;
-			background-image: url('siteassets/map_01.jpg');
-			background-size: 800px;
-			background-repeat: no-repeat;
-			border: 2px solid black;
-			position: relative;
-		}
-
-		.map_point {
-			width: 16px;
-			height: 16px;
-			border: 2px solid red;
-			border-radius: 50%;
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			margin-left: -8px;
-			margin-top: -8px;
-		}
-		
-		.map_circle {
-			width: 4px;
-			height: 4px;
-			background-color: red;
-			border-radius: 50%;
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			margin-left: -2px;
-			margin-top: -2px;
-		}
-	</style>
+	<script src='./components/cUtmMapPlot.js'></script>
 
 	<style>
 		/* Style the tab */
@@ -98,7 +63,7 @@
 			<div class="card">
 
 				<div class="tab">
-					<button class="tablinks mobile" onclick="openTab(event, 'Tools_Body')">Tools & Review</button>
+					<button class="tablinks mobile active" onclick="openTab(event, 'Tools_Body')">Tools & Review</button>
 					<button class="tablinks mobile" onclick="openTab(event, 'Units_Body')">Unit Conversion</button>
 					<button class="tablinks mobile" onclick="openTab(event, 'Pacing_Body')">Pacing Problems</button>
 					<button class="tablinks mobile" onclick="openTab(event, 'Mapping_Body')">Mapping Problems</button>
@@ -150,8 +115,8 @@
 					<div class='padding-bottom'>
 						<p>In order to complete this supplemental coursework you will need some basic tools. These items are included in the navigation kit that you will receive at Course B. However, if you have not yet received your navigation kit then these printable versions will be sufficient for now.</p>
 						<p><b>Pencil</b> - Pencils are preferable because you may need to make corrections or revise your plan.</p>
-						<p><b>Ruler</b> - A tenths ruler makes calculations easier than a standard ruler. <a href='siteassets/tenths-ruler.pdf'>Tenths Ruler PDF <i class="fa fa-download"></i></a></p>
-						<p><b>Protractor</b> - A 360° protractor, clear is preferable. <a href='siteassets/protractor.pdf'>Protractor PDF <i class="fa fa-download"></i></a></p>
+						<p><b>Ruler</b> - A tenths ruler makes calculations easier than a standard ruler. <a href='./assets/doc/tenths-ruler.pdf'>Tenths Ruler PDF <i class="fa fa-download"></i></a></p>
+						<p><b>Protractor</b> - A 360° protractor, clear is preferable. <a href='./assets/doc/protractor.pdf'>Protractor PDF <i class="fa fa-download"></i></a></p>
 						<p><b>Calculator</b> - A basic calculator for doing simple math.</p>
 					</div>
 					
@@ -186,61 +151,68 @@
 					
 					<h1 class="sub-header-1">Units of Measurement</h1>
 
-					<c-quiz-item
-						prompt="Convert 5 centimeters to inches."
-						answer="1.9685in"
-						explain="5cm / 2.54cm/in = 1.9685 inches"
-					></c-quiz-item>
+					<c-quiz-item prompt="Convert 5 centimeters to inches.">
+						<p class="padding-bottom">1.9685in</p>
+						<p>5cm / 2.54cm/in = 1.9685 inches</p>
+					</c-quiz-item>
 
-					<c-quiz-item
-						prompt="Convert 3.4 inches to centimeters."
-						answer="8.636cm"
-						explain="3.4in * 2.54cm/in = 8.636 centimeters"
-					></c-quiz-item>
+					<c-quiz-item prompt="Convert 3.4 inches to centimeters.">
+						<p class="padding-bottom">8.636cm</p>
+						<p>3.4in * 2.54cm/in = 8.636 centimeters</p>
+					</c-quiz-item>
 
-					<c-quiz-item
-						prompt="How many kilometers is 1 mile?"
-						answer="1.61km"
-						explain="5280ft / 3.28ft/m = ~1610 meters<br>1610m / 1000m/km = 1.61 kilometers"
-					></c-quiz-item>
+					<c-quiz-item prompt="How many kilometers is 1 mile?">
+						<p class="padding-bottom">1.61km</p>
+						<p>5280ft / 3.28ft/m = ~1610 meters<br>1610m / 1000m/km = 1.61 kilometers</p>
+					</c-quiz-item>
 
-					<c-quiz-item
-						prompt="You are riding with 4x4 to your assignment location. The assignment begins 1100 meters past a forest service gate. The 4x4 driver can use their trip meter to help determine how far to drive. How many tenths of a mile should they drive?"
-						answer="Approximately 7 tenths of a mile."
-						explain="3608ft / 5280ft/mi = 0.68 miles"
-					></c-quiz-item>
+					<c-quiz-item prompt="You are riding with 4x4 to your assignment location. The assignment begins 1100 meters past a forest service gate. The 4x4 driver can use their trip meter to help determine how far to drive. How many tenths of a mile should they drive?">
+						<p class="padding-bottom">Approximately 7 tenths of a mile.</p>
+						<p>3608ft / 5280ft/mi = 0.68 miles</p>
+					</c-quiz-item>
 
 					<h1 class="sub-header-1">Coordinate Systems</h1>
 
-					<c-quiz-item
-						prompt="How many Minutes is 54.6 Seconds?"
-						answer="0.91 Minutes"
-						explain="54.6 seconds / 60 seconds per minute = 0.91 Minutes"
-					></c-quiz-item>
+					<c-quiz-item prompt="How many Minutes is 54.6 Seconds?">
+						<p class="padding-bottom">0.91 Minutes</p>
+						<p>54.6 seconds / 60 seconds per minute = 0.91 Minutes</p>
+					</c-quiz-item>
 
-					<c-quiz-item
-						prompt="How many Seconds is 0.70 Minutes?"
-						answer="42 Seconds"
-						explain="0.70 Minutes * 60 seconds per minute = 42 Seconds"
-					></c-quiz-item>
+					<c-quiz-item prompt="How many Seconds is 0.70 Minutes?">
+						<p class="padding-bottom">42 Seconds</p>
+						<p>0.70 Minutes * 60 seconds per minute = 42 Seconds</p>
+					</c-quiz-item>
 
-					<c-quiz-item
-						prompt="How many Minutes is 0.8059 Degrees?"
-						answer="48.354 Minutes"
-						explain="0.8059 degrees * 60 minutes per degree = 48.354 Minutes"
-					></c-quiz-item>
+					<c-quiz-item prompt="How many Minutes is 0.8059 Degrees?">
+						<p class="padding-bottom">48.354 Minutes</p>
+						<p>0.8059 degrees * 60 minutes per degree = 48.354 Minutes</p>
+					</c-quiz-item>
 
-					<c-quiz-item
-						prompt="Convert N47.4880° W121.7232° to Degrees Decimal Minutes."
-						answer="N47°29.28' W121°43.392'"
-						explain="<br>Convert the Decimal Degrees to Minutes:<br>Latitude: .4880 degrees * 60 = 29.28 minutes<br>Longitude: .7232 degrees * 60 = 43.392 minutes<br>N47°29.28' W121°43.392'</p>"
-					></c-quiz-item>
+					<c-quiz-item prompt="Convert N47.4880° W121.7232° to Degrees Decimal Minutes.">
+						<p class="padding-bottom">N47°29.28' W121°43.392'</p>
+						<p>
+							    Convert the Decimal Degrees to Minutes:
+							<br>Latitude: .4880 degrees * 60 = 29.28 minutes
+							<br>Longitude: .7232 degrees * 60 = 43.392 minutes
+							<br>N47°29.28' W121°43.392'
+						</p>
+					</c-quiz-item>
 
-					<c-quiz-item
-						prompt="Convert N47°32'28.1&quot; W122°10'28.2&quot; to Decimal Degress."
-						answer="N47.541138° W122.174500°"
-						explain="<br>First convert the Seconds to Decimal Minutes:<br>Latitude: 28.1 seconds / 60 = .4683 minutes<br>Longitude: 28.2 seconds / 60 = .4700 minutes<br>N47°32.4683' W122°10.4700'</p><p>Next convert the Minutes to Decimal Degrees:<br>Latitude: 32.4683 minutes / 60 = .541138 degrees<br>Longitude: 10.4700 minutes / 60 = .174500 degrees<br>N47.541138° W122.174500°</p>"
-					></c-quiz-item>
+					<c-quiz-item prompt="Convert N47°32'28.1&quot; W122°10'28.2&quot; to Decimal Degress.">
+						<p class="padding-bottom">N47.541138° W122.174500°</p>
+						<p class="padding-bottom">
+							    First convert the Seconds to Decimal Minutes:
+							<br>Latitude: 28.1 seconds / 60 = .4683 minutes
+							<br>Longitude: 28.2 seconds / 60 = .4700 minutes
+							<br>N47°32.4683' W122°10.4700'
+						</p>
+						<p>
+							    Next convert the Minutes to Decimal Degrees:
+							<br>Latitude: 32.4683 minutes / 60 = .541138 degrees
+							<br>Longitude: 10.4700 minutes / 60 = .174500 degrees
+							<br>N47.541138° W122.174500°
+						</p>
+					</c-quiz-item>
 				
 				</div>
 
@@ -250,192 +222,70 @@
 					<p class="padding-bottom">Pacing is a method to keep track of distance. A pace is the distance that you travel while walking each time the same foot hits the ground. For example, if you lead (take your first step) with your left foot, then you will count a pace each time your right foot touches the ground. For the purposes of ESAR Basic Training we generally refer to pace in terms of feet.</p>
 					<div class="mobile"><img class='w3-card w3-mobile' style='max-width: 600px;' src='./assets/img/1pace.jpg'></div>
 				
-					<c-quiz-item
-						prompt="Joe is calculating his pace. If he walks 1000 feet in 196 paces, what is the length of his pace?"
-						answer="5.10 feet"
-						explain="<p>Joe's pace can be calculated by simply dividing the distance he travelled by the number of paces he took:</p><p>1000 feet / 196 paces = 5.10 feet</p>"
-					></c-quiz-item>
+					<c-quiz-item prompt="Joe is calculating his pace. If he walks 1000 feet in 196 paces, what is the length of his pace?">
+						<p class="padding-bottom">5.10 feet</p>
+						<p>Joe's pace can be calculated by simply dividing the distance he travelled by the number of paces he took:</p><p>1000 feet / 196 paces = 5.10 feet</p>
+					</c-quiz-item>
 
-					<c-quiz-item
-						prompt="Susan's pace is 4.5 feet. If she needs to travel 1140 feet how many paces does she need to take?"
-						answer="Approximately 253 paces"
-						explain="<p>Since the distance and Susan's pace are already expressed in the same units (feet), we can simply divide:</p><p>1140 feet / 4.5 feet = ~253 paces</p>"
-					></c-quiz-item>
+					<c-quiz-item prompt="Susan's pace is 4.5 feet. If she needs to travel 1140 feet how many paces does she need to take?">
+						<p class="padding-bottom">Approximately 253 paces</p>
+						<p>Since the distance and Susan's pace are already expressed in the same units (feet), we can simply divide:</p><p>1140 feet / 4.5 feet = ~253 paces</p>
+					</c-quiz-item>
 
-					<c-quiz-item
-						prompt="Michael's pace is 4.8 feet. If he needs to travel 235 meters how many paces does he need to take?"
-						answer="Approximately 161 paces"
-						explain="<p>Because the distance that Michael needs to travel is expressed in meters, first we need to convert it to feet. By checking the conversion table, we know that 1 meter = 3.28 feet.</p><p>First Convert to Feet: 235 meters * 3.28 feet = Michael needs to travel 770.8 feet</p><p>Then Calculate Paces: 770.8 feet / 4.8 feet = ~161 paces</p>"
-					></c-quiz-item>
+					<c-quiz-item prompt="Michael's pace is 4.8 feet. If he needs to travel 235 meters how many paces does he need to take?">
+						<p class="padding-bottom">Approximately 161 paces</p>
+						<p>Because the distance that Michael needs to travel is expressed in meters, first we need to convert it to feet. By checking the conversion table, we know that 1 meter = 3.28 feet.</p><p>First Convert to Feet: 235 meters * 3.28 feet = Michael needs to travel 770.8 feet</p><p>Then Calculate Paces: 770.8 feet / 4.8 feet = ~161 paces</p>
+					</c-quiz-item>
 
-					<c-quiz-item
-						prompt="Megan and Zoe have partnered for a compass run. Megan's pace is 4.7 feet and Zoe's pace is 5.25 feet. During the compass run both Megan and Zoe were counting their paces, but Zoe forgot what her count was. They stop to confer. Megan has counted 57 paces so far. If Zoe returns to Megan's position, what should her current pace count be?"
-						answer="Approximately 51 paces"
-						explain="<p>First we need to know how far the pair has travelled based on Megan's pace count:</p><p>57 paces * 4.7 feet = ~268 feet</p><p>Next we can calculate how many paces Zoe should have taken by this point:</p><p>268 feet / 5.25 feet = ~51 paces</p>"
-					></c-quiz-item>					
+					<c-quiz-item prompt="Megan and Zoe have partnered for a compass run. Megan's pace is 4.7 feet and Zoe's pace is 5.25 feet. During the compass run both Megan and Zoe were counting their paces, but Zoe forgot what her count was. They stop to confer. Megan has counted 57 paces so far. If Zoe returns to Megan's position, what should her current pace count be?">
+						<p class="padding-bottom">Approximately 51 paces</p>
+						<p>First we need to know how far the pair has travelled based on Megan's pace count:</p><p>57 paces * 4.7 feet = ~268 feet</p><p>Next we can calculate how many paces Zoe should have taken by this point:</p><p>268 feet / 5.25 feet = ~51 paces</p>
+					</c-quiz-item>				
 				
 				</div>
 
 				<!-- Mapping Problem Set -->
-				<div class='tabcontent' Id='Mapping_Body' style='display: none;'>
+				<div class='tabcontent container' Id='Mapping_Body' style='display: none;'>
 
-						<div class="w3-container">
-							<p>In order to complete this set of problems you will need to print and familiarize yourself with <a href="siteassets/map_01.jpg" target="_blank">The Map  <i class="fa fa-download"></i></a>.</p>
-						</div>
+					<p class="padding-bottom">In order to complete this set of problems you will need to print and familiarize yourself with <a href="./assets/img/map_01.jpg" target="_blank" class="inline">The Map  <i class="fa fa-download"></i></a>.</p>
+					
+					<c-quiz-item
+						prompt="Use information available on the map to determine the scale, then check your answer by calculating the distance, in feet, between the ends of the bracket at the bottom of the map, where it says &quot;Check Scale Here.&quot;"
+						answer="The width of the bracket is approximately 1056 Feet"
+						explain="<p>The scale of the map may vary depending on how it was printed. We'll need to use information that is printed on the map to determine its scale. The best indication of scale on this map is the UTM grid, the width of which is a known distance, 1000 meters.</p><p>To calculate the scale:<ol style=&quot;margin-left:16px;&quot;><li>Measure the distance between the UTM grid lines on the map using your preferred unit of measure, generally either inches or centimeters.<li>Divide 1000m by your measurement, for example if you measured the grid to be 5 inches wide: 1000m/5in = 200m/in.<li>Next, convert meters to feet (1m = 3.28ft). Continuing the example from above, 200m/in * 3.28ft/m = 656ft/in. This is your scale!<li>Finally to check your answer, measure the distance between the ends of the bracket, then multiply by your scale. e.g. 1.6in * 656ft/in = 1056 feet.</ol></p>"
+					></c-quiz-item>
 
-						<div class="w3-container w3-card w3-margin-top w3-margin-bottom">
-							<p>Use information available on the map to determine the scale, then check your answer by calculating the distance, in feet, between the ends of the bracket at the bottom of the map, where it says "Check Scale Here."</p>
-							<button onclick="myAccFunc('Q001')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right w3-margin">Show/Hide Answer</button>
-							<div id="Q001" class="w3-hide">
-								<div class="w3-container w3-margin">
-								<div class="w3-container w3-third">
-									<strong>Answer:</strong>
-									<p>The width of the bracket is approximately 1056 Feet</p>
-								</div>
-								<div class="w3-container w3-twothird">
-									<strong>Explanation:</strong>
-									<p>The scale of the map may vary depending on how it was printed. We'll need to use information that is printed on the map to determine its scale. The best indication of scale on this map is the UTM grid, the width of which is a known distance, 1000 meters.</p>
-									<p>
-										To calculate the scale:
-										<ol>
-											<li>Measure the distance between the UTM grid lines on the map using your preferred unit of measure, generally either inches or centimeters.
-											<li>Divide 1000m by your measurement, for example if you measured the grid to be 5 inches wide: 1000m/5in = 200m/in.
-											<li>Next, convert meters to feet (1m = 3.28ft). Continuing the example from above, 200m/in * 3.28ft/m = 656ft/in. This is your scale!
-											<li>Finally to check your answer, measure the distance between the ends of the bracket, then multiply by your scale. e.g. 1.6in * 656ft/in = 1056 feet.
-										</ol>
-									</p>
-								</div>
-								</div>
-							</div>
-						</div>
-						
-						<div class="w3-container w3-card w3-margin-top w3-margin-bottom">
-							<p><br>Plot 10T 0619350E 5253637N</p>
-							<button onclick="myAccFunc('Q002')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right w3-margin">Show/Hide Answer</button>
-							<div id="Q002" class="w3-hide">
-								<div class="w3-container w3-margin">
-								<div class="w3-container w3-left">
-									<div class="map_container" style="background-position: -140px -201px;"><div class="map_point"></div><div class="map_circle"></div></div>
-								</div>
-								<div class="w3-container w3-left">
-									<strong>Explanation:</strong>
-									<p>The bottom of Julie's Chair</p>
-								</div>
-								</div>
-							</div>
-						</div>
-						
-						<div class="w3-container w3-card w3-margin-top w3-margin-bottom">
-							<p>Plot 10T 0619708E 5252790N</p>
-							<button onclick="myAccFunc('Q003')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right w3-margin">Show/Hide Answer</button>
-							<div id="Q003" class="w3-hide">
-								<div class="w3-container w3-margin">
-								<div class="w3-container w3-left">
-									<div class="map_container" style="background-position: -346px -720px;"><div class="map_point"></div><div class="map_circle"></div></div>
-								</div>
-								<div class="w3-container w3-left">
-									<strong>Explanation:</strong>
-									<p>Intersection northwest of the Fire Station</p>
-								</div>
-								</div>
-							</div>
-						</div>
-						
-						<div class="w3-container w3-card w3-margin-top w3-margin-bottom">
-							<p>Plot 10T 0619693E 5253869N</p>
-							<button onclick="myAccFunc('Q004')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right w3-margin">Show/Hide Answer</button>
-							<div id="Q004" class="w3-hide">
-								<div class="w3-container w3-margin">
-								<div class="w3-container w3-left">
-									<div class="map_container" style="background-position: -350px -65px;"><div class="map_point"></div><div class="map_circle"></div></div>
-								</div>
-								<div class="w3-container w3-left">
-									<strong>Explanation:</strong>
-									<p>Intersection of Pacfic Crest Trail and Old Commonweath Trail</p>
-								</div>
-								</div>
-							</div>
-						</div>
-						
-						<div class="w3-container w3-card w3-margin-top w3-margin-bottom">
-							<p>Plot 10T 0619083E 5253522N</p>
-							<button onclick="myAccFunc('Q005')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right w3-margin">Show/Hide Answer</button>
-							<div id="Q005" class="w3-hide">
-								<div class="w3-container w3-margin">
-								<div class="w3-container w3-left">
-									<div class="map_container" style="background-position: 22px -268px;"><div class="map_point"></div><div class="map_circle"></div></div>
-								</div>
-								<div class="w3-container w3-left">
-									<strong>Explanation:</strong>
-									<p>~3200 Foot Elevation on the Pacific Crest Trail</p>
-								</div>
-								</div>
-							</div>
-						</div>
-						
-						<div class="w3-container w3-card w3-margin-top w3-margin-bottom">
-							<p>Plot 10T 0619104E 5252818N</p>
-							<button onclick="myAccFunc('Q006')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right w3-margin">Show/Hide Answer</button>
-							<div id="Q006" class="w3-hide">
-								<div class="w3-container w3-margin">
-								<div class="w3-container w3-left">
-									<div class="map_container" style="background-position: 19px -695px;"><div class="map_point"></div><div class="map_circle"></div></div>
-								</div>
-								<div class="w3-container w3-left">
-									<strong>Explanation:</strong>
-									<p>Near the top of Easy Rider Chair Lift</p>
-								</div>
-								</div>
-							</div>
-						</div>
-						
-						<div class="w3-container w3-card w3-margin-top w3-margin-bottom">
-							<p>Plot 10T 0619047E 5253858N</p>
-							<button onclick="myAccFunc('Q007')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right w3-margin">Show/Hide Answer</button>
-							<div id="Q007" class="w3-hide">
-								<div class="w3-container w3-margin">
-								<div class="w3-container w3-left">
-									<div class="map_container" style="background-position: 40px -65px;"><div class="map_point"></div><div class="map_circle"></div></div>
-								</div>
-								<div class="w3-container w3-left">
-									<strong>Explanation:</strong>
-									<p>Pacific Crest Trailhead - Summit West</p>
-								</div>
-								</div>
-							</div>
-						</div>
-						
-						<div class="w3-container w3-card w3-margin-top w3-margin-bottom">
-							<p>From the intersection at 10T 0619742E 5252932N walk northbound on the road for 216m.</p>
-							<button onclick="myAccFunc('Q008')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right w3-margin">Show/Hide Answer</button>
-							<div id="Q008" class="w3-hide">
-								<div class="w3-container w3-margin">
-								<div class="w3-container w3-left">
-									<div class="map_container" style="background-position: -400px -475px;"><div class="map_point"></div><div class="map_circle"></div></div>
-								</div>
-								<div class="w3-container w3-left">
-									<strong>Explanation:</strong>
-									<p>On WA 906 in front of the Museum</p>
-								</div>
-								</div>
-							</div>
-						</div>
-						
-						<div class="w3-container w3-card w3-margin-top w3-margin-bottom">
-							<p>Follow the Dodge Ridge Chairlift uphill until you reach 3160ft elevation, then travel 355ft on a bearing of 186&deg;T</p>
-							<button onclick="myAccFunc('Q009')" class="w3-padding-16 w3-theme w3-button w3-left-align w3-right w3-margin">Show/Hide Answer</button>
-							<div id="Q009" class="w3-hide">
-								<div class="w3-container w3-margin">
-								<div class="w3-container w3-left">
-									<div class="map_container" style="background-position: -58px -437px;"><div class="map_point"></div><div class="map_circle"></div></div>
-								</div>
-								<div class="w3-container w3-left">
-									<strong>Explanation:</strong>
-									<p>On the slope between the Dodge Ridge and Little Thunder Chairlifts</p>
-								</div>
-								</div>
-							</div>
-						</div>
+					<c-quiz-item prompt="Plot 10T 0619350E 5253637N">
+						<c-utm-map-plot easting="0619350" northing="5253637"></c-utm-map-plot>
+					</c-quiz-item>
+
+					<c-quiz-item prompt="Plot 10T 0619708E 5252790N">
+						<c-utm-map-plot easting="0619708" northing="5252790"></c-utm-map-plot>
+					</c-quiz-item>
+
+					<c-quiz-item prompt="Plot 10T 0619693E 5253869N">
+						<c-utm-map-plot easting="0619693" northing="5253869"></c-utm-map-plot>
+					</c-quiz-item>
+
+					<c-quiz-item prompt="Plot 10T 0619083E 5253522N">
+						<c-utm-map-plot easting="0619083" northing="5253522"></c-utm-map-plot>
+					</c-quiz-item>
+
+					<c-quiz-item prompt="Plot 10T 0619104E 5252818N">
+						<c-utm-map-plot easting="0619104" northing="5252818"></c-utm-map-plot>
+					</c-quiz-item>
+
+					<c-quiz-item prompt="Plot 10T 0619047E 5253858N">
+						<c-utm-map-plot easting="0619047" northing="5253858"></c-utm-map-plot>
+					</c-quiz-item>
+
+					<c-quiz-item prompt="From the intersection at 10T 0619742E 5252932N walk northbound on the road for 216m.">
+						<c-utm-map-plot easting="0619789" northing="5253195"></c-utm-map-plot>
+					</c-quiz-item>
+
+					<c-quiz-item prompt="Follow the Dodge Ridge Chairlift uphill until you reach 3160ft elevation, then travel 355ft on a bearing of 186&deg;T">
+						<c-utm-map-plot easting="0619224" northing="5253249"></c-utm-map-plot>
+					</c-quiz-item>					
 					
 				</div>
 			</div>
@@ -449,7 +299,7 @@
 <script src="./esar.js"></script>
 
 <script>
-	function openTab(evt, cityName) {
+	function openTab(evt, tabName) {
 		// Declare all variables
 		var i, tabcontent, tablinks;
 
@@ -466,7 +316,7 @@
 		}
 
 		// Show the current tab, and add an "active" class to the button that opened the tab
-		document.getElementById(cityName).style.display = "block";
+		document.getElementById(tabName).style.display = "block";
 		evt.currentTarget.className += " active";
 	}
 </script>
