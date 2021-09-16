@@ -287,6 +287,8 @@
 						<c-utm-map-plot easting="0619224" northing="5253249"></c-utm-map-plot>
 					</c-quiz-item>					
 					
+					<p class="card-btn" style="cursor: pointer;" id="moar-maps" onclick="console.log(addRandomMapProblem())"><a class="btn btn-green">Add a Randomized Plot Question</a></p>
+
 				</div>
 			</div>
 		</div>
@@ -318,6 +320,33 @@
 		// Show the current tab, and add an "active" class to the button that opened the tab
 		document.getElementById(tabName).style.display = "block";
 		evt.currentTarget.className += " active";
+	}
+
+	function addRandomMapProblem() {
+		let mappingBody = document.querySelector('#Mapping_Body');
+		let randomCoordinates = getRandomCoordinates();
+		
+		let quizItem = document.createElement('c-quiz-item');
+		quizItem.setAttribute('prompt', `Plot 10T 0${randomCoordinates.x}E ${randomCoordinates.y}N`);
+		
+		let utmMapPlot = document.createElement('c-utm-map-plot');
+		utmMapPlot.setAttribute('easting', randomCoordinates.x);
+		utmMapPlot.setAttribute('northing', randomCoordinates.y);
+
+		quizItem.appendChild(utmMapPlot);
+
+		mappingBody.insertBefore(quizItem, document.querySelector('#moar-maps'));
+	}
+
+	function getRandomCoordinates() {
+		return {
+			x: 619000 - 50 + getRandomInt(1150),
+			y: 5253000 -300 + getRandomInt(1400)
+		}
+	}
+
+	function getRandomInt(max) {
+		return Math.floor(Math.random() * max);
 	}
 </script>
 
