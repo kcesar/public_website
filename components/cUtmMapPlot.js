@@ -122,14 +122,8 @@ class cUtmMapPlot extends HTMLElement {
     }
 
     getMapContainerPlot() {
-        console.log(this.easting);
-        console.log(this.northing);
-
         this._easting = (this.easting - this.orgiinUTM.easting) * this.eastingScale;
 		this._northing = (this.northing - this.orgiinUTM.northing) * this.northingScale;
-
-        console.log(this._easting);
-        console.log(this._northing);
 
         let eastingPlot = {
             x: this.origin.x + (this._easting * Math.sqrt(1/(1+Math.pow(this.eastingSlope,2)))),
@@ -149,7 +143,6 @@ class cUtmMapPlot extends HTMLElement {
 
     _draw(){
         let offsets = this.getMapContainerPlot();
-        console.log(offsets);
         this.shadowRoot.querySelector('.map_container').style.backgroundPosition=`${offsets.x}px ${offsets.y}px`;
     }
 

@@ -249,11 +249,19 @@
 
 					<p class="padding-bottom">In order to complete this set of problems you will need to print and familiarize yourself with <a href="./assets/img/map_01.jpg" target="_blank" class="inline">The Map  <i class="fa fa-download"></i></a>.</p>
 					
-					<c-quiz-item
-						prompt="Use information available on the map to determine the scale, then check your answer by calculating the distance, in feet, between the ends of the bracket at the bottom of the map, where it says &quot;Check Scale Here.&quot;"
-						answer="The width of the bracket is approximately 1056 Feet"
-						explain="<p>The scale of the map may vary depending on how it was printed. We'll need to use information that is printed on the map to determine its scale. The best indication of scale on this map is the UTM grid, the width of which is a known distance, 1000 meters.</p><p>To calculate the scale:<ol style=&quot;margin-left:16px;&quot;><li>Measure the distance between the UTM grid lines on the map using your preferred unit of measure, generally either inches or centimeters.<li>Divide 1000m by your measurement, for example if you measured the grid to be 5 inches wide: 1000m/5in = 200m/in.<li>Next, convert meters to feet (1m = 3.28ft). Continuing the example from above, 200m/in * 3.28ft/m = 656ft/in. This is your scale!<li>Finally to check your answer, measure the distance between the ends of the bracket, then multiply by your scale. e.g. 1.6in * 656ft/in = 1056 feet.</ol></p>"
-					></c-quiz-item>
+					<c-quiz-item prompt="Use information available on the map to determine the scale, then check your answer by calculating the distance, in feet, between the ends of the bracket at the bottom of the map, where it says &quot;Check Scale Here.&quot;">
+						<p class="padding-bottom">The width of the bracket is approximately 1056 Feet</p>
+						<p class="padding-bottom">The scale of the map may vary depending on how it was printed. We'll need to use information that is printed on the map to determine its scale. The best indication of scale on this map is the UTM grid, the width of which is a known distance, 1000 meters.</p>
+						<p>
+							To calculate the scale:
+							<ol style="margin-left:16px;">
+								<li>Measure the distance between the UTM grid lines on the map using your preferred unit of measure, generally either inches or centimeters.
+								<li>Divide 1000m by your measurement, for example if you measured the grid to be 5 inches wide: 1000m/5in = 200m/in.
+								<li>Next, convert meters to feet (1m = 3.28ft). Continuing the example from above, 200m/in * 3.28ft/m = 656ft/in. This is your scale!
+								<li>Finally to check your answer, measure the distance between the ends of the bracket, then multiply by your scale. e.g. 1.6in * 656ft/in = 1056 feet.
+							</ol>
+						</p>
+					</c-quiz-item>
 
 					<c-quiz-item prompt="Plot 10T 0619350E 5253637N">
 						<c-utm-map-plot easting="0619350" northing="5253637"></c-utm-map-plot>
@@ -279,7 +287,7 @@
 						<c-utm-map-plot easting="0619047" northing="5253858"></c-utm-map-plot>
 					</c-quiz-item>
 
-					<c-quiz-item prompt="From the intersection at 10T 0619742E 5252932N walk northbound on the road for 216m.">
+					<c-quiz-item prompt="From the intersection at 10T 0619742E 5252932N walk northbound on the road for 290m.">
 						<c-utm-map-plot easting="0619789" northing="5253195"></c-utm-map-plot>
 					</c-quiz-item>
 
@@ -287,7 +295,7 @@
 						<c-utm-map-plot easting="0619224" northing="5253249"></c-utm-map-plot>
 					</c-quiz-item>					
 					
-					<p class="card-btn" style="cursor: pointer;" id="moar-maps" onclick="console.log(addRandomMapProblem())"><a class="btn btn-green">Add a Randomized Plot Question</a></p>
+					<p class="card-btn" style="cursor: pointer;" id="moar-maps" onclick="addRandomMapProblem()"><a class="btn btn-green">Add a Randomized Plot Question</a></p>
 
 				</div>
 			</div>
