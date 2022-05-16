@@ -53,7 +53,7 @@ function addHeader() {
     mainMenu.appendChild(getListItem(getLink('./about.html', document.createTextNode('About Us'), ['menu-item'])));
     mainMenu.appendChild(getListItem(getLink('./donate.html', document.createTextNode('Donate'), ['menu-item'])));
     mainMenu.appendChild(getListItem(getLink('./recruiting.html', document.createTextNode('Join'), ['menu-item'])));
-    mainMenu.appendChild(getListItem(getLink('./members.html', document.createTextNode('Members'), ['menu-item'])));
+    mainMenu.appendChild(getListItem(getLink('https://accounts.google.com/AccountChooser/signinchooser?continue=https%3A%2F%2Fsites.google.com%2Fkcesar.org%2Fmembers&amp;flowName=GlifWebSignIn&amp;flowEntry=AccountChooser', document.createTextNode('Members'), ['menu-item'])));
     mainMenu.appendChild(getListItem(getLink('./contacts.html', document.createTextNode('Contact'), ['menu-item'])));
     navMenu.appendChild(mainMenu);
 
