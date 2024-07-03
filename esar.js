@@ -15,7 +15,7 @@ window.onload = () => {
         }
     });
 }
-    
+
 function addHeader() {
     let header = document.querySelector('header');
     if (header === null) {
@@ -111,12 +111,12 @@ function addFooter() {
 
     // Add Logo
     container.appendChild(getImg('./assets/logo/logo_kcesar_300x300.png', ['wordmark-logo']));
-    
+
     // Add Wordmark
     let wordmark = document.createElement('div');
     wordmark.classList.add('wordmark');
     wordmark.appendChild(getHeading('2', null, document.createTextNode('King County ESAR')));
-    wordmark.appendChild(getParagraph(null, document.createTextNode('© KCESAR • PO Box 1266 • North Bend, WA 98045')));
+    wordmark.appendChild(getParagraph(null, document.createTextNode('© KCESAR • PO Box 40152 • Bellevue, WA 98015')));
     container.appendChild(wordmark);
 
     // Add Links
