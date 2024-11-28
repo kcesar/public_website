@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-3xl md:text-5xl;
+  }
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+  p {
+    @apply text-sm lg:text-lg;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .h-screen {
+    height: 100vh;
+    max-height: -webkit-fill-available !important;
+  }
+}
