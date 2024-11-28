@@ -1,9 +1,6 @@
 <h2 align="center">
 <img src=".github/images/readme-logo.png" alt="King County Explorer Search and Rescue Public Website, with logo" width="800">
 </h2>
-<h2 align="center">
-  The Modern Website for King County Explorer Search and Rescue
-</h2>
 
 <div align="center">
 
