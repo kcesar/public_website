@@ -1,6 +1,3 @@
-<h1 align="center">
-  kcesar_2024_website
-</h1>
 <h2 align="center">
 <img src=".github/images/readme-logo.png" alt="King County Explorer Search and Rescue Public Website, with logo" width="800">
 </h2>
