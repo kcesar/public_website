@@ -69,7 +69,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'app'
+          app-name: 'kcesar-next'
           slot-name: 'Production'
           startup-command: 'pm2 start release/standalone/server.js --no-daemon'
           package: .
