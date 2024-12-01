@@ -71,5 +71,5 @@ jobs:
         with:
           app-name: 'kcesar-next'
           slot-name: 'Production'
-          startup-command: 'pm2 start release/standalone/server.js --no-daemon'
+          startup-command: 'node release/standalone/server.js'
           package: .
