@@ -65,6 +65,5 @@ jobs:
         with:
           app-name: 'kcesar-web'
           slot-name: 'Production'
-          startup-command: 'node release/standalone/server.js'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5A0BC40F82894AC29579A4AFBBE8EB27 }}
           package: .
