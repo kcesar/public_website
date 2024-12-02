@@ -28,7 +28,14 @@ jobs:
           npm run test --if-present
 
       - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
+        run: |
+          mkdir -p release
+          cp next.config.js release
+          cp -r public release
+          cp package.json release
+          cp -r build/standalone release
+          cp -r build/static release
+          zip -r release.zip release
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
@@ -58,5 +65,6 @@ jobs:
         with:
           app-name: 'kcesar-web'
           slot-name: 'Production'
+          startup-command: 'node release/standalone/server.js'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5A0BC40F82894AC29579A4AFBBE8EB27 }}
           package: .
