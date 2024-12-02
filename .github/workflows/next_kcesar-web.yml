@@ -30,11 +30,9 @@ jobs:
       - name: Zip artifact for deployment
         run: |
           mkdir -p release
-          cp next.config.js release
+          cp -r build/standalone/* release
+          cp -r build/static release/build
           cp -r public release
-          cp package.json release
-          cp -r build/standalone release
-          cp -r build/static release
           zip -r release.zip release
 
       - name: Upload artifact for deployment job
