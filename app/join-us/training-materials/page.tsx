@@ -27,17 +27,17 @@ export default async function TrainingMaterials() {
           <LinkCard
             title="Basic Training Orientation Packet"
             content="Information surrounding basic training including membership requirements, training courses overview, and more."
-            href="https://kcesar.org/assets/doc/ESAR_TrainingPacket.pdf"
+            href="/assets/doc/ESAR_TrainingPacket.pdf"
           />
           <LinkCard
             title="Code of Conduct"
             content="King County Explorer Search and Rescue's offical document concerning personnel conduct."
-            href="https://kcesar.org/assets/doc/KCESAR_Code_of_Conduct.pdf"
+            href="/assets/doc/KCESAR_Code_of_Conduct.pdf"
           />
           <LinkCard
             title="48hr Pack List"
             content='Official gear list for a "48 hour" backpack, used in training and mission response.'
-            href="https://kcesar.org/assets/doc/48_Hour_Pack_2022.pdf"
+            href="/assets/doc/48_Hour_Pack_2022.pdf"
           />
           <LinkCard
             title="Training Schedule"
