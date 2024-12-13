@@ -227,6 +227,12 @@ const locations: CourseLocation[] = [
       name: "Issaquah Senior Center",
       street_address: "75 NE Creek Way, Issaquah, WA 98027",
       google_maps_url: "https://maps.app.goo.gl/WiByrxSTcvVZLwcKA"
+    },
+    {
+      id: "VLYCMP",
+      name: "Valley Camp",
+      street_address: "49515 SE Middle Fork Rd, North Bend, WA 98045",
+      google_maps_url: "https://maps.app.goo.gl/pdK6xUkXfiKDGMTE8"
     }
   ];
 
@@ -353,28 +359,21 @@ const sessions: Session[] = [
     },
     {
       course_id: "CRSC",
-      course_date: "November 23-24",
+      course_date: "Deceber 7-8",
       course_start_time: "Sat 6:30am",
       course_end_time: "Sun 4:00pm",
-      location_id: "CAMPED"
-    },
-    {
-      course_id: "CRS1",
-      course_date: "November 23-24",
-      course_start_time: "Sat 6:20am",
-      course_end_time: "Sun 3:00pm",
-      location_id: "CAMPED"
-    },
-    {
-      course_id: "CRS1",
-      course_date: "December 7-8",
-      course_start_time: "Sat 6:20am",
-      course_end_time: "Sun 3:00pm",
-      location_id: "CAMPED"
+      location_id: "VLYCMP"
     },
     {
       course_id: "CRS1",
       course_date: "January 4-5",
+      course_start_time: "Sat 6:20am",
+      course_end_time: "Sun 3:00pm",
+      location_id: "CAMPED"
+    },
+    {
+      course_id: "CRS1",
+      course_date: "January 18-19",
       course_start_time: "Sat 6:20am",
       course_end_time: "Sun 3:00pm",
       location_id: "CAMPED"
