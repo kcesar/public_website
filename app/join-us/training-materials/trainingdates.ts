@@ -415,7 +415,7 @@ const sessions: Session[] = [
     },
     {
       course_id: "SFA2",
-      course_date: "February 22th",
+      course_date: "February 22nd",
       course_start_time: "9:00am",
       course_end_time: "6:00pm",
       location_id: "TBDTBD"
