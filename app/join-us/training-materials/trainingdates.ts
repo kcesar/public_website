@@ -401,24 +401,24 @@ const sessions: Session[] = [
     },
     {
       course_id: "SFA2",
-      course_date: "February 1st",
-      course_start_time: "9:00am",
-      course_end_time: "6:00pm",
-      location_id: "KCSARA"
-    },
-    {
-      course_id: "SFA2",
       course_date: "February 8th",
       course_start_time: "9:00am",
       course_end_time: "6:00pm",
-      location_id: "KCSARA"
+      location_id: "TBDTBD"
     },
     {
       course_id: "SFA2",
       course_date: "February 15th",
       course_start_time: "9:00am",
       course_end_time: "6:00pm",
-      location_id: "KCSARA"
+      location_id: "TBDTBD"
+    },
+    {
+      course_id: "SFA2",
+      course_date: "February 22th",
+      course_start_time: "9:00am",
+      course_end_time: "6:00pm",
+      location_id: "TBDTBD"
     },
     {
       course_id: "CRS3",
