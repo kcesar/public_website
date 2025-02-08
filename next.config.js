@@ -41,6 +41,7 @@ const nextConfig = {
         '/paging-setup': 'https://docs.google.com/forms/d/e/1FAIpQLSfRjUxFUCaQBQ9Xu4ojowPj9NVdyoQYFJBAL5MSnc4IqWmDhQ/viewform',
         '/course-a-registration': 'https://www.signupgenius.com/go/10C0F4FA8AF2AAAFDCE9-50124119-course',
         '/admin-hours': 'https://docs.google.com/forms/d/e/1FAIpQLSeU53MJ5PBhq-7sp2l6ER5R5attix_ApgOV9EtH03R55aANYw/viewform',
+        '/elections': 'https://docs.google.com/forms/d/e/1FAIpQLSdv3DlIg4oGbAoROVfdS4WcV_b_RKAwIQcEP4BaexBISV4vQg/viewform',
       };
 
       return [
