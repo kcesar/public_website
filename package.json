@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "^14.1.4",
+    "next": "^14.2.21",
     "postcss-100vh-fix": "^1.0.2",
     "react": "^18",
     "react-countup": "^6.5.0",
