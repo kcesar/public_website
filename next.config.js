@@ -34,6 +34,7 @@ const nextConfig = {
         '/members': 'https://accounts.google.com/AccountChooser?continue=https://sites.google.com/kcesar.org/members',
         '/sartopo': 'https://caltopo.com',
         '/database': 'https://kcsara.d4h.org',
+        '/rig.html': '/rig',
       };
       const temp = {
         '/apply': 'https://forms.gle/wag18kY9xHgMY3rb7',
@@ -42,6 +43,7 @@ const nextConfig = {
         '/course-a-registration': 'https://www.signupgenius.com/go/10C0F4FA8AF2AAAFDCE9-50124119-course',
         '/admin-hours': 'https://docs.google.com/forms/d/e/1FAIpQLSeU53MJ5PBhq-7sp2l6ER5R5attix_ApgOV9EtH03R55aANYw/viewform',
         '/elections': 'https://docs.google.com/forms/d/e/1FAIpQLSdv3DlIg4oGbAoROVfdS4WcV_b_RKAwIQcEP4BaexBISV4vQg/viewform',
+        '/rig': 'https://docs.google.com/forms/d/e/1FAIpQLSck1SruL9W8_RSLvpFRblAW02pFybIEhKaIvH_ZhxW-FxEbnA/viewform',
       };
 
       return [
