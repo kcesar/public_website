@@ -35,6 +35,7 @@ const nextConfig = {
         '/sartopo': 'https://caltopo.com',
         '/database': 'https://kcsara.d4h.org',
         '/rig.html': '/rig',
+        '/slack': 'https://kingcountyesar.slack.com/',
       };
       const temp = {
         '/apply': 'https://forms.gle/wag18kY9xHgMY3rb7',
