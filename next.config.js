@@ -34,6 +34,7 @@ const nextConfig = {
         '/members': 'https://accounts.google.com/AccountChooser?continue=https://sites.google.com/kcesar.org/members',
         '/sartopo': 'https://caltopo.com',
         '/database': 'https://kcsara.d4h.org',
+        '/slack': 'https://kingcountyesar.slack.com/',
       };
       const temp = {
         '/apply': 'https://forms.gle/wag18kY9xHgMY3rb7',
