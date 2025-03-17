@@ -233,6 +233,12 @@ const locations: CourseLocation[] = [
       name: "Valley Camp",
       street_address: "49515 SE Middle Fork Rd, North Bend, WA 98045",
       google_maps_url: "https://maps.app.goo.gl/pdK6xUkXfiKDGMTE8"
+    },
+    {
+      id: "SMRMRC",
+      name: "SMR Mountain Rescue Center",
+      street_address: "43403 SE 128th Pl, North Bend, WA 98045",
+      google_maps_url: "https://maps.app.goo.gl/ri3sD7ETWbQgRBKY9"
     }
   ];
 
@@ -446,7 +452,7 @@ const sessions: Session[] = [
       course_date: "March 25th",
       course_start_time: "6:30pm",
       course_end_time: "9:30pm",
-      location_id: "KCSARA"
+      location_id: "SMRMRC"
     },
     {
       course_id: "OPS1",
