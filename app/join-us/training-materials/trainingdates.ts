@@ -464,9 +464,9 @@ const sessions: Session[] = [
     {
       course_id: "GRAD",
       course_date: "April 6th",
-      course_start_time: "1:00pm",
-      course_end_time: "4:00pm",
-      location_id: "TBDTBD"
+      course_start_time: "2:30pm",
+      course_end_time: "5:00pm",
+      location_id: "ISSYSC"
     }
   ]
 
