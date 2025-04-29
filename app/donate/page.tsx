@@ -40,6 +40,15 @@ let donateOptions: DonateCardProps[] = [
 ];
 
 export default async function Donate() {
+
+  const callToAction = `
+    ESAR is King County's primary wilderness ground search and rescue organization. 
+    Our members are outdoor enthusiasts with a passion for helping those in need. 
+    100% of funding for training, operations, and critical, life-saving equipment 
+    comes from generous donations by local businesses, the communities that we serve, 
+    our volunteers, and people like you.
+  `;
+
   return (
     <BasicLayout>
       <Banner
@@ -50,9 +59,9 @@ export default async function Donate() {
       <BasicBody>
         <Subtitle content="King County Explorer Search & Rescue (ESAR) is a 501(c)(3) Volunteer Organization" />
         <div className="py-5" />
-        Our members respond to over 150 emergencies every year.
+        <span>Our members respond to over 150 emergencies every year.</span>
         <div className="py-4" />
-        ESAR is King County's primary wilderness ground search and rescue organization. Our members are outdoor enthusiasts with a passion for helping those in need. 100% of funding for training, operations, and critical, life-saving equipment comes from generous donations by local businesses, the communities that we serve, our volunteers, and people like you.
+        <span>{callToAction}</span>
         <div className="divider py-5" />
         <Subtitle content="General Donations: Here's a few easy ways to donate!" />
         <div className="flex flex-wrap justify-center gap-10 pt-10">
