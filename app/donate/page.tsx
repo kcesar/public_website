@@ -48,14 +48,11 @@ export default async function Donate() {
         alt="Rescuers navigating a litter over an obstacle"
       />
       <BasicBody>
-        <Subtitle content="We are fundraising for a new rescue truck!" />
+        <Subtitle content="King County Explorer Search & Rescue (ESAR) is a 501(c)(3) Volunteer Organization" />
         <div className="py-5" />
-        <BasicImage
-          location="/kcesar/new_truck/truck-render.png"
-          alt="A preview render of a future rescue truck"
-        />
+        Our members respond to over 150 emergencies every year.
         <div className="py-4" />
-        <BasicLink href="/truck" title="View Plans and Donation Options" />
+        ESAR is King County's primary wilderness ground search and rescue organization. Our members are outdoor enthusiasts with a passion for helping those in need. 100% of funding for training, operations, and critical, life-saving equipment comes from generous donations by local businesses, the communities that we serve, our volunteers, and people like you.
         <div className="divider py-5" />
         <Subtitle content="General Donations: Here's a few easy ways to donate!" />
         <div className="flex flex-wrap justify-center gap-10 pt-10">
