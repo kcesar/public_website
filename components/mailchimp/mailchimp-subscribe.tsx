@@ -40,6 +40,7 @@ export default function MailchimpSubscribeForm() {
         {fields.map(input => 
           <input
             { ...input }
+            disabled={isSubmitting}
             key={input.name}
             className="input input-xl input-neutral border border-gray-800 w-64"
           />
