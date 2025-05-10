@@ -1,5 +1,6 @@
 import Image from "next/image";
 import BasicLink from "../navigation/basiclink";
+import MailchimpSubscibeModal from "../mailchimp/mailchimp-subscribe-modal";
 
 export default function Hero() {
   return (
@@ -26,7 +27,12 @@ export default function Hero() {
           Rescue organizations established in the United States and the largest
           of nine member-units of the King County Search & Rescue Association.
         </p>
-        <BasicLink title="Join Us" href="/join-us" />
+        <div className="flex flex-col gap-2 justify-center items-center">
+          <BasicLink title="Join Us" href="/join-us" />
+          <div className="hidden md:inline-block xl:hidden">
+            <MailchimpSubscibeModal />
+          </div>
+        </div>
       </div>
     </div>
   );

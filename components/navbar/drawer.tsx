@@ -2,6 +2,8 @@ import Link from "next/link";
 import { FaBarsStaggered } from "react-icons/fa6";
 import Logo from "./logo";
 import { NavLink } from "./navlink";
+import MailchimpSubscibeModal from "../mailchimp/mailchimp-subscribe-modal";
+import DonateButton from "../donate/button";
 
 export default function Drawer({ navlinks }: { navlinks: NavLink[] }) {
   function timeout(delay: number) {
@@ -62,6 +64,12 @@ export default function Drawer({ navlinks }: { navlinks: NavLink[] }) {
           ))}
 
           <li className="grow pointer-events-none bg-inherit" />
+          <li>
+            <MailchimpSubscibeModal />
+          </li>
+          <li className="flex items-center">
+            <DonateButton />
+          </li>
           <li className="pointer-events-none">
             <div className="flex justify-center items-center p-4">
               <Logo />
