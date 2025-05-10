@@ -3,27 +3,29 @@
 import Link from "next/link";
 import Logo from "@/components/navbar/logo";
 import { usePathname } from "next/navigation";
+import { NavLink } from "./navlink";
 
-export default function Links() {
+export default function Links({ navlinks }: { navlinks: NavLink[] }) {
   let pathname = usePathname();
 
   return (
     <>
       <div className="navbar-center hidden md:flex">
         <ul className="inline-flex flex-row text-slate-50 gap-4">
-          <li className="rounded-md hover:bg-opacity-25 hover:bg-slate-300 px-4 py-2">
-            <Link href="/about">About Us</Link>
-          </li>
-          <li className="rounded-md hover:bg-opacity-25 hover:bg-slate-300 px-4 py-2">
-            <Link href="/join-us">Join Us</Link>
-          </li>
-
-          <li className="rounded-md hover:bg-opacity-25 hover:bg-slate-300 px-4 py-2">
-            <Link href="/contact-us">Contact Us</Link>
-          </li>
-          <li className="rounded-md hover:bg-opacity-25 hover:bg-slate-300 px-4 py-2">
-            <a href="https://sites.google.com/kcesar.org/members">Members</a>
-          </li>
+          {navlinks.map((link, index) => (
+            <li
+              key={index}
+              className="rounded-md hover:bg-base-300/70 px-4 py-2 hover:text-black dark:hover:text-slate-50"
+            >
+              {link.external ? (
+                <a href={link.href} target="_blank" rel="noopener noreferrer">
+                  {link.label}
+                </a>
+              ) : (
+                <Link href={link.href}>{link.label}</Link>
+              )}
+            </li>
+          ))}
         </ul>
       </div>
       {pathname !== "/" && (

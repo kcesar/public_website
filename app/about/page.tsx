@@ -83,7 +83,7 @@ export default async function About() {
         </div>
         <div className="divider py-10" />
         <Subtitle content="Annual Report" />
-        <div className="w-full h-[30rem] md:h-[70rem] p-10 flex justify-center">
+        <div className="w-full h-120 md:h-280 p-10 flex justify-center">
           <iframe
             className="w-full"
             src="/kcesar/annual-report/2023-annual-report.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
