@@ -14,14 +14,14 @@ export default function Hero() {
             className="drop-shadow-xl"
           />
         </div>
-        <h1 className="text-3xl md:text-7xl font-gin font-normal drop-shadow-xl md:[text-shadow:_0_5px_10px_rgb(0_0_0_/_60%)] tracking-wider pb-5 md:pb-10">
+        <h1 className="text-3xl md:text-7xl font-gin font-normal drop-shadow-xl md:[text-shadow:0_5px_10px_rgb(0_0_0/60%)] tracking-wider pb-5 md:pb-10">
           <span className="block">King County Explorer</span>
           <span className="block">Search & Rescue</span>
         </h1>
-        <h1 className="text-lg md:text-3xl font-gin drop-shadow-xl md:[text-shadow:_0_2px_10px_rgb(0_0_0_/_60%)] tracking-widest pb-5">
+        <h1 className="text-lg md:text-3xl font-gin drop-shadow-xl md:[text-shadow:0_2px_10px_rgb(0_0_0/60%)] tracking-widest pb-5">
           Est. 1954 - King County, Washington
         </h1>
-        <p className="text-sm md:text-lg pb-10 drop-shadow-xl md:[text-shadow:_0_1px_4px_rgb(0_0_0_/_60%)]">
+        <p className="text-sm md:text-lg pb-10 drop-shadow-xl md:[text-shadow:0_1px_4px_rgb(0_0_0/60%)]">
           King County Explorer Search & Rescue is one of the earliest Search &
           Rescue organizations established in the United States and the largest
           of nine member-units of the King County Search & Rescue Association.

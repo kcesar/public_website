@@ -20,7 +20,7 @@ export default async function Truck() {
           location="/kcesar/new_truck/truck-render.png"
           alt="A preview render of a future rescue truck"
         />
-        <div className="w-full h-[30rem] md:h-[70rem] p-10 flex justify-center">
+        <div className="w-full h-120 md:h-280 p-10 flex justify-center">
           <iframe
             className="w-full"
             src="/kcesar/new_truck/rescue-truck-replacement-2024.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
