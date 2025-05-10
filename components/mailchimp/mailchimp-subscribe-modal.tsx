@@ -13,11 +13,10 @@ export default function MailchimpSubscibeModal() {
   const showModal = () => modal.current?.showModal();
   const closeModal = () => modal.current?.close();
 
-  const handelSuccess = (message: string) => {
+  const handleSuccess = (message: string) => {
     setThankYou(message);
     setTimeout(() => {
       closeModal();
-      setShowSpinner(false);
       setThankYou(null);
       form.current?.reset();
     }, 2000);
@@ -28,10 +27,12 @@ export default function MailchimpSubscibeModal() {
     setShowSpinner(true)
     postSubscription(e)
     .then((res) => {
-      handelSuccess(res);
+      handleSuccess(res);
     })
     .catch((err) => {
       setError(err);
+    })
+    .finally(() => {
       setShowSpinner(false)
     });
   }
