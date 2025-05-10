@@ -8,7 +8,7 @@ export default function Logo() {
       role="button"
       className="btn btn-ghost btn-circle avatar mx-2"
     >
-      <Link href="/">
+      <Link href="/" className="flex items-center">
         <div className="w-12 rounded-full inline-block">
           <Image
             alt="Tailwind CSS Navbar component"

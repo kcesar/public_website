@@ -1,12 +1,18 @@
-'use client';
+"use client";
 
 import { FormEvent, useRef, useState } from "react";
 import OverlaySpinner from "../spinner/overlay-spinner";
-import { MailChimpDisclaimer, MailChimpFields, MailChimpSubtext, MailChimpTitle, postSubscription } from "../mailchimp/mailchimp";
+import {
+  MailChimpDisclaimer,
+  MailChimpFields,
+  MailChimpSubtext,
+  MailChimpTitle,
+  postSubscription,
+} from "../mailchimp/mailchimp";
 
 export default function MailchimpSubscibeModal() {
-  const [thankYou, setThankYou] = useState<string|null>(null);
-  const [error, setError] = useState<string|null>(null);
+  const [thankYou, setThankYou] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
   const [showSpinner, setShowSpinner] = useState(false);
   const form = useRef<HTMLFormElement>(null);
   const modal = useRef<HTMLDialogElement>(null);
@@ -20,45 +26,60 @@ export default function MailchimpSubscibeModal() {
       setThankYou(null);
       form.current?.reset();
     }, 2000);
-  }
+  };
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) =>{
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setShowSpinner(true)
+    setShowSpinner(true);
     postSubscription(e)
-    .then((res) => {
-      handleSuccess(res);
-    })
-    .catch((err) => {
-      setError(err);
-    })
-    .finally(() => {
-      setShowSpinner(false)
-    });
-  }
-  
+      .then((res) => {
+        handleSuccess(res);
+      })
+      .catch((err) => {
+        setError(err);
+      })
+      .finally(() => {
+        setShowSpinner(false);
+      });
+  };
+
   return (
     <>
-      <button className="btn" onClick={showModal}>Sign Up For Our Newsletter</button>
-      <dialog ref={modal}
+      <button
+        className="btn btn-ghost bg-base-200 text-base-content border-none hover:bg-base-300/70 hover:text-black dark:hover:text-slate-50"
+        onClick={showModal}
+      >
+        Sign Up For Our Newsletter
+      </button>
+      <dialog
+        ref={modal}
         id="my_modal_1"
         className="modal"
         onKeyDown={(e) => {
-          if (e.key === "Escape" && showSpinner) e.preventDefault()
+          if (e.key === "Escape" && showSpinner) e.preventDefault();
         }}
       >
         <div className="modal-box">
           {showSpinner && <OverlaySpinner label="Submitting" />}
           {thankYou && <ThankYou message={thankYou} />}
-          <form ref={form} className="grid grid-cols-1 gap-4" onSubmit={handleSubmit} onChange={() => setError(null)}>
+          <form
+            ref={form}
+            className="grid grid-cols-1 gap-4"
+            onSubmit={handleSubmit}
+            onChange={() => setError(null)}
+          >
             <MailChimpTitle />
             <MailChimpSubtext />
             <MailChimpFields className="input input-xl input-neutral border border-gray-800" />
             {error && <span className="text-red-500">{error}</span>}
             <MailChimpDisclaimer />
             <div className="flex gap-4 justify-end">
-              <button className="btn" type="button" onClick={closeModal}>Cancel</button>
-              <button className="btn bg-esar-green text-white" type="submit">Submit</button>
+              <button className="btn" type="button" onClick={closeModal}>
+                Cancel
+              </button>
+              <button className="btn bg-esar-green text-white" type="submit">
+                Submit
+              </button>
             </div>
           </form>
         </div>
@@ -67,7 +88,7 @@ export default function MailchimpSubscibeModal() {
   );
 }
 
-function ThankYou({message}: {message: string}) {
+function ThankYou({ message }: { message: string }) {
   return (
     <div className="w-full h-full fixed top-0 left-0 bg-white z-50 flex flex-col items-center justify-center">
       <span>{message}</span>

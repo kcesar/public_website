@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { FaBarsStaggered } from "react-icons/fa6";
 import Logo from "./logo";
+import { NavLink } from "./navlink";
+import MailchimpSubscibeModal from "../mailchimp/mailchimp-subscribe-modal";
+import DonateButton from "../donate/button";
 
-export default function Drawer() {
+export default function Drawer({ navlinks }: { navlinks: NavLink[] }) {
   function timeout(delay: number) {
     return new Promise((res) => setTimeout(res, delay));
   }
@@ -35,38 +38,43 @@ export default function Drawer() {
           className="drawer-overlay"
         ></label>
         <ul className="menu bg-base-200 min-h-full w-80 p-4">
-          <li className="hover:bg-esar-green hover:text-white rounded-xl">
+          <li
+            key="homeidx"
+            className="hover:bg-esar-green hover:text-white rounded"
+          >
             <Link href="/" onClick={onLinkClick}>
               <h3>Home</h3>
             </Link>
           </li>
-          <li className="hover:bg-esar-green hover:text-white rounded-xl">
-            <Link href="/about" onClick={onLinkClick}>
-              <h3>About Us</h3>
-            </Link>
-          </li>
-          <li className="hover:bg-esar-green hover:text-white rounded-xl">
-            <Link href="/join-us" onClick={onLinkClick}>
-              <h3>Join Us</h3>
-            </Link>
-          </li>
-          <li className="hover:bg-esar-green hover:text-white rounded-xl">
-            <Link href="/contact-us" onClick={onLinkClick}>
-              <h3>Contact Us</h3>
-            </Link>
-          </li>
-          <li className="hover:bg-esar-green hover:text-white rounded-xl">
-            <a href="https://sites.google.com/kcesar.org/members">
-              <h3>Members</h3>
-            </a>
-          </li>
+          {navlinks.map((link, index) => (
+            <li
+              key={index}
+              className="hover:bg-esar-green hover:text-white rounded"
+            >
+              {link.external ? (
+                <a href={link.href} target="_blank" rel="noopener noreferrer">
+                  <h3>{link.label}</h3>
+                </a>
+              ) : (
+                <Link href={link.href} onClick={onLinkClick}>
+                  <h3>{link.label}</h3>
+                </Link>
+              )}
+            </li>
+          ))}
 
-          <li className="flex-grow pointer-events-none bg-inherit" />
+          <li className="grow pointer-events-none bg-inherit" />
+          <li>
+            <MailchimpSubscibeModal />
+          </li>
+          <li className="flex items-center">
+            <DonateButton />
+          </li>
           <li className="pointer-events-none">
             <div className="flex justify-center items-center p-4">
               <Logo />
               <p className="text-center">
-                &copy; 2024 King County Explorer Search & Rescue
+                &copy; 2025 King County Explorer Search & Rescue
               </p>
             </div>
           </li>
