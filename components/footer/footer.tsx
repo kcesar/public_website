@@ -13,7 +13,8 @@ export default function Footer() {
           width={150}
           height={150}
           priority={true}
-          className="drop-shadow py-5 inline-block" />
+          className="drop-shadow py-5 inline-block"
+        />
         <p className="font-bold">
           King County Explorer Search & Rescue <br />
           Providing search & rescue services to King County since 1954
