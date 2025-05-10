@@ -29,7 +29,7 @@ export default function Links({ navlinks }: { navlinks: NavLink[] }) {
         </ul>
       </div>
       {pathname !== "/" && (
-        <div className="navbar-center md:hidden z-10 flex justify-center align-middle items-center ">
+        <div className="navbar-center md:hidden z-10">
           <Logo />
         </div>
       )}
