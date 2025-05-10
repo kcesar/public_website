@@ -1,7 +1,7 @@
 'use client';
 
 import { FormEvent, useRef, useState } from "react";
-import { fields, postSubscription } from "../mailchimp/mailchimp";
+import { MailChimpDisclaimer, MailChimpFields, MailChimpSubtext, MailChimpTitle, postSubscription } from "../mailchimp/mailchimp";
 
 export default function MailchimpSubscribeForm() {
   const [thankYou, setThankYou] = useState<string|null>(null);
@@ -31,27 +31,19 @@ export default function MailchimpSubscribeForm() {
     .finally(() => {
       setIsSubmitting(false);
     });
-
   }
 
   return (
     <>
-      <form ref={form} className="flex flex-wrap items-center justify-center gap-4" onSubmit={handleSubmit}>
-        {fields.map(input => 
-          <input
-            { ...input }
-            disabled={isSubmitting}
-            key={input.name}
-            className="input input-xl input-neutral border border-gray-800 w-64"
-          />
-        )}
-        <div aria-hidden="true" style={{position: 'absolute', left: '-5000px'}}>
-          <input type="text" name="b_ec37197c1d8d927011aee85cf_ea26b6ede3" tabIndex={-1} value="" readOnly></input>
-        </div>
+      <MailChimpTitle />
+      <MailChimpSubtext />
+      <form ref={form} className="flex flex-wrap items-center justify-center gap-4" onSubmit={handleSubmit} onChange={() => setError(null)}>
+        <MailChimpFields className="input input-xl input-neutral border border-gray-800 w-64" />
         <button disabled={isSubmitting} className="btn bg-esar-green text-white w-64" type="submit">Submit</button>
       </form>
       {error && <span className="text-red-500">{error}</span>}
       {thankYou && <span>{thankYou}</span>}
+      <MailChimpDisclaimer />
     </>
   );
 }
