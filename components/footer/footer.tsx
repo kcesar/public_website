@@ -1,17 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
-import MailchimpSubscribeForm from "../mailchimp/mailchimp-subscribe";
 
 export default function Footer() {
   return (
     <>
-      <div className="footer footer-center bg-slate-100 px-4 py-5">
-        <h3>Subscribe</h3>
-        <span>Recieve our quarterly newsletter with safe outdoor recreation tips and more.</span>
-        <MailchimpSubscribeForm />
-        <span>We will not share your information with anyone else.</span>
-      </div>
       <footer className="footer footer-center bg-esar-green text-white px-4 py-5">
         <aside>
           <h1 className="font-bold text-2xl">Support us to save lives.</h1>

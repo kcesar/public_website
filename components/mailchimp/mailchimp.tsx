@@ -61,3 +61,37 @@ export const postSubscription = (e: FormEvent<HTMLFormElement>): Promise<string>
     });
   });
 };
+
+export function MailChimpTitle() {
+  return (
+    <h3>STAY CONNECTED</h3>
+  );
+}
+
+export function MailChimpSubtext() {
+  return (
+    <span>Sign up for <i>The Dispatch</i>, our quarterly newsletter featuring wilderness safety tips and rescue stories.</span>
+  );
+}
+
+export function MailChimpFields({ className = '' }: {  className?: string }) {
+  return (
+    <>
+      {fields.map(input => 
+        <input
+          { ...input }
+          key={input.name}
+          className={className}
+        />
+      )}
+    </>
+  );
+}
+
+export function MailChimpDisclaimer() {
+  return (
+    <div className="text-xs text-gray-500">
+      We will not share your information with anyone else.
+    </div>
+  );
+}
