@@ -6,9 +6,12 @@ import MailchimpSubscribeForm from "../mailchimp/mailchimp-subscribe";
 export default function Footer() {
   return (
     <>
-      <div className="footer footer-center bg-slate-100 px-4 py-5">
+      <div className="footer footer-horizontal footer-center bg-base-200 px-4 py-5">
         <h3>Subscribe</h3>
-        <span>Recieve our quarterly newsletter with safe outdoor recreation tips and more.</span>
+        <span>
+          Recieve our quarterly newsletter with safe outdoor recreation tips and
+          more.
+        </span>
         <MailchimpSubscribeForm />
         <span>We will not share your information with anyone else.</span>
       </div>
