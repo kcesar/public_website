@@ -70,7 +70,7 @@ export default function MailchimpSubscibeModal() {
           >
             <MailChimpTitle />
             <MailChimpSubtext />
-            <MailChimpFields className="input input-xl input-neutral border border-gray-800" />
+            <MailChimpFields className="input input-xl input-neutral border border-gray-800 w-full" />
             {error && <span className="text-red-500">{error}</span>}
             <MailChimpDisclaimer />
             <div className="flex gap-4 justify-end">
