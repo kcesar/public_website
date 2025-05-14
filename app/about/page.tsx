@@ -30,7 +30,7 @@ export default async function About() {
       email: "training@kcesar.org",
     },
     {
-      personName: "Edmund Tse",
+      personName: "Matt Patterson",
       title: "Treasurer",
       location: "/kcesar/middle-fork.jpg",
       alt: "Photo by Dominic Hampton on Unsplash",
