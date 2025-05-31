@@ -7,6 +7,7 @@ import { getTrainingSessions } from "./trainingdates";
 import BasicBody from "@/components/layout/basicbody";
 import Links from "@/components/join-us/links";
 import { links } from "../links";
+import MailchimpSubscribeForm from "@/components/mailchimp/mailchimp-subscribe";
 
 export default async function TrainingMaterials() {
   let trainingSessions = getTrainingSessions();
@@ -47,8 +48,12 @@ export default async function TrainingMaterials() {
         </div>
         <div className="divider py-10"></div>
         <div id="training-calendar" />
-        <Subtitle content="2024-2025 Training Season" />
+        <Subtitle content="2025-2026 Training Season" />
         <div className="p-5">
+          <div className="text-center text-lg text-gray-700 dark:text-gray-300 py-10">
+            <span>Our 2025-26 Training Calendar will be posted soon. Sign up for our newsletter to receive an updates:</span>
+            <MailchimpSubscribeForm />
+          </div>
           <TrainingCalendar sessions={trainingSessions} />
         </div>
       </BasicBody>
