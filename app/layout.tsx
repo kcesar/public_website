@@ -15,6 +15,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const bodyClass = `flex flex-col h-screen ${mulish.className}`;
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <head>
@@ -25,12 +26,12 @@ export default function RootLayout({
         <meta name="viewport" content="initial-scale=1, width=device-width" />
         <link rel="shortcut icon" href="/kcesar/favicon.ico" />
       </head>
-      <body className={mulish.className}>
-        <div>
-          <Navbar />
-          {children}
-          <Footer />
-        </div>
+      <body className={bodyClass}>
+        <Navbar />
+          <div className="flex-1">
+            {children}
+          </div>
+        <Footer />
       </body>
     </html>
   );

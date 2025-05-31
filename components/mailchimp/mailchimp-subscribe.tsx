@@ -40,29 +40,27 @@ export default function MailchimpSubscribeForm() {
   };
 
   return (
-    <>
-      <div className="bg-base-200">
-        <MailChimpTitle />
-        <MailChimpSubtext />
-        <form
-          ref={form}
-          className="flex flex-wrap items-center justify-center gap-4"
-          onSubmit={handleSubmit}
-          onChange={() => setError(null)}
+    <div className="flex flex-col items-center justify-center gap-4 p-4">
+      <MailChimpTitle />
+      <MailChimpSubtext />
+      <form
+        ref={form}
+        className="flex flex-wrap items-center justify-center gap-4 flex-col xl:flex-row"
+        onSubmit={handleSubmit}
+        onChange={() => setError(null)}
+      >
+        <MailChimpFields className="input input-xl input-neutral border border-gray-800 w-64" />
+        <button
+          disabled={isSubmitting}
+          className="btn bg-esar-green text-white w-64 h-14"
+          type="submit"
         >
-          <MailChimpFields className="input input-xl input-neutral border border-gray-800 w-64" />
-          <button
-            disabled={isSubmitting}
-            className="btn bg-esar-green text-white w-64"
-            type="submit"
-          >
-            Submit
-          </button>
-        </form>
-        {error && <span className="text-red-500">{error}</span>}
-        {thankYou && <span>{thankYou}</span>}
-        <MailChimpDisclaimer />
-      </div>
-    </>
+          Submit
+        </button>
+      </form>
+      {error && <span className="text-red-500">{error}</span>}
+      {thankYou && <span>{thankYou}</span>}
+      <MailChimpDisclaimer />
+    </div>
   );
 }
