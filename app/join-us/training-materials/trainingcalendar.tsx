@@ -23,7 +23,7 @@ export default function TrainingCalendar({
 
   return (
     <div className="overflow-x-auto rounded-xl">
-      {sortedSessions.map((sessions, index) => (
+      {false && sortedSessions.map((sessions, index) => (
         <div className="py-4" key={index}>
           <Subtitle content={sessions[0].course.name} />
           <PrerequisitesCard prerequisites={sessions[0].course.prerequisites} />
