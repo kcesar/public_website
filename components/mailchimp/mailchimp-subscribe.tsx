@@ -49,7 +49,7 @@ export default function MailchimpSubscribeForm() {
         onSubmit={handleSubmit}
         onChange={() => setError(null)}
       >
-        <MailChimpFields className="input input-xl input-neutral border border-gray-800 w-64" />
+        <MailChimpFields className="input input-xl input-neutral bg-base-300 border border-gray-800 w-64" />
         <button
           disabled={isSubmitting}
           className="btn bg-esar-green text-white w-64 h-14"
