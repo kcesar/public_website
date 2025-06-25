@@ -1,7 +1,9 @@
 import { FaFacebook } from "react-icons/fa";
 import BasicLink from "@/components/navigation/basiclink";
-import CenteredText from "@/components/text/centeredtext";
-import Subtitle from "@/components/text/subtitle";
+import CenteredText, {
+  ActuallyCenteredText,
+} from "@/components/text/centeredtext";
+import Subtitle, { SubSubtitle } from "@/components/text/subtitle";
 import Link from "next/link";
 
 export default function Application({
@@ -11,10 +13,26 @@ export default function Application({
 }) {
   if (acceptingApplications) {
     return (
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center pb-6">
         <Subtitle content="Ready to Apply?" />
-        <div className="pt-8">
-          <BasicLink title="Apply Now" href="#" />
+        <div className="pt-6">
+          <SubSubtitle content="Training season is now underway." />
+        </div>
+        <div className="pt-2">
+          <ActuallyCenteredText content="Registration for Course A, the first step in 2025-26 training, is open. See the training schedule for more information, including the registration link. " />
+          <div className="flex flex-col items-center gap-2">
+            <BasicLink
+              title="Training Calendar"
+              href="https://www.kcesar.org/join-us/training-materials#training-calendar"
+            />
+          </div>
+          <ActuallyCenteredText content="Information about Basic Training is available here:" />
+          <div className="flex flex-col items-center gap-2">
+            <BasicLink
+              title="Basic Training Overview"
+              href="https://www.kcesar.org/join-us/basic-training-overview"
+            />
+          </div>
         </div>
       </div>
     );

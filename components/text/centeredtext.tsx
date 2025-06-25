@@ -13,3 +13,11 @@ export function CenteredTextMinimalXPadding({ content }: { content: string }) {
     </div>
   );
 }
+
+export function ActuallyCenteredText({ content }: { content: string }) {
+  return (
+    <div className="lg:text-md text-xl py-8 text-center px-5 lg:px-10">
+      {content}
+    </div>
+  );
+}

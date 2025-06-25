@@ -5,3 +5,11 @@ export default function Subtitle({ content }: { content: string }) {
     </h2>
   );
 }
+
+export function SubSubtitle({ content }: { content: string }) {
+  return (
+    <h3 className="text-center text-xl md:text-2xl font-bold tracking-widest px-4">
+      {content}
+    </h3>
+  );
+}
