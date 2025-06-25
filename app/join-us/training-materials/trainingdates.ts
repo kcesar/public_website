@@ -262,14 +262,14 @@ const sessions: Session[] = [
     },
     {
       course_id: "CRSA",
-      course_date: "July 22nd",
-      course_start_time: "7:00pm",
-      course_end_time: "9:00pm",
+      course_date: "July 21st",
+      course_start_time: "6:30pm",
+      course_end_time: "8:30pm",
       location_id: "TBDTBD"
     },
     {
       course_id: "CRSA",
-      course_date: "July 23rd",
+      course_date: "July 22nd",
       course_start_time: "7:00pm",
       course_end_time: "9:00pm",
       location_id: "TBDTBD"
