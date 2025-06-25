@@ -43,7 +43,14 @@ export default function TrainingCalendar({
                     {`${session.session.course_date} ${session.session.course_start_time} - ${session.session.course_end_time}`}
                   </td>
                   <td>
-                    {session.location.google_maps_url ? (
+                    {session.course.id === "CRSA" ? (
+                      <a
+                        className="underline text-blue-400"
+                        href="https://tinyurl.com/ESARCourseA2025"
+                      >
+                        Course A Registration
+                      </a>
+                    ) : session.location.google_maps_url ? (
                       <a
                         className="underline text-blue-400"
                         href={session.location.google_maps_url}

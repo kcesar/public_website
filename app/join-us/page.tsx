@@ -19,7 +19,7 @@ export default async function JoinUs() {
       <BasicBody>
         <Links links={links} />
         <div className="pt-10">
-          <Application acceptingApplications={false} />
+          <Application acceptingApplications={true} />
         </div>
         <div className="divider pb-10" />
         <Subtitle content="Joining King County Explorer Search & Rescue" />
