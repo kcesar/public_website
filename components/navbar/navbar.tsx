@@ -26,8 +26,7 @@ export default function Navbar() {
   }, []); // Empty dependency array means this effect runs once on mount and cleanup on unmount
 
   let transparentCss = "navbar sticky top-0 z-50";
-  let solidCss =
-    "navbar sticky top-0 z-50 bg-esar-green bg-opacity-90 backdrop-blur-xs";
+  let solidCss = "navbar sticky top-0 z-50 bg-esar-green/80 backdrop-blur-xs";
 
   let navlinks: NavLink[] = [
     { href: "/about", label: "About Us" },

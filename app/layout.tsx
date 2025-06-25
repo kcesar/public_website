@@ -3,6 +3,7 @@ import { Mulish } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/navbar";
 import Footer from "@/components/footer/footer";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: "King County Explorer Search & Rescue",
@@ -28,11 +29,10 @@ export default function RootLayout({
       </head>
       <body className={bodyClass}>
         <Navbar />
-          <div className="flex-1">
-            {children}
-          </div>
+        <div className="flex-1">{children}</div>
         <Footer />
       </body>
+      <GoogleAnalytics gaId="G-H8XEQFXYFQ" />
     </html>
   );
 }
