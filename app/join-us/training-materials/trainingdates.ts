@@ -298,8 +298,8 @@ const sessions: Session[] = [
     {
       course_id: "MEET",
       course_date: "August 9th",
-      course_start_time: "6:30pm",
-      course_end_time: "9:30pm",
+      course_start_time: "8:30pm",
+      course_end_time: "11:30pm",
       location_id: "TBDTBD"
     },
     {
@@ -346,7 +346,7 @@ const sessions: Session[] = [
     },
     {
       course_id: "SFA1",
-      course_date: "October 25th",
+      course_date: "October 26th",
       course_start_time: "9:00am",
       course_end_time: "6:00pm",
       location_id: "TBDTBD"
