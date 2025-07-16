@@ -298,8 +298,8 @@ const sessions: Session[] = [
     {
       course_id: "MEET",
       course_date: "August 9th",
-      course_start_time: "8:30pm",
-      course_end_time: "11:30pm",
+      course_start_time: "8:30am",
+      course_end_time: "11:30am",
       location_id: "TBDTBD"
     },
     {
