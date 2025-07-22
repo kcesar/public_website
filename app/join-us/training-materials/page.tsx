@@ -32,6 +32,11 @@ export default async function TrainingMaterials() {
             href="/assets/doc/ESAR_TrainingPacket.pdf"
           />
           <LinkCard
+            title="2025 Parent Packet - Youth"
+            content="Information for parents of youth members regarding training, requirements, and expectations."
+            href="/assets/doc/Parent_Packet_2025_Final.pdf"
+          />
+          <LinkCard
             title="Code of Conduct"
             content="King County Explorer Search and Rescue's offical document concerning personnel conduct."
             href="/assets/doc/KCESAR_Code_of_Conduct.pdf"
