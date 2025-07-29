@@ -36,6 +36,7 @@ const nextConfig = {
         '/database': 'https://kcsara.d4h.org',
         '/rig.html': '/rig',
         '/slack': 'https://kingcountyesar.slack.com/',
+        '/parent-packet': '/assets/doc/ESAR_Parent_Packet.pdf',
       };
       const temp = {
         '/apply': 'https://forms.gle/wag18kY9xHgMY3rb7',
@@ -45,6 +46,8 @@ const nextConfig = {
         '/admin-hours': 'https://docs.google.com/forms/d/e/1FAIpQLSeU53MJ5PBhq-7sp2l6ER5R5attix_ApgOV9EtH03R55aANYw/viewform',
         '/elections': 'https://docs.google.com/forms/d/e/1FAIpQLSdv3DlIg4oGbAoROVfdS4WcV_b_RKAwIQcEP4BaexBISV4vQg/viewform',
         '/rig': 'https://docs.google.com/forms/d/e/1FAIpQLSck1SruL9W8_RSLvpFRblAW02pFybIEhKaIvH_ZhxW-FxEbnA/viewform',
+        '/assets/doc/Parent_Packet_2025_Final.pdf': '/assets/doc/ESAR_Parent_Packet.pdf',
+        '/assets/doc/ESAR_Parent_Packet_2019.pdf': '/assets/doc/ESAR_Parent_Packet.pdf',
       };
 
       return [
