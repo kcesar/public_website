@@ -34,7 +34,7 @@ export default async function TrainingMaterials() {
           <LinkCard
             title="2025 Parent Packet - Youth"
             content="Information for parents of youth members regarding training, requirements, and expectations."
-            href="/assets/doc/Parent_Packet_2025_Final.pdf"
+            href="/parent-packet"
           />
           <LinkCard
             title="Code of Conduct"
