@@ -44,12 +44,7 @@ export default function TrainingCalendar({
                   </td>
                   <td>
                     {session.course.id === "CRSA" ? (
-                      <a
-                        className="underline text-blue-400"
-                        href="https://tinyurl.com/ESARCourseA2025"
-                      >
-                        Course A Registration
-                      </a>
+                      "n/a"
                     ) : session.location.google_maps_url ? (
                       <a
                         className="underline text-blue-400"

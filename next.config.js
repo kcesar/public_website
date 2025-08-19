@@ -39,7 +39,7 @@ const nextConfig = {
         '/parent-packet': '/assets/doc/ESAR_Parent_Packet.pdf',
       };
       const temp = {
-        '/apply': 'https://forms.gle/wag18kY9xHgMY3rb7',
+        '/apply': '/join-us',
         '/cert': 'https://docs.google.com/forms/d/e/1FAIpQLSctsjL6JfUxsQNoUiqJeZqADig1N4KlY43VJr0sy25q9lNK-g/viewform',
         '/paging-setup': 'https://docs.google.com/forms/d/e/1FAIpQLSfRjUxFUCaQBQ9Xu4ojowPj9NVdyoQYFJBAL5MSnc4IqWmDhQ/viewform',
         '/course-a-registration': 'https://www.signupgenius.com/go/10C0F4FA8AF2AAAFDCE9-50124119-course',
