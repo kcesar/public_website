@@ -16,7 +16,7 @@ export default function MappingProblems({}: {}) {
     { question: "Plot 10T 0619104E 5252818N", answer: <UtmMapPlot easting={619104} northing={5252818} /> },
     { question: "Plot 10T 0619047E 5253858N", answer: <UtmMapPlot easting={619047} northing={5253858} /> },
     { question: "From the intersection at 10T 0619742E 5252932N walk northbound on the road for 290m.", answer: <UtmMapPlot easting={619789} northing={5253195} /> },
-    { question: "Follow the Dodge Ridge Chairlift uphill until you reach 3160ft elevation, then travel 355ft on a bearing of 186&deg;T", answer: <UtmMapPlot easting={619224} northing={5253249} /> },    
+    { question: "Follow the Dodge Ridge Chairlift uphill until you reach 3160ft elevation, then travel 355ft on a bearing of 186°", answer: <UtmMapPlot easting={619224} northing={5253249} /> },    
   ]);
 
   function addRandomMapProblem() {
