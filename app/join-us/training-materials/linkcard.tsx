@@ -4,10 +4,12 @@ export default function LinkCard({
   title,
   content,
   href,
+  label = 'Download',
 }: {
   title: string;
   content: string;
   href: string;
+  label?: string;
 }) {
   return (
     <div className="card bg-base-300 w-96 shadow-xl">
@@ -15,7 +17,7 @@ export default function LinkCard({
         <h2 className="card-title text-xl">{title}</h2>
         <p>{content}</p>
         <div className="card-actions justify-end">
-          <BasicLink href={href} title="Download" />
+          <BasicLink href={href} title={label} />
         </div>
       </div>
     </div>
