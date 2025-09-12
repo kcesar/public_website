@@ -51,6 +51,12 @@ export default async function TrainingMaterials() {
             content="Google Calendar Embed"
             href="https://calendar.google.com/calendar/embed?src=kcesar.org_4r2brjkoml90hilp9h73t2lgno%40group.calendar.google.com&ctz=America%2FLos_Angeles"
           />
+          <LinkCard
+            title="Supplemental Mapwork"
+            content="Review and practice mapwork problems similar to those used in training."
+            href="/mapwork"
+            label="Supplemental Mapwork"
+          />
         </div>
         <div className="divider py-10"></div>
         <div id="training-calendar" />
