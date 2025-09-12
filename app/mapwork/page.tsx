@@ -7,7 +7,7 @@ import ToolsAndReview from "./toolsAndReview";
 import UnitConversion from "./unitConversion";
 import PacingProblems from "./pacingProblems";
 
-export default async function ContactUs() {
+export default async function MapWork() {
   let pageTitle = "Supplemental Mapwork";
   return (
     <BasicLayout>
