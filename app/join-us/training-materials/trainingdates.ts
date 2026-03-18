@@ -100,8 +100,8 @@ export type CourseLocation = {
 const locations: CourseLocation[] = [
     {
       id: "KCSARA",
-      name: "King County Search & Rescue Headquarters",
-      street_address: "47.512097, -121.882279",
+      name: "KCSARA HQ",
+      street_address: "34501 SE 99th St, Snoqualmie",
       google_maps_url: "https://goo.gl/maps/GrLHi5q6giKDrTcc7"
     },
     {
@@ -241,6 +241,12 @@ const locations: CourseLocation[] = [
       name: "SMR Mountain Rescue Center",
       street_address: "43403 SE 128th Pl, North Bend, WA 98045",
       google_maps_url: "https://maps.app.goo.gl/ri3sD7ETWbQgRBKY9"
+    },
+    {
+      id: "SIVIEW",
+      name: "Si View Community Center",
+      street_address: "400 SE Orchard Dr, North Bend, WA 98045",
+      google_maps_url: "https://maps.app.goo.gl/hCjp57sBW3foRGBc6"
     }
   ];
 
@@ -461,28 +467,28 @@ const sessions: Session[] = [
       course_date: "March TBD",
       course_start_time: "6:30pm",
       course_end_time: "9:30pm",
-      location_id: "TBDTBD"
+      location_id: "KCSARA"
     },
     {
       course_id: "OPS1",
       course_date: "March TBD",
       course_start_time: "6:30pm",
       course_end_time: "9:30pm",
-      location_id: "TBDTBD"
+      location_id: "KCSARA"
     },
     {
       course_id: "OPS1",
       course_date: "April TBD",
       course_start_time: "6:30pm",
       course_end_time: "9:30pm",
-      location_id: "TBDTBD"
+      location_id: "KCSARA"
     },
     {
       course_id: "GRAD",
       course_date: "April 12th",
       course_start_time: "2:30pm",
       course_end_time: "5:00pm",
-      location_id: "TBDTBD"
+      location_id: "SIVIEW"
     }
   ]
 
