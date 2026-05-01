@@ -23,7 +23,7 @@ export default async function About() {
       email: "operations@kcesar.org",
     },
     {
-      personName: "Nancy Ward",
+      personName: "Jeremy Heater",
       title: "Director of Training",
       location: "/kcesar/middle-fork.jpg",
       alt: "Photo by Dominic Hampton on Unsplash",
