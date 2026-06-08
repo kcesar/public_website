@@ -39,8 +39,7 @@ export default function Application({
         <Subtitle content="Thank you for your interest in joining KCESAR." />
         <div className="pt-6">
           <SubSubtitle
-            content="Training for 2025-26 is now underway.
-"
+            content="Joining ESAR is a 7-month process generally beginning in August and ending in March.  Information about applications and scheduling for the 2026-27 training season will be released in July."
           />
         </div>
         <div className="pt-2">
