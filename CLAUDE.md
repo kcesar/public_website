@@ -24,10 +24,11 @@ Use `bun` / `bun run <script>` for all local work, scripts, and GitHub Actions.
 When adding a workflow or doc, target Bun (e.g. `oven-sh/setup-bun`), not
 `actions/setup-node` + `npm install`.
 
-> **Known holdout:** `.github/workflows/deploy-prod.yml` (the Azure production
-> deploy) still uses `npm install` on Node 20. That is the one place still on
-> npm and is slated to migrate to Bun. Everything else — local dev, the
-> `pr-checks` workflow, and Vercel — uses Bun.
+> **Exception — do NOT change:** `.github/workflows/deploy-prod.yml` (the Azure
+> production deploy) uses `npm install` on Node 20. That pipeline is owned/managed
+> outside this repo's normal workflow — leave it exactly as-is; do not "migrate"
+> it to Bun. Everything else — local dev, the `pr-checks` workflow, and Vercel —
+> uses Bun.
 
 ## Testing
 
