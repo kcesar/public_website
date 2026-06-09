@@ -20,6 +20,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <head>
+        <link rel="preconnect" href="https://use.typekit.net" crossOrigin="" />
+        <link rel="preconnect" href="https://p.typekit.net" crossOrigin="" />
         <link
           rel="stylesheet"
           href="https://use.typekit.net/xyo6wwn.css"

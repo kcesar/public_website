@@ -14,6 +14,7 @@ export default function SmallImage({
           alt={alt}
           src={location}
           fill={true}
+          sizes="(min-width: 1536px) 1227px, 83vw"
           className="object-cover overflow-hidden rounded-xl"
         />
       </div>
