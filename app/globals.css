@@ -1,6 +1,26 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+/*
+  daisyUI v5 ties button/field corners to --radius-field, whose default theme
+  value is 0.25rem. daisyUI v4 rounded buttons at 0.5rem (--rounded-btn), so the
+  v4->v5 upgrade visibly flattened every .btn. Restore the original radius.
+  Uses :root:root to outrank daisyUI's own :root theme declaration.
+*/
+:root:root {
+  --radius-field: 0.5rem;
+}
+
+/*
+  Under turbopack (next dev), daisyUI v5's base `.btn` rule is emitted without
+  its corner-radius declaration (only `.prose .btn` gets it), so plain buttons
+  render as sharp rectangles. Reassert the radius for all non-circle/square
+  buttons. Harmless in the production build, where the value matches.
+*/
+.btn:not(.btn-circle):not(.btn-square) {
+  border-radius: var(--radius-field);
+}
+
 @theme {
   --color-esar-green: #026737;
 
