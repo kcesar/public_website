@@ -20,14 +20,14 @@ export default function Application({
           <div className="flex flex-col items-center gap-2">
             <BasicLink
               title="Training Calendar"
-              href="https://www.kcesar.org/join-us/training-materials#training-calendar"
+              href="/join-us/training-materials#training-calendar"
             />
           </div>
           <ActuallyCenteredText content="Information about Basic Training is available here:" />
           <div className="flex flex-col items-center gap-2">
             <BasicLink
               title="Basic Training Overview"
-              href="https://www.kcesar.org/join-us/basic-training-overview"
+              href="/join-us/basic-training-overview"
             />
           </div>
         </div>
@@ -51,7 +51,7 @@ export default function Application({
                 our{" "}
                 <Link
                   className="text-blue-500 underline"
-                  href="https://www.kcesar.org/join-us/training-materials#training-calendar"
+                  href="/join-us/training-materials#training-calendar"
                 >
                   newsletter
                 </Link>{" "}
@@ -76,7 +76,7 @@ export default function Application({
           <div className="flex flex-col items-center gap-2">
             <BasicLink
               title="Basic Training Overview"
-              href="https://www.kcesar.org/join-us/basic-training-overview"
+              href="/join-us/basic-training-overview"
             />
           </div>
         </div>

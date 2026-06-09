@@ -50,14 +50,19 @@ export const postSubscription = (e: FormEvent<HTMLFormElement>): Promise<string>
   const postUrl = `${url}&${values}`;
   return new Promise((resolve, reject) => {
     jsonp(postUrl, { param: "c" }, (err, data) => {
-      if (data.msg.includes("already subscribed")) {
+      if (err || !data) {
+        // Network failure, timeout, or blocked JSONP request: `data` is
+        // undefined here, so guard before touching it or the promise hangs.
+        console.error("Newsletter subscription request failed", err);
+        reject("Error submitting form, please try again later.");
+      } else if (data.msg?.includes("already subscribed")) {
         resolve("You are already subscribed to our newsletter.");
-      } else if (err || data.result !== 'success') {
-        console.error(err, data.msg);
+      } else if (data.result !== 'success') {
+        console.error("Newsletter subscription rejected", data.msg);
         reject("Error submitting form, please try again later.");
       } else {
         resolve("You have successfully subscribed to our newsletter.");
-      };
+      }
     });
   });
 };
