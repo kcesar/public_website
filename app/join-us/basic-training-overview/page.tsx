@@ -33,7 +33,7 @@ export default async function BasicTrainingOverview() {
         members for the challenges that they will face in the field. As a
         trainee, you will receive instruction and demonstrate proficiency in
         wilderness navigation, survival skills, search method theory, first aid,
-        and evidence search procedures. Basic Training begins in July and runs through April. 
+        and evidence search procedures. Basic Training begins in August and runs through March.
         It is purposefully scheduled during the winter months to give trainees experience working
         in the challenging conditions they could encounter on a mission.
         Training may involve snow, ice, wind, rain, and other unpleasant

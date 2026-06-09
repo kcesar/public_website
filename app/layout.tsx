@@ -66,7 +66,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const bodyClass = `flex flex-col h-screen ${mulish.className}`;
+  const bodyClass = `flex flex-col min-h-screen ${mulish.className}`;
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <head>

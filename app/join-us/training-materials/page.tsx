@@ -69,7 +69,7 @@ export default async function TrainingMaterials() {
         <div className="divider py-10"></div>
         <div id="training-calendar" />
         <div className="pb-10">
-          <Subtitle content="2025-2026 Training Season" />
+          <Subtitle content="2026-27 Training Season" />
         </div>
         <MailchimpSubscribeForm />
         <div className="divider" />
