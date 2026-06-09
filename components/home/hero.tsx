@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="max-w-6xl pb-10 px-5">
         <div className="relative w-[150px] h-[150px] md:w-[200px] md:h-[200px] mt-10 md:mt-24 mb-10 inline-block">
           <Image
-            alt="Tailwind CSS Navbar component"
+            alt=""
             src="/kcesar/logos/logo_kcesar_1280x1280.png"
             fill={true}
             priority={true}

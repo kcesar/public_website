@@ -28,8 +28,16 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/kcesar/favicon.ico" />
       </head>
       <body className={bodyClass}>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded focus:bg-esar-green focus:px-4 focus:py-2 focus:text-white"
+        >
+          Skip to main content
+        </a>
         <Navbar />
-        <div className="flex-1">{children}</div>
+        <main id="main-content" className="flex-1">
+          {children}
+        </main>
         <Footer />
       </body>
       <GoogleAnalytics gaId="G-H8XEQFXYFQ" />

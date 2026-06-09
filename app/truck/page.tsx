@@ -22,6 +22,7 @@ export default async function Truck() {
         />
         <div className="w-full h-120 md:h-280 p-10 flex justify-center">
           <iframe
+            title="Rescue truck replacement proposal (PDF)"
             className="w-full"
             src="/kcesar/new_truck/rescue-truck-replacement-2024.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
           />
