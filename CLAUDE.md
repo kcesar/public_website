@@ -17,6 +17,8 @@ The committed lockfile is `bun.lockb`.
 | Production build | `bun run build` |
 | Lint | `bun run lint` |
 | Type check | `bun run typecheck` |
+| Unit tests | `bun run test` (Bun's built-in runner; specs in `tests/unit/`) |
+| E2E tests | `bun run test:e2e` (Playwright + Chromium; specs in `e2e/`) |
 
 Use `bun` / `bun run <script>` for all local work, scripts, and GitHub Actions.
 When adding a workflow or doc, target Bun (e.g. `oven-sh/setup-bun`), not
@@ -26,6 +28,17 @@ When adding a workflow or doc, target Bun (e.g. `oven-sh/setup-bun`), not
 > deploy) still uses `npm install` on Node 20. That is the one place still on
 > npm and is slated to migrate to Bun. Everything else — local dev, the
 > `pr-checks` workflow, and Vercel — uses Bun.
+
+## Testing
+
+- **Unit:** Bun's built-in runner. Specs live in `tests/unit/`. Run with
+  `bun run test` (scoped to `tests/unit` — do **not** run bare `bun test`, which
+  would also try to execute the Playwright `e2e/*.spec.ts` files and fail).
+- **E2E:** Playwright (Chromium only). Specs in `e2e/`, config in
+  `playwright.config.ts`. Run with `bun run test:e2e`; it auto-starts the dev
+  server via `webServer`. First run needs `bunx playwright install chromium`.
+- Both run in CI via `.github/workflows/pr-checks.yml` (unit in the `checks`
+  job, E2E in a dedicated `e2e` job).
 
 ## Config gotchas (don't relearn these)
 
