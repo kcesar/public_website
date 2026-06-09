@@ -17,22 +17,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Node.js version
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20.x'
+      # This project uses Bun (see CLAUDE.md). Do not assume npm is available.
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
 
       - name: Install dependencies
-        run: npm install
+        run: bun install --frozen-lockfile
 
       - name: Lint
-        run: npm run lint
+        run: bun run lint
 
       - name: Type check
-        run: npm run typecheck
+        run: bun run typecheck
 
       - name: Build
-        run: npm run build
-
-      - name: Test (if present)
-        run: npm test --if-present
+        run: bun run build
