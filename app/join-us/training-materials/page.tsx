@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Banner from "@/components/banner/banner";
+
+export const metadata: Metadata = {
+  title: "Training Materials & Schedule",
+  description:
+    "Training materials, orientation packets, and the course schedule for King County ESAR Basic Training.",
+  alternates: { canonical: "/join-us/training-materials" },
+};
 import BasicLayout from "@/components/layout/basiclayout";
 import Subtitle from "@/components/text/subtitle";
 import LinkCard from "./linkcard";

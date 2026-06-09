@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Banner from "@/components/banner/banner";
+
+export const metadata: Metadata = {
+  title: "Join Us",
+  description:
+    "Join King County Explorer Search & Rescue. Membership is open to anyone 14 and older — learn about Basic Training and how to apply.",
+  alternates: { canonical: "/join-us" },
+};
 import CenteredText from "@/components/text/centeredtext";
 import Subtitle from "@/components/text/subtitle";
 import BasicImage from "@/components/image/basicimage";

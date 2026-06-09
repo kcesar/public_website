@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Banner from "@/components/banner/banner";
+
+export const metadata: Metadata = {
+  title: "Donate",
+  description:
+    "Support King County Explorer Search & Rescue, a 501(c)(3) volunteer organization. Your donation helps fund the training and equipment behind every rescue across King County.",
+  alternates: { canonical: "/donate" },
+};
 import DonateCard, {
   DonateCardProps,
   PaypalDonateButton,

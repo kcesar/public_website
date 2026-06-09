@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Banner from "@/components/banner/banner";
+
+export const metadata: Metadata = {
+  title: "Contact Us",
+  description:
+    "Get in touch with King County Explorer Search & Rescue. In a backcountry or any other emergency, always call 911 first.",
+  alternates: { canonical: "/contact-us" },
+};
 import BasicBody from "@/components/layout/basicbody";
 import BasicLayout from "@/components/layout/basiclayout";
 import Link from "next/link";

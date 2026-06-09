@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Banner from "@/components/banner/banner";
+
+export const metadata: Metadata = {
+  title: "Supplemental Mapwork",
+  description:
+    "Practice map and compass navigation problems similar to those used in King County ESAR Basic Training.",
+  alternates: { canonical: "/mapwork" },
+};
 import BasicBody from "@/components/layout/basicbody";
 import BasicLayout from "@/components/layout/basiclayout";
 import CenteredText from "@/components/text/centeredtext";
