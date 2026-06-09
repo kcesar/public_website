@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Banner from "@/components/banner/banner";
+
+export const metadata: Metadata = {
+  title: "Basic Training Overview",
+  description:
+    "An overview of ESAR Basic Training — the roughly 170-hour program that prepares new members to safely contribute to wilderness search and rescue.",
+  alternates: { canonical: "/join-us/basic-training-overview" },
+};
 import BasicLink from "@/components/navigation/basiclink";
 import BasicLayout from "@/components/layout/basiclayout";
 import CenteredText from "@/components/text/centeredtext";

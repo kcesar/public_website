@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Banner from "@/components/banner/banner";
+
+export const metadata: Metadata = {
+  title: "Our History",
+  description:
+    "The history of King County Explorer Search & Rescue, one of the oldest volunteer search and rescue units in the United States.",
+  alternates: { canonical: "/about/history" },
+};
 import BasicImage from "@/components/image/basicimage";
 import BasicBody from "@/components/layout/basicbody";
 import BasicLayout from "@/components/layout/basiclayout";

@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Banner from "@/components/banner/banner";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description:
+    "Learn about King County Explorer Search & Rescue — who we are, our mission, and how our volunteers support wilderness search and rescue across King County, Washington.",
+  alternates: { canonical: "/about" },
+};
 import Card from "./card";
 import BasicLayout from "@/components/layout/basiclayout";
 import Subtitle from "@/components/text/subtitle";

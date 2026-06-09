@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Banner from "@/components/banner/banner";
+
+export const metadata: Metadata = {
+  title: "New Rescue Truck",
+  description:
+    "Help King County Explorer Search & Rescue fund a new rescue truck — vital equipment that supports our leaders and teams in the field.",
+  alternates: { canonical: "/truck" },
+};
 import BasicImage from "@/components/image/basicimage";
 import BasicBody from "@/components/layout/basicbody";
 import BasicLayout from "@/components/layout/basiclayout";
