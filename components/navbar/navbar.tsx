@@ -10,20 +10,20 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 25) {
-        setNavbarTransparent(false);
-      } else {
-        setNavbarTransparent(true);
-      }
+      const next = window.scrollY <= 25;
+      // Functional updater so React bails out when the value is unchanged,
+      // avoiding a re-render of the navbar on every single scroll event.
+      setNavbarTransparent((prev) => (prev === next ? prev : next));
     };
 
-    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // sync state if the page loads already scrolled
+    // Passive listener so scrolling is never blocked on this handler.
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
-    // Cleanup function to remove the event listener when the component unmounts
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []); // Empty dependency array means this effect runs once on mount and cleanup on unmount
+  }, []);
 
   let transparentCss = "navbar sticky top-0 z-50";
   let solidCss = "navbar sticky top-0 z-50 bg-esar-green/80 backdrop-blur-xs";

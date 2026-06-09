@@ -10,9 +10,6 @@ export default function Banner({
   alt: string;
 }) {
   return (
-    // <div className="object-cover overflow-clip relative min-w-full h-96 z-0 -mt-20">
-    //   <Image alt={alt} src={location} fill={true} />
-    // </div>
     <div className="relative w-full pb-10">
       <div className="relative z-0 h-96 -mt-20">
         <Image
@@ -20,6 +17,7 @@ export default function Banner({
           src={location}
           fill={true}
           priority={true}
+          sizes="100vw"
           className="object-cover overflow-hidden brightness-[0.6]"
         />
       </div>
