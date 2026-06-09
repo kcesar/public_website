@@ -58,7 +58,7 @@ export default function MailchimpSubscribeForm() {
           Submit
         </button>
       </form>
-      {error && <span className="text-red-500">{error}</span>}
+      {error && <span role="alert" className="text-red-500">{error}</span>}
       {thankYou && <span>{thankYou}</span>}
       <MailChimpDisclaimer />
     </div>

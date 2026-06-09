@@ -24,7 +24,7 @@ export default async function ContactUs() {
       <BasicBody>
         <div className="flex flex-col text-center justify-center pb-5 px-4">
           <h2 className="pb-5">Reporting an emergency?</h2>
-          <h1 className="text-red-600">Call 911</h1>
+          <p className="text-red-600 text-3xl md:text-5xl font-bold">Call 911</p>
           <p className="pt-5 px-8">
             King County Search & Rescue Resources must be requested by the King
             County Sheriff&apos;s Office SAR Coordinator.

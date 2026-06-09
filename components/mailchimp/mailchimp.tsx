@@ -82,12 +82,18 @@ export function MailChimpSubtext() {
 export function MailChimpFields({ className = '' }: {  className?: string }) {
   return (
     <>
-      {fields.map(input => 
-        <input
-          { ...input }
-          key={input.name}
-          className={className}
-        />
+      {fields.map(input =>
+        input.type === 'hidden' ? (
+          <input { ...input } key={input.name} className={className} />
+        ) : (
+          // `contents` keeps the label transparent to the surrounding flex
+          // layout; the sr-only text gives each input an accessible name since
+          // the placeholder alone is not announced by screen readers.
+          <label key={input.name} className="contents">
+            <span className="sr-only">{input.placeholder}</span>
+            <input { ...input } id={input.name} className={className} />
+          </label>
+        )
       )}
     </>
   );

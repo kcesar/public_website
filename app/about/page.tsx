@@ -93,6 +93,7 @@ export default async function About() {
         <Subtitle content="Annual Report" />
         <div className="w-full h-120 md:h-280 p-10 flex justify-center">
           <iframe
+            title="2023 Annual Report (PDF)"
             className="w-full"
             src="/kcesar/annual-report/2023-annual-report.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
           />

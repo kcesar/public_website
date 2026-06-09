@@ -31,8 +31,8 @@ export default function Card({
 
         <div className="card-actions justify-end">
           <p>{title}</p>
-          <Link href={`mailto:${email}`}>
-            <FaEnvelope className="h-6 w-6" />
+          <Link href={`mailto:${email}`} aria-label={`Email ${personName}`}>
+            <FaEnvelope className="h-6 w-6" aria-hidden="true" />
           </Link>
         </div>
       </div>
