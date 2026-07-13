@@ -97,8 +97,9 @@ export default async function About() {
           America Learning for Life program. King County ESAR still maintains a
           Post with the Boy Scouts of America but we are not as directly
           associated with Scouting as we once were. Today, we are the largest of
-          seven member-units of King County Search & Rescue (KCSAR), and accept
-          both adult and youth members each training season.'
+          seven member-units of the King County Search & Rescue Association
+          (KCSARA), and accept both adult and youth members each training
+          season.'
         />
         <BasicImage
           location="/kcesar/advanced-litter/advanced-litter-19.jpg"
