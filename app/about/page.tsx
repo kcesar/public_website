@@ -13,6 +13,7 @@ import Subtitle from "@/components/text/subtitle";
 import BasicBody from "@/components/layout/basicbody";
 import CenteredText from "@/components/text/centeredtext";
 import BasicLink from "@/components/navigation/basiclink";
+import BasicImage from "@/components/image/basicimage";
 
 export default async function About() {
   let people = [
@@ -68,6 +69,10 @@ export default async function About() {
           operations, promoting wilderness safety, and fostering leadership,
           community, and personal development among our members."
         />
+        <BasicImage
+          location="/kcesar/advanced-litter/advanced-litter-4.jpg"
+          alt="Rescuers carrying a subject on a wheeled litter through the forest"
+        />
 
         <div className="divider py-10" />
         <Subtitle content="Vision" />
@@ -76,6 +81,10 @@ export default async function About() {
           responsibly, where those in need of rescue receive rapid and
           compassionate assistance, and where members build skills, confidence,
           and lasting connections through service."
+        />
+        <BasicImage
+          location="/kcesar/advanced-litter/advanced-litter-13.jpg"
+          alt="Rescuers working together to manage a rope line on a steep slope"
         />
 
         <div className="divider py-10" />
@@ -90,6 +99,10 @@ export default async function About() {
           associated with Scouting as we once were. Today, we are the largest of
           seven member-units of King County Search & Rescue (KCSAR), and accept
           both adult and youth members each training season.'
+        />
+        <BasicImage
+          location="/kcesar/advanced-litter/advanced-litter-19.jpg"
+          alt="The full team hiking out together along a forest trail with a litter"
         />
 
         <BasicLink title="Our History" href="/about/history" />
