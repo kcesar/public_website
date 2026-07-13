@@ -36,10 +36,13 @@ export default function Application({
   } else {
     return (
       <div className="flex flex-col items-center pb-6">
-        <Subtitle content="Thank you for your interest in joining KCESAR." />
+        <Subtitle content="Thank you for your interest in joining KCESAR!" />
         <div className="pt-6">
           <SubSubtitle
-            content="Joining ESAR is a 7-month process generally beginning in August and ending in March.  Information about applications and scheduling for the 2026-27 training season will be released in July."
+            content={
+              'Training for 2026-27 will run from September through March. ' +
+              'Registration for the first course—“Course A”—will open here, in mid-August.'
+            }
           />
         </div>
         <div className="pt-2">

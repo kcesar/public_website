@@ -30,29 +30,31 @@ export default async function BasicTrainingOverview() {
         <Subtitle content="Basic Training Overview" />
         <CenteredText
           content="ESAR Basic Training is a comprehensive program designed to prepare new
-        members for the challenges that they will face in the field. As a
-        trainee, you will receive instruction and demonstrate proficiency in
+        members to serve their community as first responders on search and
+        rescue operations. It will prepare them for the challenges that they
+        will face in the field and to respond to missions as a member of the
+        unit. Trainees will receive instruction and demonstrate proficiency in
         wilderness navigation, survival skills, search method theory, first aid,
-        and evidence search procedures. Basic Training begins in August and runs through March.
-        It is purposefully scheduled during the winter months to give trainees experience working
-        in the challenging conditions they could encounter on a mission.
-        Training may involve snow, ice, wind, rain, and other unpleasant
-        situations."
+        and evidence search procedures. Basic Training begins in September and
+        runs through March. It is purposefully scheduled during the winter
+        months to give trainees experience working in the challenging conditions
+        they could encounter on a mission. Training may involve snow, ice, wind,
+        rain, and other unpleasant situations. Trainees are expected to
+        understand how to prevent hypothermia, to be aware of the conditions
+        around them, and to take care of themselves and their team."
         />
         <BasicImage
           location="/kcesar/advanced-litter/advanced-litter-7.jpg"
           alt="Rescuers evacuating a subject"
         />
         <CenteredText
-          content="Trainees are expected to understand how to prevent hypothermia, to be
-        aware of the conditions around them, and to take care of themselves and
-        their team. Basic Training requires approximately 170 hours including
-        four overnight-weekends, several full-day and evening classroom
-        sessions, and a combination of homework and independent on-line
-        learning. All courses are pass/fail and some trainees may need to repeat one or
-        more additional weekends to successfully complete the series. For
-        additional information about the training and courses, please download a
-        copy of the Basic Training Orientation Packet."
+          content="Basic Training requires 170+ hours including four overnight-weekends,
+        several full-day and evening classroom sessions, and a combination of
+        homework and independent on-line learning. All courses are pass/fail and
+        some trainees may need to repeat one or more additional weekends to
+        successfully complete the series. For additional information about the
+        training please download a copy of the Basic Training Orientation
+        Packet."
         />
         <BasicImage
           location="/kcesar/advanced-litter/advanced-litter-33.jpg"

@@ -61,6 +61,24 @@ export default async function About() {
         alt="Rescuers standing"
       />
       <BasicBody>
+        <Subtitle content="Mission" />
+        <CenteredText
+          content="King County Explorer Search & Rescue is a volunteer organization
+          dedicated to assisting people in need through search and rescue
+          operations, promoting wilderness safety, and fostering leadership,
+          community, and personal development among our members."
+        />
+
+        <div className="divider py-10" />
+        <Subtitle content="Vision" />
+        <CenteredText
+          content="We envision a community where people explore the outdoors safely and
+          responsibly, where those in need of rescue receive rapid and
+          compassionate assistance, and where members build skills, confidence,
+          and lasting connections through service."
+        />
+
+        <div className="divider py-10" />
         <Subtitle content="Who We Are" />
         <CenteredText
           content='King County Explorer Search & Rescue was founded in 1954 as one of the
@@ -70,8 +88,8 @@ export default async function About() {
           America Learning for Life program. King County ESAR still maintains a
           Post with the Boy Scouts of America but we are not as directly
           associated with Scouting as we once were. Today, we are the largest of
-          nine member-units of the King County Search & Rescue Association
-          (KCSARA) and accept both adult and youth members each training season.'
+          seven member-units of King County Search & Rescue (KCSAR), and accept
+          both adult and youth members each training season.'
         />
 
         <BasicLink title="Our History" href="/about/history" />
