@@ -13,6 +13,7 @@ import Subtitle from "@/components/text/subtitle";
 import BasicBody from "@/components/layout/basicbody";
 import CenteredText from "@/components/text/centeredtext";
 import BasicLink from "@/components/navigation/basiclink";
+import BasicImage from "@/components/image/basicimage";
 
 export default async function About() {
   let people = [
@@ -61,6 +62,32 @@ export default async function About() {
         alt="Rescuers standing"
       />
       <BasicBody>
+        <Subtitle content="Mission" />
+        <CenteredText
+          content="King County Explorer Search & Rescue is a volunteer organization
+          dedicated to assisting people in need through search and rescue
+          operations, promoting wilderness safety, and fostering leadership,
+          community, and personal development among our members."
+        />
+        <BasicImage
+          location="/kcesar/advanced-litter/advanced-litter-4.jpg"
+          alt="Rescuers carrying a subject on a wheeled litter through the forest"
+        />
+
+        <div className="divider py-10" />
+        <Subtitle content="Vision" />
+        <CenteredText
+          content="We envision a community where people explore the outdoors safely and
+          responsibly, where those in need of rescue receive rapid and
+          compassionate assistance, and where members build skills, confidence,
+          and lasting connections through service."
+        />
+        <BasicImage
+          location="/kcesar/advanced-litter/advanced-litter-13.jpg"
+          alt="Rescuers working together to manage a rope line on a steep slope"
+        />
+
+        <div className="divider py-10" />
         <Subtitle content="Who We Are" />
         <CenteredText
           content='King County Explorer Search & Rescue was founded in 1954 as one of the
@@ -70,8 +97,12 @@ export default async function About() {
           America Learning for Life program. King County ESAR still maintains a
           Post with the Boy Scouts of America but we are not as directly
           associated with Scouting as we once were. Today, we are the largest of
-          nine member-units of the King County Search & Rescue Association
-          (KCSARA) and accept both adult and youth members each training season.'
+          seven member-units of King County Search & Rescue (KCSAR), and accept
+          both adult and youth members each training season.'
+        />
+        <BasicImage
+          location="/kcesar/advanced-litter/advanced-litter-19.jpg"
+          alt="The full team hiking out together along a forest trail with a litter"
         />
 
         <BasicLink title="Our History" href="/about/history" />

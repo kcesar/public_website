@@ -1,6 +1,6 @@
 import React from 'react';
 
-const imagePath = './assets/img/map_01.jpg';
+const imagePath = '/assets/img/map_01.jpg';
 const imageOriginalWidth = 1540;
 const imageRenderSize = 800;
 const imageScale = imageRenderSize / imageOriginalWidth;
