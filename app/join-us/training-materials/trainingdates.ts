@@ -25,7 +25,7 @@ const courses: Course[] = [
       name: "Course B: Map and Compass",
       prerequisites: [
         "Course A",
-        "Acceptance into 2025-26 Training Class",
+        "Acceptance into 2026-27 Training Class",
         "Course Fee Paid ($250) - Do not make a course fee payment until you have successfully registered for Course B"
       ]
     },
