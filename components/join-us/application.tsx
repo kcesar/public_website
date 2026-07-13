@@ -16,7 +16,7 @@ export default function Application({
           <SubSubtitle content="Training season is now underway." />
         </div>
         <div className="pt-2">
-          <ActuallyCenteredText content="Registration for Course A, the first step in 2025-26 training, is open. See the training schedule for more information, including the registration link. " />
+          <ActuallyCenteredText content="Registration for Course A, the first step in 2026-27 training, is open. See the training schedule for more information, including the registration link. " />
           <div className="flex flex-col items-center gap-2">
             <BasicLink
               title="Training Calendar"
