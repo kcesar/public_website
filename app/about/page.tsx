@@ -105,9 +105,13 @@ export default async function About() {
           alt="The full team hiking out together along a forest trail with a litter"
         />
 
-        <BasicLink title="Our History" href="/about/history" />
-
-        <br />
+        <div className="flex justify-center pt-10 pb-6">
+          <BasicLink
+            title="Read Our History →"
+            href="/about/history"
+            className="btn-lg shadow-lg"
+          />
+        </div>
         <div className="flex flex-wrap justify-center gap-10 p-10">
           {people.map((person) => (
             <Card
