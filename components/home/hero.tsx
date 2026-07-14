@@ -25,7 +25,7 @@ export default function Hero() {
         <p className="text-sm md:text-lg pb-10 drop-shadow-xl md:[text-shadow:0_1px_4px_rgb(0_0_0/60%)]">
           King County Explorer Search & Rescue is one of the earliest Search &
           Rescue organizations established in the United States and the largest
-          of nine member-units of the King County Search & Rescue Association.
+          of seven member-units of King County Search & Rescue (KCSAR).
         </p>
         <div className="flex flex-col gap-2 justify-center items-center">
           <BasicLink title="Join Us" href="/join-us" />

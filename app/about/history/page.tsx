@@ -28,7 +28,7 @@ export default function History() {
         <CenteredText
           content="King County Explorer Search & Rescue (ESAR) was founded in 1954 
         as one of the first organized search and rescue teams in the country.  Today, it is 
-        the largest of nine member-units of the King County Search & Rescue Association (KCSARA) 
+        the largest of seven member-units of King County Search & Rescue (KCSAR)
         with over 250 active members. "
         />
         <BasicImage
