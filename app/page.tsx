@@ -27,7 +27,7 @@ export default function Home() {
 
               <GridText
                 title="Who We Are"
-                body="King County Explorer Search & Rescue (also known as KCESAR or ESAR) is the primary ground search and rescue resource in King County and the largest of nine member-units in the King County Search & Rescue Association. We operate under the purview of the King County Sheriff's Office and Washington State Department of Emergency Management."
+                body="King County Explorer Search & Rescue (also known as KCESAR or ESAR) is the primary ground search and rescue resource in King County and the largest of seven member-units in King County Search & Rescue (KCSAR). We operate under the purview of the King County Sheriff's Office and Washington State Department of Emergency Management."
                 link="/about"
                 linkText="Learn More"
               />
@@ -64,7 +64,7 @@ export default function Home() {
               />
               <GridText
                 title="Who We Are"
-                body="ESAR is the primary ground search and rescue resource in King County and the largest of nine member-units in the King County Search & Rescue Association. We operate under the purview of the King County Sheriff's Office and Washington State Department of Emergency Management."
+                body="ESAR is the primary ground search and rescue resource in King County and the largest of seven member-units in King County Search & Rescue (KCSAR). We operate under the purview of the King County Sheriff's Office and Washington State Department of Emergency Management."
                 link="/about"
                 linkText="Learn More"
               />

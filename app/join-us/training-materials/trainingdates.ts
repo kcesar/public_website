@@ -100,7 +100,7 @@ export type CourseLocation = {
 const locations: CourseLocation[] = [
     {
       id: "KCSARA",
-      name: "KCSARA HQ",
+      name: "KCSAR HQ",
       street_address: "34501 SE 99th St, Snoqualmie",
       google_maps_url: "https://goo.gl/maps/GrLHi5q6giKDrTcc7"
     },
