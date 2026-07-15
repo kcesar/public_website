@@ -78,6 +78,14 @@
   */
   html {
     background-color: var(--color-timber);
+    /*
+      The hero video is fixed at w-screen (100vw), which includes the scrollbar
+      width — on systems with classic scrollbars that overflows the content by
+      the scrollbar width and creates a horizontal scrollbar. Clip it at the
+      root. overflow-x on <html> (the scroll root) doesn't break the sticky
+      navbar, since the viewport is still its scroll container.
+    */
+    overflow-x: hidden;
   }
 
   body {
