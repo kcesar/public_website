@@ -18,7 +18,9 @@ export default function Home() {
         <Video />
         <Hero />
       </div>
-      <div className="relative bg-base-100 pb-10">
+      {/* mt keeps the mountain ridge (which extends up from this section's top)
+          below the fold on load — it only appears as you scroll. */}
+      <div className="relative bg-base-100 pb-10 mt-24 md:mt-36">
         {/* Content rises over the hero video as a mountain silhouette */}
         <MountainRidge className="absolute bottom-full left-0 text-base-100 h-16 md:h-28" />
         {/* Ambient topographic texture across the whole content area */}

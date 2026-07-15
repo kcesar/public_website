@@ -132,11 +132,11 @@
 }
 
 /*
-  Rounded (pill) buttons. Unlayered so it wins over DaisyUI's layered radius
-  token without touching input/field radii.
+  Slightly-rounded buttons that match the navbar's rounded-md corners.
+  Unlayered so it wins over DaisyUI's layered radius token.
 */
 .btn {
-  border-radius: 9999px;
+  border-radius: 0.375rem;
 }
 
 @supports (-webkit-touch-callout: none) {
