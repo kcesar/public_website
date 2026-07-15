@@ -25,7 +25,7 @@ export default function Home() {
           line lives inside MountainRidge (at its base) so it paints on top. */}
       <div className="relative bg-base-100 pb-10 mt-32 md:mt-48">
         {/* Content rises over the hero video as a mountain silhouette */}
-        <MountainRidge className="absolute bottom-full left-0 text-base-100 h-24 md:h-40" />
+        <MountainRidge className="absolute bottom-full left-0 text-base-100 h-20 md:h-32" />
         <TerrainField opacity={0.5} />
         <div className="relative pt-10">
         <BasicLayout>
