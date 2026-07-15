@@ -8,6 +8,7 @@ import InstagramEmbed from "@/components/instagram/instagram";
 import BasicBody from "@/components/layout/basicbody";
 import BasicLayout from "@/components/layout/basiclayout";
 import Contour from "@/components/topo/contour";
+import MountainRidge from "@/components/topo/mountain";
 
 export default function Home() {
   return (
@@ -17,7 +18,12 @@ export default function Home() {
         <Video />
         <Hero />
       </div>
-      <div className="bg-base-100 py-10">
+      <div className="relative bg-base-100 pb-10">
+        {/* Content rises over the hero video as a mountain silhouette */}
+        <MountainRidge className="absolute bottom-full left-0 text-base-100 h-16 md:h-28" />
+        {/* Ambient topographic texture across the whole content area */}
+        <Contour opacity={0.14} className="!absolute inset-0 h-full" />
+        <div className="relative pt-10">
         <BasicLayout>
           <BasicBody>
             <div className="hidden grid-cols-3 lg:grid gap-4 gap-y-10 place-items-stretch">
@@ -128,6 +134,7 @@ export default function Home() {
             </div>
           </BasicBody>
         </BasicLayout>
+        </div>
       </div>
     </div>
   );

@@ -131,6 +131,14 @@
   opacity: 0.7;
 }
 
+/*
+  Rounded (pill) buttons. Unlayered so it wins over DaisyUI's layered radius
+  token without touching input/field radii.
+*/
+.btn {
+  border-radius: 9999px;
+}
+
 @supports (-webkit-touch-callout: none) {
   .h-screen {
     height: 100vh;

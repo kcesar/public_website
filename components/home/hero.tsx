@@ -1,11 +1,13 @@
 import Image from "next/image";
 import BasicLink from "../navigation/basiclink";
 import MailchimpSubscibeModal from "../mailchimp/mailchimp-subscribe-modal";
+import Contour from "../topo/contour";
 
 export default function Hero() {
   return (
-    <div className="h-[calc(100vh-80px)] flex text-center items-center justify-center text-white -translate-y-[60px]">
-      <div className="max-w-6xl pb-10 px-5">
+    <div className="relative h-[calc(100vh-80px)] flex text-center items-center justify-center text-white -translate-y-[60px]">
+      <Contour opacity={0.18} className="mix-blend-soft-light" />
+      <div className="relative max-w-6xl pb-10 px-5">
         <div className="relative w-[150px] h-[150px] md:w-[200px] md:h-[200px] mt-10 md:mt-24 mb-10 inline-block">
           <Image
             alt="Tailwind CSS Navbar component"
