@@ -21,10 +21,12 @@ export default async function MapWork() {
     <BasicLayout>
       <Banner
         title={pageTitle}
+        eyebrow="Land Navigation"
         location="/kcesar/advanced-litter/advanced-litter-47.jpg"
         alt="Rescuers walking up a snowy trail"
       />
       <BasicBody>
+        <p className="eyebrow pb-3">Basic Training · Self-study</p>
         <CenteredText
           content='In response to many of our trainees asking for additional practice mapwork 
           we have compiled a series of supplemental problems that you can use to self-study. 
@@ -34,23 +36,23 @@ export default async function MapWork() {
         />
         <div className="tabs tabs-border w-full">
 
-          <input type="radio" name="mapwork" className="tab" aria-label="Tools & Review" defaultChecked />
-          <div className="tab-content border-base-300 bg-base-100 p-10">
+          <input type="radio" name="mapwork" className="tab font-stratum uppercase tracking-wide text-xs" aria-label="Tools & Review" defaultChecked />
+          <div className="tab-content border-moss/40 bg-base-100 p-10">
             <ToolsAndReview />
           </div>
 
-          <input type="radio" name="mapwork" className="tab" aria-label="Unit Conversion" />
-          <div className="tab-content border-base-300 bg-base-100 p-10">
+          <input type="radio" name="mapwork" className="tab font-stratum uppercase tracking-wide text-xs" aria-label="Unit Conversion" />
+          <div className="tab-content border-moss/40 bg-base-100 p-10">
             <UnitConversion />
           </div>
 
-          <input type="radio" name="mapwork" className="tab" aria-label="Pacing Problems" />
-          <div className="tab-content border-base-300 bg-base-100 p-10">
+          <input type="radio" name="mapwork" className="tab font-stratum uppercase tracking-wide text-xs" aria-label="Pacing Problems" />
+          <div className="tab-content border-moss/40 bg-base-100 p-10">
             <PacingProblems />
           </div>
 
-          <input type="radio" name="mapwork" className="tab" aria-label="Mapping Problems" />
-          <div className="tab-content border-base-300 bg-base-100 p-10">
+          <input type="radio" name="mapwork" className="tab font-stratum uppercase tracking-wide text-xs" aria-label="Mapping Problems" />
+          <div className="tab-content border-moss/40 bg-base-100 p-10">
             <MappingProblems />
           </div>
         </div>
