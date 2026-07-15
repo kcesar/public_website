@@ -8,12 +8,12 @@ export default function BasicImage({
   alt: string;
 }) {
   return (
-    <div className="relative h-96 w-full px-2 lg:px-5">
+    <div className="relative h-96 w-full max-w-4xl mx-auto">
       <Image
         alt={alt}
         src={location}
         fill={true}
-        sizes="(min-width: 1536px) 1472px, 100vw"
+        sizes="(min-width: 928px) 896px, 100vw"
         className="brightness-90 object-cover overflow-hidden rounded-xl"
       />
     </div>
