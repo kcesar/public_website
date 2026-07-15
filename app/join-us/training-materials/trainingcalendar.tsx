@@ -15,9 +15,9 @@ const MONTHS = [
   "Dec",
 ];
 
-// Parse the compact date strings ("9/2/26", "11/7-11/8/26") into a month label
-// and a day (or day-range) for a calendar tile. Falls back to the raw string.
-function formatDate(raw: string): { month: string; days: string } {
+// Turn the compact date strings ("9/2/26", "11/7-11/8/26") into a readable
+// label ("Sep 2", "Nov 7-8"). Falls back to the raw string if it can't parse.
+function formatDate(raw: string): string {
   const parse = (s: string) => {
     const p = s.split("/");
     return { m: parseInt(p[0], 10), d: parseInt(p[1], 10) };
@@ -27,46 +27,32 @@ function formatDate(raw: string): { month: string; days: string } {
     const a = parse(range[0]);
     const b = parse(range[1]);
     if (!isNaN(a.m) && !isNaN(a.d) && a.m === b.m) {
-      return { month: MONTHS[a.m - 1] ?? "", days: `${a.d}–${b.d}` };
+      return `${MONTHS[a.m - 1] ?? ""} ${a.d}–${b.d}`;
     }
   }
   const one = parse(raw);
   if (!isNaN(one.m) && !isNaN(one.d)) {
-    return { month: MONTHS[one.m - 1] ?? "", days: `${one.d}` };
+    return `${MONTHS[one.m - 1] ?? ""} ${one.d}`;
   }
-  return { month: "", days: raw };
+  return raw;
 }
 
-function DateTile({ session }: { session: JoinedSession }) {
-  const { month, days } = formatDate(session.session.course_date);
-  const start = session.session.course_start_time;
-  const end = session.session.course_end_time;
+function LocationCell({ session }: { session: JoinedSession }) {
+  if (session.course.id === "CRSA") {
+    return <span className="text-lichen">n/a</span>;
+  }
   const loc = session.location;
-  const hasLoc = session.course.id !== "CRSA" && loc?.google_maps_url;
-
-  return (
-    <div className="flex min-w-[80px] flex-col items-center rounded-lg border border-moss/40 bg-timber/60 px-4 py-3 text-center">
-      {month && (
-        <span className="font-stratum text-[0.65rem] uppercase tracking-widest text-trail">
-          {month}
-        </span>
-      )}
-      <span className="font-gin text-2xl leading-tight text-bone">{days}</span>
-      {start && (
-        <span className="pt-1 text-[0.65rem] text-lichen">
-          {start}–{end}
-        </span>
-      )}
-      {hasLoc && (
-        <a
-          href={loc.google_maps_url!}
-          className="pt-1 text-[0.65rem] text-trail underline hover:text-trail/70"
-        >
-          {loc.name}
-        </a>
-      )}
-    </div>
-  );
+  if (loc.google_maps_url) {
+    return (
+      <a
+        href={loc.google_maps_url}
+        className="text-trail underline hover:text-trail/70"
+      >
+        {loc.name}
+      </a>
+    );
+  }
+  return <span className="text-lichen">{loc.name || "TBD"}</span>;
 }
 
 export default function TrainingCalendar({
@@ -92,6 +78,7 @@ export default function TrainingCalendar({
     <div className="flex w-full flex-col gap-6">
       {sortedSessions.map((group, index) => {
         const course = group[0].course;
+        const hasTime = group.some((s) => s.session.course_start_time);
         return (
           <div
             key={index}
@@ -112,10 +99,43 @@ export default function TrainingCalendar({
               </div>
             )}
 
-            <div className="flex flex-wrap gap-3 pt-5">
-              {group.map((session, i) => (
-                <DateTile key={i} session={session} />
-              ))}
+            <div className="overflow-x-auto pt-5">
+              <table className="w-full border-collapse text-left">
+                <thead>
+                  <tr className="border-b border-moss/40">
+                    <th className="eyebrow !text-lichen py-2 pr-6 font-normal">
+                      Date
+                    </th>
+                    {hasTime && (
+                      <th className="eyebrow !text-lichen py-2 pr-6 font-normal">
+                        Time
+                      </th>
+                    )}
+                    <th className="eyebrow !text-lichen py-2 font-normal">
+                      Location
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {group.map((session, i) => (
+                    <tr key={i} className="border-b border-moss/20">
+                      <td className="whitespace-nowrap py-3 pr-6 font-gin text-lg tracking-wide text-bone">
+                        {formatDate(session.session.course_date)}
+                      </td>
+                      {hasTime && (
+                        <td className="whitespace-nowrap py-3 pr-6 text-bone/80">
+                          {session.session.course_start_time
+                            ? `${session.session.course_start_time}–${session.session.course_end_time}`
+                            : "—"}
+                        </td>
+                      )}
+                      <td className="py-3">
+                        <LocationCell session={session} />
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         );
