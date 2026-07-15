@@ -31,7 +31,6 @@ export default async function JoinUs() {
           <Application acceptingApplications={false} />
         </div>
         <div className="ridgeline my-14" />
-        <p className="eyebrow pb-3">Membership</p>
         <Subtitle content="Joining King County Explorer Search & Rescue" />
         <CenteredText
           content="Membership in King County Explorer Search & Rescue (ESAR) is open to

@@ -107,7 +107,6 @@ export default function Home() {
             <div className="ridgeline my-12" />
             <div className="relative w-full overflow-hidden rounded-lg bg-canopy/70 border border-moss/40 py-12 px-6">
               <div className="relative text-center pb-10">
-                <p className="eyebrow pb-3">By the numbers</p>
                 <h2 className="font-gin text-3xl md:text-4xl tracking-wider">
                   What it takes to answer the call
                 </h2>
@@ -126,7 +125,6 @@ export default function Home() {
 
             <div className="ridgeline my-12" />
             <div className="text-center pb-6">
-              <p className="eyebrow pb-3">Field notes</p>
               <h2 className="font-gin text-3xl md:text-4xl tracking-wider">
                 KCESAR on Instagram
               </h2>

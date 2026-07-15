@@ -26,7 +26,6 @@ export default async function MapWork() {
         alt="Rescuers walking up a snowy trail"
       />
       <BasicBody>
-        <p className="eyebrow pb-3">Basic Training · Self-study</p>
         <CenteredText
           content='In response to many of our trainees asking for additional practice mapwork 
           we have compiled a series of supplemental problems that you can use to self-study. 

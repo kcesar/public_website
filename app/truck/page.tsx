@@ -24,7 +24,6 @@ export default async function Truck() {
         alt="Rescuers working on hillside"
       />
       <BasicBody>
-        <p className="eyebrow pb-3">Help us gear up</p>
         <Subtitle content="Will you help us?" />
         <CenteredText content="We are raising funds to purchase a new rescue truck.  Please consider donating to help us reach our goal. A rescue truck is vital to the daily operations we conduct and helps support our leaders and teams in the field." />
         <Link
@@ -38,7 +37,6 @@ export default async function Truck() {
           alt="A preview render of a future rescue truck"
         />
         <div className="ridgeline my-14" />
-        <p className="eyebrow text-center pb-6">The proposal</p>
         <div className="w-full h-120 md:h-280 flex justify-center">
           <iframe
             title="Rescue truck replacement proposal (PDF)"

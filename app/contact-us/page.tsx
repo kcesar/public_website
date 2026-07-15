@@ -74,7 +74,6 @@ export default async function ContactUs() {
 
         <div className="ridgeline my-14" />
 
-        <p className="eyebrow pb-3">Get in touch</p>
         <Subtitle content="Contacts" />
         <div className="flex flex-wrap justify-center gap-8 pt-10">
           <ContactCard title="KCESAR Contacts">

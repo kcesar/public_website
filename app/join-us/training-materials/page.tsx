@@ -33,7 +33,6 @@ export default async function TrainingMaterials() {
         <Links links={links} />
         <div className="pt-8" />
         <div id="traning-materials" />
-        <p className="eyebrow pb-3">Downloads</p>
         <Subtitle content="Training Materials" />
         <div className="flex flex-wrap justify-center gap-10 pt-10">
           <LinkCard

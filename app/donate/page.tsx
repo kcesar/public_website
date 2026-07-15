@@ -112,7 +112,6 @@ export default async function Donate() {
         <div className="ridgeline my-16" />
 
         {/* Ways to give */}
-        <p className="eyebrow text-center pb-3">Ways to give</p>
         <Subtitle content="Pick what's easiest for you" />
         <div className="flex flex-wrap justify-center gap-10 pt-10">
           {donateOptions.map((option, idx) => (

@@ -33,7 +33,6 @@ export default function History() {
         alt="Rescuers walking in the snow"
       />
       <BasicBody>
-        <p className="eyebrow pb-3">Our story</p>
         <Subtitle content="The Early Years" />
         <CenteredText
           content="King County Explorer Search & Rescue (ESAR) was founded in 1954
@@ -61,7 +60,6 @@ export default function History() {
           </div>
         </div>
 
-        <p className="eyebrow pb-3">A youth-first mission</p>
         <Subtitle content="First to Welcome Youth" />
         <CenteredText
           content="ESAR was the first program in the country to accept youth members-and this was by design.
@@ -85,7 +83,6 @@ export default function History() {
 
         <div className="ridgeline my-14" />
 
-        <p className="eyebrow pb-3">Growth &amp; inclusion</p>
         <Subtitle content="A Team for Everyone" />
         <CenteredText
           content="In its early years, Scouting's rules did not allow for women to participate in ESAR.

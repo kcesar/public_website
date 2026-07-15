@@ -22,7 +22,6 @@ export default async function ContactUs() {
         alt="Rescuers walking up a snowy trail"
       />
       <BasicBody>
-        <p className="eyebrow pb-3">Stay in the loop</p>
         <p className="text-center text-base lg:text-lg text-bone/90 max-w-2xl pb-10">
           Wilderness safety tips, rescue stories, and unit news — a few times a
           year, straight to your inbox.

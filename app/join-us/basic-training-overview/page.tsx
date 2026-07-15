@@ -28,7 +28,6 @@ export default async function BasicTrainingOverview() {
       <BasicBody>
         <Links links={links} />
         <div className="pt-8" />
-        <p className="eyebrow pb-3">What to expect</p>
         <Subtitle content="Basic Training Overview" />
         <CenteredText
           content="ESAR Basic Training is a comprehensive program designed to prepare new
@@ -63,7 +62,6 @@ export default async function BasicTrainingOverview() {
           alt="Rescuers moving the litter down the trail"
         />
         <div className="ridgeline my-14" />
-        <p className="eyebrow pb-3">Get prepared</p>
         <Subtitle content="Training Materials" />
         <div className="pt-6">
           <BasicLink href="/join-us/training-materials" title="Download Here" />

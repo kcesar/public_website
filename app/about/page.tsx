@@ -63,7 +63,6 @@ export default async function About() {
         alt="Rescuers standing"
       />
       <BasicBody>
-        <p className="eyebrow pb-3">What drives us</p>
         <Subtitle content="Mission" />
         <CenteredText
           content="King County Explorer Search & Rescue is a volunteer organization
@@ -90,7 +89,6 @@ export default async function About() {
         />
 
         <div className="ridgeline my-14" />
-        <p className="eyebrow pb-3">Our story</p>
         <Subtitle content="Who We Are" />
         <CenteredText
           content='King County Explorer Search & Rescue was founded in 1954 as one of the
@@ -118,7 +116,6 @@ export default async function About() {
 
         <div className="ridgeline my-14" />
 
-        <p className="eyebrow pb-3">Leadership</p>
         <Subtitle content="Who Keeps Us Running" />
         <div className="flex flex-wrap justify-center gap-8 pt-10">
           {people.map((person) => (
@@ -135,7 +132,6 @@ export default async function About() {
 
         <div className="ridgeline my-14" />
 
-        <p className="eyebrow pb-3">Transparency</p>
         <Subtitle content="Annual Report" />
         <div className="w-full h-120 md:h-280 pt-10 flex justify-center">
           <iframe
