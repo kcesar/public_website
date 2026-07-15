@@ -10,104 +10,154 @@
 
 </div>
 
-## Architecture and Design
-### Runtime
-[Bun][bun-link] is the JavaScript/TypeScript runtime for this project. It was chosen purely based upon speed. When developing locally, fast bundling and reloads are key to providing a good experience. When compared to Node.js/Deno, Bun is significantly much faster and provides other optional speed-ups provided by tools that have been rewritten in Rust, such as Turbopack.
-### Framework
-[Next.js][nextjs-link] is the framework that was chosen for this project due to it's current use in the respond app and developer familiarity within the organization. Within the Next.js ecosystem, this project utilizes the App Router, which is now preferred for new projects.
-### Styling
-[TailwindCSS][tailwind-link] is now a built-in option in the `create-next-app@latest` flow. It is very convenient and provides more approachable styling when compared to raw CSS or other options. On top of TailwindCSS, we chose to leverage [DaisyUI][daisyui-link] components as they provide theming (light/dark especially) out of the box, with the possibility of extending the theme later on. In addition, they are pure TailwindCSS and don't require any extra JavaScript. With a wide variety of components available, you should be able to find what you need with ease.
-### Components/Dependencies
-* `react-countup`
-  * This component is used on the home page to provide an interactive count-up animation for the various statistics
-* `react-icons`
-  * This component library is used across the site for icons such as social logos and navigation symbols
+Informational/marketing site for **King County Explorer Search & Rescue (ESAR)** —
+Next.js 15 (App Router) + React 19 + TypeScript, Tailwind CSS v4 + daisyUI v5,
+run and built with **Bun**. Deployed as a Node standalone app to Azure App
+Service, with per-PR previews on Vercel.
 
+> **Contributing with an AI agent?** Read [`CLAUDE.md`](./CLAUDE.md) — it is the
+> source of truth for the design system, tooling, testing, and config gotchas.
+> This README is the human-oriented overview.
+
+## Tech stack
+
+| Layer | Choice | Notes |
+|-------|--------|-------|
+| Runtime / package manager | [Bun][bun-link] | fast installs + bundling; lockfile is `bun.lockb`. **Not** npm/yarn/pnpm. |
+| Framework | [Next.js][nextjs-link] 15 (App Router) | statically rendered; `output: 'standalone'` for Azure |
+| UI | React 19 + TypeScript | |
+| Styling | [TailwindCSS][tailwind-link] v4 + [daisyUI][daisyui-link] v5 | custom `esar` theme in `app/globals.css` |
+| Fonts | Adobe Typekit (`use.typekit.net/xyo6wwn`) | `gin`, `trade-gothic-next`, `stratum-2-web` |
+| Misc | `react-countup` (stat count-ups), `react-icons` (social/nav icons), `jsonp` (Mailchimp) | |
+
+## Design system — "Deep Forest / Field Ops"
+
+A deep-evergreen palette, a rugged/technical type system, and a **topographic**
+signature (land navigation is a core SAR skill). Full detail and rules live in
+[`CLAUDE.md`](./CLAUDE.md); the essentials:
+
+- **Palette** — `Timber #0b1f16` (base) · `Canopy #10271b` (surfaces) ·
+  `ESAR Green #026737` (brand) · `Trail #34c56e` (links/interactive) ·
+  `Beacon #f26a21` (Donate only) · `Bone #f3f6f1` / `Lichen #9db1a4` (text) ·
+  `Moss #2e5e43` (lines). Exposed as both the daisyUI `esar` theme and Tailwind
+  utilities (`bg-timber`, `text-trail`, `border-moss`, …).
+- **Type (3 roles)** — `font-gin` (condensed display: titles/headings/stats),
+  `font-trade-gothic-next` (body), `font-stratum` (small uppercase "map
+  annotation" labels: eyebrows, nav, buttons).
+- **Signature** — topographic contours + a fractal mountain ridge. Home gets the
+  full treatment (video hero → `MountainRidge` → `TerrainField`); interior pages
+  get a faint `Contour` backdrop in the body; a dashed `ridgeline` divides
+  sections.
+- **Convention** — cards are `bg-canopy border border-moss/40` with a `gin`
+  title; don't invent new card styles, new fonts, or default-blue links, and
+  don't put an "eyebrow" kicker above every heading (reserve eyebrows for real
+  info). See `CLAUDE.md` for the reasoning.
+
+### Topographic art is generated
+
+The contour/terrain SVG data is produced deterministically by scripts in
+`tools/topo/` — **do not hand-edit** the generated files
+(`components/topo/contour.tsx`, `components/topo/terrain-data.ts`). To change the
+terrain, edit the generator and re-run:
+
+```bash
+bun run gen:topo        # regenerate both
+bun run gen:contours    # just the interior/stats Contour field
+bun run gen:terrain     # just the shared home mountain + terrain field
+```
 
 ## Development
-### Prerequisites
-1. Install Bun
-   1. `curl -fsSL https://bun.sh/install | bash` - Bun can be installed with the previous command on Linux and macOS. As always, exercise caution when copying commands from the internet.
-2. Install Packages with Bun
-   1. `bun i`
 
-### Building
+**Prerequisites**
 
-Please use `bun run dev` to build and run the application locally.
+1. Install Bun — `curl -fsSL https://bun.sh/install | bash` (exercise caution
+   running install scripts from the internet).
+2. Install packages — `bun install`
+
+**Common commands**
+
+| Task | Command |
+|------|---------|
+| Dev server | `bun run dev` |
+| Production build | `bun run build` |
+| Lint | `bun run lint` |
+| Type check | `bun run typecheck` |
+| Unit tests (`tests/unit/`) | `bun run test` |
+| E2E tests (`e2e/`, Playwright) | `bun run test:e2e` |
+| Regenerate topo art | `bun run gen:topo` |
 
 ## Adding New Pages
-Next.js App Router uses the folder structure to define routes.
 
-> Folders are used to define routes. A route is a single path of nested folders, following the file-system hierarchy from the root folder down to a final leaf folder that includes a page.tsx
+Next.js App Router uses the folder structure to define routes: a folder under
+`app/` with a `page.tsx` becomes a route (e.g. `app/example/page.tsx` →
+`/example`). Interior pages follow this pattern — `BasicLayout` supplies the
+faint topographic backdrop, `Banner` the photo header, `BasicBody` the content
+column:
 
-For example, to add a page at `https://myexamplewebsite/example`, in the `app` directory, we would need to add a folder titled `example` with a file inside called `page.tsx`. Within that file would be the contents below defining our page. I have provided the minimal amount of code that preserves the basic styling of this site. In the next section I have defined additional components that can be leveraged in your own pages!
-
-<details open>
-<summary>Minimum Viable Implementation</summary>
-
-```ts
+```tsx
+import type { Metadata } from "next";
 import Banner from "@/components/banner/banner";
 import BasicLayout from "@/components/layout/basiclayout";
-import Subtitle from "@/components/text/subtitle";
 import BasicBody from "@/components/layout/basicbody";
+import Subtitle from "@/components/text/subtitle";
 import CenteredText from "@/components/text/centeredtext";
+
+export const metadata: Metadata = {
+  title: "Example",
+  description: "…",
+  alternates: { canonical: "/example" },
+};
 
 export default async function Example() {
   return (
     <BasicLayout>
       <Banner
         title="Example"
+        eyebrow="Optional kicker"
         location="/example-static-image.png"
-        alt="Example static image"
+        alt="Describe the image"
       />
       <BasicBody>
         <Subtitle content="Example Page" />
-        <CenteredText
-          content="Forests in Washington State are known for their lush greenery and 
-        diverse ecosystems, ranging from temperate rainforests on the Olympic Peninsula to dense 
-        coniferous forests in the Cascade Mountains. These forests are dominated by towering 
-        Douglas fir, western hemlock, and red cedar trees, creating rich habitats for wildlife 
-        like black bears, elk, and the endangered northern spotted owl. The state's climate, with 
-        its heavy rainfall and mild temperatures, fosters the growth of dense underbrush and a vibrant 
-        mossy landscape. Washington&apos;s forests play a vital role in the region's water cycle, carbon 
-        storage, and outdoor recreation, attracting hikers, campers, and nature lovers year-round."
-        />
+        <CenteredText content="Body copy in the trade-gothic body face…" />
       </BasicBody>
     </BasicLayout>
   );
 }
 ```
-</details>
 
-## Custom Components
-| Component                   | Component Folder | File               | Description                                                                                      |
-|-----------------------------|------------------|--------------------|--------------------------------------------------------------------------------------------------|
-| Banner                      | `banner`         | `banner.tsx`       | provides the image at the top of every page                                                      |
-| DonateCard                  | `donate`         | `card.tsx`         | provides the card used for each donation type                                                    |
-| SimpleDonateLinkButton      | `donate`         | `card.tsx`         | provides a button used in donation cards that includes a button icon (such as Venmo or Facebook) |
-| PaypalDonateButton          | `donate`         | `card.tsx`         | provides a PayPal specific donation button (on it's own due to specific implemetation required)  |
-| Footer                      | `footer`         | `footer.tsx`       | provides the footer that is used in the main layout                                              |
-| GridImage                   | `home`           | `gridimage.tsx`    | provides the images used on the home page in large screen layouts                                |
-| GridText                    | `home`           | `gridtext.tsx`     | provides the accompanying text for the images in GridImage                                       |
-| Hero                        | `home`           | `hero.tsx`         | provides the video and text on the home page (where the initial load occurs)                     |
-| SmallImage                  | `home`           | `smallimage.tsx`   | provides the images used on the home page in small or mobile screen layouts                      |
-| Stats                       | `home`           | `stats.tsx`        | provides the count-up statistics used on the home page                                           |
-| Video                       | `home`           | `video.tsx`        | provides the video used on the Hero                                                              |
-| BasicImage                  | `image`          | `basicimage.tsx`   | provides the most common implementation of a Next.js Image with styling                          |
-| InstagramEmbed              | `instagram`      | `instagram.tsx`    | provides the embedded Instagram that points to `kingcounty_esar`                                 |
-| Application                 | `join-us`        | `application.tsx`  | provides the boolean training application open/closed text and form button                       |
-| Links                       | `join-us`        | `links.tsx`        | provides the links that are present below the banner image on each join-us page                  |
-| BasicBody                   | `layout`         | `basicbody.tsx`    | provides the consistent body width and padding on each page                                      |
-| BasicLayout                 | `layout`         | `basiclayout.tsx`  | provides the consistent page layout (wraps all content on page)                                  |
-| Drawer                      | `navbar`         | `drawer.tsx`       | provides the pop-out navigation menu on smaller screen layouts                                   |
-| EndButtons                  | `navbar`         | `end-buttons.tsx`  | provides the always-present donate button in the navbar                                          |
-| Links                       | `navbar`         | `links.tsx`        | provides the links at the top-center in the navbar at larger screen layouts                      |
-| Logo                        | `navbar`         | `logo.tsx`         | provides the logo in the navbar                                                                  |
-| Navbar                      | `navbar`         | `navbar.tsx`       | provides the navbar element in the main layout (including scroll-driven background)              |
-| BasicLink                   | `navigation`     | `basiclink.tsx`    | provides a consistently-styled link button                                                       |
-| CenteredText                | `text`           | `centeredtext.tsx` | provides the most common implementation of text on each page                                     |
-| CenteredTextMinimalXPadding | `text`           | `centeredtext.tsx` | provides a special implementation of CenteredText used on the home page                          |
-| Subtitle                    | `text`           | `subtitle`         | provides the subtitles used on each page                                                         |
+## Shared components (`components/`)
+
+Reusable building blocks. Page-specific components live next to their route
+under `app/` (e.g. `app/about/card.tsx`, `app/join-us/training-materials/`,
+`app/mapwork/quizItem.tsx`).
+
+| Component | Folder / file | Description |
+|-----------|---------------|-------------|
+| `Banner` | `banner/banner.tsx` | full-bleed photo header + timber gradient + `gin` title + optional eyebrow |
+| `DonateButton` | `donate/button.tsx` | the Beacon-orange Donate button in the navbar |
+| `DonateCard`, `PaypalDonateButton`, `SimpleDonateLinkButton` | `donate/card.tsx` | donation option cards + buttons |
+| `Footer` | `footer/footer.tsx` | navigation footer (canopy, ESAR-green top rule, link columns, Beacon donate CTA, social) |
+| `Hero` | `home/hero.tsx` | home hero: logo, eyebrow, `gin` title, CTA (over the video) |
+| `Video` | `home/video.tsx` | fixed full-bleed hero background; poster on mobile / reduced-motion, video otherwise |
+| `Stats` | `home/stats.tsx` | count-up statistic (`react-countup`), `gin` numerals |
+| `GridImage`, `GridText`, `SmallImage` | `home/*.tsx` | home "who we are / join / donate" grid pieces |
+| `BasicImage` | `image/basicimage.tsx` | standard styled Next.js `Image` |
+| `InstagramEmbed` | `instagram/instagram.tsx` | embedded `kingcounty_esar` feed |
+| `Application` | `join-us/application.tsx` | training-open/closed copy + CTAs |
+| `Links` | `join-us/links.tsx` | the stratum sub-nav under the banner on join-us pages |
+| `BasicLayout` | `layout/basiclayout.tsx` | page wrapper; renders the faint interior `Contour` backdrop (pass `contour={false}` to opt out, e.g. the home page) |
+| `BasicBody` | `layout/basicbody.tsx` | content column: max width + horizontal padding |
+| `MailchimpSubscribeForm`, `MailchimpSubscibeModal` | `mailchimp/*.tsx` | newsletter signup (inline form + modal); shared fields in `mailchimp.tsx` |
+| `Navbar` | `navbar/navbar.tsx` | sticky navbar; transparent → `bg-timber/85` on scroll |
+| `Drawer` | `navbar/drawer.tsx` | mobile slide-out menu (daisyUI drawer) |
+| `EndButtons`, `Links`, `Logo` | `navbar/*.tsx` | newsletter/donate buttons, center links, logo |
+| `BasicLink` | `navigation/basiclink.tsx` | consistently-styled link button (stratum, esar-green) |
+| `Subtitle`, `SubSubtitle` | `text/subtitle.tsx` | `gin` section heading / body-face supporting subheading |
+| `CenteredText` (+ variants) | `text/centeredtext.tsx` | standard body-copy blocks |
+| `Contour` | `topo/contour.tsx` | ambient zoomed-out contour field (generated) |
+| `TerrainField` | `topo/terrain-field.tsx` | home section background terrain (generated data) |
+| `MountainRidge` | `topo/mountain.tsx` | home hero→content mountain ridge (generated data) |
 
 <!--
 
@@ -121,16 +171,8 @@ Reference Variables
 [volunteers-badge]: .github/images/made-by-volunteers.svg
 
 <!-- Links -->
-[blank-reference-link]: #
 [for-the-badge-link]: https://forthebadge.com
-[grpc-go-documentation-link]: https://grpc.io/docs/languages/go/
-
-[ko-k8s-apps-yaml]: https://github.com/Kochava/ko-k8s-apps/tree/main/fisher
-
 [nextjs-link]: https://nextjs.org/
-
 [bun-link]: https://bun.sh/
-
 [daisyui-link]: https://daisyui.com/
-
 [tailwind-link]: https://tailwindcss.com/
