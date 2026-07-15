@@ -9,6 +9,7 @@ import BasicBody from "@/components/layout/basicbody";
 import BasicLayout from "@/components/layout/basiclayout";
 import Contour from "@/components/topo/contour";
 import MountainRidge from "@/components/topo/mountain";
+import TerrainField from "@/components/topo/terrain-field";
 
 export default function Home() {
   return (
@@ -19,12 +20,13 @@ export default function Home() {
         <Hero />
       </div>
       {/* mt keeps the mountain ridge (which extends up from this section's top)
-          below the fold on load — it only appears as you scroll. */}
-      <div className="relative bg-base-100 pb-10 mt-24 md:mt-36">
-        {/* Content rises over the hero video as a mountain silhouette */}
-        <MountainRidge className="absolute bottom-full left-0 text-base-100 h-16 md:h-28" />
-        {/* Ambient topographic texture across the whole content area */}
-        <Contour opacity={0.14} className="!absolute inset-0 h-full" />
+          below the fold on load — it only appears as you scroll. Must be >=
+          the ridge render height so the crest starts off-screen. */}
+      <div className="relative bg-base-100 pb-10 mt-32 md:mt-48">
+        {/* Content rises over the hero video as a mountain silhouette; the
+            contour field continues out of it and down the section below. */}
+        <MountainRidge className="absolute bottom-full left-0 text-base-100 h-24 md:h-40" />
+        <TerrainField opacity={0.5} />
         <div className="relative pt-10">
         <BasicLayout>
           <BasicBody>
