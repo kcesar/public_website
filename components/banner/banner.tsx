@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Contour from "@/components/topo/contour";
 
 export default function Banner({
   title,
@@ -23,8 +22,8 @@ export default function Banner({
           sizes="100vw"
           className="object-cover brightness-[0.5]"
         />
-        {/* Topographic texture + a gradient that grounds the title in Timber */}
-        <Contour opacity={0.35} />
+        {/* Gradient grounds the title in Timber; the topographic motif stays a
+            home-page signature rather than sitting on top of the photo. */}
         <div className="absolute inset-0 bg-gradient-to-b from-timber/40 via-transparent to-timber" />
       </div>
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center -mt-20 px-4">
