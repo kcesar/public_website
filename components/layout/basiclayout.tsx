@@ -18,8 +18,9 @@ export default function BasicLayout({
           className="pointer-events-none absolute inset-0"
           style={{
             WebkitMaskImage:
-              "linear-gradient(to bottom, transparent, black 22rem)",
-            maskImage: "linear-gradient(to bottom, transparent, black 22rem)",
+              "linear-gradient(to bottom, transparent 0, transparent 14rem, black 46rem)",
+            maskImage:
+              "linear-gradient(to bottom, transparent 0, transparent 14rem, black 46rem)",
           }}
         >
           <Contour opacity={0.1} className="!absolute inset-0 h-full" />
