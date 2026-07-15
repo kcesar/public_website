@@ -1,6 +1,6 @@
 export default function Subtitle({ content }: { content: string }) {
   return (
-    <h2 className="text-center text-3xl md:text-4xl font-bold tracking-widest px-4">
+    <h2 className="text-center font-gin text-3xl md:text-5xl tracking-wider px-4">
       {content}
     </h2>
   );
@@ -8,7 +8,7 @@ export default function Subtitle({ content }: { content: string }) {
 
 export function SubSubtitle({ content }: { content: string }) {
   return (
-    <h3 className="text-center text-xl md:text-2xl font-bold tracking-widest px-4">
+    <h3 className="text-center font-gin text-xl md:text-3xl tracking-wider px-4">
       {content}
     </h3>
   );

@@ -30,7 +30,7 @@ export default async function ContactUs() {
               <h3>President</h3>
               <Link
                 href={`mailto:president@kcesar.org`}
-                className="text-blue-600 hover:text-blue-400"
+                className="text-trail hover:text-trail/70"
               >
                 president@kcesar.org
                 <FaEnvelope className="h-6 w-6 inline-block ml-3" />
@@ -38,7 +38,7 @@ export default async function ContactUs() {
               <h3>Board of Directors</h3>
               <Link
                 href={`mailto:bod@kcesar.org`}
-                className="text-blue-600 hover:text-blue-400"
+                className="text-trail hover:text-trail/70"
               >
                 bod@kcesar.org
                 <FaEnvelope className="h-6 w-6 inline-block ml-3" />
@@ -46,7 +46,7 @@ export default async function ContactUs() {
               <h3>Public Information Officer</h3>
               <Link
                 href={`mailto:pio@kcesar.org`}
-                className="text-blue-600 hover:text-blue-400"
+                className="text-trail hover:text-trail/70"
               >
                 pio@kcesar.org
                 <FaEnvelope className="h-6 w-6 inline-block ml-3" />
@@ -59,7 +59,7 @@ export default async function ContactUs() {
               <h3>Training Admin</h3>
               <Link
                 href={`mailto:training.admin@kcesar.org`}
-                className="text-blue-600 hover:text-blue-400"
+                className="text-trail hover:text-trail/70"
               >
                 training.admin@kcesar.org
                 <FaEnvelope className="h-6 w-6 inline-block ml-3" />
@@ -72,7 +72,7 @@ export default async function ContactUs() {
               <h3>Recruiting Coordinator</h3>
               <Link
                 href={`mailto:recruiting@kcesar.org`}
-                className="text-blue-600 hover:text-blue-400"
+                className="text-trail hover:text-trail/70"
               >
                 recruiting@kcesar.org
                 <FaEnvelope className="h-6 w-6 inline-block ml-3" />
@@ -80,7 +80,7 @@ export default async function ContactUs() {
               <h3>Youth Coordinator</h3>
               <Link
                 href={`mailto:youth@kcesar.org`}
-                className="text-blue-600 hover:text-blue-400"
+                className="text-trail hover:text-trail/70"
               >
                 youth@kcesar.org
                 <FaEnvelope className="h-6 w-6 inline-block ml-3" />
@@ -88,7 +88,7 @@ export default async function ContactUs() {
               <h3>Fundraising Coordinator</h3>
               <Link
                 href={`mailto:fundraising@kcesar.org`}
-                className="text-blue-600 hover:text-blue-400"
+                className="text-trail hover:text-trail/70"
               >
                 fundraising@kcesar.org
                 <FaEnvelope className="h-6 w-6 inline-block ml-3" />
@@ -96,7 +96,7 @@ export default async function ContactUs() {
               <h3>Public Events Coordinator</h3>
               <Link
                 href={`mailto:events@kcesar.org`}
-                className="text-blue-600 hover:text-blue-400"
+                className="text-trail hover:text-trail/70"
               >
                 events@kcesar.org
                 <FaEnvelope className="h-6 w-6 inline-block ml-3" />

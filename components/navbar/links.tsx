@@ -11,11 +11,11 @@ export default function Links({ navlinks }: { navlinks: NavLink[] }) {
   return (
     <>
       <div className="navbar-center hidden md:flex">
-        <ul className="inline-flex flex-row text-slate-50 gap-4">
+        <ul className="inline-flex flex-row text-bone font-stratum uppercase tracking-[0.12em] text-sm gap-2">
           {navlinks.map((link, index) => (
             <li
               key={index}
-              className="rounded-md hover:bg-base-300/70 px-4 py-2 hover:text-black dark:hover:text-slate-50"
+              className="rounded-md px-4 py-2 hover:bg-moss/25 hover:text-trail transition-colors"
             >
               {link.external ? (
                 <a href={link.href} target="_blank" rel="noopener noreferrer">

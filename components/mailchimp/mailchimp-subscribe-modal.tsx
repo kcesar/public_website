@@ -46,7 +46,7 @@ export default function MailchimpSubscibeModal() {
   return (
     <>
       <button
-        className="btn btn-ghost bg-base-200 text-base-content border-none hover:bg-base-300/70 hover:text-black dark:hover:text-slate-50"
+        className="btn btn-ghost border border-moss/60 bg-canopy text-bone font-stratum uppercase tracking-[0.12em] text-sm hover:bg-base-300 hover:text-trail transition-colors"
         onClick={showModal}
       >
         Sign Up For Our Newsletter

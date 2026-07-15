@@ -7,6 +7,7 @@ import Video from "@/components/home/video";
 import InstagramEmbed from "@/components/instagram/instagram";
 import BasicBody from "@/components/layout/basicbody";
 import BasicLayout from "@/components/layout/basiclayout";
+import Contour from "@/components/topo/contour";
 
 export default function Home() {
   return (
@@ -68,7 +69,7 @@ export default function Home() {
                 link="/about"
                 linkText="Learn More"
               />
-              <div className="divider"></div>
+              <div className="ridgeline my-8" />
 
               <SmallImage
                 location="/kcesar/advanced-litter/advanced-litter-41.jpg"
@@ -80,7 +81,7 @@ export default function Home() {
                 link="/donate"
                 linkText="Donate Now"
               />
-              <div className="divider"></div>
+              <div className="ridgeline my-8" />
 
               <SmallImage
                 location="/kcesar/advanced-litter/advanced-litter-4.jpg"
@@ -94,24 +95,34 @@ export default function Home() {
               />
             </div>
 
-            <div className="divider pt-10"></div>
-            <div className="p-8">
-              <h1 className="font-bold">KCESAR by the numbers:</h1>
+            <div className="ridgeline my-12" />
+            <div className="relative w-full overflow-hidden rounded-lg bg-canopy/60 border border-moss/40 py-12 px-6">
+              <Contour opacity={0.4} />
+              <div className="relative text-center pb-10">
+                <p className="eyebrow pb-3">By the numbers</p>
+                <h2 className="font-gin text-3xl md:text-4xl tracking-wider">
+                  What it takes to answer the call
+                </h2>
+              </div>
+              <div className="relative lg:grid grid-cols-3 gap-4 place-items-stretch hidden">
+                <Stats number={125} description="Missions per Year" />
+                <Stats number={18000} description="Training Hours per Year" />
+                <Stats number={250} description="Volunteers" />
+              </div>
+              <div className="relative lg:hidden grid-cols-1 place-items-stretch grid gap-8">
+                <Stats number={125} description="Missions per Year" />
+                <Stats number={18000} description="Training Hours per Year" />
+                <Stats number={250} description="Volunteers" />
+              </div>
             </div>
-            <div className="lg:grid grid-cols-3 gap-4 place-items-stretch hidden">
-              <Stats number={125} description="Missions per Year" />
-              <Stats number={18000} description="Training Hours per Year" />
-              <Stats number={250} description="Volunteers" />
+
+            <div className="ridgeline my-12" />
+            <div className="text-center pb-6">
+              <p className="eyebrow pb-3">Field notes</p>
+              <h2 className="font-gin text-3xl md:text-4xl tracking-wider">
+                KCESAR on Instagram
+              </h2>
             </div>
-            <div className="lg:hidden grid-cols-1 place-items-stretch grid pb-16">
-              <Stats number={125} description="Missions per Year" />
-              <div className="divider"></div>
-              <Stats number={18000} description="Training Hours per Year" />
-              <div className="divider"></div>
-              <Stats number={250} description="Volunteers" />
-            </div>
-            <div className="divider py-10"></div>
-            <h1 className="font-bold py-6">KCESAR on Instagram!</h1>
             <div className="flex justify-center">
               <InstagramEmbed />
             </div>

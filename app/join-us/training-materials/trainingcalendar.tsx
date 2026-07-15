@@ -47,7 +47,7 @@ export default function TrainingCalendar({
                       "n/a"
                     ) : session.location.google_maps_url ? (
                       <a
-                        className="underline text-blue-400"
+                        className="underline text-trail hover:text-trail/70"
                         href={session.location.google_maps_url}
                       >
                         {session.location.name}

@@ -5,7 +5,7 @@ export default function DonateButton() {
     <div className="">
       <Link
         href="/donate"
-        className="btn btn-ghost border-none flex text-white bg-orange-500 hover:bg-orange-500/70 hover:border-none"
+        className="btn border-none flex text-timber bg-beacon font-stratum uppercase tracking-[0.15em] text-sm hover:bg-beacon/85 hover:border-none transition-colors"
       >
         Donate
       </Link>
