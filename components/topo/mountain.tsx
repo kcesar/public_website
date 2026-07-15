@@ -39,6 +39,17 @@ export default function MountainRidge({
           <path key={i} d={c.d} strokeWidth={c.i ? 1.6 : 0.9} strokeOpacity={c.i ? 0.8 : 0.45} />
         ))}
       </g>
+      {/* divider at the base of the ridge, separating it from the section.
+          Drawn last so it sits on top; non-scaling stroke keeps it crisp. */}
+      <line
+        x1="0"
+        y1={MTN - 1}
+        x2="1440"
+        y2={MTN - 1}
+        stroke="#aebfb4"
+        strokeWidth={2}
+        vectorEffect="non-scaling-stroke"
+      />
     </svg>
   );
 }

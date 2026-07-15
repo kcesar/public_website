@@ -21,10 +21,9 @@ export default function Home() {
       </div>
       {/* mt keeps the mountain ridge (which extends up from this section's top)
           below the fold on load — it only appears as you scroll. Must be >=
-          the ridge render height so the crest starts off-screen. A hairline at
-          the section top reads as the base of the ridge and cleanly separates
-          the mountain field from the section field. */}
-      <div className="relative bg-base-100 pb-10 mt-32 md:mt-48 border-t-2 border-lichen/70">
+          the ridge render height so the crest starts off-screen. The divider
+          line lives inside MountainRidge (at its base) so it paints on top. */}
+      <div className="relative bg-base-100 pb-10 mt-32 md:mt-48">
         {/* Content rises over the hero video as a mountain silhouette */}
         <MountainRidge className="absolute bottom-full left-0 text-base-100 h-24 md:h-40" />
         <TerrainField opacity={0.5} />
