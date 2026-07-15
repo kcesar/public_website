@@ -33,7 +33,7 @@ export default function Navbar() {
     { href: "/join-us", label: "Join Us" },
     { href: "/contact-us", label: "Contact Us" },
     {
-      href: "https://sites.google.com/kcesar.org/members",
+      href: "https://accounts.google.com/AccountChooser?continue=https%3A%2F%2Fsites.google.com%2Fkcesar.org%2Fmembers",
       label: "Members",
       external: true,
     },
