@@ -21,7 +21,6 @@ FROM node:20-slim AS runner
 WORKDIR /app
 ENV NODE_ENV=production
 ENV PORT=8080
-ENV HOSTNAME=0.0.0.0
 
 # Standalone server + its traced node_modules (server.js lands at /app/server.js)
 COPY --from=build /app/build/standalone ./
@@ -34,4 +33,7 @@ COPY --from=build /app/public ./public
 RUN npm install --no-save sharp && npm cache clean --force
 
 EXPOSE 8080
-CMD ["node", "server.js"]
+# Force HOSTNAME=0.0.0.0 at start: Next's standalone server binds to $HOSTNAME,
+# and the Fly/Docker runtime otherwise sets HOSTNAME to the machine id, which
+# makes the server bind to a bogus address and be unreachable by the proxy.
+CMD ["sh", "-c", "HOSTNAME=0.0.0.0 exec node server.js"]
