@@ -155,9 +155,8 @@ under `app/` (e.g. `app/about/card.tsx`, `app/join-us/training-materials/`,
 | `BasicLink` | `navigation/basiclink.tsx` | consistently-styled link button (stratum, esar-green) |
 | `Subtitle`, `SubSubtitle` | `text/subtitle.tsx` | `gin` section heading / body-face supporting subheading |
 | `CenteredText` (+ variants) | `text/centeredtext.tsx` | standard body-copy blocks |
-| `Contour` | `topo/contour.tsx` | ambient zoomed-out contour field (generated) |
-| `TerrainField` | `topo/terrain-field.tsx` | home section background terrain (generated data) |
-| `MountainRidge` | `topo/mountain.tsx` | home hero→content mountain ridge (generated data) |
+| `Contour` | `topo/contour.tsx` | ambient zoomed-out contour backdrop, used site-wide (generated) |
+| `MountainRidge` | `topo/mountain.tsx` | home hero→content mountain ridge silhouette (generated data) |
 
 <!--
 

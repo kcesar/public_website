@@ -67,15 +67,14 @@ was removed. Shared text components: `Subtitle` (gin heading), `SubSubtitle`
 
 ## Topographic signature system
 
-Real iso-elevation contour lines (marching-squares) + a fractal mountain ridge.
-Three render components draw from **generated** data — never hand-edit the
-generated files; edit the generator and re-run.
+Real iso-elevation contour lines (marching-squares) + a fractal mountain ridge,
+drawn from **generated** data — never hand-edit the generated files; edit the
+generator and re-run.
 
 | Component | Source data | Where used |
 |-----------|-------------|-----------|
-| `components/topo/contour.tsx` (`Contour`) | self-contained (baked paths) | ambient backdrop: interior page bodies (via `BasicLayout`), home stats panel |
-| `components/topo/terrain-field.tsx` (`TerrainField`) | `components/topo/terrain-data.ts` | home page section background (the terrain the mountain rises from) |
-| `components/topo/mountain.tsx` (`MountainRidge`) | `components/topo/terrain-data.ts` | home hero→content transition (the ridge, over the video) |
+| `components/topo/contour.tsx` (`Contour`) | self-contained (baked paths) | the ambient contour backdrop everywhere: interior page bodies (via `BasicLayout`), the home section background, the home stats panel |
+| `components/topo/mountain.tsx` (`MountainRidge`) | `components/topo/terrain-data.ts` (`MOUNTAIN_FILL`, `DISTANT`) | home hero→content transition (the solid ridge silhouette, over the video) |
 
 Generators (Bun/Node, deterministic — safe to re-run, output is stable):
 
@@ -85,13 +84,14 @@ bun run gen:terrain    # tools/topo/gen-terrain.mjs  → components/topo/terrain
 bun run gen:topo       # both
 ```
 
-`MountainRidge` and `TerrainField` share ONE `terrain-data.ts` field so their
-contours are continuous across the seam (both `preserveAspectRatio="none"`, same
-horizontal scale; the mountain renders field rows `0..MTN`, the section renders
-`MTN..FIELD_H`). The interior-page `Contour` is a *separate*, zoomed-out field
-(many small hills) rendered very faintly and masked to fade in below the banner.
-Home is the full signature; interior pages get only the faint `Contour` backdrop;
-banner photos carry NO contours.
+`Contour` is a zoomed-out field (many small hills) and uses
+`preserveAspectRatio="xMidYMid slice"` so it never distorts — important on
+mobile, where a non-aspect-preserving field would squish. It's rendered faintly
+and masked to fade in below the banner/mountain. `MountainRidge` is a solid
+silhouette (no contours on it); it uses `terrain-data.ts` only for the ridge
+shape and is `preserveAspectRatio="none"` since a ridge should span the full
+width. Home is the full signature (mountain + contour backdrop); interior pages
+get just the faint `Contour` backdrop; banner photos carry NO contours.
 
 ## CSS utilities & gotchas (in `app/globals.css`)
 

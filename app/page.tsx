@@ -8,7 +8,7 @@ import InstagramEmbed from "@/components/instagram/instagram";
 import BasicBody from "@/components/layout/basicbody";
 import BasicLayout from "@/components/layout/basiclayout";
 import MountainRidge from "@/components/topo/mountain";
-import TerrainField from "@/components/topo/terrain-field";
+import Contour from "@/components/topo/contour";
 
 export default function Home() {
   return (
@@ -25,7 +25,19 @@ export default function Home() {
       <div className="relative bg-base-100 pb-10 mt-32 md:mt-48">
         {/* Content rises over the hero video as a mountain silhouette */}
         <MountainRidge className="absolute bottom-full left-0 text-base-100 h-20 md:h-32" />
-        <TerrainField opacity={0.5} />
+        {/* Ambient contour backdrop (aspect-preserving, so it never squishes on
+            narrow screens); masked to ease in below the mountain. */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            WebkitMaskImage:
+              "linear-gradient(to bottom, transparent 0, transparent 6rem, black 34rem)",
+            maskImage:
+              "linear-gradient(to bottom, transparent 0, transparent 6rem, black 34rem)",
+          }}
+        >
+          <Contour opacity={0.35} className="!absolute inset-0 h-full" />
+        </div>
         <div className="relative pt-10">
         <BasicLayout contour={false}>
           <BasicBody>
