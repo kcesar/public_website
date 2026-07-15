@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: true,
-    distDir: 'build',
+    // Vercel's Next.js builder expects the default `.next` output directory
+    // (it looks there for routes-manifest.json). The custom `build` dir is only
+    // needed for the self-hosted Azure deploy, whose workflow zips from
+    // build/standalone and build/static. VERCEL is set during Vercel builds.
+    distDir: process.env.VERCEL ? '.next' : 'build',
     output: 'standalone',
     images: {
         remotePatterns: [
@@ -60,4 +64,4 @@ const nextConfig = {
     }
 }
 
-module.exports = nextConfig/** @type {import('next').NextConfig} */
+module.exports = nextConfig;

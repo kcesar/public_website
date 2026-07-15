@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Banner from "@/components/banner/banner";
+
+export const metadata: Metadata = {
+  title: "New Rescue Truck",
+  description:
+    "Help King County Explorer Search & Rescue fund a new rescue truck — vital equipment that supports our leaders and teams in the field.",
+  alternates: { canonical: "/truck" },
+};
 import BasicImage from "@/components/image/basicimage";
 import BasicBody from "@/components/layout/basicbody";
 import BasicLayout from "@/components/layout/basiclayout";
@@ -22,6 +30,7 @@ export default async function Truck() {
         />
         <div className="w-full h-120 md:h-280 p-10 flex justify-center">
           <iframe
+            title="Rescue truck replacement proposal (PDF)"
             className="w-full"
             src="/kcesar/new_truck/rescue-truck-replacement-2024.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
           />

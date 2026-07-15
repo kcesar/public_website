@@ -54,6 +54,7 @@ export default function MailchimpSubscibeModal() {
       <dialog
         ref={modal}
         id="my_modal_1"
+        aria-label="Newsletter signup"
         className="modal"
         onKeyDown={(e) => {
           if (e.key === "Escape" && showSpinner) e.preventDefault();
@@ -71,7 +72,7 @@ export default function MailchimpSubscibeModal() {
             <MailChimpTitle />
             <MailChimpSubtext />
             <MailChimpFields className="input input-xl input-neutral border border-gray-800 w-full" />
-            {error && <span className="text-red-500">{error}</span>}
+            {error && <span role="alert" className="text-red-500">{error}</span>}
             <MailChimpDisclaimer />
             <div className="flex gap-4 justify-end">
               <button className="btn" type="button" onClick={closeModal}>

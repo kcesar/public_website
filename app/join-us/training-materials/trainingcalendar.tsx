@@ -40,7 +40,9 @@ export default function TrainingCalendar({
                 <tr key={index}>
                   <td>{session.course.name}</td>
                   <td>
-                    {`${session.session.course_date} ${session.session.course_start_time} - ${session.session.course_end_time}`}
+                    {session.session.course_start_time
+                      ? `${session.session.course_date} ${session.session.course_start_time} - ${session.session.course_end_time}`
+                      : session.session.course_date}
                   </td>
                   <td>
                     {session.course.id === "CRSA" ? (

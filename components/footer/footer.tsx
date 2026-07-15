@@ -10,7 +10,7 @@ export default function Footer() {
           Support us to save lives
         </h2>
         <Image
-          alt="King County Explorer Search & Rescue seal"
+          alt=""
           src="/kcesar/logos/logo_kcesar_300x300.png"
           width={150}
           height={150}
@@ -30,11 +30,11 @@ export default function Footer() {
       </aside>
       <nav>
         <div className="grid grid-flow-col gap-4">
-          <Link href="https://www.facebook.com/kingcountyesar/">
-            <FaFacebook className="w-10 h-10" />
+          <Link href="https://www.facebook.com/kingcountyesar/" aria-label="King County ESAR on Facebook">
+            <FaFacebook className="w-10 h-10" aria-hidden="true" />
           </Link>
-          <Link href="https://www.instagram.com/kingcounty_esar/">
-            <FaInstagram className="w-10 h-10" />
+          <Link href="https://www.instagram.com/kingcounty_esar/" aria-label="King County ESAR on Instagram">
+            <FaInstagram className="w-10 h-10" aria-hidden="true" />
           </Link>
         </div>
       </nav>

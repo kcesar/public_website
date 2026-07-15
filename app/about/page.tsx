@@ -1,10 +1,19 @@
+import type { Metadata } from "next";
 import Banner from "@/components/banner/banner";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description:
+    "Learn about King County Explorer Search & Rescue — who we are, our mission, and how our volunteers support wilderness search and rescue across King County, Washington.",
+  alternates: { canonical: "/about" },
+};
 import Card from "./card";
 import BasicLayout from "@/components/layout/basiclayout";
 import Subtitle from "@/components/text/subtitle";
 import BasicBody from "@/components/layout/basicbody";
 import CenteredText from "@/components/text/centeredtext";
 import BasicLink from "@/components/navigation/basiclink";
+import BasicImage from "@/components/image/basicimage";
 
 export default async function About() {
   let people = [
@@ -23,7 +32,7 @@ export default async function About() {
       email: "operations@kcesar.org",
     },
     {
-      personName: "Nancy Ward",
+      personName: "Jeremy Heater",
       title: "Director of Training",
       location: "/kcesar/middle-fork.jpg",
       alt: "Photo by Dominic Hampton on Unsplash",
@@ -54,6 +63,33 @@ export default async function About() {
         alt="Rescuers standing"
       />
       <BasicBody>
+        <p className="eyebrow pb-3">What drives us</p>
+        <Subtitle content="Mission" />
+        <CenteredText
+          content="King County Explorer Search & Rescue is a volunteer organization
+          dedicated to assisting people in need through search and rescue
+          operations, promoting wilderness safety, and fostering leadership,
+          community, and personal development among our members."
+        />
+        <BasicImage
+          location="/kcesar/advanced-litter/advanced-litter-4.jpg"
+          alt="Rescuers carrying a subject on a wheeled litter through the forest"
+        />
+
+        <div className="ridgeline my-14" />
+        <Subtitle content="Vision" />
+        <CenteredText
+          content="We envision a community where people explore the outdoors safely and
+          responsibly, where those in need of rescue receive rapid and
+          compassionate assistance, and where members build skills, confidence,
+          and lasting connections through service."
+        />
+        <BasicImage
+          location="/kcesar/advanced-litter/advanced-litter-13.jpg"
+          alt="Rescuers working together to manage a rope line on a steep slope"
+        />
+
+        <div className="ridgeline my-14" />
         <p className="eyebrow pb-3">Our story</p>
         <Subtitle content="Who We Are" />
         <CenteredText
@@ -64,11 +100,21 @@ export default async function About() {
           America Learning for Life program. King County ESAR still maintains a
           Post with the Boy Scouts of America but we are not as directly
           associated with Scouting as we once were. Today, we are the largest of
-          nine member-units of the King County Search & Rescue Association
-          (KCSARA) and accept both adult and youth members each training season.'
+          seven member-units of King County Search & Rescue (KCSAR), and accept
+          both adult and youth members each training season.'
+        />
+        <BasicImage
+          location="/kcesar/advanced-litter/advanced-litter-19.jpg"
+          alt="The full team hiking out together along a forest trail with a litter"
         />
 
-        <BasicLink title="Our History" href="/about/history" />
+        <div className="flex justify-center pt-10 pb-6">
+          <BasicLink
+            title="Read Our History →"
+            href="/about/history"
+            className="btn-lg shadow-lg"
+          />
+        </div>
 
         <div className="ridgeline my-14" />
 
@@ -93,6 +139,7 @@ export default async function About() {
         <Subtitle content="Annual Report" />
         <div className="w-full h-120 md:h-280 pt-10 flex justify-center">
           <iframe
+            title="2023 Annual Report (PDF)"
             className="w-full rounded-lg border border-moss/40"
             src="/kcesar/annual-report/2023-annual-report.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
           />

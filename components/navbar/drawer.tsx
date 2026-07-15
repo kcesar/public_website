@@ -6,16 +6,10 @@ import MailchimpSubscibeModal from "../mailchimp/mailchimp-subscribe-modal";
 import DonateButton from "../donate/button";
 
 export default function Drawer({ navlinks }: { navlinks: NavLink[] }) {
-  function timeout(delay: number) {
-    return new Promise((res) => setTimeout(res, delay));
-  }
-
-  //@ts-ignore fine to skip for now
-  const onLinkClick = async () => {
-    // click checkbox my-drawer to close the drawer
-    timeout(1000);
-    // @ts-ignore we know the element exists
-    document.getElementById("my-drawer").click();
+  const onLinkClick = () => {
+    // Close the drawer by unchecking the daisyUI toggle when a link is clicked.
+    const toggle = document.getElementById("my-drawer") as HTMLInputElement | null;
+    if (toggle) toggle.checked = false;
   };
 
   return (

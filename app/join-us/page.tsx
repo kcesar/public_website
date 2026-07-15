@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Banner from "@/components/banner/banner";
+
+export const metadata: Metadata = {
+  title: "Join Us",
+  description:
+    "Join King County Explorer Search & Rescue. Membership is open to anyone 14 and older — learn about Basic Training and how to apply.",
+  alternates: { canonical: "/join-us" },
+};
 import CenteredText from "@/components/text/centeredtext";
 import Subtitle from "@/components/text/subtitle";
 import BasicImage from "@/components/image/basicimage";
@@ -26,22 +34,31 @@ export default async function JoinUs() {
         <CenteredText
           content="Membership in King County Explorer Search & Rescue (ESAR) is open to
         those who are age 14 and older, have a desire to help others in the
-        outdoors, and are willing to respond to emergencies whenever possible.
-        In order to ensure that new members have the knowledge and skills
-        necessary to positively and safely contribute to search and rescue
-        operations, prospective members must complete King County ESAR'S
-        Basic Training program."
+        outdoors, and are willing to respond to emergencies. In order to ensure
+        that new members have the knowledge and skills necessary to positively
+        and safely contribute to search and rescue operations, prospective
+        members must complete King County ESAR'S Basic Training program."
         />
         <BasicImage
           location="/kcesar/advanced-litter/advanced-litter-23.jpg"
           alt="Rescuers above preparing to lower a litter"
         />
         <CenteredText
-          content="The 170+ hour Basic Training program includes a combination of classroom, 
-        overnight field courses, online certifications and more.  Once training is complete, our members 
-        are field-qualified Search and Rescue responders under the Washington State Department of Emergency 
-        Management and the King County Sheriff's Office.  Members maintain their training and certifications 
-        through mission participation and continuing education. "
+          content="Basic Training is intended for dedicated outdoor enthusiasts to
+        prepare for and learn the skills necessary to serve King County as a
+        first responder on search and rescue operations. The 170+ hour Basic
+        Training program includes a combination of classroom sessions, overnight
+        field courses, online certifications, and more. After successfully
+        completing Basic Training members are field-qualified search and rescue
+        responders under the Washington State Department of Emergency Management
+        and the King County Sheriff's Office."
+        />
+        <CenteredText
+          content="ESAR responders are expected to participate in search and rescue
+        operations and continue to hone their skills through continuing
+        education opportunities—both of which are required to remain eligible to
+        serve in this capacity. Both Basic Training and ongoing unit
+        participation require a significant time commitment."
         />
       </BasicBody>
     </BasicLayout>

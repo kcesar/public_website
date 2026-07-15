@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Banner from "@/components/banner/banner";
+
+export const metadata: Metadata = {
+  title: "Our History",
+  description:
+    "The history of King County Explorer Search & Rescue, one of the oldest volunteer search and rescue units in the United States.",
+  alternates: { canonical: "/about/history" },
+};
 import BasicImage from "@/components/image/basicimage";
 import BasicBody from "@/components/layout/basicbody";
 import BasicLayout from "@/components/layout/basiclayout";
@@ -20,7 +28,7 @@ export default function History() {
         <CenteredText
           content="King County Explorer Search & Rescue (ESAR) was founded in 1954 
         as one of the first organized search and rescue teams in the country.  Today, it is 
-        the largest of nine member-units of the King County Search & Rescue Association (KCSARA) 
+        the largest of seven member-units of King County Search & Rescue (KCSAR)
         with over 250 active members. "
         />
         <BasicImage

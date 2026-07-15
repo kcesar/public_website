@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="max-w-6xl pb-10 px-5">
         <div className="relative w-[150px] h-[150px] md:w-[200px] md:h-[200px] mt-10 md:mt-24 mb-10 inline-block">
           <Image
-            alt="Tailwind CSS Navbar component"
+            alt=""
             src="/kcesar/logos/logo_kcesar_1280x1280.png"
             fill={true}
             priority={true}
@@ -24,8 +24,8 @@ export default function Hero() {
         </h1>
         <p className="text-sm md:text-lg max-w-2xl mx-auto pb-10 drop-shadow-xl md:[text-shadow:0_1px_4px_rgb(0_0_0/60%)]">
           One of the earliest Search & Rescue organizations in the United States,
-          and the largest of nine member-units of the King County Search & Rescue
-          Association.
+          and the largest of seven member-units of King County Search & Rescue
+          (KCSAR).
         </p>
         <div className="flex flex-col gap-2 justify-center items-center">
           <BasicLink title="Join Us" href="/join-us" />

@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Banner from "@/components/banner/banner";
+
+export const metadata: Metadata = {
+  title: "Training Materials & Schedule",
+  description:
+    "Training materials, orientation packets, and the course schedule for King County ESAR Basic Training.",
+  alternates: { canonical: "/join-us/training-materials" },
+};
 import BasicLayout from "@/components/layout/basiclayout";
 import Subtitle from "@/components/text/subtitle";
 import LinkCard from "./linkcard";
@@ -29,7 +37,7 @@ export default async function TrainingMaterials() {
           <LinkCard
             title="Basic Training Orientation Packet"
             content="Information surrounding basic training including membership requirements, training courses overview, and more."
-            href="/assets/doc/ESAR_TrainingPacket.pdf"
+            href="/assets/doc/ESAR_TrainingPacket_202627.pdf"
           />
           <LinkCard
             title="2025 Parent Packet - Youth"
@@ -47,11 +55,6 @@ export default async function TrainingMaterials() {
             href="/assets/doc/48_Hour_Pack_2022.pdf"
           />
           <LinkCard
-            title="Training Schedule"
-            content="Google Calendar Embed"
-            href="https://calendar.google.com/calendar/embed?src=kcesar.org_4r2brjkoml90hilp9h73t2lgno%40group.calendar.google.com&ctz=America%2FLos_Angeles"
-          />
-          <LinkCard
             title="Supplemental Mapwork"
             content="Review and practice mapwork problems similar to those used in training."
             href="/mapwork"
@@ -60,9 +63,6 @@ export default async function TrainingMaterials() {
         </div>
         <div className="divider py-10"></div>
         <div id="training-calendar" />
-        <div className="pb-10">
-          <Subtitle content="2025-2026 Training Season" />
-        </div>
         <MailchimpSubscribeForm />
         <div className="divider" />
         <div className="pt-10">

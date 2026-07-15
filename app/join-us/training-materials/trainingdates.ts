@@ -25,7 +25,7 @@ const courses: Course[] = [
       name: "Course B: Map and Compass",
       prerequisites: [
         "Course A",
-        "Acceptance into 2025-26 Training Class",
+        "Acceptance into 2026-27 Training Class",
         "Course Fee Paid ($250) - Do not make a course fee payment until you have successfully registered for Course B"
       ]
     },
@@ -100,7 +100,7 @@ export type CourseLocation = {
 const locations: CourseLocation[] = [
     {
       id: "KCSARA",
-      name: "KCSARA HQ",
+      name: "KCSAR HQ",
       street_address: "34501 SE 99th St, Snoqualmie",
       google_maps_url: "https://goo.gl/maps/GrLHi5q6giKDrTcc7"
     },
@@ -259,237 +259,60 @@ export type Session = {
 }
 
 const sessions: Session[] = [
-    {
-      course_id: "CRSA",
-      course_date: "July 17th",
-      course_start_time: "7:00pm",
-      course_end_time: "9:00pm",
-      location_id: "TBDTBD"
-    },
-    {
-      course_id: "CRSA",
-      course_date: "July 21st",
-      course_start_time: "6:30pm",
-      course_end_time: "8:30pm",
-      location_id: "TBDTBD"
-    },
-    {
-      course_id: "CRSA",
-      course_date: "July 22nd",
-      course_start_time: "7:00pm",
-      course_end_time: "9:00pm",
-      location_id: "TBDTBD"
-    },
-    {
-      course_id: "CRSA",
-      course_date: "July 28th",
-      course_start_time: "7:00pm",
-      course_end_time: "9:00pm",
-      location_id: "TBDTBD"
-    },
-    {
-      course_id: "MEET",
-      course_date: "August 6th",
-      course_start_time: "6:30pm",
-      course_end_time: "9:30pm",
-      location_id: "TBDTBD"
-    },
-    {
-      course_id: "MEET",
-      course_date: "August 8th",
-      course_start_time: "6:30pm",
-      course_end_time: "9:30pm",
-      location_id: "TBDTBD"
-    },
-    {
-      course_id: "MEET",
-      course_date: "August 9th",
-      course_start_time: "8:30am",
-      course_end_time: "11:30am",
-      location_id: "TBDTBD"
-    },
-    {
-      course_id: "MEET",
-      course_date: "August 20th",
-      course_start_time: "6:30pm",
-      course_end_time: "9:30pm",
-      location_id: "TBDTBD"
-    },
-    {
-      course_id: "MEET",
-      course_date: "August 28th",
-      course_start_time: "6:30pm",
-      course_end_time: "9:30pm",
-      location_id: "TBDTBD"
-    },
-    {
-      course_id: "CRSB",
-      course_date: "September 13th",
-      course_start_time: "9:00am",
-      course_end_time: "5:00pm",
-      location_id: "TBDTBD"
-    },
-    {
-      course_id: "CRSB",
-      course_date: "September 21st",
-      course_start_time: "9:00am",
-      course_end_time: "5:00pm",
-      location_id: "TBDTBD"
-    },
-    {
-      course_id: "CRSB",
-      course_date: "October 5th",
-      course_start_time: "9:00am",
-      course_end_time: "5:00pm",
-      location_id: "TBDTBD"
-    },
-    {
-      course_id: "SFA1",
-      course_date: "October 11th",
-      course_start_time: "9:00am",
-      course_end_time: "6:00pm",
-      location_id: "TBDTBD"
-    },
-    {
-      course_id: "SFA1",
-      course_date: "October 26th",
-      course_start_time: "9:00am",
-      course_end_time: "6:00pm",
-      location_id: "TBDTBD"
-    },
-    {
-      course_id: "SFA1",
-      course_date: "November 8th",
-      course_start_time: "9:00am",
-      course_end_time: "6:00pm",
-      location_id: "TBDTBD"
-    },
-    {
-      course_id: "CRSC",
-      course_date: "November 1-2",
-      course_start_time: "Sat 6:30am",
-      course_end_time: "Sun 4:00pm",
-      location_id: "CAMPED"
-    },
-    {
-      course_id: "CRSC",
-      course_date: "November 15-16",
-      course_start_time: "Sat 6:30am",
-      course_end_time: "Sun 4:00pm",
-      location_id: "CAMPED"
-    },
-    {
-      course_id: "CRSC",
-      course_date: "December 6-7",
-      course_start_time: "Sat 6:30am",
-      course_end_time: "Sun 4:00pm",
-      location_id: "CAMPED"
-    },
-    {
-      course_id: "CRS1",
-      course_date: "December 6-7",
-      course_start_time: "Sat 6:20am",
-      course_end_time: "Sun 3:00pm",
-      location_id: "CAMPED"
-    },
-    {
-      course_id: "CRS1",
-      course_date: "January 10-11",
-      course_start_time: "Sat 6:20am",
-      course_end_time: "Sun 3:00pm",
-      location_id: "CAMPED"
-    },
-    {
-      course_id: "CRS1",
-      course_date: "January 24-25",
-      course_start_time: "Sat 6:20am",
-      course_end_time: "Sun 3:00pm",
-      location_id: "CAMPED"
-    },
-    {
-      course_id: "SFA2",
-      course_date: "December 13th",
-      course_start_time: "9:00am",
-      course_end_time: "6:00pm",
-      location_id: "TBDTBD"
-    },
-    {
-      course_id: "SFA2",
-      course_date: "January 17th",
-      course_start_time: "9:00am",
-      course_end_time: "6:00pm",
-      location_id: "TBDTBD"
-    },
-    {
-      course_id: "SFA2",
-      course_date: "January 31st",
-      course_start_time: "9:00am",
-      course_end_time: "6:00pm",
-      location_id: "TBDTBD"
-    },
-    {
-      course_id: "CRS2",
-      course_date: "January 24-25",
-      course_start_time: "Sat 7:00am",
-      course_end_time: "Sun 3:00pm",
-      location_id: "CAMPED"
-    },
-    {
-      course_id: "CRS2",
-      course_date: "February 7-8",
-      course_start_time: "Sat 7:00am",
-      course_end_time: "Sun 3:00pm",
-      location_id: "CAMPED"
-    },
-    {
-      course_id: "CRS2",
-      course_date: "February 21-22",
-      course_start_time: "Sat 7:00am",
-      course_end_time: "Sun 3:00pm",
-      location_id: "CAMPED"
-    },
-    {
-      course_id: "CRS3",
-      course_date: "March 7-8",
-      course_start_time: "Sat 7:00am",
-      course_end_time: "Sun 3:00pm",
-      location_id: "TBDTBD"
-    },
-    {
-      course_id: "CRS3",
-      course_date: "March 21-22",
-      course_start_time: "Sat 7:00am",
-      course_end_time: "Sun 3:00pm",
-      location_id: "TBDTBD"
-    },
-    {
-      course_id: "OPS1",
-      course_date: "March TBD",
-      course_start_time: "6:30pm",
-      course_end_time: "9:30pm",
-      location_id: "KCSARA"
-    },
-    {
-      course_id: "OPS1",
-      course_date: "March TBD",
-      course_start_time: "6:30pm",
-      course_end_time: "9:30pm",
-      location_id: "KCSARA"
-    },
-    {
-      course_id: "OPS1",
-      course_date: "April TBD",
-      course_start_time: "6:30pm",
-      course_end_time: "9:30pm",
-      location_id: "KCSARA"
-    },
-    {
-      course_id: "GRAD",
-      course_date: "April 12th",
-      course_start_time: "2:30pm",
-      course_end_time: "5:00pm",
-      location_id: "SIVIEW"
-    }
+    // Course A: Orientation
+    { course_id: "CRSA", course_date: "9/2/26", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+    { course_id: "CRSA", course_date: "9/3/26", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+    { course_id: "CRSA", course_date: "9/8/26", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+    { course_id: "CRSA", course_date: "9/10/26", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+
+    // Meet The Team Hike
+    { course_id: "MEET", course_date: "9/15/26", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+    { course_id: "MEET", course_date: "9/19/26", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+    { course_id: "MEET", course_date: "9/23/26", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+    { course_id: "MEET", course_date: "9/26/26", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+    { course_id: "MEET", course_date: "9/27/26", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+
+    // Course B: Map and Compass
+    { course_id: "CRSB", course_date: "10/11/26", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+    { course_id: "CRSB", course_date: "10/17/26", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+    { course_id: "CRSB", course_date: "10/24/26", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+
+    // Introduction to Searcher First Aid
+    { course_id: "SFA1", course_date: "10/24/26", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+    { course_id: "SFA1", course_date: "11/1/26", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+    { course_id: "SFA1", course_date: "11/7/26", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+
+    // Course C: Search Theory and Field Practice
+    { course_id: "CRSC", course_date: "11/7-11/8/26", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+    { course_id: "CRSC", course_date: "11/21-11/22/26", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+    { course_id: "CRSC", course_date: "12/5-12/6/26", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+
+    // Course I: Navigation Practice
+    { course_id: "CRS1", course_date: "12/5-12/6/26", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+    { course_id: "CRS1", course_date: "12/19-12/20/26", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+    { course_id: "CRS1", course_date: "1/9-1/10/27", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+
+    // Advanced Searcher First Aid
+    { course_id: "SFA2", course_date: "12/12/26", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+    { course_id: "SFA2", course_date: "1/9/27", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+    { course_id: "SFA2", course_date: "1/16/27", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+
+    // Course II: Navigation Evaluation
+    { course_id: "CRS2", course_date: "1/9-1/10/27", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+    { course_id: "CRS2", course_date: "1/23-1/24/27", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+    { course_id: "CRS2", course_date: "2/6-2/7/27", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+
+    // Course III: Mock Missions
+    { course_id: "CRS3", course_date: "2/27-2/28/27", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+    { course_id: "CRS3", course_date: "3/13-3/14/27", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+
+    // Operations Orientation
+    { course_id: "OPS1", course_date: "March 2027", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+    { course_id: "OPS1", course_date: "March 2027", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+    { course_id: "OPS1", course_date: "March 2027", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+
+    // Graduation
+    { course_id: "GRAD", course_date: "4/18/2027", course_start_time: "", course_end_time: "", location_id: "TBDTBD" }
   ]
 
 export type JoinedSession = {

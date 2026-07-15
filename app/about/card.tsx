@@ -37,7 +37,7 @@ export default function Card({
             aria-label={`Email ${personName}`}
             className="text-trail hover:text-bone transition-colors"
           >
-            <FaEnvelope className="h-5 w-5" />
+            <FaEnvelope className="h-5 w-5" aria-hidden="true" />
           </Link>
         </div>
       </div>

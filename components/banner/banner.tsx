@@ -20,6 +20,7 @@ export default function Banner({
           src={location}
           fill={true}
           priority={true}
+          sizes="100vw"
           className="object-cover brightness-[0.5]"
         />
         {/* Topographic texture + a gradient that grounds the title in Timber */}

@@ -16,18 +16,18 @@ export default function Application({
           <SubSubtitle content="Training season is now underway." />
         </div>
         <div className="pt-2">
-          <ActuallyCenteredText content="Registration for Course A, the first step in 2025-26 training, is open. See the training schedule for more information, including the registration link. " />
+          <ActuallyCenteredText content="Registration for Course A, the first step in 2026-27 training, is open. See the training schedule for more information, including the registration link. " />
           <div className="flex flex-col items-center gap-2">
             <BasicLink
               title="Training Calendar"
-              href="https://www.kcesar.org/join-us/training-materials#training-calendar"
+              href="/join-us/training-materials#training-calendar"
             />
           </div>
           <ActuallyCenteredText content="Information about Basic Training is available here:" />
           <div className="flex flex-col items-center gap-2">
             <BasicLink
               title="Basic Training Overview"
-              href="https://www.kcesar.org/join-us/basic-training-overview"
+              href="/join-us/basic-training-overview"
             />
           </div>
         </div>
@@ -36,11 +36,13 @@ export default function Application({
   } else {
     return (
       <div className="flex flex-col items-center pb-6">
-        <Subtitle content="Thank you for your interest in joining KCESAR." />
+        <Subtitle content="Thank you for your interest in joining KCESAR!" />
         <div className="pt-6">
           <SubSubtitle
-            content="Training for 2025-26 is now underway.
-"
+            content={
+              'Training for 2026-27 will run from September through March. ' +
+              'Registration for the first course—“Course A”—will open here, in mid-August.'
+            }
           />
         </div>
         <div className="pt-2">
@@ -51,7 +53,7 @@ export default function Application({
                 our{" "}
                 <Link
                   className="text-trail underline hover:text-trail/70"
-                  href="https://www.kcesar.org/join-us/training-materials#training-calendar"
+                  href="/join-us/training-materials#training-calendar"
                 >
                   newsletter
                 </Link>{" "}
@@ -76,7 +78,7 @@ export default function Application({
           <div className="flex flex-col items-center gap-2">
             <BasicLink
               title="Basic Training Overview"
-              href="https://www.kcesar.org/join-us/basic-training-overview"
+              href="/join-us/basic-training-overview"
             />
           </div>
         </div>

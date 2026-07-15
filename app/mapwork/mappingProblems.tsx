@@ -42,7 +42,7 @@ export default function MappingProblems({}: {}) {
     <>
       <h3 className="mb-4">Mapping Problems</h3>
       <p className="mb-4">
-        In order to complete this set of problems you will need to print and familiarize yourself with <Link href={"./assets/img/map_01.jpg"} target="_blank" className="underline hover:text-esar-green">The Map (download)</Link>
+        In order to complete this set of problems you will need to print and familiarize yourself with <Link href={"/assets/img/map_01.jpg"} target="_blank" className="underline hover:text-esar-green">The Map (download)</Link>
       </p>
       {mappingQuestions.map((item, index) => (
         <QuizItem key={index} {...item} />
