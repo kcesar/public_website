@@ -27,7 +27,7 @@ export default function Home() {
         <MountainRidge className="absolute bottom-full left-0 text-base-100 h-20 md:h-32" />
         <TerrainField opacity={0.5} />
         <div className="relative pt-10">
-        <BasicLayout>
+        <BasicLayout contour={false}>
           <BasicBody>
             <div className="hidden grid-cols-3 lg:grid gap-4 gap-y-10 place-items-stretch">
               <GridImage
