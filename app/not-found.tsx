@@ -8,13 +8,17 @@ export default function NotFound() {
     <BasicLayout>
       <Banner
         title="404 - Not Found"
+        eyebrow="Off the map"
         location="/kcesar/middle-fork.jpg"
         alt="Photo by Dominic Hampton on Unsplash"
       />
-      <Subtitle content="Are you lost? We can help with that!" />
-      <div className="py-10" />
-      <BasicLink title="Let's get you home safe" href="/" />
-      <div className="py-10" />
+      <div className="flex flex-col items-center px-4 py-16">
+        <p className="eyebrow pb-4">Nothing here</p>
+        <Subtitle content="Are you lost? We can help with that!" />
+        <div className="pt-8">
+          <BasicLink title="Let's get you home safe" href="/" />
+        </div>
+      </div>
     </BasicLayout>
   );
 }

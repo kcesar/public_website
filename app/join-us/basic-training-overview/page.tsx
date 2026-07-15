@@ -21,12 +21,14 @@ export default async function BasicTrainingOverview() {
     <BasicLayout>
       <Banner
         title="Join Us"
+        eyebrow="Become a member"
         location="/kcesar/advanced-litter/advanced-litter-1.jpg"
         alt="Rescuers using a litter to evacuate a subject"
       />
       <BasicBody>
         <Links links={links} />
-        <div className="pt-5" />
+        <div className="pt-8" />
+        <p className="eyebrow pb-3">What to expect</p>
         <Subtitle content="Basic Training Overview" />
         <CenteredText
           content="ESAR Basic Training is a comprehensive program designed to prepare new
@@ -60,10 +62,12 @@ export default async function BasicTrainingOverview() {
           location="/kcesar/advanced-litter/advanced-litter-33.jpg"
           alt="Rescuers moving the litter down the trail"
         />
-        <div className="divider py-10"></div>
-        <Subtitle content="Training Materials:" />
-        <br />
-        <BasicLink href="/join-us/training-materials" title="Download Here" />
+        <div className="ridgeline my-14" />
+        <p className="eyebrow pb-3">Get prepared</p>
+        <Subtitle content="Training Materials" />
+        <div className="pt-6">
+          <BasicLink href="/join-us/training-materials" title="Download Here" />
+        </div>
       </BasicBody>
     </BasicLayout>
   );

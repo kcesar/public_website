@@ -7,25 +7,20 @@ export default function Links({
   }[];
 }) {
   return (
-    <>
-      <div className="flex flex-col items-center lg:flex-row mt-[-10px]">
-        {links.map((link, index) => (
-          <div className="flex flex-row py-1 " key={index}>
-            <div>
-              <div className="rounded-md hover:bg-opacity-50 hover:bg-slate-300 dark:hover:bg-neutral-900 text-lg px-4 py-2 list-none">
-                <a href={link.href}>{link.title}</a>
-              </div>
-            </div>
-            <div className="hidden lg:flex">
-              {index != links.length - 1 ? (
-                <div className="divider divider-horizontal" />
-              ) : (
-                <></>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
-    </>
+    <div className="flex flex-col items-center lg:flex-row lg:gap-1">
+      {links.map((link, index) => (
+        <div className="flex flex-row items-center" key={index}>
+          <a
+            href={link.href}
+            className="rounded-md px-4 py-2 font-stratum uppercase tracking-wide text-sm text-bone hover:bg-moss/25 hover:text-trail transition-colors"
+          >
+            {link.title}
+          </a>
+          {index != links.length - 1 && (
+            <div className="hidden lg:block h-4 w-px bg-moss/50" />
+          )}
+        </div>
+      ))}
+    </div>
   );
 }
