@@ -6,8 +6,10 @@ const POSTER =
   "https://storage.googleapis.com/kcesar-website-assets/marckworth1080frame1.png";
 const VIDEO =
   "https://storage.googleapis.com/kcesar-website-assets/marckworth1080.mp4";
+// w-full / h-full (100%) rather than w-screen / h-screen (100vw/100vh): 100vw
+// includes the scrollbar width and overflows the content area horizontally.
 const className =
-  "fixed -z-20 w-screen h-screen object-cover top-0 left-0 brightness-75";
+  "fixed -z-20 top-0 left-0 h-full w-full object-cover brightness-75";
 
 export default function Video() {
   // Default to the static poster: never autoplay before we know the user's
