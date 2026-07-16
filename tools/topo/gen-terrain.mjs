@@ -50,7 +50,17 @@ function ridge(seed, iters, baseY, amp, rough, tilt = 0) {
 const line = (pts) => "M" + pts.map((p) => `${p.x} ${p.y}`).join("L");
 const front = ridge(4231, 7, 150, 165, 0.62, 6);
 const mountainFill = line(front) + `L${W} ${MTN}L0 ${MTN}Z`;
-const distant = line(ridge(9187, 8, 108, 135, 0.62, -12));
+// Slope the distant range down toward the left/right corners so its silhouette
+// tapers to the base at the edges instead of ending on a tall vertical wall.
+function taperEnds(pts, edge, floorY) {
+  return pts.map((p) => {
+    const t = Math.min(p.x, W - p.x) / edge; // 0 at the very edge → 1 inward
+    if (t >= 1) return p;
+    const k = t * t * (3 - 2 * t); // smoothstep for a natural shoulder
+    return { x: p.x, y: Math.round(p.y * k + floorY * (1 - k)) };
+  });
+}
+const distant = line(taperEnds(ridge(9187, 8, 108, 135, 0.62, -12), 300, 185));
 
 /* ---- Elevation field + marching squares over the whole terrain ---- */
 const COLS = 110, ROWS = 105;
