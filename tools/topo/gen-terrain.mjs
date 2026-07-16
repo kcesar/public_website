@@ -56,7 +56,7 @@ const line = (pts) => "M" + pts.map((p) => `${p.x} ${p.y}`).join("L");
 // below the viewBox and clip it to a flat line. FLOOR_FRONT is chosen so the
 // near ridge lands just below where the raised distant corner renders, keeping a
 // thin sliver of the lighter range visible at the very edges.
-const EDGE = 220, FLOOR_DISTANT = 185, FLOOR_FRONT = 112;
+const EDGE = 220, FLOOR_DISTANT = 120, FLOOR_FRONT = 95;
 function taperEnds(pts, edge, floorY) {
   return pts.map((p) => {
     const t = Math.min(p.x, W - p.x) / edge; // 0 at the very edge → 1 inward
