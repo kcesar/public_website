@@ -12,8 +12,11 @@ import { MOUNTAIN_FILL, DISTANT } from "./terrain-data";
 */
 const VIEW_H = 190;
 
-// Close the distant ridge line into a filled silhouette down to the viewBox base.
-const DISTANT_FILL = `${DISTANT}L1440 ${VIEW_H}L0 ${VIEW_H}Z`;
+// How far to lift the distant range so it peeks higher above the near ridge.
+const RAISE = 45;
+// Close the distant ridge into a filled silhouette. Extend the base past the
+// viewBox so that, once translated up by RAISE, it still fills to the bottom.
+const DISTANT_FILL = `${DISTANT}L1440 ${VIEW_H + RAISE}L0 ${VIEW_H + RAISE}Z`;
 
 export default function MountainRidge({
   className = "",
@@ -28,8 +31,8 @@ export default function MountainRidge({
       preserveAspectRatio="none"
       className={`block w-full ${className}`}
     >
-      {/* distant range, a step lighter — peeks above the near ridge for depth */}
-      <path d={DISTANT_FILL} fill="#1d3d2b" />
+      {/* distant range, a step lighter — lifted so it peeks above the near ridge */}
+      <path d={DISTANT_FILL} fill="#1d3d2b" transform={`translate(0 -${RAISE})`} />
       {/* solid near ridge — fill matches the section via currentColor */}
       <path d={MOUNTAIN_FILL} fill="currentColor" />
     </svg>
