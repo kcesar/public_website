@@ -48,9 +48,9 @@ function ridge(seed, iters, baseY, amp, rough, tilt = 0) {
   return pts.map((p) => ({ x: Math.round(p.x * W), y: Math.max(10, Math.min(MTN - 6, Math.round(p.y))) }));
 }
 const line = (pts) => "M" + pts.map((p) => `${p.x} ${p.y}`).join("L");
-const front = ridge(4231, 7, 150, 165, 0.62, 6);
+const front = ridge(1975, 7, 150, 165, 0.62, 6);
 const mountainFill = line(front) + `L${W} ${MTN}L0 ${MTN}Z`;
-const distant = line(ridge(9187, 8, 108, 135, 0.62, -12));
+const distant = line(ridge(2008, 8, 108, 135, 0.62, -12));
 
 /* ---- Elevation field + marching squares over the whole terrain ---- */
 const COLS = 110, ROWS = 105;
