@@ -12,9 +12,15 @@ import { MOUNTAIN_FILL, DISTANT } from "./terrain-data";
 */
 const VIEW_H = 150;
 
-// How far to lift the distant range so it peeks higher above the near ridge.
-// Capped so its highest peaks (min y ~49) don't clip against the viewBox top.
-const RAISE = 46;
+// Extra headroom above y=0 so the lifted distant range has room to rise without
+// clipping against the viewBox top. page.tsx scales the render height by
+// (VIEW_H + VIEW_TOP)/VIEW_H so the near ridge keeps its exact proportions.
+const VIEW_TOP = 55;
+
+// How far to lift the distant range so it clears the near ridge — enough
+// separation that the front no longer overlaps most of the back. Its highest
+// peaks (min y ~49) land at 49 - RAISE, which must stay below -VIEW_TOP.
+const RAISE = 92;
 // Close the distant ridge into a filled silhouette. Extend the base past the
 // viewBox so that, once translated up by RAISE, it still fills to the bottom.
 const DISTANT_FILL = `${DISTANT}L1440 ${VIEW_H + RAISE}L0 ${VIEW_H + RAISE}Z`;
@@ -28,7 +34,7 @@ export default function MountainRidge({
     <svg
       aria-hidden="true"
       focusable="false"
-      viewBox={`0 0 1440 ${VIEW_H}`}
+      viewBox={`0 ${-VIEW_TOP} 1440 ${VIEW_H + VIEW_TOP}`}
       preserveAspectRatio="none"
       className={`block w-full ${className}`}
     >

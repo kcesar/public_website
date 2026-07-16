@@ -22,9 +22,11 @@ export default function Home() {
           incl. the raised distant range) below the fold on load — it only
           appears as you scroll. Must exceed the ridge render height + the
           distant range's lift so the crest starts off-screen. */}
-      <div className="relative bg-base-100 pb-10 mt-40 md:mt-60">
-        {/* Content rises over the hero video as a mountain silhouette */}
-        <MountainRidge className="absolute bottom-full left-0 text-base-100 h-28 md:h-44" />
+      <div className="relative bg-base-100 pb-10 mt-52 md:mt-72">
+        {/* Content rises over the hero video as a mountain silhouette. Render
+            height tracks MountainRidge's viewBox (VIEW_H + VIEW_TOP = 205) so the
+            near ridge keeps its proportions while the distant range rises higher. */}
+        <MountainRidge className="absolute bottom-full left-0 text-base-100 h-[153px] md:h-[241px]" />
         {/* Ambient contour backdrop (aspect-preserving, so it never squishes on
             narrow screens); masked to ease in below the mountain. */}
         <div
