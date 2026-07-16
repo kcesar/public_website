@@ -10,7 +10,7 @@ import { MOUNTAIN_FILL, DISTANT } from "./terrain-data";
   the section beneath it. VIEW_H crops the viewBox above the fill's true bottom
   (260) to trim excess solid base below the crest.
 */
-const VIEW_H = 190;
+const VIEW_H = 150;
 
 // How far to lift the distant range so it peeks higher above the near ridge.
 const RAISE = 45;

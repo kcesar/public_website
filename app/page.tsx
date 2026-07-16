@@ -18,13 +18,13 @@ export default function Home() {
         <Video />
         <Hero />
       </div>
-      {/* mt keeps the mountain ridge (which extends up from this section's top)
-          below the fold on load — it only appears as you scroll. Must be >=
-          the ridge render height so the crest starts off-screen. The divider
-          line lives inside MountainRidge (at its base) so it paints on top. */}
-      <div className="relative bg-base-100 pb-10 mt-32 md:mt-48">
+      {/* mt keeps the mountain ridge (which extends up from this section's top,
+          incl. the raised distant range) below the fold on load — it only
+          appears as you scroll. Must exceed the ridge render height + the
+          distant range's lift so the crest starts off-screen. */}
+      <div className="relative bg-base-100 pb-10 mt-40 md:mt-60">
         {/* Content rises over the hero video as a mountain silhouette */}
-        <MountainRidge className="absolute bottom-full left-0 text-base-100 h-20 md:h-32" />
+        <MountainRidge className="absolute bottom-full left-0 text-base-100 h-28 md:h-44" />
         {/* Ambient contour backdrop (aspect-preserving, so it never squishes on
             narrow screens); masked to ease in below the mountain. */}
         <div
