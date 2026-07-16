@@ -1,10 +1,9 @@
-import { MOUNTAIN_FILL, DISTANT } from "./terrain-data";
+import { MOUNTAIN_FILL } from "./terrain-data";
 
 /*
   Steep, rugged ridgeline that caps the top of the content section: the page
-  "rises" over the hero video as a solid fractured mountain silhouette, with a
-  faint distant ridge behind. The topographic section fades in below it.
-  See components/topo/terrain-data.ts.
+  "rises" over the hero video as a solid fractured mountain silhouette. The
+  topographic section fades in below it. See components/topo/terrain-data.ts.
 
   Fill uses currentColor: set text-<base color> so the silhouette merges with
   the section beneath it. VIEW_H crops the viewBox above the fill's true bottom
@@ -25,8 +24,6 @@ export default function MountainRidge({
       preserveAspectRatio="none"
       className={`block w-full ${className}`}
     >
-      {/* distant ridge behind the crest (in the "sky" over the video) */}
-      <path d={DISTANT} fill="none" stroke="#2e5e43" strokeWidth={1.5} opacity={0.4} />
       {/* solid near-ridge silhouette — fill matches the section via currentColor */}
       <path d={MOUNTAIN_FILL} fill="currentColor" />
     </svg>
