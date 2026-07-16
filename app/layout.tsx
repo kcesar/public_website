@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Navbar from "@/components/navbar/navbar";
 import Footer from "@/components/footer/footer";
@@ -41,6 +41,17 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     images: ["/og-image.png"],
   },
+};
+
+// The site is a single, deliberately-dark theme (see globals.css). Tint the
+// mobile browser chrome to the page base (Timber) so the URL bar blends with the
+// hero instead of flashing white as it collapses on scroll — a single value on
+// purpose, since there is no light variant. colorScheme mirrors the CSS
+// `color-scheme: dark` as an early signal so native UA controls don't render
+// light before the stylesheet loads.
+export const viewport: Viewport = {
+  themeColor: "#0b1f16",
+  colorScheme: "dark",
 };
 
 const organizationJsonLd = {
