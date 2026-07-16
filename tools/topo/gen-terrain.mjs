@@ -48,10 +48,11 @@ function ridge(seed, iters, baseY, amp, rough, tilt = 0) {
   return pts.map((p) => ({ x: Math.round(p.x * W), y: Math.max(10, Math.min(MTN - 6, Math.round(p.y))) }));
 }
 const line = (pts) => "M" + pts.map((p) => `${p.x} ${p.y}`).join("L");
-const front = ridge(4231, 7, 150, 165, 0.62, 6);
-const mountainFill = line(front) + `L${W} ${MTN}L0 ${MTN}Z`;
-// Slope the distant range down toward the left/right corners so its silhouette
-// tapers to the base at the edges instead of ending on a tall vertical wall.
+// Slope both ridges down toward the left/right corners so their silhouettes ease
+// into the base at the edges instead of ending on a tall vertical wall. A wide
+// EDGE keeps the drop-off gradual; both ranges use the same shoulder so they
+// recede in parallel.
+const EDGE = 520, FLOOR = 185;
 function taperEnds(pts, edge, floorY) {
   return pts.map((p) => {
     const t = Math.min(p.x, W - p.x) / edge; // 0 at the very edge → 1 inward
@@ -60,7 +61,9 @@ function taperEnds(pts, edge, floorY) {
     return { x: p.x, y: Math.round(p.y * k + floorY * (1 - k)) };
   });
 }
-const distant = line(taperEnds(ridge(9187, 8, 108, 135, 0.62, -12), 300, 185));
+const front = taperEnds(ridge(4231, 7, 150, 165, 0.62, 6), EDGE, FLOOR);
+const mountainFill = line(front) + `L${W} ${MTN}L0 ${MTN}Z`;
+const distant = line(taperEnds(ridge(9187, 8, 108, 135, 0.62, -12), EDGE, FLOOR));
 
 /* ---- Elevation field + marching squares over the whole terrain ---- */
 const COLS = 110, ROWS = 105;
