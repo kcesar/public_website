@@ -17,7 +17,7 @@ export default function PacingProblems({}: {}) {
   ];
   return (
     <>
-      <h3 className="mb-4">Pacing</h3>
+      <h3 className="font-gin text-2xl tracking-wide mb-4">Pacing</h3>
       <p className="mb-4">
         Pacing is a method to keep track of distance. A pace is the distance that you travel while walking 
         each time the same foot hits the ground. For example, if you lead (take your first step) with your 

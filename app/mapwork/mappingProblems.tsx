@@ -40,14 +40,14 @@ export default function MappingProblems({}: {}) {
 
   return (
     <>
-      <h3 className="mb-4">Mapping Problems</h3>
+      <h3 className="font-gin text-2xl tracking-wide mb-4">Mapping Problems</h3>
       <p className="mb-4">
-        In order to complete this set of problems you will need to print and familiarize yourself with <Link href={"/assets/img/map_01.jpg"} target="_blank" className="underline hover:text-esar-green">The Map (download)</Link>
+        In order to complete this set of problems you will need to print and familiarize yourself with <Link href={"/assets/img/map_01.jpg"} target="_blank" className="text-trail underline hover:text-trail/70">The Map (download)</Link>
       </p>
       {mappingQuestions.map((item, index) => (
         <QuizItem key={index} {...item} />
       ))}
-      <button className="btn bg-esar-green hover:bg-base-300 text-white border-none" onClick={addRandomMapProblem}>Add Random Map Problem</button>
+      <button className="btn border-none bg-esar-green text-bone font-stratum uppercase tracking-[0.15em] text-sm hover:bg-trail hover:text-timber transition-colors" onClick={addRandomMapProblem}>Add Random Map Problem</button>
     </>
   );
 }

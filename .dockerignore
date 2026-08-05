@@ -1,0 +1,14 @@
+# Keep the Docker build context small and force a clean rebuild inside the image
+node_modules
+.next
+build
+.git
+.github
+.vercel
+playwright-report
+test-results
+tests
+e2e
+tools
+*.log
+.env*

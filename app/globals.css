@@ -2,27 +2,50 @@
 @plugin "daisyui";
 
 /*
-  daisyUI v5 ties button/field corners to --radius-field, whose default theme
-  value is 0.25rem. daisyUI v4 rounded buttons at 0.5rem (--rounded-btn), so the
-  v4->v5 upgrade visibly flattened every .btn. Restore the original radius.
-  Uses :root:root to outrank daisyUI's own :root theme declaration.
+  KCESAR "Deep Forest / Field Ops" theme.
+  Dark is a deliberate choice here, not a framework default: the base is a
+  deep evergreen derived from the brand green (#026737), not neutral navy.
 */
-:root:root {
-  --radius-field: 0.5rem;
-}
+@plugin "daisyui/theme" {
+  name: "esar";
+  default: true;
+  prefersdark: true;
+  color-scheme: dark;
 
-/*
-  Under turbopack (next dev), daisyUI v5's base `.btn` rule is emitted without
-  its corner-radius declaration (only `.prose .btn` gets it), so plain buttons
-  render as sharp rectangles. Reassert the radius for all non-circle/square
-  buttons. Harmless in the production build, where the value matches.
-*/
-.btn:not(.btn-circle):not(.btn-square) {
-  border-radius: var(--radius-field);
+  --color-base-100: #0b1f16; /* Timber  - page base */
+  --color-base-200: #10271b; /* Canopy  - raised surface */
+  --color-base-300: #1b3a29; /* elevated / hover */
+  --color-base-content: #f3f6f1; /* Bone - primary text */
+
+  --color-primary: #026737; /* ESAR Green - brand anchor */
+  --color-primary-content: #f3f6f1;
+  --color-secondary: #34c56e; /* Trail - interactive / links */
+  --color-secondary-content: #06130d;
+  --color-accent: #f26a21; /* Beacon - reserved for highest-intent action */
+  --color-accent-content: #0b1f16;
+  --color-neutral: #10271b;
+  --color-neutral-content: #f3f6f1;
+
+  --color-info: #34c56e;
+  --color-success: #34c56e;
+  --color-warning: #f2a51e;
+  --color-error: #e5484d;
+
+  --radius-selector: 0.25rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.375rem;
+  --border: 1px;
 }
 
 @theme {
   --color-esar-green: #026737;
+  --color-timber: #0b1f16;
+  --color-canopy: #10271b;
+  --color-moss: #2e5e43;
+  --color-trail: #34c56e;
+  --color-beacon: #f26a21;
+  --color-bone: #f3f6f1;
+  --color-lichen: #9db1a4;
 
   --font-neuzeit: neuzeit-grotesk, sans-serif;
   --font-stratum: stratum-2-web, sans-serif;
@@ -38,9 +61,6 @@
   The default border color has changed to `currentcolor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
   looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
 */
 @layer base {
   *,
@@ -48,11 +68,30 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
+    border-color: var(--color-moss, currentcolor);
   }
-}
 
-@layer base {
+  /*
+    Timber lives on <html> (the canvas layer), NOT <body>: the hero video is a
+    fixed element at z-index -20, and a <body> background would paint in front
+    of it and hide it. The canvas background stays behind the video.
+  */
+  html {
+    background-color: var(--color-timber);
+    /*
+      The hero video is fixed at w-screen (100vw), which includes the scrollbar
+      width — on systems with classic scrollbars that overflows the content by
+      the scrollbar width and creates a horizontal scrollbar. Clip it at the
+      root. overflow-x on <html> (the scroll root) doesn't break the sticky
+      navbar, since the viewport is still its scroll container.
+    */
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: var(--font-trade-gothic-next);
+  }
+
   h1 {
     @apply text-3xl md:text-5xl;
   }
@@ -65,6 +104,58 @@
   p {
     @apply text-sm lg:text-lg;
   }
+}
+
+/*
+  Field-annotation eyebrow: small, wide, uppercase label set in the technical
+  Stratum face — reads like a note in the margin of a topo map.
+*/
+@utility eyebrow {
+  font-family: var(--font-stratum);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  line-height: 1;
+  color: var(--color-trail);
+}
+
+/*
+  Contour "ridgeline" divider — a single dashed elevation line that replaces
+  the plain rule between sections. Part of the topographic signature system.
+*/
+@utility ridgeline {
+  border: none;
+  height: 14px;
+  width: 100%;
+  color: var(--color-moss);
+  background-image: repeating-linear-gradient(
+    90deg,
+    currentColor 0 6px,
+    transparent 6px 12px
+  );
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 1px;
+  opacity: 0.7;
+}
+
+/*
+  Slightly-rounded buttons that match the navbar's rounded-md corners.
+  Unlayered so it wins over DaisyUI's layered radius token. Excludes
+  circle/square buttons (logo, hamburger) so they keep their shape.
+*/
+.btn:not(.btn-circle):not(.btn-square) {
+  border-radius: 0.375rem;
+}
+
+/*
+  DaisyUI's fixed .drawer-side ships with a horizontal inset (left: 8px /
+  right: -8px) that pushes the off-canvas drawer container 8px past the right
+  edge — a small horizontal overflow present at every viewport width. Pin it
+  flush to the viewport. Unlayered so it wins over DaisyUI's layered rule.
+*/
+.drawer-side {
+  inset-inline: 0;
 }
 
 @supports (-webkit-touch-callout: none) {

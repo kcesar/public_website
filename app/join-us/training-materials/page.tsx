@@ -24,13 +24,14 @@ export default async function TrainingMaterials() {
     <BasicLayout>
       <Banner
         title="Join Us"
+        eyebrow="Become a member"
         location="/kcesar/advanced-litter/advanced-litter-1.jpg"
         alt="Rescuers walking in field"
       />
 
       <BasicBody>
         <Links links={links} />
-        <div className="pt-5" />
+        <div className="pt-8" />
         <div id="traning-materials" />
         <Subtitle content="Training Materials" />
         <div className="flex flex-wrap justify-center gap-10 pt-10">
@@ -61,11 +62,12 @@ export default async function TrainingMaterials() {
             label="Supplemental Mapwork"
           />
         </div>
-        <div className="divider py-10"></div>
+        <div className="ridgeline my-14" />
         <div id="training-calendar" />
         <MailchimpSubscribeForm />
-        <div className="divider" />
-        <div className="pt-10">
+        <div className="ridgeline my-14" />
+        <div className="pt-2">
+          <p className="eyebrow text-center pb-3">2026-27 season</p>
           <Subtitle content="Training Calendar" />
         </div>
         <div className="p-5">

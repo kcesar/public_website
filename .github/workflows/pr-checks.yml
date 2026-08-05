@@ -1,9 +1,9 @@
 name: PR Checks
 
 on:
+  # Run on every PR regardless of target branch (not just PRs into main), so
+  # checks run on stacked / feature-branch PRs too.
   pull_request:
-    branches:
-      - main
 
 # Cancel superseded runs when a PR is updated.
 concurrency:

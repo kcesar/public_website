@@ -52,21 +52,21 @@ export default function Application({
                 To stay informed about future training cycles please sign up for
                 our{" "}
                 <Link
-                  className="text-blue-500 underline"
+                  className="text-trail underline hover:text-trail/70"
                   href="/join-us/training-materials#training-calendar"
                 >
                   newsletter
                 </Link>{" "}
                 and follow us on{" "}
                 <Link
-                  className="text-blue-500 underline"
+                  className="text-trail underline hover:text-trail/70"
                   href="https://www.facebook.com/kingcountyesar"
                 >
                   Facebook
                 </Link>{" "}
                 and{" "}
                 <Link
-                  className="text-blue-500 underline"
+                  className="text-trail underline hover:text-trail/70"
                   href="https://www.instagram.com/kingcounty_esar"
                 >
                   Instagram

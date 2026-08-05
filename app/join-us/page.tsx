@@ -21,6 +21,7 @@ export default async function JoinUs() {
     <BasicLayout>
       <Banner
         title="Join Us"
+        eyebrow="Become a member"
         location="/kcesar/advanced-litter/advanced-litter-1.jpg"
         alt="Rescuers using a litter to evacuate a subject"
       />
@@ -29,7 +30,7 @@ export default async function JoinUs() {
         <div className="pt-10">
           <Application acceptingApplications={false} />
         </div>
-        <div className="divider pb-10" />
+        <div className="ridgeline my-14" />
         <Subtitle content="Joining King County Explorer Search & Rescue" />
         <CenteredText
           content="Membership in King County Explorer Search & Rescue (ESAR) is open to
