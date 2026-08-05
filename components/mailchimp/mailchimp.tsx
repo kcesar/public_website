@@ -69,7 +69,9 @@ export const postSubscription = (e: FormEvent<HTMLFormElement>): Promise<string>
 
 export function MailChimpTitle() {
   return (
-    <h3>STAY CONNECTED</h3>
+    <h3 className="font-gin text-2xl md:text-3xl tracking-wider">
+      STAY CONNECTED
+    </h3>
   );
 }
 

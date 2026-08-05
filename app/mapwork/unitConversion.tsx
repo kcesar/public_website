@@ -28,11 +28,11 @@ export default function UnitConversion({}: {}) {
 
   return (
     <>
-      <h3 className="mb-4">Units of Measurement</h3>
+      <h3 className="font-gin text-2xl tracking-wide mb-4">Units of Measurement</h3>
       {unitsOfMeasurement.map((item, index) => (
         <QuizItem key={index} {...item} />
       ))}
-      <h3 className="mb-4">Coordinate Systems</h3>
+      <h3 className="font-gin text-2xl tracking-wide mb-4">Coordinate Systems</h3>
       {coordinateSystems.map((item, index) => (
         <QuizItem key={index} {...item} />
       ))}

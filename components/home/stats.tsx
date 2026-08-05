@@ -19,13 +19,13 @@ export default function Stats({
   if (!isMounted) {
     return (
       <div className="flex justify-center items-center h-full">
-        <div>
-          <div className="text-center">
-            <span className="font-komet text-6xl block pb-4">
-              {number || 0}+
-            </span>
-            <span className="font-komet text-2xl block">{description}</span>
-          </div>
+        <div className="text-center">
+          <span className="font-gin text-6xl md:text-7xl block pb-3 text-trail">
+            {number || 0}+
+          </span>
+          <span className="eyebrow !text-sm text-lichen block">
+            {description}
+          </span>
         </div>
       </div>
     );
@@ -33,24 +33,24 @@ export default function Stats({
 
   return (
     <div className="flex justify-center items-center h-full">
-      <div>
-        <div className="text-center">
-          <span className="font-komet text-6xl block pb-4">
-            <CountUp
-              start={0}
-              end={number || 0}
-              duration={4}
-              scrollSpyDelay={500}
-              enableScrollSpy
-              scrollSpyOnce={true}
-              suffix="+"
-            >
-              {/* https://stackoverflow.com/a/78057764 */}
-              {({ countUpRef }) => <span ref={countUpRef} />}
-            </CountUp>
-          </span>
-          <span className="font-komet text-2xl block">{description}</span>
-        </div>
+      <div className="text-center">
+        <span className="font-gin text-6xl md:text-7xl block pb-3 text-trail">
+          <CountUp
+            start={0}
+            end={number || 0}
+            duration={4}
+            scrollSpyDelay={500}
+            enableScrollSpy
+            scrollSpyOnce={true}
+            suffix="+"
+          >
+            {/* https://stackoverflow.com/a/78057764 */}
+            {({ countUpRef }) => <span ref={countUpRef} />}
+          </CountUp>
+        </span>
+        <span className="eyebrow !text-sm text-lichen block">
+          {description}
+        </span>
       </div>
     </div>
   );

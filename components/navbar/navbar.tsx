@@ -25,15 +25,16 @@ export default function Navbar() {
     };
   }, []);
 
-  let transparentCss = "navbar sticky top-0 z-50";
-  let solidCss = "navbar sticky top-0 z-50 bg-esar-green/80 backdrop-blur-xs";
+  let transparentCss = "navbar sticky top-0 z-50 transition-colors duration-300";
+  let solidCss =
+    "navbar sticky top-0 z-50 bg-timber/85 backdrop-blur border-b border-moss/40 transition-colors duration-300";
 
   let navlinks: NavLink[] = [
     { href: "/about", label: "About Us" },
     { href: "/join-us", label: "Join Us" },
     { href: "/contact-us", label: "Contact Us" },
     {
-      href: "https://sites.google.com/kcesar.org/members",
+      href: "https://accounts.google.com/AccountChooser?continue=https%3A%2F%2Fsites.google.com%2Fkcesar.org%2Fmembers",
       label: "Members",
       external: true,
     },

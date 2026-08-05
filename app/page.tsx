@@ -7,6 +7,8 @@ import Video from "@/components/home/video";
 import InstagramEmbed from "@/components/instagram/instagram";
 import BasicBody from "@/components/layout/basicbody";
 import BasicLayout from "@/components/layout/basiclayout";
+import MountainRidge from "@/components/topo/mountain";
+import Contour from "@/components/topo/contour";
 
 export default function Home() {
   return (
@@ -16,8 +18,30 @@ export default function Home() {
         <Video />
         <Hero />
       </div>
-      <div className="bg-base-100 py-10">
-        <BasicLayout>
+      {/* mt keeps the mountain ridge (which extends up from this section's top,
+          incl. the raised distant range) below the fold on load — it only
+          appears as you scroll. Must exceed the ridge render height + the
+          distant range's lift so the crest starts off-screen. */}
+      <div className="relative bg-base-100 pb-10 mt-52 md:mt-72">
+        {/* Content rises over the hero video as a mountain silhouette. Render
+            height tracks MountainRidge's viewBox (VIEW_H + VIEW_TOP = 205) so the
+            near ridge keeps its proportions while the distant range rises higher. */}
+        <MountainRidge className="absolute bottom-full left-0 text-base-100 h-[153px] md:h-[241px]" />
+        {/* Ambient contour backdrop (aspect-preserving, so it never squishes on
+            narrow screens); masked to ease in below the mountain. */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            WebkitMaskImage:
+              "linear-gradient(to bottom, transparent 0, transparent 6rem, black 34rem)",
+            maskImage:
+              "linear-gradient(to bottom, transparent 0, transparent 6rem, black 34rem)",
+          }}
+        >
+          <Contour opacity={0.35} className="!absolute inset-0 h-full" />
+        </div>
+        <div className="relative pt-10">
+        <BasicLayout contour={false}>
           <BasicBody>
             <div className="hidden grid-cols-3 lg:grid gap-4 gap-y-10 place-items-stretch">
               <GridImage
@@ -68,7 +92,7 @@ export default function Home() {
                 link="/about"
                 linkText="Learn More"
               />
-              <div className="divider"></div>
+              <div className="ridgeline my-8" />
 
               <SmallImage
                 location="/kcesar/advanced-litter/advanced-litter-41.jpg"
@@ -80,7 +104,7 @@ export default function Home() {
                 link="/donate"
                 linkText="Donate Now"
               />
-              <div className="divider"></div>
+              <div className="ridgeline my-8" />
 
               <SmallImage
                 location="/kcesar/advanced-litter/advanced-litter-4.jpg"
@@ -94,29 +118,37 @@ export default function Home() {
               />
             </div>
 
-            <div className="divider pt-10"></div>
-            <div className="p-8">
-              <h1 className="font-bold">KCESAR by the numbers:</h1>
+            <div className="ridgeline my-12" />
+            <div className="relative w-full overflow-hidden rounded-lg bg-canopy/70 border border-moss/40 py-12 px-6">
+              <div className="relative text-center pb-10">
+                <h2 className="font-gin text-3xl md:text-4xl tracking-wider">
+                  What it takes to answer the call
+                </h2>
+              </div>
+              <div className="relative lg:grid grid-cols-3 gap-4 place-items-stretch hidden">
+                <Stats number={125} description="Missions per Year" />
+                <Stats number={18000} description="Training Hours per Year" />
+                <Stats number={250} description="Volunteers" />
+              </div>
+              <div className="relative lg:hidden grid-cols-1 place-items-stretch grid gap-8">
+                <Stats number={125} description="Missions per Year" />
+                <Stats number={18000} description="Training Hours per Year" />
+                <Stats number={250} description="Volunteers" />
+              </div>
             </div>
-            <div className="lg:grid grid-cols-3 gap-4 place-items-stretch hidden">
-              <Stats number={125} description="Missions per Year" />
-              <Stats number={18000} description="Training Hours per Year" />
-              <Stats number={250} description="Volunteers" />
+
+            <div className="ridgeline my-12" />
+            <div className="text-center pb-6">
+              <h2 className="font-gin text-3xl md:text-4xl tracking-wider">
+                KCESAR on Instagram
+              </h2>
             </div>
-            <div className="lg:hidden grid-cols-1 place-items-stretch grid pb-16">
-              <Stats number={125} description="Missions per Year" />
-              <div className="divider"></div>
-              <Stats number={18000} description="Training Hours per Year" />
-              <div className="divider"></div>
-              <Stats number={250} description="Volunteers" />
-            </div>
-            <div className="divider py-10"></div>
-            <h1 className="font-bold py-6">KCESAR on Instagram!</h1>
             <div className="flex justify-center">
               <InstagramEmbed />
             </div>
           </BasicBody>
         </BasicLayout>
+        </div>
       </div>
     </div>
   );

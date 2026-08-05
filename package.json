@@ -9,7 +9,10 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "test": "if command -v bun >/dev/null 2>&1; then bun test tests/unit; else echo 'bun not found; skipping unit tests (they run in PR checks)'; fi",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "gen:contours": "node tools/topo/gen-contours.mjs",
+    "gen:terrain": "node tools/topo/gen-terrain.mjs",
+    "gen:topo": "bun run gen:contours && bun run gen:terrain"
   },
   "dependencies": {
     "@next/third-parties": "^15.5.7",

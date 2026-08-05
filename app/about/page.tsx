@@ -58,6 +58,7 @@ export default async function About() {
     <BasicLayout>
       <Banner
         title="About"
+        eyebrow="King County · Since 1954"
         location="/kcesar/advanced-litter/advanced-litter-8.jpg"
         alt="Rescuers standing"
       />
@@ -74,7 +75,7 @@ export default async function About() {
           alt="Rescuers carrying a subject on a wheeled litter through the forest"
         />
 
-        <div className="divider py-10" />
+        <div className="ridgeline my-14" />
         <Subtitle content="Vision" />
         <CenteredText
           content="We envision a community where people explore the outdoors safely and
@@ -87,7 +88,7 @@ export default async function About() {
           alt="Rescuers working together to manage a rope line on a steep slope"
         />
 
-        <div className="divider py-10" />
+        <div className="ridgeline my-14" />
         <Subtitle content="Who We Are" />
         <CenteredText
           content='King County Explorer Search & Rescue was founded in 1954 as one of the
@@ -112,7 +113,11 @@ export default async function About() {
             className="btn-lg shadow-lg"
           />
         </div>
-        <div className="flex flex-wrap justify-center gap-10 p-10">
+
+        <div className="ridgeline my-14" />
+
+        <Subtitle content="Who Keeps Us Running" />
+        <div className="flex flex-wrap justify-center gap-8 pt-10">
           {people.map((person) => (
             <Card
               key={person.personName}
@@ -124,12 +129,14 @@ export default async function About() {
             ></Card>
           ))}
         </div>
-        <div className="divider py-10" />
+
+        <div className="ridgeline my-14" />
+
         <Subtitle content="Annual Report" />
-        <div className="w-full h-120 md:h-280 p-10 flex justify-center">
+        <div className="w-full h-120 md:h-280 pt-10 flex justify-center">
           <iframe
             title="2023 Annual Report (PDF)"
-            className="w-full"
+            className="w-full rounded-lg border border-moss/40"
             src="/kcesar/annual-report/2023-annual-report.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
           />
         </div>

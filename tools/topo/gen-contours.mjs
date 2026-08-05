@@ -1,0 +1,180 @@
+// Generates components/topo/contour.tsx — the standalone topographic contour
+// field used as an ambient backdrop (interior pages via BasicLayout, the home
+// stats panel). Real iso-elevation lines traced with marching squares over a
+// synthetic terrain of many small hills (a "zoomed-out" topo map).
+//
+// Deterministic (no RNG). Run: `bun run gen:contours`. Do not hand-edit the
+// generated file.
+
+import { writeFileSync } from "fs";
+
+const W = 800, H = 400;
+const COLS = 170, ROWS = 85; // sampling grid (finer = more detail, bigger file)
+const dx = W / COLS, dy = H / ROWS;
+
+function gauss(x, y, cx, cy, amp, sx, sy) {
+  const a = (x - cx) / sx, b = (y - cy) / sy;
+  return amp * Math.exp(-(a * a + b * b));
+}
+// [cx, cy, amp, sx, sy] — many small hills read as a zoomed-out map.
+const HILLS = [
+  [110, 80, 0.9, 62, 55], [300, 55, 0.7, 55, 50], [520, 105, 0.85, 70, 60],
+  [700, 75, 0.65, 58, 55], [185, 205, 0.78, 66, 58], [400, 195, 0.95, 78, 66],
+  [640, 235, 0.82, 72, 62], [95, 340, 0.72, 62, 55], [285, 330, 0.62, 55, 50],
+  [500, 350, 0.76, 70, 58], [725, 335, 0.66, 60, 55], [430, 300, 0.55, 60, 52],
+];
+const BASINS = [
+  [360, 130, 0.5, 80, 62], [600, 300, 0.45, 74, 62], [230, 280, 0.4, 66, 56],
+];
+function elevation(x, y) {
+  let h = 0;
+  for (const [cx, cy, amp, sx, sy] of HILLS) h += gauss(x, y, cx, cy, amp, sx, sy);
+  for (const [cx, cy, amp, sx, sy] of BASINS) h -= gauss(x, y, cx, cy, amp, sx, sy);
+  h += 0.00025 * x - 0.0003 * y; // gentle regional tilt
+  return h;
+}
+
+const grid = [];
+let min = Infinity, max = -Infinity;
+for (let r = 0; r <= ROWS; r++) {
+  const row = [];
+  for (let c = 0; c <= COLS; c++) {
+    const v = elevation(c * dx, r * dy);
+    row.push(v);
+    if (v < min) min = v;
+    if (v > max) max = v;
+  }
+  grid.push(row);
+}
+
+const LEVELS = 18;
+const levels = [];
+for (let i = 1; i < LEVELS; i++) levels.push(min + ((max - min) * i) / LEVELS);
+
+const lerp = (p1, p2, v1, v2, level) => {
+  const t = (level - v1) / (v2 - v1);
+  return [p1[0] + (p2[0] - p1[0]) * t, p1[1] + (p2[1] - p1[1]) * t];
+};
+
+const byLevel = levels.map(() => []);
+for (let r = 0; r < ROWS; r++) {
+  for (let c = 0; c < COLS; c++) {
+    const x0 = c * dx, y0 = r * dy, x1 = (c + 1) * dx, y1 = (r + 1) * dy;
+    const tl = grid[r][c], tr = grid[r][c + 1], br = grid[r + 1][c + 1], bl = grid[r + 1][c];
+    for (let li = 0; li < levels.length; li++) {
+      const lv = levels[li];
+      let idx = 0;
+      if (tl > lv) idx |= 8;
+      if (tr > lv) idx |= 4;
+      if (br > lv) idx |= 2;
+      if (bl > lv) idx |= 1;
+      if (idx === 0 || idx === 15) continue;
+      const top = () => lerp([x0, y0], [x1, y0], tl, tr, lv);
+      const right = () => lerp([x1, y0], [x1, y1], tr, br, lv);
+      const bottom = () => lerp([x0, y1], [x1, y1], bl, br, lv);
+      const left = () => lerp([x0, y0], [x0, y1], tl, bl, lv);
+      const seg = [];
+      switch (idx) {
+        case 1: case 14: seg.push(left(), bottom()); break;
+        case 2: case 13: seg.push(bottom(), right()); break;
+        case 3: case 12: seg.push(left(), right()); break;
+        case 4: case 11: seg.push(top(), right()); break;
+        case 5: seg.push(left(), top()); seg.push(bottom(), right()); break;
+        case 6: case 9: seg.push(top(), bottom()); break;
+        case 7: case 8: seg.push(left(), top()); break;
+        case 10: seg.push(left(), bottom()); seg.push(top(), right()); break;
+      }
+      for (let s = 0; s < seg.length; s += 2) byLevel[li].push([seg[s], seg[s + 1]]);
+    }
+  }
+}
+
+function stitch(segs) {
+  const key = (p) => `${p[0].toFixed(1)},${p[1].toFixed(1)}`;
+  const used = new Array(segs.length).fill(false);
+  const map = new Map();
+  segs.forEach((s, i) => {
+    for (const p of s) {
+      const k = key(p);
+      if (!map.has(k)) map.set(k, []);
+      map.get(k).push(i);
+    }
+  });
+  const polylines = [];
+  for (let i = 0; i < segs.length; i++) {
+    if (used[i]) continue;
+    used[i] = true;
+    let ln = [segs[i][0], segs[i][1]];
+    let grow = true;
+    while (grow) {
+      grow = false;
+      const end = ln[ln.length - 1];
+      for (const j of map.get(key(end)) || []) {
+        if (used[j]) continue;
+        const [a, b] = segs[j];
+        if (key(a) === key(end)) { ln.push(b); used[j] = true; grow = true; break; }
+        if (key(b) === key(end)) { ln.push(a); used[j] = true; grow = true; break; }
+      }
+    }
+    if (ln.length >= 2) polylines.push(ln);
+  }
+  return polylines;
+}
+
+const toPath = (ln) => "M" + ln.map((p) => `${Math.round(p[0])} ${Math.round(p[1])}`).join("L");
+
+const contours = [];
+for (let li = 0; li < byLevel.length; li++) {
+  const lines = stitch(byLevel[li]).filter((l) => l.length >= 6); // drop tiny specks
+  if (!lines.length) continue;
+  contours.push({ i: li % 5 === 0 ? 1 : 0, d: lines.map(toPath).join("") });
+}
+
+const paths = contours
+  .map((p) => `  { i: ${p.i}, d: ${JSON.stringify(p.d)} },`)
+  .join("\n");
+
+const tsx = `// AUTO-GENERATED by tools/topo/gen-contours.mjs — do not hand-edit.
+//
+// Topographic contour field — the site's signature motif. Real iso-elevation
+// lines traced with marching squares over a synthetic terrain of many small
+// hills (a zoomed-out topo map). Static, aria-hidden, purely ambient. Index
+// contours (every 5th line) are drawn heavier, as on a real quad sheet.
+
+const CONTOURS: { i: number; d: string }[] = [
+${paths}
+];
+
+export default function Contour({
+  className = "",
+  opacity = 0.5,
+}: {
+  className?: string;
+  opacity?: number;
+}) {
+  return (
+    <svg
+      aria-hidden="true"
+      focusable="false"
+      viewBox="0 0 ${W} ${H}"
+      preserveAspectRatio="xMidYMid slice"
+      className={\`pointer-events-none absolute inset-0 h-full w-full text-moss \${className}\`}
+      style={{ opacity }}
+      fill="none"
+      stroke="currentColor"
+    >
+      {CONTOURS.map((c, idx) => (
+        <path
+          key={idx}
+          d={c.d}
+          strokeWidth={c.i ? 1.1 : 0.6}
+          strokeOpacity={c.i ? 0.85 : 0.5}
+        />
+      ))}
+    </svg>
+  );
+}
+`;
+
+writeFileSync(new URL("../../components/topo/contour.tsx", import.meta.url), tsx);
+console.log("contour.tsx:", contours.length, "levels,", tsx.length, "chars");

@@ -3,9 +3,11 @@ import Link from "next/link";
 export default function ToolsAndReview({}: {}) {
   return (
     <>
-      <div className="card card-border bg-base-100 w-96 drop-shadow-sm float-right ml-8 mb-8">
+      <div className="card bg-canopy border border-moss/40 w-96 drop-shadow-sm float-right ml-8 mb-8">
         <div className="card-body">
-          <h2 className="card-title">Unit Conversion Table</h2>
+          <h2 className="font-gin text-xl tracking-wide text-bone">
+            Unit Conversion Table
+          </h2>
             <table className="table">
               <tbody>
                 <tr>
@@ -42,7 +44,7 @@ export default function ToolsAndReview({}: {}) {
 						</table>
         </div>
       </div>
-      <h3 className="mt-8">Tools</h3>
+      <h3 className="font-gin text-2xl tracking-wide mt-8">Tools</h3>
       <p className="my-4">
         In order to complete this supplemental coursework you will need some basic tools. 
         These items are included in the navigation kit that you will receive at Course B. 
@@ -50,10 +52,10 @@ export default function ToolsAndReview({}: {}) {
         will be sufficient for now.
       </p>
       <p><b>Pencil</b> - Pencils are preferable because you may need to make corrections or revise your plan.</p>
-      <p><b>Ruler</b> - A tenths ruler makes calculations easier than a standard ruler. <Link href={"./assets/doc/tenths-ruler.pdf"} target="_blank" className="underline hover:text-esar-green">Tenths Ruler PDF (download)</Link></p>
-      <p><b>Protractor</b> - A 360° protractor, clear is preferable. <Link href={"./assets/doc/protractor.pdf"} target="_blank" className="underline hover:text-esar-green">Protractor PDF (download)</Link></p>
+      <p><b>Ruler</b> - A tenths ruler makes calculations easier than a standard ruler. <Link href={"./assets/doc/tenths-ruler.pdf"} target="_blank" className="text-trail underline hover:text-trail/70">Tenths Ruler PDF (download)</Link></p>
+      <p><b>Protractor</b> - A 360° protractor, clear is preferable. <Link href={"./assets/doc/protractor.pdf"} target="_blank" className="text-trail underline hover:text-trail/70">Protractor PDF (download)</Link></p>
       <p><b>Calculator</b> - A basic calculator for doing simple math.</p>
-      <h3 className="mt-8">Coordinate Systems</h3>
+      <h3 className="font-gin text-2xl tracking-wide mt-8">Coordinate Systems</h3>
       <p className="my-4">
         The most common coordinate systems used in search and rescue are Latidude/Longitude and UTM. 
         For the purposes of this supplemental coursework we will stick to these and assume the WGS-84 

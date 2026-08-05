@@ -1,5 +1,4 @@
-import type { Metadata } from "next";
-import { Mulish } from "next/font/google";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Navbar from "@/components/navbar/navbar";
 import Footer from "@/components/footer/footer";
@@ -44,6 +43,17 @@ export const metadata: Metadata = {
   },
 };
 
+// The site is a single, deliberately-dark theme (see globals.css). Tint the
+// mobile browser chrome to the page base (Timber) so the URL bar blends with the
+// hero instead of flashing white as it collapses on scroll — a single value on
+// purpose, since there is no light variant. colorScheme mirrors the CSS
+// `color-scheme: dark` as an early signal so native UA controls don't render
+// light before the stylesheet loads.
+export const viewport: Viewport = {
+  themeColor: "#0b1f16",
+  colorScheme: "dark",
+};
+
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "NGO",
@@ -59,16 +69,14 @@ const organizationJsonLd = {
   ],
 };
 
-const mulish = Mulish({ subsets: ["latin"] });
-
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const bodyClass = `flex flex-col min-h-screen ${mulish.className}`;
+  const bodyClass = "flex flex-col min-h-screen font-trade-gothic-next";
   return (
-    <html lang="en" suppressHydrationWarning={true}>
+    <html lang="en" data-theme="esar" suppressHydrationWarning={true}>
       <head>
         <link rel="preconnect" href="https://use.typekit.net" crossOrigin="" />
         <link rel="preconnect" href="https://p.typekit.net" crossOrigin="" />
