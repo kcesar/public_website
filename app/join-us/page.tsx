@@ -13,8 +13,8 @@ import BasicImage from "@/components/image/basicimage";
 import BasicLayout from "@/components/layout/basiclayout";
 import BasicBody from "@/components/layout/basicbody";
 import Application from "@/components/join-us/application";
-import Links from "@/components/join-us/links";
-import { links } from "./links";
+import SectionNav from "@/components/navigation/section-nav";
+import { flattenPages, joinUsNav } from "@/lib/navigation";
 
 export default async function JoinUs() {
   return (
@@ -26,7 +26,7 @@ export default async function JoinUs() {
         alt="Rescuers using a litter to evacuate a subject"
       />
       <BasicBody>
-        <Links links={links} />
+        <SectionNav items={flattenPages(joinUsNav)} label="Join Us section" />
         <div className="pt-10">
           <Application acceptingApplications={false} />
         </div>

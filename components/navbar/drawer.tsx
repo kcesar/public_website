@@ -1,24 +1,27 @@
+"use client";
+
 import Link from "next/link";
 import { FaBarsStaggered } from "react-icons/fa6";
 import Logo from "./logo";
-import { NavLink } from "./navlink";
+import { NavNode } from "@/lib/navigation";
 import MailchimpSubscibeModal from "../mailchimp/mailchimp-subscribe-modal";
 import DonateButton from "../donate/button";
 
-export default function Drawer({ navlinks }: { navlinks: NavLink[] }) {
-  const onLinkClick = () => {
-    // Close the drawer by unchecking the daisyUI toggle when a link is clicked.
-    const toggle = document.getElementById("my-drawer") as HTMLInputElement | null;
-    if (toggle) toggle.checked = false;
+export default function Drawer({ navlinks }: { navlinks: NavNode[] }) {
+  // Close the drawer by unchecking the daisyUI toggle when a link is clicked.
+  const closeDrawer = () => {
+    const toggle = document.getElementById("my-drawer");
+    if (toggle instanceof HTMLInputElement) toggle.checked = false;
   };
 
   return (
     <div className="drawer z-20">
       <input id="my-drawer" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
-        <div className="px-2 flex gap-2 items-center">
+        <div className="flex items-center gap-2 px-2">
           <label htmlFor="my-drawer" className="md:hidden">
-            <FaBarsStaggered className="pl-2 w-6 h-6 text-white" />
+            <span className="sr-only">Open navigation menu</span>
+            <FaBarsStaggered aria-hidden="true" className="h-6 w-6 pl-2 text-white" />
           </label>
           <div className="hidden md:inline-block">
             <Logo />
@@ -31,33 +34,59 @@ export default function Drawer({ navlinks }: { navlinks: NavLink[] }) {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <ul className="menu bg-base-200 min-h-full w-80 p-4">
-          <li
-            key="homeidx"
-            className="hover:bg-esar-green hover:text-white rounded"
-          >
-            <Link href="/" onClick={onLinkClick}>
+        <ul className="menu min-h-full w-80 bg-base-200 p-4">
+          <li className="rounded hover:bg-esar-green hover:text-white">
+            <Link href="/" onClick={closeDrawer}>
               <h3>Home</h3>
             </Link>
           </li>
-          {navlinks.map((link, index) => (
-            <li
-              key={index}
-              className="hover:bg-esar-green hover:text-white rounded"
-            >
-              {link.external ? (
-                <a href={link.href} target="_blank" rel="noopener noreferrer">
-                  <h3>{link.label}</h3>
+
+          {navlinks.map((link) => {
+            const children = link.children ?? [];
+            return (
+            <li key={link.href}>
+              {link.kind === "external" ? (
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded hover:bg-esar-green hover:text-white"
+                >
+                  <h3>{link.title}</h3>
                 </a>
               ) : (
-                <Link href={link.href} onClick={onLinkClick}>
-                  <h3>{link.label}</h3>
+                <Link
+                  href={link.href}
+                  onClick={closeDrawer}
+                  className="rounded hover:bg-esar-green hover:text-white"
+                >
+                  <h3>{link.title}</h3>
                 </Link>
               )}
-            </li>
-          ))}
 
-          <li className="grow pointer-events-none bg-inherit" />
+              {/* Nested pages are listed inline rather than behind a toggle --
+                  in a full-height drawer there is room, and it means every
+                  nested page is reachable without a second interaction. */}
+              {children.length > 0 && (
+                <ul>
+                  {children.map((child) => (
+                    <li key={child.href}>
+                      <Link
+                        href={child.href}
+                        onClick={closeDrawer}
+                        className="rounded hover:bg-esar-green hover:text-white"
+                      >
+                        {child.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+            );
+          })}
+
+          <li className="pointer-events-none grow bg-inherit" />
           <li>
             <MailchimpSubscibeModal />
           </li>
@@ -65,7 +94,7 @@ export default function Drawer({ navlinks }: { navlinks: NavLink[] }) {
             <DonateButton />
           </li>
           <li className="pointer-events-none">
-            <div className="flex justify-center items-center p-4">
+            <div className="flex items-center justify-center p-4">
               <Logo />
               <p className="text-center">
                 &copy; 2025 King County Explorer Search & Rescue

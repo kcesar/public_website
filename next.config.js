@@ -41,6 +41,10 @@ const nextConfig = {
         '/rig.html': '/rig',
         '/slack': 'https://kingcountyesar.slack.com/',
         '/parent-packet': '/assets/doc/ESAR_Parent_Packet.pdf',
+        // Supplemental Mapwork moved under Training Materials so the URL matches
+        // the site hierarchy. /mapwork was linked from training emails, so it
+        // needs to keep working.
+        '/mapwork': '/join-us/training-materials/mapwork',
       };
       const temp = {
         '/apply': '/join-us',

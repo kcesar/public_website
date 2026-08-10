@@ -14,9 +14,12 @@ import MappingProblems from "./mappingProblems";
 import ToolsAndReview from "./toolsAndReview";
 import UnitConversion from "./unitConversion";
 import PacingProblems from "./pacingProblems";
+import Breadcrumbs from "@/components/navigation/breadcrumbs";
+import SectionNav from "@/components/navigation/section-nav";
+import { flattenPages, joinUsNav } from "@/lib/navigation";
 
 export default async function MapWork() {
-  let pageTitle = "Supplemental Mapwork";
+  const pageTitle = "Supplemental Mapwork";
   return (
     <BasicLayout>
       <Banner
@@ -26,8 +29,11 @@ export default async function MapWork() {
         alt="Rescuers walking up a snowy trail"
       />
       <BasicBody>
+        <Breadcrumbs />
+        <SectionNav items={flattenPages(joinUsNav)} label="Join Us section" />
+        <div className="pt-5" />
         <CenteredText
-          content='In response to many of our trainees asking for additional practice mapwork 
+          content='In response to many of our trainees asking for additional practice mapwork
           we have compiled a series of supplemental problems that you can use to self-study. 
           These example questions are similar to the type of work you will be completing during 
           training. Each problem has the answer hidden. When you are ready to check your work 
