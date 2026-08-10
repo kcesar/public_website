@@ -18,9 +18,9 @@
     "gen:topo": "bun run gen:contours && bun run gen:terrain"
   },
   "dependencies": {
-    "@next/third-parties": "^16.2.12",
+    "@next/third-parties": "^16.3.0",
     "jsonp": "^0.2.1",
-    "next": "^16.2.12",
+    "next": "^16.3.0",
     "postcss-100vh-fix": "^1.0.2",
     "react": "^19.2.8",
     "react-countup": "^6.5.0",
@@ -37,7 +37,7 @@
     "@types/react-dom": "^19.2.4",
     "daisyui": "^5.7.14",
     "eslint": "^9.39.5",
-    "eslint-config-next": "^16.2.12",
+    "eslint-config-next": "^16.3.0",
     "postcss": "^8.5.25",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.9.3"
