@@ -11,7 +11,9 @@ const routes = [
   "/join-us",
   "/join-us/basic-training-overview",
   "/join-us/training-materials",
-  "/mapwork",
+  // Canonical path; /mapwork now 308s here, and a sitemap should list the
+  // destination rather than the redirect.
+  "/join-us/training-materials/mapwork",
   "/newsletter",
   "/truck",
 ];

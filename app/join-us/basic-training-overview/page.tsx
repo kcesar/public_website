@@ -1,5 +1,14 @@
 import type { Metadata } from "next";
 import Banner from "@/components/banner/banner";
+import BasicLink from "@/components/navigation/basiclink";
+import BasicLayout from "@/components/layout/basiclayout";
+import CenteredText from "@/components/text/centeredtext";
+import Subtitle from "@/components/text/subtitle";
+import BasicImage from "@/components/image/basicimage";
+import BasicBody from "@/components/layout/basicbody";
+import SectionNav from "@/components/navigation/section-nav";
+import Breadcrumbs from "@/components/navigation/breadcrumbs";
+import { flattenPages, joinUsNav } from "@/lib/navigation";
 
 export const metadata: Metadata = {
   title: "Basic Training Overview",
@@ -7,14 +16,6 @@ export const metadata: Metadata = {
     "An overview of ESAR Basic Training — the roughly 170-hour program that prepares new members to safely contribute to wilderness search and rescue.",
   alternates: { canonical: "/join-us/basic-training-overview" },
 };
-import BasicLink from "@/components/navigation/basiclink";
-import BasicLayout from "@/components/layout/basiclayout";
-import CenteredText from "@/components/text/centeredtext";
-import Subtitle from "@/components/text/subtitle";
-import BasicImage from "@/components/image/basicimage";
-import BasicBody from "@/components/layout/basicbody";
-import Links from "@/components/join-us/links";
-import { links } from "../links";
 
 export default async function BasicTrainingOverview() {
   return (
@@ -26,7 +27,8 @@ export default async function BasicTrainingOverview() {
         alt="Rescuers using a litter to evacuate a subject"
       />
       <BasicBody>
-        <Links links={links} />
+        <Breadcrumbs />
+        <SectionNav items={flattenPages(joinUsNav)} label="Join Us section" />
         <div className="pt-8" />
         <Subtitle content="Basic Training Overview" />
         <CenteredText
@@ -64,7 +66,12 @@ export default async function BasicTrainingOverview() {
         <div className="ridgeline my-14" />
         <Subtitle content="Training Materials" />
         <div className="pt-6">
-          <BasicLink href="/join-us/training-materials" title="Download Here" />
+          {/* "Download Here" named a link that goes to a page, not a file, and
+              read as a bare "here" out of context. */}
+          <BasicLink
+            href="/join-us/training-materials"
+            title="Browse training materials"
+          />
         </div>
       </BasicBody>
     </BasicLayout>
