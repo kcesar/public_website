@@ -1,9 +1,11 @@
 # KCESAR Public Website
 
 Informational/marketing site for King County Explorer Search & Rescue (ESAR).
-Next.js 15 (App Router) + React 19 + TypeScript, styled with Tailwind CSS v4 and
+Next.js 16 (App Router) + React 19 + TypeScript, styled with Tailwind CSS v4 and
 daisyUI v5. Statically rendered; deployed as a Node standalone app to Azure App
-Service, with per-PR preview deployments on Vercel.
+Service. Shareable previews come from the Fly.io app (`fly.toml` +
+`Dockerfile`); Vercel's automatic Git deployments are switched off — see
+`vercel.json`.
 
 ---
 
@@ -151,8 +153,7 @@ When adding a workflow or doc, target Bun (e.g. `oven-sh/setup-bun`), not
 > **Exception — do NOT change:** `.github/workflows/deploy-prod.yml` (the Azure
 > production deploy) uses `npm install` on Node 20. That pipeline is owned/managed
 > outside this repo's normal workflow — leave it exactly as-is; do not "migrate"
-> it to Bun. Everything else — local dev, the `pr-checks` workflow, and Vercel —
-> uses Bun.
+> it to Bun. Everything else — local dev and the `pr-checks` workflow — uses Bun.
 
 ## Testing
 
@@ -170,7 +171,9 @@ When adding a workflow or doc, target Bun (e.g. `oven-sh/setup-bun`), not
 - **`next.config.js` `distDir`** is `process.env.VERCEL ? '.next' : 'build'`.
   Vercel's Next.js builder only finds `routes-manifest.json` in the default
   `.next`; the Azure deploy zips from `build/standalone` + `build/static`. Keep
-  it conditional — don't hardcode either value.
+  it conditional — don't hardcode either value. (Automatic Vercel deployments
+  are currently off via `vercel.json`, but the branch stays so a manual
+  `vercel deploy` still works.)
 - **`output: 'standalone'`** exists for the Azure self-hosted deploy. Vercel
   ignores it; leave it.
 - **daisyUI v5 button radius:** under turbopack dev the base `.btn` corner
