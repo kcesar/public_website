@@ -1,7 +1,15 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useSyncExternalStore } from "react";
 import CountUp from "react-countup";
+
+// "Have we hydrated yet?" expressed as an external store rather than a
+// setState-in-effect. Same two-pass behaviour (server/first paint renders the
+// plain number, the client swaps in the animated CountUp), but without the
+// cascading re-render that react-hooks/set-state-in-effect flags.
+const subscribe = () => () => {};
+const getClientSnapshot = () => true;
+const getServerSnapshot = () => false;
 
 export default function Stats({
   number,
@@ -10,11 +18,11 @@ export default function Stats({
   number: number;
   description: string;
 }) {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+  const isMounted = useSyncExternalStore(
+    subscribe,
+    getClientSnapshot,
+    getServerSnapshot,
+  );
 
   if (!isMounted) {
     return (

@@ -1,0 +1,6 @@
+# Mirror of the `min-release-age=7` gate in .npmrc, for contributors who use bun
+# locally. package-lock.json is authoritative -- bun.lockb is a convenience.
+#
+# bun spells this in SECONDS, npm in days. Keep the two in sync: 604800 = 7 days.
+[install]
+minimumReleaseAge = 604800
