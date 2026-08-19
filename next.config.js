@@ -50,7 +50,9 @@ const nextConfig = {
         '/apply': '/join-us',
         '/cert': 'https://docs.google.com/forms/d/e/1FAIpQLSctsjL6JfUxsQNoUiqJeZqADig1N4KlY43VJr0sy25q9lNK-g/viewform',
         '/paging-setup': 'https://docs.google.com/forms/d/e/1FAIpQLSfRjUxFUCaQBQ9Xu4ojowPj9NVdyoQYFJBAL5MSnc4IqWmDhQ/viewform',
-        '/course-a-registration': 'https://www.signupgenius.com/go/10C0F4FA8AF2AAAFDCE9-50124119-course',
+        // Unit-managed short link; resolves to the current season's SignUpGenius
+        // sign-up so the target can change without a site deploy.
+        '/course-a-registration': 'https://tinyurl.com/KCESARCourseA',
         '/admin-hours': 'https://docs.google.com/forms/d/e/1FAIpQLSeU53MJ5PBhq-7sp2l6ER5R5attix_ApgOV9EtH03R55aANYw/viewform',
         '/elections': 'https://docs.google.com/forms/d/e/1FAIpQLSdv3DlIg4oGbAoROVfdS4WcV_b_RKAwIQcEP4BaexBISV4vQg/viewform',
         '/rig': 'https://docs.google.com/forms/d/e/1FAIpQLSck1SruL9W8_RSLvpFRblAW02pFybIEhKaIvH_ZhxW-FxEbnA/viewform',
