@@ -38,9 +38,6 @@ function formatDate(raw: string): string {
 }
 
 function LocationCell({ session }: { session: JoinedSession }) {
-  if (session.course.id === "CRSA") {
-    return <span className="text-lichen">n/a</span>;
-  }
   const loc = session.location;
   if (loc.google_maps_url) {
     return (

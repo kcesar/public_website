@@ -28,7 +28,7 @@ export default async function JoinUs() {
       <BasicBody>
         <SectionNav items={flattenPages(joinUsNav)} label="Join Us section" />
         <div className="pt-10">
-          <Application acceptingApplications={false} />
+          <Application acceptingApplications={true} />
         </div>
         <div className="ridgeline my-14" />
         <Subtitle content="Joining King County Explorer Search & Rescue" />

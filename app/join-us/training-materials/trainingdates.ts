@@ -247,6 +247,32 @@ const locations: CourseLocation[] = [
       name: "Si View Community Center",
       street_address: "400 SE Orchard Dr, North Bend, WA 98045",
       google_maps_url: "https://maps.app.goo.gl/hCjp57sBW3foRGBc6"
+    },
+    // City-level placeholders for sessions whose exact venue is announced
+    // to registrants rather than published here.
+    {
+      id: "SEATWA",
+      name: "Seattle, WA",
+      street_address: "",
+      google_maps_url: null
+    },
+    {
+      id: "BELVWA",
+      name: "Bellevue, WA",
+      street_address: "",
+      google_maps_url: null
+    },
+    {
+      id: "SNOQWA",
+      name: "Snoqualmie, WA",
+      street_address: "",
+      google_maps_url: null
+    },
+    {
+      id: "ISSAWA",
+      name: "Issaquah, WA",
+      street_address: "",
+      google_maps_url: null
     }
   ];
 
@@ -260,10 +286,10 @@ export type Session = {
 
 const sessions: Session[] = [
     // Course A: Orientation
-    { course_id: "CRSA", course_date: "9/2/26", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
-    { course_id: "CRSA", course_date: "9/3/26", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
-    { course_id: "CRSA", course_date: "9/8/26", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
-    { course_id: "CRSA", course_date: "9/10/26", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+    { course_id: "CRSA", course_date: "9/2/26", course_start_time: "", course_end_time: "", location_id: "SEATWA" },
+    { course_id: "CRSA", course_date: "9/3/26", course_start_time: "", course_end_time: "", location_id: "BELVWA" },
+    { course_id: "CRSA", course_date: "9/8/26", course_start_time: "", course_end_time: "", location_id: "SEATWA" },
+    { course_id: "CRSA", course_date: "9/10/26", course_start_time: "", course_end_time: "", location_id: "SNOQWA" },
 
     // Meet The Team Hike
     { course_id: "MEET", course_date: "9/15/26", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
@@ -273,9 +299,9 @@ const sessions: Session[] = [
     { course_id: "MEET", course_date: "9/27/26", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
 
     // Course B: Map and Compass
-    { course_id: "CRSB", course_date: "10/11/26", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
-    { course_id: "CRSB", course_date: "10/17/26", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
-    { course_id: "CRSB", course_date: "10/24/26", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
+    { course_id: "CRSB", course_date: "10/11/26", course_start_time: "", course_end_time: "", location_id: "ISSAWA" },
+    { course_id: "CRSB", course_date: "10/17/26", course_start_time: "", course_end_time: "", location_id: "ISSAWA" },
+    { course_id: "CRSB", course_date: "10/24/26", course_start_time: "", course_end_time: "", location_id: "ISSAWA" },
 
     // Introduction to Searcher First Aid
     { course_id: "SFA1", course_date: "10/24/26", course_start_time: "", course_end_time: "", location_id: "TBDTBD" },
