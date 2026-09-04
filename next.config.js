@@ -59,6 +59,8 @@ const nextConfig = {
         '/feedback': 'https://docs.google.com/forms/d/e/1FAIpQLSdCl1jZM3jW5oUl2fwdrakBEJZz6my0qiVxuXAtQ7KH-EZF1Q/viewform?usp=dialog',
         '/assets/doc/Parent_Packet_2025_Final.pdf': '/assets/doc/ESAR_Parent_Packet.pdf',
         '/assets/doc/ESAR_Parent_Packet_2019.pdf': '/assets/doc/ESAR_Parent_Packet.pdf',
+        // The 2023 annual report was removed from the site; catch old links.
+        '/kcesar/annual-report/2023-annual-report.pdf': '/about',
       };
 
       return [
